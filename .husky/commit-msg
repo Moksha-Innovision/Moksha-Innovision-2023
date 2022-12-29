@@ -1,0 +1,15 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🚨 Committing'
+
+# Check Prettier standards
+npm run commitmsg ||
+(
+    echo  '🚨 Wrong commit message! 😕"
+        The commit message must have this format:"
+        <verb in imperative mood> <what was done>"
+        Allowed verbs in imperative mood: fix, feature ,refactor, merge, docs, revert"
+        Example: refactor: login button';
+    false;
+)
