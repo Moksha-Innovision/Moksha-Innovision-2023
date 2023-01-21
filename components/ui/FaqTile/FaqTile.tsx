@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Koulen, Montserrat } from "@next/font/google";
+import Image from "next/image";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
 type Props = {
@@ -28,7 +29,12 @@ const FaqTile = (props: Props) => {
         onClick={handleFaqClick}
       >
         <div className="faq-icon  col-start-1 col-end-2 m-auto">
-          <img src={`${active ? "-" : "+"}.svg`} alt="faq-icon" />
+          <Image
+            width={100}
+            height={100}
+            src={`${active ? "-" : "+"}.svg`}
+            alt="faq-icon"
+          />
         </div>
         <h3
           className={`col-start-2 col-end-9 gap-1 text-xl ${koulen.className} tracking-wider`}
