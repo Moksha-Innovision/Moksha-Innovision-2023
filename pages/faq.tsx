@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import FaqContainer from "../components/ui/FaqContainer/FaqContainer";
 import Image from "next/image";
 import Navbar from "../components/ui/Navbar/Navbar";
 type Props = {};
 
 const Faq = (props: Props) => {
+  const [owl, setOwl] = useState("owl.svg");
+
+  const handleOwl = () => {
+    setOwl("owl-1.svg");
+  };
+
   return (
     <>
       <Navbar />
@@ -47,13 +53,21 @@ const Faq = (props: Props) => {
 
         <div className="grid grid-cols-12 grid-rows-6 max-w-7xl m-auto max-h-[calc(100vh_-_96px)] bg-saffron-500 z-10 pt-8 transition">
           <div className="owl relative -ml-8 -mt-8  col-start-2 col-end-12 sm:col-end-5 md:col-end-6  row-start-1 row-end-7 flex items-center justify-center animate-slideinleft">
-            <Image src="owl.svg" alt="" width={500} height={500} />
+            <Image
+              src={owl}
+              alt=""
+              width={500}
+              height={500}
+              onClick={handleOwl}
+              className="animate-slideinleft"
+            />
+            {/* <Image src="owl-1.svg" alt="" width={500} height={500} className='absolute h-0 transition' /> */}
           </div>
           <div className="cloud col-start-9 col-end-12 sm:col-start-5 sm:col-end-7 flex items-end md:items-start row-start-2 z-50">
             <Image src="Cloud.svg" alt="" width={500} height={500} />
           </div>
-          <div className="Faqs  z-10 col-span-10  col-start-2 sm:col-start-6 md:col-start-7 lg:col-start-7 col-end-12  row-start-2 ">
-            <FaqContainer />
+          <div className="Faqs  z-10 col-span-10  col-start-2 sm:col-start-6 md:col-start-7 lg:col-start-7 col-end-12  row-start-2 animate-slideinbottom">
+            <FaqContainer setOwl={setOwl} />
           </div>
         </div>
       </div>

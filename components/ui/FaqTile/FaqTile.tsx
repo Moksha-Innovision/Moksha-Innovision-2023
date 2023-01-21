@@ -7,15 +7,21 @@ type Props = {
   ques: string;
   ans: string;
   setOpen: (a: any) => any;
+  setOwl: (a: any) => any;
   active: boolean;
   id: number;
 };
 
 const FaqTile = (props: Props) => {
-  const { ques, ans, active, setOpen, id } = props;
+  const { ques, ans, active, setOpen, id, setOwl } = props;
 
   const handleFaqClick = () => {
-    setOpen(id);
+    setOpen((prev: number) => {
+      let newid = prev === id ? 0 : id;
+      if (newid === 0) setOwl("owl.svg");
+      else setOwl("owl-1.svg");
+      return newid;
+    });
   };
 
   return (
@@ -30,8 +36,8 @@ const FaqTile = (props: Props) => {
       >
         <div className="faq-icon  col-start-1 col-end-2 m-auto">
           <Image
-            width={100}
-            height={100}
+            width={30}
+            height={30}
             src={`${active ? "-" : "+"}.svg`}
             alt="faq-icon"
           />

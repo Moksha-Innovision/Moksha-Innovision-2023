@@ -19,8 +19,8 @@ module.exports = {
         },
       },
       animation: {
-        slideinbottom: "slideinbottom 1.5s ease-in-out 0s 1",
-        slideinleft: "slideinleft 1s ease-in-out 0s 1",
+        slideinbottom: "slideinbottom 1s ease-in-out 0s 1",
+        slideinleft: "slideinleft 1.5s ease-in-out 0s 1",
       },
       colors: {
         saffron: {
