@@ -6,8 +6,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        bold: "black 5px 5px 1px",
+        semibold: "black 3px 3px 1px",
+        lightbold: "black 2.5px 2.5px 0.5px",
+        lightestbold: "black 1px 1px 2px",
+      },
+      boxShadow: {
+        extrasoft: "0px 0px 6px 5px rgba(0, 0, 0, 0.2)",
+        soft: "0px 0px 6px 5px rgba(0, 0, 0, 0.2)",
+      },
       colors: {
         saffron: {
+          25: "#F5F4F4",
           50: "#fffceb",
           100: "#fdf4c8",
           200: "#fbe98c",
@@ -78,6 +89,7 @@ module.exports = {
           700: "#0083ff",
           800: "#0073e0",
           900: "#012a56",
+          1000: "#02012B",
         },
       },
     },
