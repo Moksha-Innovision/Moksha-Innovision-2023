@@ -11,9 +11,14 @@ module.exports = {
           "0%": { left: "0" },
           "100%": { left: "-100%" },
         },
+        wheel: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         carosel: "scroll 5s linear infinite",
+        wheel: "wheel 15s linear infinite",
       },
       dropShadow: {
         bold: "black 5px 5px 1px",
@@ -30,6 +35,10 @@ module.exports = {
         height: "400px",
       },
       colors: {
+        "Safety-Orange": {
+          100: "#FFBF1A",
+          500: "#FF7E0A",
+        },
         saffron: {
           25: "#F5F4F4",
           50: "#fffceb",
