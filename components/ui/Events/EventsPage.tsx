@@ -105,7 +105,7 @@ const events = [
 ];
 const EventsPage = () => {
   const [day, setDay] = useState("I");
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
   return (
     <div
       className={`${koulen.className} text-white h-[93vh] bg-[#f44142] justify-center flex  overflow-x-hidden `}

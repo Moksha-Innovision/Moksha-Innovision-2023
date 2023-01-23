@@ -11,22 +11,18 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import EventCards from "./EventCards";
 
-
 interface Props {
   events?: { name: string; img: string }[];
   day: string;
 }
 const EventCarosel = ({ events, day }: Props) => {
-  const nextRef = useRef<any>()
-  const prevRef = useRef<any>()
-  useEffect(() => {
-
-  })
+  const nextRef = useRef<any>();
+  const prevRef = useRef<any>();
+  useEffect(() => {});
   const [active, setActive] = useState();
   return (
     <div className="relative w-[94vw] mx-[3vw] overflow-hidden">
       <Image
-
         src={"blur.svg"}
         alt={"blur"}
         width={100}
@@ -51,9 +47,7 @@ const EventCarosel = ({ events, day }: Props) => {
             delay: 8000,
             disableOnInteraction: false,
           }}
-
           navigation={true}
-
           lazy={true}
           loop={true}
           loopFillGroupWithBlank={true}
@@ -72,25 +66,24 @@ const EventCarosel = ({ events, day }: Props) => {
             },
             1424: {
               slidesPerView: 5,
-            }
+            },
           }}
-
           modules={[Autoplay, Navigation, Pagination]}
           className="mySwiper "
         >
           {events?.map((e, i) => {
-            return <SwiperSlide>
-              {({ isActive }) => (
-                <EventCards event={e} key={i} active={isActive} />
-              )}
-            </SwiperSlide>;
+            return (
+              <SwiperSlide key={i}>
+                {({ isActive }) => (
+                  <EventCards event={e} key={i} active={isActive} />
+                )}
+              </SwiperSlide>
+            );
           })}
         </Swiper>
       </div>
-
-    </div >
-  )
-  /*<div className="flex justify-center items-center  space-x-16 ">
+    </div>
+    /*<div className="flex justify-center items-center  space-x-16 ">
         
       </div>
        <div className=" flex items-center justify-center">
@@ -107,12 +100,11 @@ const EventCarosel = ({ events, day }: Props) => {
             })}
           </div>
         </div>
-      </div>*/;
+      </div>*/
+  );
 };
 const arrow = () => {
-  return (
-    <div className=""></div>
-  )
-}
+  return <div className=""></div>;
+};
 
 export default EventCarosel;
