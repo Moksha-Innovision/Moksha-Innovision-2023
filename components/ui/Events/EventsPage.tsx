@@ -15,27 +15,27 @@ const events = [
         img: "orientation.svg",
       },
       {
-        name: "Orientaion",
+        name: "1",
         img: "orientation.svg",
       },
       {
-        name: "Orientaion",
+        name: "2",
         img: "orientation.svg",
       },
       {
-        name: "Orientaion",
+        name: "3",
         img: "orientation.svg",
       },
       {
-        name: "Orientaion",
+        name: "4",
         img: "orientation.svg",
       },
       {
-        name: "Orientaion",
+        name: "5",
         img: "orientation.svg",
       },
       {
-        name: "Orientaion",
+        name: "6",
         img: "orientation.svg",
       },
     ],
@@ -105,7 +105,7 @@ const events = [
 ];
 const EventsPage = () => {
   const [day, setDay] = useState("I");
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   return (
     <div
       className={`${koulen.className} text-white h-[93vh] bg-[#f44142] justify-center flex  overflow-x-hidden `}

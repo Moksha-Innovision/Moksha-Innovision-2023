@@ -6,6 +6,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        scroll: {
+          "0%": { left: "0" },
+          "100%": { left: "-100%" },
+        },
+      },
+      animation: {
+        carosel: "scroll 5s linear infinite",
+      },
       dropShadow: {
         bold: "black 5px 5px 1px",
         semibold: "black 3px 3px 1px",
@@ -15,6 +24,10 @@ module.exports = {
       boxShadow: {
         extrasoft: "0px 0px 6px 5px rgba(0, 0, 0, 0.2)",
         soft: "0px 0px 6px 5px rgba(0, 0, 0, 0.2)",
+      },
+      swiperSlideActive: {
+        width: "400px",
+        height: "400px",
       },
       colors: {
         saffron: {
