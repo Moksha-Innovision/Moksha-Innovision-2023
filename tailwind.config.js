@@ -17,10 +17,22 @@ module.exports = {
 
           "100%": { transform: "translateX(0px)", opacity: "1" },
         },
+        infinitescrollleft: {
+          "0%": { left: "2%" },
+
+          "100%": { left: "-100%" },
+        },
+        infinitescrollright: {
+          "0%": { right: "2%" },
+
+          "100%": { right: "-100%" },
+        },
       },
       animation: {
         slideinbottom: "slideinbottom 1s ease-in-out 0s 1",
         slideinleft: "slideinleft 1.5s ease-in-out 0s 1",
+        infinitescrollleft: "infinitescrollleft 20s linear infinite",
+        infinitescrollright: "infinitescrollright 20s linear infinite",
       },
       colors: {
         saffron: {

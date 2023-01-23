@@ -8,21 +8,21 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 type Props = {};
 
-const ACTIVELINKTYLE =
-  "text-transparent text-3xl bg-clip-text bg-gradient-to-b from-razzmatazz-800 to-saffron-600";
+const ACTIVE_LINK_STYLE =
+  "text-transparent text-4xl bg-clip-text bg-gradient-to-b from-razzmatazz-800 to-saffron-600";
 
 const Navbar = (props: Props) => {
   const router = useRouter();
   return (
     <div className="navbar h-24 flex justify-between items-center border-b-4 border-b-black px-6 ">
-      <Link href="/" className="logo w-44">
+      <Link href="/" className="logo w-52">
         <Image width={500} height={500} src="mokshalogo.svg" alt="" />
       </Link>
-      <ul className="links md:flex  items-center w-full gap-8 justify-center hidden">
+      <ul className="links md:flex  items-center w-full gap-20  justify-center hidden">
         <Link
           href="/events"
           className={`link ${koulen.className} uppercase  ${
-            router.asPath === "/events" ? ACTIVELINKTYLE : "text-xl"
+            router.asPath === "/events" ? ACTIVE_LINK_STYLE : "text-2xl"
           }`}
         >
           Events
@@ -30,31 +30,31 @@ const Navbar = (props: Props) => {
         <Link
           href="/sponsors"
           className={`link ${koulen.className} uppercase  ${
-            router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-xl"
+            router.asPath === "/sponsors" ? ACTIVE_LINK_STYLE : "text-2xl"
           }`}
         >
           Sponsors
         </Link>
         <Link
           href="/faq"
-          className={`link ${koulen.className} uppercase   ${
-            router.asPath === "/faq" ? ACTIVELINKTYLE : "text-xl"
+          className={`link ${koulen.className} uppercase    ${
+            router.asPath === "/faq" ? ACTIVE_LINK_STYLE : "text-2xl"
           }`}
         >
           FAQ&apos;s
         </Link>
         <Link
           href="/contact"
-          className={`link ${koulen.className} uppercase  ${
-            router.asPath === "/contact" ? ACTIVELINKTYLE : "text-xl"
+          className={`link ${koulen.className} uppercase   ${
+            router.asPath === "/contact" ? ACTIVE_LINK_STYLE : "text-2xl"
           }`}
         >
           Contact Us
         </Link>
         <Link
           href="/about"
-          className={`link ${koulen.className} uppercase  ${
-            router.asPath === "/about" ? ACTIVELINKTYLE : "text-xl"
+          className={`link ${koulen.className} uppercase   ${
+            router.asPath === "/about" ? ACTIVE_LINK_STYLE : "text-2xl"
           }`}
         >
           About us
