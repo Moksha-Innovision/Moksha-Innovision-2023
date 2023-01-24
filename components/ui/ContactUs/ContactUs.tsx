@@ -6,7 +6,7 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 const ContactUs = () => {
   return (
     <div
-      className={`${koulen.className} text-white h-[93vh] bg-prussian-blue-1000 justify-center flex  overflow-x-hidden `}
+      className={`${koulen.className} text-white min-h-[93vh] bg-prussian-blue-1000 justify-center items-center flex  overflow-x-hidden relative`}
     >
       <div className="z-10">
         <Image
@@ -14,14 +14,14 @@ const ContactUs = () => {
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-40 xl:w-44 left-0 "
+          className="absolute w-28 lg:w-40 xl:w-44 left-0 top-0"
         />
         <Image
           src="border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-40 xl:w-44 right-0 -scale-x-100 "
+          className="absolute w-28 lg:w-40 xl:w-44 right-0 -scale-x-100 top-0"
         />
         <Image
           src="border-event-contact.svg"
@@ -58,7 +58,7 @@ const ContactUs = () => {
             className=" w-28 lg:w-36 xl:w-42 "
           />
         </div>
-        <h1 className="text-4xl lg:text-5xl text-center  mb-4 drop-shadow-xl">
+        <h1 className="text-4xl lg:text-5xl text-center  mb-7 md:mb-4 drop-shadow-xl">
           CONTACT US
         </h1>
         <ContactUsForm />
