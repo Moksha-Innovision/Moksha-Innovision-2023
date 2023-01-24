@@ -1,9 +1,12 @@
 import { Koulen } from "@next/font/google";
 import Image from "next/image";
+import { useEffect } from "react";
 import ContactUsForm from "./ContactUsForm";
+
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const ContactUs = () => {
+  useEffect(() => {});
   return (
     <div
       className={`${koulen.className} text-white min-h-[93vh] bg-prussian-blue-1000 justify-center items-center flex  overflow-x-hidden relative`}
