@@ -3,7 +3,7 @@ import From from "../components/ui/Login/From";
 const fsd = {
   bgColor: "bg-Safety-Orange-100",
   meta: {
-    ySpac: "space-y-10",
+    ySpac: "space-y-8",
   },
   title: {
     content: "Log-in",
@@ -42,8 +42,8 @@ const fsd = {
 
 const login = () => {
   return (
-    <div className="w-[100vw] overflow-x-hidden relative min-h-[100vh] bg-[#300e2f]  flex justify-center items-center">
-      <div className=" absolute w-[120%] md:w-[100%] xl:w-[70%] ">
+    <div className=" overflow-x-hidden relative min-h-[100vh] bg-[#300e2f]  flex justify-center items-center py-10">
+      <div className=" fixed w-[100%] overflow-hidden  lg:w-[50%] ">
         <Image
           src={"logbg.svg"}
           className="w-full h-full animate-wheel "

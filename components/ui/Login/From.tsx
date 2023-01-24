@@ -41,7 +41,7 @@ const From = ({ fsd }: Prop) => {
     <div
       className={`${koulen.className} ${
         fsd.bgColor || "white"
-      } text-black shadow-xl  rounded-2xl w-[80vw] max-w-[680px]  flex flex-col items-center py-10 md:px-24 px-14 ${
+      } text-black shadow-xl  rounded-2xl w-[80vw] max-w-[500px]  flex flex-col items-center py-6 md:px-16 px-12 ${
         fsd.meta.ySpac || "space-y-2"
       }`}
     >
@@ -63,7 +63,7 @@ const From = ({ fsd }: Prop) => {
             </label>
             <input
               type={`${f.type || "text"}`}
-              className="outline outline-[3px] rounded-lg h-12 p-2 focus:bg-white bg-saffron-25"
+              className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25"
               placeholder={`${f.placeholder}`}
             />
           </div>
@@ -72,7 +72,7 @@ const From = ({ fsd }: Prop) => {
 
       <div className="w-full flex flex-col text-2xl items-center">
         <button
-          className={`${fsd.submit.color} outline outline-[3px] rounded-lg outline-black mt-3 h-16 w-[100%] duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
+          className={`${fsd.submit.color} outline outline-[3px] rounded-lg outline-black mt-3 h-14 w-[100%] duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
           onClick={fsd.submit.click}
         >
           {fsd.submit.label}
@@ -85,7 +85,7 @@ const From = ({ fsd }: Prop) => {
       </div>
       <div className="w-full flex flex-col text-xl items-center">
         <button
-          className={`bg-white outline outline-[3px] rounded-lg outline-black mt-3 h-12 w-[94%] duration-100 transition-[transform] hover:scale-[1.02] flex justify-center items-center text-black`}
+          className={`bg-white outline outline-[3px] rounded-lg outline-black mt-1 h-10 md:h-12 w-[94%] duration-100 transition-[transform] hover:scale-[1.02] flex justify-center items-center text-black`}
           onClick={fsd.submit.click}
         >
           <Image

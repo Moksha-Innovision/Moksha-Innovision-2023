@@ -7,8 +7,10 @@ const ContactUsForm = () => {
       className={`${koulen.className} text-black shadow-xl bg-saffron-25 rounded-2xl w-[80vw] max-w-[550px]  flex flex-col items-center py-6 md:px-24 px-12 space-y-5`}
     >
       <div className="">
-        <div className=" text-4xl">DROP US A MESSAGE</div>
-        <div className="text-center text-monza-800 text-lg">
+        <div className=" text-[26px] text-center leading-7">
+          DROP US A MESSAGE
+        </div>
+        <div className="text-center text-monza-800 text-md">
           we’d love to hear from you!
         </div>
       </div>
@@ -51,7 +53,7 @@ const ContactUsForm = () => {
           name=""
           id=""
           placeholder="MOKSHA WAS REALLY FUN TO ATTEND! MOJ KARDI.."
-          className="  focus:bg-white bg-saffron-25 outline outline-[3px] p-2 rounded-lg h-[100px] lg: resize-none"
+          className="  focus:bg-white bg-saffron-25 outline outline-[3px] p-2 rounded-lg h-[100px] resize-none"
           maxLength={250}
         ></textarea>
       </div>
