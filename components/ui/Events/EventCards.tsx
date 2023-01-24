@@ -5,16 +5,16 @@ interface Props {
 }
 const EventCards = ({ event, active }: Props) => {
   return (
-    <div className="w-[560px]  h-[560px] flex flex-col justify-center items-center">
+    <div className="w-[400px]  h-[400px] flex flex-col justify-center items-center">
       <div
         className={`${
-          active ? "z-20" : "scale-75"
-        } w-[550px]  h-[550px] mr-80 transition-[transform] duration-300  flex flex-col justify-center items-center relative    box-content`}
+          active ? "z-20 scale-105" : "scale-75"
+        } w-[390px]  h-[390px] mr-48 transition-[transform] duration-300  flex flex-col justify-center items-center relative    box-content`}
       >
         <div
           className={`${
             active ? "" : ""
-          }  bg-white  w-[400px] h-[400px]  border-black border-[4px] shadow-soft p-2  box-content`}
+          }  bg-white  w-[250px] h-[250px]  border-black border-[4px] shadow-soft p-2  box-content`}
         >
           <Image
             src={`events/${event.img}`}
@@ -27,7 +27,7 @@ const EventCards = ({ event, active }: Props) => {
         <div
           className={`${
             active ? " " : "-rotate-[15deg]"
-          }  relative bottom-24 w-[260px] -right-32 transition-[transform] duration-300`}
+          }  relative bottom-28 w-[200px] -right-24 transition-[transform] duration-300`}
         >
           <Image
             src={`events/ticket.svg`}
@@ -35,7 +35,7 @@ const EventCards = ({ event, active }: Props) => {
             width={100}
             height={100}
             className={`
-              } drop-shadow-lightestbold w-[260px]`}
+              } drop-shadow-lightestbold w-[200px]`}
           />
         </div>
       </div>

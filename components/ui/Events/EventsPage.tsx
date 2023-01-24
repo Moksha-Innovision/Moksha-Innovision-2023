@@ -116,35 +116,35 @@ const EventsPage = () => {
           width={100}
           height={100}
           alt="border"
-          className="absolute w-32 lg:w-40 xl:w-52 left-0 "
+          className="absolute w-28 lg:w-40 xl:w-44 left-0 "
         />
         <Image
           src="border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-32 lg:w-40 xl:w-52 right-0 -scale-x-100 "
+          className="absolute w-28 lg:w-40 xl:w-44 right-0 -scale-x-100 "
         />
         <Image
           src="border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-32 lg:w-40 xl:w-52 bottom-0 left-0 -scale-y-100 "
+          className="absolute w-28 lg:w-40 xl:w-44 bottom-0 left-0 -scale-y-100 "
         />
         <Image
           src="border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-32 lg:w-40 xl:w-52 bottom-0 right-0 -scale-y-100 -scale-x-100"
+          className="absolute w-28 lg:w-40 xl:w-44 bottom-0 right-0 -scale-y-100 -scale-x-100"
         />
       </div>
-      <div className="mt-8 flex w-full items-center flex-col relative mb-4">
-        <h1 className="text-5xl lg:text-6xl text-center drop-shadow-bold mb-10 ">
+      <div className="mt-6 md:mt-4 flex flex-col relative   w-full items-center  mb-4">
+        <h1 className="text-4xl lg:text-5xl text-center  mb-6  drop-shadow-bold  ">
           EVENTS
         </h1>
-        <div className="flex space-x-3">
+        <div className="flex space-x-1">
           {days.map((d, i) => {
             return (
               <EventDays
@@ -156,7 +156,7 @@ const EventsPage = () => {
             );
           })}
         </div>
-        <div className="mt-32">
+        <div className="mt-20">
           <EventCarosel
             events={events.filter((e) => e.day == day).at(0)?.events}
             day={day}

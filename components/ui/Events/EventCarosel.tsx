@@ -21,27 +21,27 @@ const EventCarosel = ({ events, day }: Props) => {
   useEffect(() => {});
   const [active, setActive] = useState();
   return (
-    <div className="relative w-[94vw] mx-[3vw] overflow-hidden">
+    <div className="relative w-[96vw] mx-[2vw] overflow-hidden">
       <Image
         src={"blur.svg"}
         alt={"blur"}
         width={100}
         height={100}
-        className=" absolute z-10 w-96 h-96 -right-48 lg:-right-44  top-8 "
+        className=" absolute z-[2] w-96 h-60 -right-48 lg:-right-44  top-8 "
       />
       <Image
         src={"blur.svg"}
         alt={"blur"}
         width={100}
         height={100}
-        className=" absolute z-10 w-96 h-96 lg:-left-44  -left-48 top-8 "
+        className=" absolute z-[2] w-96 h-60 lg:-left-44  -left-48 top-8 "
       />
 
       <div className=" flex justify-center relative ">
         <Swiper
           slidesPerGroup={1}
-          slidesPerView="auto"
-          spaceBetween={200}
+          spaceBetween={100}
+          slidesPerView={"auto"}
           centeredSlides={true}
           autoplay={{
             delay: 8000,
@@ -55,14 +55,17 @@ const EventCarosel = ({ events, day }: Props) => {
           clickable: true,
         }}*/
           breakpoints={{
-            640: {
+            200: {
               slidesPerView: 2,
             },
-            800: {
+            640: {
               slidesPerView: 3,
             },
-            1024: {
+            800: {
               slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 5,
             },
             1424: {
               slidesPerView: 5,
