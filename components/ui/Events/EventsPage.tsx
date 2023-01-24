@@ -116,28 +116,28 @@ const EventsPage = () => {
           width={100}
           height={100}
           alt="border"
-          className="absolute w-36 lg:w-40 xl:w-52 left-0 "
+          className="absolute w-32 lg:w-40 xl:w-52 left-0 "
         />
         <Image
           src="border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-36 lg:w-40 xl:w-52 right-0 -scale-x-100 "
+          className="absolute w-32 lg:w-40 xl:w-52 right-0 -scale-x-100 "
         />
         <Image
           src="border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-36 lg:w-40 xl:w-52 bottom-0 left-0 -scale-y-100 "
+          className="absolute w-32 lg:w-40 xl:w-52 bottom-0 left-0 -scale-y-100 "
         />
         <Image
           src="border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-36 lg:w-40 xl:w-52 bottom-0 right-0 -scale-y-100 -scale-x-100"
+          className="absolute w-32 lg:w-40 xl:w-52 bottom-0 right-0 -scale-y-100 -scale-x-100"
         />
       </div>
       <div className="mt-8 flex w-full items-center flex-col relative mb-4">

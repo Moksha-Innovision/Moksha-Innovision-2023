@@ -21,12 +21,12 @@ const Navbar = (props: Props) => {
     <div className="flex w-full flex-col relative">
       <div className="navbar h-[7vh] flex justify-between items-center border-b-4 border-b-black px-6 ">
         <div
-          className={`h-14 py-2 w-14 md:hidden`}
+          className={`h-12 py-2 w-12 md:hidden`}
           onClick={() => setShow(!show)}
         >
           <Image src={"hamburger.svg"} alt="" width={100} height={100} />
         </div>
-        <Link href="/" className="logo md:w-44 w-52">
+        <Link href="/" className="logo md:w-44 w-48">
           <Image width={500} height={500} src="mokshalogo.svg" alt="" />
         </Link>
         <ul
@@ -74,14 +74,14 @@ const Navbar = (props: Props) => {
           </Link>
         </ul>
         <div className="profile-btn flex ">
-          <button className="flex gap-3  h-14 rounded-full border-black border-4 items-center justify-center lg:px-10 p-2">
-            <div className="profile-pic rounded-full w-10 h-8 flex items-center">
+          <button className="flex gap-3  h-[45px] rounded-full border-black border-4 items-center justify-center lg:px-10 p-2">
+            <div className="profile-pic rounded-full w-10 h-6 flex items-center justify-center">
               <Image
                 width={100}
                 height={100}
                 src="thirteen.svg"
                 alt=""
-                className="w-10"
+                className="w-8"
               />
             </div>
             <span className={`${koulen.className}  text-xl hidden lg:block`}>

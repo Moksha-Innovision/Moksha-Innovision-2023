@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useEffect } from "react";
 import From from "../components/ui/Login/From";
 const fsd = {
   bgColor: "bg-Safety-Orange-100",
@@ -42,7 +41,6 @@ const fsd = {
 };
 
 const login = () => {
-  useEffect(() => {}, []);
   return (
     <div className="w-[100vw] overflow-x-hidden relative min-h-[100vh] bg-[#300e2f]  flex justify-center items-center">
       <div className=" absolute w-[120%] md:w-[100%] xl:w-[70%] ">
