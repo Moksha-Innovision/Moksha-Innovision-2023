@@ -1,4 +1,10 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, {
+  LegacyRef,
+  MutableRefObject,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import FaqContainer from "../components/ui/FaqContainer/FaqContainer";
 import Image from "next/image";
 import { gsap } from "gsap";
@@ -12,7 +18,7 @@ const Faq = (props: Props) => {
     setOwl("owl-1.svg");
   };
 
-  const containerRef = useRef();
+  const containerRef: any = useRef();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -26,10 +32,11 @@ const Faq = (props: Props) => {
       gsap.from(".cloud-big", {
         y: -300,
         opacity: 0,
-        delay:1.5,
+        delay: 1.5,
         ease: "elastic",
         duration: 1.5,
       });
+
       gsap.from(".faq-container", {
         x: 500,
         opacity: 0,
@@ -38,8 +45,24 @@ const Faq = (props: Props) => {
         ease: "expo",
       });
 
-      gsap.from(['.borders-1','.borders-2','.borders-3','.borders-4'],{scale:0,duration:1,opacity:0,delay:0,stagger:0.1,ease:'expo'})
-
+      gsap.from(
+        [
+          ".borders-1",
+          ".borders-2",
+          ".borders-3",
+          ".borders-4",
+          ".cloud-small",
+          ".owl-small",
+        ],
+        {
+          scale: 0,
+          duration: 1,
+          opacity: 0,
+          delay: 0,
+          stagger: 0.1,
+          ease: "expo",
+        }
+      );
     }, containerRef);
 
     return () => {
@@ -120,7 +143,7 @@ const Faq = (props: Props) => {
               width={500}
               height={500}
               onClick={handleOwl}
-              className="animate-slideinleft relative -ml-6 owl-small"
+              className=" relative -ml-6 owl-small"
             />
             <Image
               src="Cloud.svg"

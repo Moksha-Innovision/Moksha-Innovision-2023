@@ -41,7 +41,7 @@ const From = ({ fsd }: Prop) => {
     <div
       className={`${koulen.className} ${
         fsd.bgColor || "white"
-      } text-black shadow-xl  rounded-2xl w-[80vw] max-w-[500px]  flex flex-col items-center py-6 md:px-16 px-12 ${
+      } text-black shadow-xl  rounded-2xl w-[85vw] max-w-[500px]  flex flex-col items-center py-6 md:px-16 px-8 ${
         fsd.meta.ySpac || "space-y-2"
       }`}
     >

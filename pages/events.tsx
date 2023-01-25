@@ -1,4 +1,3 @@
-
 import EventsPage from "../components/ui/Events/EventsPage";
 import Navbar from "../components/ui/Navbar/Navbar";
 
