@@ -18,24 +18,53 @@ module.exports = {
           "100%": { transform: "translateX(0px)", opacity: "1" },
         },
         infinitescrollleft: {
-          "0%": { left: "2%" },
+          "0%": { left: "0%" },
 
           "100%": { left: "-100%" },
         },
         infinitescrollright: {
-          "0%": { right: "2%" },
+          "0%": { right: "0%" },
 
           "100%": { right: "-100%" },
         },
+        scroll: {
+          "0%": { left: "0" },
+          "100%": { left: "-100%" },
+        },
+        wheel: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
+        carosel: "scroll 5s linear infinite",
+        wheel: "wheel 15s linear infinite",
         slideinbottom: "slideinbottom 1s ease-in-out 0s 1",
         slideinleft: "slideinleft 1.5s ease-in-out 0s 1",
-        infinitescrollleft: "infinitescrollleft 20s linear infinite",
-        infinitescrollright: "infinitescrollright 20s linear infinite",
+        infinitescrollleft: "infinitescrollleft 10s linear infinite",
+        infinitescrollright: "infinitescrollright 10s linear infinite",
+      },
+      dropShadow: {
+        bold: "black 5px 5px 1px",
+        semibold: "black 3px 3px 1px",
+        lightbold: "black 2.5px 2.5px 0.5px",
+        lightestbold: "black 1px 1px 2px",
+      },
+      boxShadow: {
+        extrasoft: "0px 0px 6px 5px rgba(0, 0, 0, 0.2)",
+        soft: "0px 0px 6px 5px rgba(0, 0, 0, 0.2)",
+      },
+      swiperSlideActive: {
+        width: "400px",
+        height: "400px",
       },
       colors: {
+        "Safety-Orange": {
+          100: "#FFBF1A",
+          500: "#FF7E0A",
+        },
         saffron: {
+          25: "#F5F4F4",
           50: "#fffceb",
           100: "#fdf4c8",
           200: "#fbe98c",
@@ -106,6 +135,7 @@ module.exports = {
           700: "#0083ff",
           800: "#0073e0",
           900: "#012a56",
+          1000: "#02012B",
         },
       },
     },
