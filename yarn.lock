@@ -640,6 +640,13 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+dom7@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-4.0.4.tgz#8b68c5d8e5e2ed0fddb1cb93e433bc9060c8f3fb"
+  integrity sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==
+  dependencies:
+    ssr-window "^4.0.0"
+
 electron-to-chromium@^1.4.251:
   version "1.4.284"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.284.tgz#61046d1e4cab3a25238f6bf7413795270f125592"
@@ -1157,6 +1164,11 @@ grapheme-splitter@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
+
+gsap@^3.11.4:
+  version "3.11.4"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.4.tgz#e6d972d3509a7431b86d81d6fc3bbeb6862e5ff1"
+  integrity sha512-McHhEguHyExMMnjqKA8G+7TvxmlKQGMbjgwAilnFe1e4id7V/tFveRQ2YMZhTYu0oxHGWvbPltdVYQOu3z1SCA==
 
 has-bigints@^1.0.1, has-bigints@^1.0.2:
   version "1.0.2"
@@ -1991,6 +2003,11 @@ source-map-js@^1.0.2:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
+ssr-window@^4.0.0, ssr-window@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-4.0.2.tgz#dc6b3ee37be86ac0e3ddc60030f7b3bc9b8553be"
+  integrity sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==
+
 string.prototype.matchall@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/string.prototype.matchall/-/string.prototype.matchall-4.0.8.tgz#3bf85722021816dcd1bf38bb714915887ca79fd3"
@@ -2058,6 +2075,14 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+swiper@^8.4.6:
+  version "8.4.6"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-8.4.6.tgz#5b52c83cb4aa9ce6f1640e44d3f93ff4ea6f7682"
+  integrity sha512-HACW035vBz2T6Kfut23EAzXhcDpgR8doX+wjq0ZUvJgS5SQApGrV885DAPLBFnmPUISsAhNSVxPKDxqroFvXvQ==
+  dependencies:
+    dom7 "^4.0.4"
+    ssr-window "^4.0.2"
 
 synckit@^0.8.4:
   version "0.8.4"
