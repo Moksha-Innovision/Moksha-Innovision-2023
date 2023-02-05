@@ -6,5 +6,8 @@
     "source.fixAll.eslint": true,
     "source.fixAll.format": true,
     "source.organizeImports": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   }
 }
