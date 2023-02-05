@@ -7,6 +7,28 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+
+        slideinbottom: {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+
+          "100%": { transform: "translateY(0px)", opacity: "1" },
+        },
+        slideinleft: {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+
+          "100%": { transform: "translateX(0px)", opacity: "1" },
+        },
+        infinitescrollleft: {
+          "0%": { left: "0%" },
+
+          "100%": { left: "-100%" },
+        },
+        infinitescrollright: {
+          "0%": { right: "0%" },
+
+          "100%": { right: "-100%" },
+        },
+
         scroll: {
           "0%": { left: "0" },
           "100%": { left: "-100%" },
@@ -19,6 +41,12 @@ module.exports = {
       animation: {
         carosel: "scroll 5s linear infinite",
         wheel: "wheel 15s linear infinite",
+
+        slideinbottom: "slideinbottom 1s ease-in-out 0s 1",
+        slideinleft: "slideinleft 1.5s ease-in-out 0s 1",
+        infinitescrollleft: "infinitescrollleft 10s linear infinite",
+        infinitescrollright: "infinitescrollright 10s linear infinite",
+
       },
       dropShadow: {
         bold: "black 5px 5px 1px",
