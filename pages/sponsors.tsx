@@ -8,6 +8,8 @@ import { useRef, useLayoutEffect } from "react";
 import { Koulen } from "@next/font/google";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
+const sponsorImages = ["sponsor 1", "sponsor 2", "sponsor 3", "sponsor 4"];
+
 const Sponsors = (props: Props) => {
   const containerRef: any = useRef();
 
@@ -57,7 +59,7 @@ const Sponsors = (props: Props) => {
     <>
       <Navbar />
       <div
-        className="bg-prussian-blue-400 h-[calc(100vh_-_7vh)] "
+        className="bg-prussian-blue-400 relative min-h-[93vh] flex w-screen"
         ref={containerRef}
       >
         <Image
@@ -90,16 +92,45 @@ const Sponsors = (props: Props) => {
         />
 
         <div
-          className={`max-w-full m-auto h-full ${koulen.className} flex flex-col gap-8 md:gap-16 lg:gap-16 pt-12 md:pt-20`}
+          className={`max-w-full m-auto h-full ${koulen.className} w-full flex-col gap-8 md:gap-16 lg:gap-16 hidden sm:flex`}
         >
-          <h1 className="text-center text-6xl md:text-7xl drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] text-white mb-16">
+          <h1 className="text-center text-6xl md:text-7xl drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] mb-auto text-white -mt-12">
             Past Sponsors
           </h1>
           <div className="w-full top-row h-40">
-            <Infiniteslider right={false} />
+            <Infiniteslider right={false} images={sponsorImages} />
           </div>
           <div className="w-full bottom-row antialiased h-40">
-            <Infiniteslider right={true} />
+            <Infiniteslider right={true} images={sponsorImages} />
+          </div>
+        </div>
+
+        <div className={`${koulen.className} w-full mobile mt-20 sm:hidden`}>
+          <h1 className="text-center text-6xl md:text-7xl drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] text-white ">
+            Past Sponsors
+          </h1>
+
+          <div className="sponsors grid col-span-2 grid-cols-2 gap-3 px-6 my-16 pb-12">
+            {sponsorImages.map((sponsor) => {
+              return (
+                <div
+                  className="flex w-full justify-center items-center h-28  top-row text-3xl bg-white rounded-lg border-[2px] border-black"
+                  key={sponsor}
+                >
+                  {sponsor}
+                </div>
+              );
+            })}
+            {sponsorImages.map((sponsor) => {
+              return (
+                <div
+                  className="flex w-full justify-center items-center h-28 text-3xl bottom-row bg-white rounded-lg border-[2px] border-black"
+                  key={sponsor}
+                >
+                  {sponsor}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
