@@ -154,8 +154,6 @@ const Faq = (props: Props) => {
             />
           </div>
         </div>
-
-        
       </div>
     </>
   );

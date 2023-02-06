@@ -113,14 +113,20 @@ const Sponsors = (props: Props) => {
           <div className="sponsors grid col-span-2 grid-cols-2 gap-3 px-6 my-16 pb-12">
             {sponsorImages.map((sponsor) => {
               return (
-                <div className="flex w-full justify-center items-center h-28  top-row text-3xl bg-white rounded-lg border-[2px] border-black">
+                <div
+                  className="flex w-full justify-center items-center h-28  top-row text-3xl bg-white rounded-lg border-[2px] border-black"
+                  key={sponsor}
+                >
                   {sponsor}
                 </div>
               );
             })}
             {sponsorImages.map((sponsor) => {
               return (
-                <div className="flex w-full justify-center items-center h-28 text-3xl bottom-row bg-white rounded-lg border-[2px] border-black">
+                <div
+                  className="flex w-full justify-center items-center h-28 text-3xl bottom-row bg-white rounded-lg border-[2px] border-black"
+                  key={sponsor}
+                >
                   {sponsor}
                 </div>
               );

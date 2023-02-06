@@ -15,21 +15,19 @@ export default function Home() {
       <div
         id="canvas-container"
         className="h-screen w-full ml-auto bg-black absolute top-0  -z-10"
-        
       >
         <Canvas
           gl={{ logarithmicDepthBuffer: true, physicallyCorrectLights: true }}
-          
         >
           <Suspense fallback={null}>
-            <Model castShadow={false} position={[-5, -2, -5]}  />
+            <Model castShadow={false} position={[-5, -2, -5]} />
             {/* <ambientLight /> */}
             {/* <pointLight position={[1, 1, 1]} color="white" intensity={10} /> */}
             {/* <pointLight position={[-10, 10, 0]} color="white" intensity={10} /> */}
             {night ? (
               <Environment preset="night" background />
             ) : (
-              <Environment preset="warehouse" background />
+              <Environment preset="sunset" background />
             )}
             {/* <directionalLight position={[0,0,50]} /> */}
             <OrbitControls
@@ -43,7 +41,7 @@ export default function Home() {
           </Suspense>
         </Canvas>
       </div>
-      <div className="hello" onClick={()=>setNight(!night)}>
+      <div className="hello" onClick={() => setNight(!night)}>
         Hello
       </div>
     </>
