@@ -1,4 +1,7 @@
 import { Inter } from "@next/font/google";
+
+import ContactUs from "../components/ui/ContactUs/ContactUs";
+
 import Navbar from "../components/ui/Navbar/Navbar";
 import { Suspense, useState } from "react";
 import { Canvas, context } from "@react-three/fiber";
@@ -12,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+
       <div
         id="canvas-container"
         className="h-screen w-full ml-auto bg-black absolute top-0  -z-10"
@@ -44,6 +48,11 @@ export default function Home() {
       <div className="hello" onClick={() => setNight(!night)}>
         Hello
       </div>
+
+
+      
+
+
     </>
   );
 }
