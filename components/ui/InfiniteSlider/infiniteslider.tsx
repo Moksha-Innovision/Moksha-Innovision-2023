@@ -1,12 +1,11 @@
 import { Koulen } from "@next/font/google";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
-const images = ["Sponsor 1", "Sponsor 2", "Sponsor 3", "Sponsor 4"];
 
-type Props = { right: boolean };
+type Props = { right: boolean , images:string[]};
 
 const Infiniteslider = (props: Props) => {
-  const { right } = props;
+  const { right, images} = props;
   return (
     <div className="flex h-full">
       <div className="slider-holder w-[200%] overflow-x-hidden h-full relative">

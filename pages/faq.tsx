@@ -74,7 +74,7 @@ const Faq = (props: Props) => {
     <>
       <Navbar />
       <div
-        className="w-full bg-saffron-500 max-h-[calc(93vh)] relativeslideinbottom 2s ease-in-out forward overflow-y-hidden"
+        className="w-full bg-saffron-500  relative slideinbottom 2s ease-in-out forward "
         ref={containerRef}
       >
         <Image
@@ -89,21 +89,21 @@ const Faq = (props: Props) => {
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-40 xl:w-52 right-0 -scale-x-100 hidden sm:inline-block borders-2"
+          className="absolute w-28 lg:w-40 xl:w-44 right-0 -scale-x-100 hidden sm:inline-block borders-2"
         />
         <Image
           src="borders.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-40 xl:w-52 bottom-0 -scale-y-100  borders-3"
+          className="absolute w-28 lg:w-40 xl:w-44 bottom-0 -scale-y-100  borders-3"
         />
         <Image
           src="borders.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-40 xl:w-52 bottom-0 right-0 -scale-y-100 -scale-x-100 borders-4"
+          className="absolute w-28 lg:w-40 xl:w-44 bottom-0 right-0 -scale-y-100 -scale-x-100 borders-4"
         />
         {/* <Image
           src="borders.svg"
@@ -113,7 +113,7 @@ const Faq = (props: Props) => {
           className="absolute w-36 lg:w-40 xl:w-52 bottom-0 -scale-y-100 "
         /> */}
 
-        <div className="grid grid-cols-12 grid-rows-6 max-w-7xl m-auto h-[100vh]  bg-saffron-500 z-10 pt-8 transition ">
+        <div className="grid grid-cols-12 grid-rows-6 max-w-7xl m-auto h-[93vh] bg-saffron-500 z-10 pt-8 transition ">
           <div className="owl relative -ml-8 -mt-8  col-start-2 col-end-12 sm:col-end-5 md:col-end-6  row-start-1 row-end-7 flex items-center justify-center  w-0 md:w-80 lg:w-96  transition-all duration-300">
             <Image
               src={owl}
@@ -154,6 +154,8 @@ const Faq = (props: Props) => {
             />
           </div>
         </div>
+
+        
       </div>
     </>
   );
