@@ -15,7 +15,7 @@ const ACTIVELINKTYLE =
 
 const Navbar = (props: Props) => {
   const [show, setShow] = useState(false);
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   const router = useRouter();
   return (
     <div className="flex w-full flex-col relative">
@@ -33,42 +33,37 @@ const Navbar = (props: Props) => {
           className={`links hidden md:flex  items-center w-full gap-8 justify-center `}
         >
           <Link
-            href="/events"
-            className={`link ${koulen.className} uppercase  ${
-              router.asPath === "/events" ? ACTIVELINKTYLE : "text-xl"
-            }`}
+            href="/newEventPage"
+            className={`link ${koulen.className} uppercase  ${router.asPath === "/newEventPage" ? ACTIVELINKTYLE : "text-xl"
+              }`}
           >
             Events
           </Link>
           <Link
             href="/sponsors"
-            className={`link ${koulen.className} uppercase  ${
-              router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-xl"
-            }`}
+            className={`link ${koulen.className} uppercase  ${router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-xl"
+              }`}
           >
             Sponsors
           </Link>
           <Link
             href="/faq"
-            className={`link ${koulen.className} uppercase   ${
-              router.asPath === "/faq" ? ACTIVELINKTYLE : "text-xl"
-            }`}
+            className={`link ${koulen.className} uppercase   ${router.asPath === "/faq" ? ACTIVELINKTYLE : "text-xl"
+              }`}
           >
             FAQ&apos;s
           </Link>
           <Link
             href="/contact"
-            className={`link ${koulen.className} uppercase  ${
-              router.asPath === "/contact" ? ACTIVELINKTYLE : "text-xl"
-            }`}
+            className={`link ${koulen.className} uppercase  ${router.asPath === "/contact" ? ACTIVELINKTYLE : "text-xl"
+              }`}
           >
             Contact Us
           </Link>
           <Link
             href="/about"
-            className={`link ${koulen.className} uppercase  ${
-              router.asPath === "/about" ? ACTIVELINKTYLE : "text-xl"
-            }`}
+            className={`link ${koulen.className} uppercase  ${router.asPath === "/about" ? ACTIVELINKTYLE : "text-xl"
+              }`}
           >
             About us
           </Link>
@@ -92,50 +87,44 @@ const Navbar = (props: Props) => {
       </div>
       {/*Ham menu */}
       <div
-        className={` ${
-          show ? "translate-x-[90vw]" : "translate-x-0"
-        } md:hidden transition-[transform] duration-200 -left-[90vw] absolute -bottom-[90vh] w-[90vw] border-4 border-t-0 rounded-br-2xl shadow-2xl border-black  z-30 bg-white h-[90vh]`}
+        className={` ${show ? "translate-x-[90vw]" : "translate-x-0"
+          } md:hidden transition-[transform] duration-200 -left-[90vw] absolute -bottom-[90vh] w-[90vw] border-4 border-t-0 rounded-br-2xl shadow-2xl border-black  z-30 bg-white h-[90vh]`}
       >
         <ul className={`flex flex-col p-20 space-y-10 `}>
           <Link
             href="/events"
-            className={`link ${koulen.className} uppercase  ${
-              router.asPath === "/events" ? ACTIVELINKTYLE : "text-2xl"
-            }`}
+            className={`link ${koulen.className} uppercase  ${router.asPath === "/events" ? ACTIVELINKTYLE : "text-2xl"
+              }`}
           >
             Events
           </Link>
           <Link
             href="/sponsors"
-            className={`link ${koulen.className} uppercase  ${
-              router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-2xl"
-            }`}
+            className={`link ${koulen.className} uppercase  ${router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-2xl"
+              }`}
           >
             Sponsors
           </Link>
           <Link
             href="/faq"
-            className={`link ${koulen.className} uppercase   ${
-              router.asPath === "/faq"
-                ? ACTIVELINKTYLE + " font-bold"
-                : "text-2xl"
-            }`}
+            className={`link ${koulen.className} uppercase   ${router.asPath === "/faq"
+              ? ACTIVELINKTYLE + " font-bold"
+              : "text-2xl"
+              }`}
           >
             FAQ&apos;s
           </Link>
           <Link
             href="/contact"
-            className={`link ${koulen.className} uppercase  ${
-              router.asPath === "/contact" ? ACTIVELINKTYLE : "text-2xl"
-            }`}
+            className={`link ${koulen.className} uppercase  ${router.asPath === "/contact" ? ACTIVELINKTYLE : "text-2xl"
+              }`}
           >
             Contact Us
           </Link>
           <Link
             href="/about"
-            className={`link ${koulen.className} uppercase  ${
-              router.asPath === "/about" ? ACTIVELINKTYLE : "text-2xl"
-            }`}
+            className={`link ${koulen.className} uppercase  ${router.asPath === "/about" ? ACTIVELINKTYLE : "text-2xl"
+              }`}
           >
             About us
           </Link>
