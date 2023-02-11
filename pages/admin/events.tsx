@@ -10,7 +10,7 @@ const Events = (props: Props) => {
   return (
     <Dashboard>
       {EventModal && (
-        <div className="modal absolute top-0 -left-10 sm:left-0  w-full max-w-screen-2xl h-screen bg-[rgba(0,0,34,0.8)] grid place-items-center">
+        <div className="modal absolute top-0    w-full max-w-screen-2xl h-screen bg-[rgba(0,0,34,0.8)] grid place-items-center">
           <CreateEventModal setEventModal={setEventModal} />
         </div>
       )}
