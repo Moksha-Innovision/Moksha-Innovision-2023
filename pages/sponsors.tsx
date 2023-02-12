@@ -59,7 +59,7 @@ const Sponsors = (props: Props) => {
     <>
       <Navbar />
       <div
-        className="bg-prussian-blue-400 relative min-h-[93vh] flex w-screen"
+        className="bg-blue-900 relative min-h-screen flex w-screen pt-[7vh]"
         ref={containerRef}
       >
         <Image

@@ -10,76 +10,137 @@ type Props = {};
 const profile = {
   name: "John snow",
 };
-const ACTIVELINKTYLE =
-  "text-transparent text-3xl bg-clip-text bg-gradient-to-b from-razzmatazz-800 to-saffron-600";
+
+const ACTIVELINKTYLE = "text-3xl";
 
 const Navbar = (props: Props) => {
   const [show, setShow] = useState(false);
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
   const router = useRouter();
   return (
     <div className="flex w-full flex-col relative">
-      <div className="navbar h-[7vh] flex justify-between items-center border-b-4 border-b-black px-6 ">
+      <div className="navbar h-[7vh] absolute top-0 z-10 w-full flex justify-between items-center  px-6 ">
         <div
-          className={`h-12 py-2 w-12 md:hidden`}
+          className={`h-12 py-2 w-12 md:hidden `}
           onClick={() => setShow(!show)}
         >
-          <Image src={"hamburger.svg"} alt="" width={100} height={100} />
+          <Image
+            src={"/hamburger.svg"}
+            alt=""
+            width={100}
+            height={100}
+            className="outline outline-white outline-2 outline-offset-4 rounded-[1px] antialiased"
+          />
         </div>
-        <Link href="/" className="logo md:w-44 w-48">
-          <Image width={500} height={500} src="mokshalogo.svg" alt="" />
+        <Link href="/" className="logo md:w-28 w-28">
+          <Image width={500} height={500} src="/mokshalogo.svg" alt="" />
         </Link>
         <ul
-          className={`links hidden md:flex  items-center w-full gap-8 justify-center `}
+          className={`links hidden md:flex  items-center w-full gap-8 justify-center text-white`}
         >
           <Link
-            href="/newEventPage"
-            className={`link ${koulen.className} uppercase  ${router.asPath === "/newEventPage" ? ACTIVELINKTYLE : "text-xl"
-              }`}
+            href="/events"
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/events" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
             Events
+            {router.asPath === "/events" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-150 w-24"
+              />
+            )}
           </Link>
           <Link
             href="/sponsors"
-            className={`link ${koulen.className} uppercase  ${router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
-            Sponsors
+            sponsors
+            {router.asPath === "/sponsors" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-125 w-24"
+              />
+            )}
           </Link>
           <Link
             href="/faq"
-            className={`link ${koulen.className} uppercase   ${router.asPath === "/faq" ? ACTIVELINKTYLE : "text-xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/faq" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
-            FAQ&apos;s
+            f.a.q
+            {router.asPath === "/faq" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-[200%] w-24"
+              />
+            )}
           </Link>
           <Link
             href="/contact"
-            className={`link ${koulen.className} uppercase  ${router.asPath === "/contact" ? ACTIVELINKTYLE : "text-xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/contact" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
-            Contact Us
+            contact us
+            {router.asPath === "/contact" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-125 w-24 left-3"
+              />
+            )}
           </Link>
           <Link
             href="/about"
-            className={`link ${koulen.className} uppercase  ${router.asPath === "/about" ? ACTIVELINKTYLE : "text-xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/about" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
-            About us
+            about us
+            {router.asPath === "/about" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-125 w-24"
+              />
+            )}
           </Link>
         </ul>
         <div className="profile-btn flex ">
-          <button className="flex gap-3  h-[45px] rounded-full border-black border-4 items-center justify-center lg:px-10 p-2">
+          <button
+            className="flex gap-3  h-[45px] rounded-full items-center justify-center lg:px-10 p-2"
+            onClick={() => router.push("/admin/events")}
+          >
             <div className="profile-pic rounded-full w-10 h-6 flex items-center justify-center">
               <Image
                 width={100}
                 height={100}
-                src="thirteen.svg"
+                src="/thirteen.svg"
                 alt=""
                 className="w-8"
               />
             </div>
-            <span className={`${koulen.className}  text-xl hidden lg:block`}>
+            <span
+              className={`${koulen.className}  text-xl text-white hidden sm:block`}
+            >
               {profile.name.split(" ")[0].slice(0, 8)}
             </span>
           </button>
@@ -87,46 +148,97 @@ const Navbar = (props: Props) => {
       </div>
       {/*Ham menu */}
       <div
-        className={` ${show ? "translate-x-[90vw]" : "translate-x-0"
-          } md:hidden transition-[transform] duration-200 -left-[90vw] absolute -bottom-[90vh] w-[90vw] border-4 border-t-0 rounded-br-2xl shadow-2xl border-black  z-30 bg-white h-[90vh]`}
+        className={` ${
+          show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
+        } md:hidden transition-[transform] duration-200 -left-[90vw] absolute top-[7vh] w-[60vw]  border-t-0 rounded-br-2xl shadow-2xl  z-30  h-[90vh]`}
       >
-        <ul className={`flex flex-col p-20 space-y-10 `}>
+        <ul
+          className={`flex flex-col justify-center pl-8 space-y-10 text-white bg-prussian-blue-1000 bg-event-pattern bg-contain h-full`}
+        >
           <Link
             href="/events"
-            className={`link ${koulen.className} uppercase  ${router.asPath === "/events" ? ACTIVELINKTYLE : "text-2xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/events" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
             Events
+            {router.asPath === "/events" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-110 w-24 -left-3"
+              />
+            )}
           </Link>
           <Link
             href="/sponsors"
-            className={`link ${koulen.className} uppercase  ${router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-2xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
-            Sponsors
+            sponsors
+            {router.asPath === "/sponsors" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-110 w-24 left-1"
+              />
+            )}
           </Link>
           <Link
             href="/faq"
-            className={`link ${koulen.className} uppercase   ${router.asPath === "/faq"
-              ? ACTIVELINKTYLE + " font-bold"
-              : "text-2xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/faq" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
-            FAQ&apos;s
+            f.a.q
+            {router.asPath === "/faq" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-[0.8] -left-6 w-24"
+              />
+            )}
           </Link>
           <Link
             href="/contact"
-            className={`link ${koulen.className} uppercase  ${router.asPath === "/contact" ? ACTIVELINKTYLE : "text-2xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/contact" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
-            Contact Us
+            contact us
+            {router.asPath === "/contact" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-110 w-24 left-4"
+              />
+            )}
           </Link>
           <Link
             href="/about"
-            className={`link ${koulen.className} uppercase  ${router.asPath === "/about" ? ACTIVELINKTYLE : "text-2xl"
-              }`}
+            className={`link relative ${koulen.className} uppercase  ${
+              router.asPath === "/about" ? ACTIVELINKTYLE : "text-xl"
+            }`}
           >
-            About us
+            about us
+            {router.asPath === "/about" && (
+              <Image
+                src="/underline.svg"
+                width={100}
+                height={20}
+                alt={"underlien "}
+                className="absolute b-2 scale-110 w-24"
+              />
+            )}
           </Link>
         </ul>
       </div>
