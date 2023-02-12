@@ -41,12 +41,9 @@ const fsd = {
 };
 
 const login = () => {
-
-
-  const handleSubmit=()=>{
-    alert('subl')
-  }
-
+  const handleSubmit = () => {
+    alert("subl");
+  };
 
   return (
     <div className=" overflow-x-hidden relative min-h-[100vh] bg-[#300e2f]  flex justify-center items-center py-10">
