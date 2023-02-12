@@ -41,6 +41,10 @@ const fsd = {
 };
 
 const login = () => {
+  const handleSubmit = () => {
+    alert("subl");
+  };
+
   return (
     <div className=" overflow-x-hidden relative min-h-[100vh] bg-[#300e2f]  flex justify-center items-center py-10">
       <div className=" fixed w-[100%] overflow-hidden  lg:w-[50%] ">
@@ -52,9 +56,9 @@ const login = () => {
           height={100}
         />
       </div>
-      <div className="z-10">
+      <form className="z-10" onSubmit={handleSubmit}>
         <From fsd={fsd} />
-      </div>
+      </form>
     </div>
   );
 };

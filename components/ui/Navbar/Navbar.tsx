@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import { useSession } from "@supabase/auth-helpers-react";
 import { Koulen } from "@next/font/google";
 import { useEffect, useState } from "react";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
@@ -14,6 +14,8 @@ const profile = {
 const ACTIVELINKTYLE = "text-3xl";
 
 const Navbar = (props: Props) => {
+  const session = useSession();
+
   const [show, setShow] = useState(false);
   useEffect(() => {}, []);
   const router = useRouter();
@@ -127,7 +129,11 @@ const Navbar = (props: Props) => {
         <div className="profile-btn flex ">
           <button
             className="flex gap-3  h-[45px] rounded-full items-center justify-center lg:px-10 p-2"
-            onClick={() => router.push("/admin/events")}
+            onClick={() => {
+              session
+                ? router.push("/admin/events")
+                : router.push("/templogin");
+            }}
           >
             <div className="profile-pic rounded-full w-10 h-6 flex items-center justify-center">
               <Image
