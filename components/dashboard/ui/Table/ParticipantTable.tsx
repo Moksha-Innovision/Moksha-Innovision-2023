@@ -5,7 +5,7 @@ type Props = {};
 const ParticipantTable = (props: Props) => {
   return (
     <>
-      <div className="relative overflow-x-auto max-w-full shadow-md sm:rounded-lg overflow-y-auto max-h-[80vh]">
+      <div className="relative overflow-x-auto max-w-full shadow-md rounded-lg overflow-y-auto max-h-[80vh] ">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400  ">
           <thead className="text-xs text-gray-700 uppercase bg-saffron-500  ">
             <tr>
