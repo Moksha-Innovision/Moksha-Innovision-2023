@@ -6,10 +6,10 @@ type Props = {
   id?: string;
   name?: string;
   className?: string;
-  placeholder: string;
-  value:string
-  onChange: (a: any) => any;
-  required?:boolean
+  placeholder?: string;
+  value?: string;
+  onChange?: (a: any) => any;
+  required?: boolean;
 };
 
 const FormInput = ({ label, className, ...otherProps }: Props) => {

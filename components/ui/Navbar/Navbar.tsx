@@ -43,7 +43,7 @@ const Navbar = (props: Props) => {
         >
           <NavLink href="/events">Events</NavLink>
           <NavLink href="/sponsors">Sponsors</NavLink>
-          <NavLink href="/faq">Faq's</NavLink>
+          <NavLink href="/faq">Faq</NavLink>
           <NavLink href="/contact" underlineclassName="left-3">
             Contact Us
           </NavLink>
@@ -95,7 +95,7 @@ const Navbar = (props: Props) => {
             Sponsors
           </NavLink>
           <NavLink href="/faq" imgScale={95} underlineclassName="-left-4">
-            Faq's
+            Faq
           </NavLink>
           <NavLink href="/contact" underlineclassName="left-3" imgScale={125}>
             Contact Us

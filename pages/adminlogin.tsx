@@ -5,30 +5,23 @@ import FormInput from "../components/dashboard/ui/Forms/FormInput";
 import { useState } from "react";
 import Link from "next/link";
 
-
-
 const deafultFormFields = {
-  AdminEmail: '',
-  password: '',
-}
+  AdminEmail: "",
+  password: "",
+};
 
 const AdminLogin = () => {
-
-
   const [formFields, setFormFields] = useState(deafultFormFields);
-  const { AdminEmail, password } = formFields
+  const { AdminEmail, password } = formFields;
 
   const handleChange = (e: any) => {
-    const { name, value } = e.target
-    setFormFields({ ...formFields, [name]: value })
+    const { name, value } = e.target;
+    setFormFields({ ...formFields, [name]: value });
   };
 
-
-  const handleSubmit=async(e:any)=>{
-    e.preventDefault()
-
-  }
-
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+  };
 
   return (
     <div className=" overflow-x-hidden relative min-h-[100vh] bg-[#300e2f]  flex justify-center items-center py-10">
@@ -41,15 +34,16 @@ const AdminLogin = () => {
           height={100}
         />
       </div>
-      <form onSubmit={handleSubmit} className={`${koulen.className} z-10 w-[80vh] max-w-[500px] bg-Safety-Orange-100 flex flex-col items-center rounded-2xl py-6 md:px-16 px-12 space-y-2`}>
+      <form
+        onSubmit={handleSubmit}
+        className={`${koulen.className} z-10 w-[80vh] max-w-[500px] bg-Safety-Orange-100 flex flex-col items-center rounded-2xl py-6 md:px-16 px-12 space-y-2`}
+      >
         <div className="">
           <div className=" text-4xl text-center">Admin Log-In</div>
           <div
             className={`text-center  text-lg  "text-monza-800"
               }`}
-          >
-            
-          </div>
+          ></div>
         </div>
 
         <div className="w-full flex flex-col text-xl">
@@ -60,7 +54,7 @@ const AdminLogin = () => {
             placeholder="admin@email.com"
             onChange={handleChange}
             value={AdminEmail}
-            type='email'
+            type="email"
             id="Admin Email"
             required
           />
@@ -84,18 +78,15 @@ const AdminLogin = () => {
             Login As Admin
           </button>
         </div>
-        <div >
+        <div>
           Not a Admin?
-          <Link href={'/userlogin' || "/"}>
-           
+          <Link href={"/userlogin" || "/"}>
             <span className="text-Safety-Orange-500 hover:scale-150 drop-shadow-md cursor-pointer">
-            
               User Login
             </span>
           </Link>
         </div>
       </form>
-      
     </div>
   );
 };

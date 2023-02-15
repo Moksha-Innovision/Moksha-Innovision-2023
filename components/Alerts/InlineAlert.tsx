@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-    success:boolean,
-    className?:string,
-    children:any,
-}
+  success: boolean;
+  className?: string;
+  children: any;
+};
 
 const InlineAlert = (props: Props) => {
-    const {success,className,children}=props
+  const { success, className, children } = props;
   return (
-      <div className={`${success?'bg-green-600':'bg-red-500'} ${className} `}>
-          {children}
-      </div>
-  )
-}
+    <div className={`${success ? "bg-green-600" : "bg-red-500"} ${className} `}>
+      {children}
+    </div>
+  );
+};
 
-export default InlineAlert
+export default InlineAlert;

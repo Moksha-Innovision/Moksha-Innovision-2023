@@ -1,8 +1,6 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
 
 interface Prop {
   fsd: {
@@ -59,7 +57,7 @@ const From = ({ fsd }: Prop) => {
 
   return (
     <form
-      className={`${koulen.className} ${
+      className={` ${
         fsd.bgColor || "white"
       } text-black shadow-xl  rounded-2xl w-[80vw] max-w-[500px]  flex flex-col items-center py-6 md:px-16 px-12 ${
         fsd.meta.ySpac || "space-y-2"
@@ -88,13 +86,11 @@ const From = ({ fsd }: Prop) => {
               placeholder={`${f.placeholder}`}
               onChange={handleChange}
               name={f.name}
-              value={}
             />
           </div>
         );
       })}
 
-     
       <div className="flex w-[100%] items-center space-x-2">
         <div className="h-[2px] bg-black w-full "></div>
         <span className="">OR</span>
