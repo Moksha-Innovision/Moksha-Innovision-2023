@@ -1,7 +1,6 @@
-import { Koulen } from "@next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
+import { useState } from "react";
 
 interface Prop {
   fsd: {
@@ -20,9 +19,14 @@ interface Prop {
     fields: {
       label?: string;
       type?: string;
+      name: string;
       placeholder?: string;
       require: boolean;
     }[];
+    defaultValues: {
+      SocEmail?: string;
+      password?: string;
+    };
     submit: {
       click?: () => any;
       label?: string;
@@ -37,13 +41,28 @@ interface Prop {
 }
 
 const From = ({ fsd }: Prop) => {
+  const handleSubmit = () => {};
+
+  const [formFields, setFormFields] = useState({
+    SocEmail: "",
+    password: "",
+  });
+
+  const { SocEmail, password } = formFields;
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormFields({ ...formFields, [name]: value });
+  };
+
   return (
-    <div
-      className={`${koulen.className} ${
+    <form
+      className={` ${
         fsd.bgColor || "white"
       } text-black shadow-xl  rounded-2xl w-[80vw] max-w-[500px]  flex flex-col items-center py-6 md:px-16 px-12 ${
         fsd.meta.ySpac || "space-y-2"
       }`}
+      onSubmit={handleSubmit}
     >
       <div className="">
         <div className=" text-4xl text-center">{fsd.title.content || ""}</div>
@@ -65,19 +84,13 @@ const From = ({ fsd }: Prop) => {
               type={`${f.type || "text"}`}
               className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25"
               placeholder={`${f.placeholder}`}
+              onChange={handleChange}
+              name={f.name}
             />
           </div>
         );
       })}
 
-      <div className="w-full flex flex-col text-2xl items-center">
-        <button
-          className={`${fsd.submit.color} outline outline-[3px] rounded-lg outline-black mt-3 h-14 w-[100%] duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
-          onClick={fsd.submit.click}
-        >
-          {fsd.submit.label}
-        </button>
-      </div>
       <div className="flex w-[100%] items-center space-x-2">
         <div className="h-[2px] bg-black w-full "></div>
         <span className="">OR</span>
@@ -95,7 +108,6 @@ const From = ({ fsd }: Prop) => {
             alt={""}
             className="pr-4"
           />
-          Continue with Google
         </button>
       </div>
       <div className={``}>
@@ -108,7 +120,7 @@ const From = ({ fsd }: Prop) => {
           </span>
         </Link>
       </div>
-    </div>
+    </form>
   );
 };
 
