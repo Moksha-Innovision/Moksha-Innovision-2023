@@ -4,6 +4,9 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 import FormInput from "../components/dashboard/ui/Forms/FormInput";
 import { useState } from "react";
 import Link from "next/link";
+import Spinner from "../components/Loaders/Spinner";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import InlineAlert from "../components/Alerts/InlineAlert";
 
 const deafultFormFields = {
   AdminEmail: "",
@@ -11,7 +14,11 @@ const deafultFormFields = {
 };
 
 const AdminLogin = () => {
+  const supabase = useSupabaseClient();
+
   const [formFields, setFormFields] = useState(deafultFormFields);
+  const [isLoading, setIsLoading] = useState(false);
+  const [alert, setAlert] = useState("");
   const { AdminEmail, password } = formFields;
 
   const handleChange = (e: any) => {
@@ -21,11 +28,29 @@ const AdminLogin = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.auth.signInWithOtp({
+        email: AdminEmail,
+        options: {
+          emailRedirectTo: "http://localhost:3000/admin/events",
+        },
+      });
+
+      if (!error) {
+        setAlert("success");
+      }
+    } catch (err) {
+      setAlert("error");
+    }
+
+    setIsLoading(false);
   };
 
   return (
-    <div className=" overflow-x-hidden relative min-h-[100vh] bg-[#300e2f]  flex justify-center items-center py-10">
-      <div className=" fixed w-[100%] overflow-hidden  lg:w-[50%] ">
+    <div className=" overflow-x-hidden relative min-h-[100vh] bg-prussian-blue-1000  flex justify-center items-center py-10 px-2">
+      <div className=" fixed w-[100%]  lg:w-[50%] ">
         <Image
           src={"logbg.svg"}
           className="w-full h-full animate-wheel "
@@ -36,9 +61,9 @@ const AdminLogin = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className={`${koulen.className} z-10 w-[80vh] max-w-[500px] bg-Safety-Orange-100 flex flex-col items-center rounded-2xl py-6 md:px-16 px-12 space-y-2`}
+        className={`${koulen.className} z-10 w-[80vh] max-w-[500px] backdrop-blur-[8px] bg-[rgba(0,0,2,0.0)] bg- drop-shadow-glow flex flex-col items-center rounded-2xl py-6 md:px-16 px-12 space-y-2  border-saffron-500 border-4`}
       >
-        <div className="">
+        <div className="text-white">
           <div className=" text-4xl text-center">Admin Log-In</div>
           <div
             className={`text-center  text-lg  "text-monza-800"
@@ -50,8 +75,9 @@ const AdminLogin = () => {
           <FormInput
             label="Admin Email"
             name="AdminEmail"
+            labelColor="white"
             className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25 w-full"
-            placeholder="admin@email.com"
+            placeholder="Admin@email.com"
             onChange={handleChange}
             value={AdminEmail}
             type="email"
@@ -62,6 +88,7 @@ const AdminLogin = () => {
             label="Password"
             name="password"
             type="password"
+            labelColor="white"
             className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25 w-full"
             placeholder="..."
             onChange={handleChange}
@@ -75,17 +102,28 @@ const AdminLogin = () => {
           <button
             className={`bg-Safety-Orange-500 outline outline-[3px] rounded-lg outline-black mt-3 h-14 w-[100%] duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
           >
-            Login As Admin
+            {isLoading ? <Spinner /> : "Login"}
           </button>
         </div>
         <div>
-          Not a Admin?
+          <span className="text-white">Login as a User Instead?</span>
           <Link href={"/userlogin" || "/"}>
-            <span className="text-Safety-Orange-500 hover:scale-150 drop-shadow-md cursor-pointer">
-              User Login
+            <span className="text-Safety-Orange-100 tracking-wider  hover:scale-150 drop-shadow-md cursor-pointer">
+              {" User Login"}
             </span>
           </Link>
         </div>
+
+        {alert && (
+          <InlineAlert
+            success={alert === "success"}
+            className="w-full text-center text-white rounded drop-shadow-lg tracking-wider"
+          >
+            {alert === "success"
+              ? `Email Sent to ${AdminEmail}`
+              : `An Error Occurred , try again Later`}
+          </InlineAlert>
+        )}
       </form>
     </div>
   );

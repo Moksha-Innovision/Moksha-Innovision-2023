@@ -7,19 +7,19 @@ type Props = {
   ques: string;
   ans: string;
   setOpen: (a: any) => any;
-  setOwl: (a: any) => any;
   active: boolean;
   id: number;
 };
 
 const FaqTile = (props: Props) => {
-  const { ques, ans, active, setOpen, id, setOwl } = props;
+  const { ques, ans, active, setOpen, id } = props;
 
   const handleFaqClick = () => {
     setOpen((prev: number) => {
       let newid = prev === id ? 0 : id;
-      if (newid === 0) setOwl("owl.svg");
-      else setOwl("owl-1.svg");
+      if (newid === 0) {
+      }
+
       return newid;
     });
   };

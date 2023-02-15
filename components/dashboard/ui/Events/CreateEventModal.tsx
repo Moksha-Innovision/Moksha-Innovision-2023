@@ -1,5 +1,5 @@
-import FormInput from "../Forms/FormInput";
 import Image from "next/image";
+import FormInput from "../Forms/FormInput";
 type Props = { setEventModal: (a: any) => any };
 
 const CreateEventModal = (props: Props) => {
@@ -13,7 +13,7 @@ const CreateEventModal = (props: Props) => {
           width={25}
           height={25}
           alt={"cross modal"}
-          className="absolute left-4 top-4"
+          className="absolute left-1 top-1"
         />
       </button>
       <h1 className="text-4xl font-semibold text-black text-center ">
@@ -21,84 +21,98 @@ const CreateEventModal = (props: Props) => {
       </h1>
       <form action="" className="mt-2 overflow-y-scroll">
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
         <FormInput
+          labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"

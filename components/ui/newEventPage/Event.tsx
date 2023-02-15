@@ -128,7 +128,7 @@ const Event = () => {
   const [day, setDay] = useState("I");
   return (
     <div
-      className={`${koulen.className} text-white bg-event-pattern bg-contain  bg-prussian-blue-1000 justify-center items-center flex  overflow-x-hidden relative`}
+      className={`${koulen.className} text-white bg-event-pattern bg-repeat bg-contain bg-prussian-blue-1000 justify-center items-center flex  overflow-x-hidden relative`}
     >
       <div className="mt-[7vh] pt-10 md:mt-14 flex flex-col relative   w-full items-center  mb-4">
         <h1 className="text-4xl lg:text-5xl text-center  mb-7 md:mb-6  drop-shadow-lowGlowtext  ">

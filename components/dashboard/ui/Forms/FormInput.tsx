@@ -2,6 +2,7 @@ import React from "react";
 
 type Props = {
   label: string;
+  labelColor?: string;
   type?: string;
   id?: string;
   name?: string;
@@ -15,7 +16,10 @@ type Props = {
 const FormInput = ({ label, className, ...otherProps }: Props) => {
   return (
     <div className={"group flex flex-col items-start gap-2 my-4"}>
-      <label htmlFor={label} className="text-black font-semibold text-lg">
+      <label
+        htmlFor={label}
+        className={` font-semibold text-lg text-${otherProps.labelColor} tracking-widest`}
+      >
         {label}{" "}
       </label>
       <input
