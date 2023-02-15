@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import NavLink from "./NavLink";
 import { useRouter } from "next/router";
 import { useSession } from "@supabase/auth-helpers-react";
 import { Koulen } from "@next/font/google";
@@ -16,7 +17,7 @@ const ACTIVELINKTYLE = "text-3xl";
 const Navbar = (props: Props) => {
   const session = useSession();
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   useEffect(() => {}, []);
   const router = useRouter();
   return (
@@ -38,101 +39,26 @@ const Navbar = (props: Props) => {
           <Image width={500} height={500} src="/mokshalogo.svg" alt="" />
         </Link>
         <ul
-          className={`links hidden md:flex  items-center w-full gap-8 justify-center text-white`}
+          className={`links hidden md:flex  items-center w-full gap-8 justify-center ${koulen.className} text-white`}
         >
-          <Link
-            href="/events"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/events" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            Events
-            {router.asPath === "/events" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-150 w-24"
-              />
-            )}
-          </Link>
-          <Link
-            href="/sponsors"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            sponsors
-            {router.asPath === "/sponsors" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-125 w-24"
-              />
-            )}
-          </Link>
-          <Link
-            href="/faq"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/faq" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            f.a.q
-            {router.asPath === "/faq" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-[200%] w-24"
-              />
-            )}
-          </Link>
-          <Link
-            href="/contact"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/contact" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            contact us
-            {router.asPath === "/contact" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-125 w-24 left-3"
-              />
-            )}
-          </Link>
-          <Link
-            href="/about"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/about" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            about us
-            {router.asPath === "/about" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-125 w-24"
-              />
-            )}
-          </Link>
+          <NavLink href="/events">Events</NavLink>
+          <NavLink href="/sponsors">Sponsors</NavLink>
+          <NavLink href="/faq">Faq's</NavLink>
+          <NavLink href="/contact" underlineclassName="left-3">
+            Contact Us
+          </NavLink>
+          <NavLink href="/about">About Us</NavLink>
         </ul>
+
+        {/* //Profile Button */}
+
         <div className="profile-btn flex ">
           <button
             className="flex gap-3  h-[45px] rounded-full items-center justify-center lg:px-10 p-2"
             onClick={() => {
               session
                 ? router.push("/admin/events")
-                : router.push("/templogin");
+                : router.push("/userlogin");
             }}
           >
             <div className="profile-pic rounded-full w-10 h-6 flex items-center justify-center">
@@ -152,6 +78,7 @@ const Navbar = (props: Props) => {
           </button>
         </div>
       </div>
+
       {/*Ham menu */}
       <div
         className={` ${
@@ -159,93 +86,23 @@ const Navbar = (props: Props) => {
         } md:hidden transition-[transform] duration-200 -left-[90vw] absolute top-[7vh] w-[60vw]  border-t-0 rounded-br-2xl shadow-2xl  z-30  h-[90vh]`}
       >
         <ul
-          className={`flex flex-col justify-center pl-8 space-y-10 text-white bg-prussian-blue-1000 bg-event-pattern bg-contain h-full`}
+          className={`flex flex-col justify-center ${koulen.className} pl-8 space-y-10 text-white bg-prussian-blue-1000 bg-event-pattern bg-contain h-full`}
         >
-          <Link
-            href="/events"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/events" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
+          <NavLink href="/events" imgScale={110} underlineclassName="-left-3">
             Events
-            {router.asPath === "/events" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-110 w-24 -left-3"
-              />
-            )}
-          </Link>
-          <Link
-            href="/sponsors"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/sponsors" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            sponsors
-            {router.asPath === "/sponsors" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-110 w-24 left-1"
-              />
-            )}
-          </Link>
-          <Link
-            href="/faq"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/faq" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            f.a.q
-            {router.asPath === "/faq" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-[0.8] -left-6 w-24"
-              />
-            )}
-          </Link>
-          <Link
-            href="/contact"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/contact" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            contact us
-            {router.asPath === "/contact" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-110 w-24 left-4"
-              />
-            )}
-          </Link>
-          <Link
-            href="/about"
-            className={`link relative ${koulen.className} uppercase  ${
-              router.asPath === "/about" ? ACTIVELINKTYLE : "text-xl"
-            }`}
-          >
-            about us
-            {router.asPath === "/about" && (
-              <Image
-                src="/underline.svg"
-                width={100}
-                height={20}
-                alt={"underlien "}
-                className="absolute b-2 scale-110 w-24"
-              />
-            )}
-          </Link>
+          </NavLink>
+          <NavLink href="/sponsors" imgScale={110}>
+            Sponsors
+          </NavLink>
+          <NavLink href="/faq" imgScale={95} underlineclassName="-left-4">
+            Faq's
+          </NavLink>
+          <NavLink href="/contact" underlineclassName="left-3" imgScale={125}>
+            Contact Us
+          </NavLink>
+          <NavLink href="/about" imgScale={110}>
+            About Us
+          </NavLink>
         </ul>
       </div>
     </div>
