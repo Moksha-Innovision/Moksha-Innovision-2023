@@ -1,5 +1,6 @@
 import { Koulen } from "@next/font/google";
-import { useState } from "react";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useEffect, useState } from "react";
 import EventCarosel from "./EventCarosel";
 import EventDays from "./EventDays";
 import EventGrid from "./EventGrid";
@@ -125,6 +126,23 @@ const events = [
 ];
 
 const Event = () => {
+  const supabase = useSupabaseClient()
+  useEffect(
+    () => {
+      const getEvents = async () => {
+        const { data, error } = await supabase
+          .from('socevent')
+          .select('event_name')
+        if (error) {
+          console.log(error)
+          return
+        }
+        console.log(data)
+      }
+      getEvents()
+    }, []
+  )
+
   const [day, setDay] = useState("I");
   return (
     <div
