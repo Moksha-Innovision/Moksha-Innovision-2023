@@ -1,5 +1,3 @@
-import React from "react";
-
 type Props = {
   label: string;
   type?: string;
@@ -8,17 +6,19 @@ type Props = {
   className?: string;
   placeholder?: string;
   value?: string;
+  disable?: boolean;
   onChange?: (a: any) => any;
   required?: boolean;
 };
 
-const FormInput = ({ label, className, ...otherProps }: Props) => {
+const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
   return (
     <div className={"group flex flex-col items-start gap-2 my-4"}>
       <label htmlFor={label} className="text-black font-semibold text-lg">
         {label}{" "}
       </label>
       <input
+        disabled={disable}
         {...otherProps}
         className={
           className ||

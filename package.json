@@ -11,7 +11,7 @@
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
-    "test-all": "npm format && npm run check-format && npm run check-lint && npm run check-types && npm run build",
+    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "prepare": "husky install",
     "lint": "next lint"
   },
@@ -33,6 +33,7 @@
     "lodash": "^4.17.21",
     "lottie-react": "^2.3.1",
     "next": "13.1.1",
+    "pullstate": "^1.25.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.1",
