@@ -1,5 +1,8 @@
-import Image from "next/image";
 import { Koulen } from "@next/font/google";
+import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import AdminLog from "../components/Login/AdminLog";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 import FormInput from "../components/dashboard/ui/Forms/FormInput";
 import { useState } from "react";
@@ -15,11 +18,14 @@ const deafultFormFields = {
 
 const AdminLogin = () => {
   const supabase = useSupabaseClient();
-
+  const session = useSession();
+  const router = useRouter();
   const [formFields, setFormFields] = useState(deafultFormFields);
-  const [isLoading, setIsLoading] = useState(false);
-  const [alert, setAlert] = useState("");
   const { AdminEmail, password } = formFields;
+  useEffect(() => {
+    console.log(session);
+    if (session) router.push("/admin/events");
+  }, []);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;

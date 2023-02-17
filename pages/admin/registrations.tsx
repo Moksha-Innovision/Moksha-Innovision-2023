@@ -1,9 +1,18 @@
+import { useSession } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
 import ParticipantTable from "../../components/dashboard/ui/Table/ParticipantTable";
-import Navbar from "../../components/ui/Navbar/Navbar";
 type Props = {};
 
 const Registrations = (props: Props) => {
+  const session = useSession();
+  const router = useRouter();
+  useEffect(() => {
+    if (!session) {
+      router.push("/userlogin");
+    }
+  });
   return (
     <>
       {/* <Navbar/> */}

@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import Router, { useRouter } from "next/router";
-import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 type Props = {
   href: string;

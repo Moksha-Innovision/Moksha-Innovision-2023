@@ -1,10 +1,10 @@
+import { Koulen } from "@next/font/google";
+import { useSession } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import Link from "next/link";
-import NavLink from "./NavLink";
 import { useRouter } from "next/router";
-import { useSession } from "@supabase/auth-helpers-react";
-import { Koulen } from "@next/font/google";
 import { useEffect, useState } from "react";
+import NavLink from "./NavLink";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 type Props = {};
