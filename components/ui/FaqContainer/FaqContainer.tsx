@@ -27,16 +27,15 @@ const Faqs = [
   },
 ];
 
-type Props = { setOwl: (a: any) => any };
+type Props = {};
 
 const FaqContainer = (props: Props) => {
-  const { setOwl } = props;
   const [faqOpen, setFaqOpen] = useState(0);
 
   return (
     <div className="max-w-2xl flex flex-col gap-5 max-h-[calc(65vh_-_96px)] overflow-y-auto opacity-100 ">
       <h1
-        className={`${koulen.className} sm:text-5xl md:text-4xl  text-center text-razzmatazz-500 mb-5  text-3xl sticky top-0 bg-blue-800 `}
+        className={`${koulen.className} sm:text-5xl md:text-4xl  text-center text-white mb-5  text-3xl sticky top-0 bg-prussian-blue-1000 `}
       >
         Frequently Asked Questions
       </h1>
@@ -47,7 +46,6 @@ const FaqContainer = (props: Props) => {
             ans={ans}
             key={id}
             setOpen={setFaqOpen}
-            setOwl={setOwl}
             active={id === faqOpen}
             id={id}
           />

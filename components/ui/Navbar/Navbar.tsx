@@ -17,7 +17,7 @@ const ACTIVELINKTYLE = "text-3xl";
 const Navbar = (props: Props) => {
   const session = useSession();
 
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   useEffect(() => {}, []);
   const router = useRouter();
   return (
