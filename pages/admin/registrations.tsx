@@ -17,8 +17,8 @@ const Registrations = (props: Props) => {
     <>
       {/* <Navbar/> */}
       <Dashboard>
-        <div className="container px-2 md:px-4 lg:px-4 w-[350px] sm:w-[500px] md:w-full max-h-screen m-auto ">
-          <h1 className="text-3xl md:text-5xl font-semibold drop-shadow-glow text-center mb-8 mt-6">
+        <div className="container m-auto max-h-screen w-[350px] px-2 sm:w-[500px] md:w-full md:px-4 lg:px-4 ">
+          <h1 className="mb-8 mt-6 text-center text-3xl font-semibold drop-shadow-glow md:text-5xl">
             Participants
           </h1>
           <ParticipantTable />

@@ -14,10 +14,10 @@ type Props = {
 
 const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
   return (
-    <div className={"group flex flex-col items-start gap-2 my-4"}>
+    <div className={"group my-4 flex flex-col items-start gap-2"}>
       <label
         htmlFor={label}
-        className={` font-semibold text-lg text-${otherProps.labelColor} tracking-widest`}
+        className={` text-lg font-semibold text-${otherProps.labelColor} tracking-widest`}
       >
         {label}{" "}
       </label>
@@ -26,7 +26,7 @@ const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
         {...otherProps}
         className={
           className ||
-          "bg-gray-200 focus:outline-gray-300 text-gray-800 px-3 py-2 w-full rounded"
+          "w-full rounded bg-gray-200 px-3 py-2 text-gray-800 focus:outline-gray-300"
         }
       />
     </div>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Navbar from "../components/ui/Navbar/Navbar";
 import { Koulen } from "@next/font/google";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Image from "next/image";
@@ -49,29 +51,29 @@ const UserLogin = () => {
   };
 
   return (
-    <div className=" overflow-x-hidden relative min-h-[100vh] bg-prussian-blue-1000  flex justify-center items-center py-10 px-2">
-      <div className=" fixed w-[100%]  lg:w-[50%] ">
-        <Image
-          src={"logbg.svg"}
-          className="w-full h-full animate-wheel "
-          alt={""}
-          width={100}
-          height={100}
-        />
-      </div>
-      <form
-        onSubmit={handleSubmit}
-        className={`${koulen.className} z-10 w-[80vh] max-w-[500px] backdrop-blur-[8px] bg-[rgba(0,0,2,0)] bg- drop-shadow-glow flex flex-col items-center rounded-2xl py-6 md:px-16 px-12 space-y-2 border-saffron-500 border-4`}
-      >
-
-        <div className="">
-          <div className=" text-4xl text-center">Log-In</div>
-
-          <div
-            className={`text-center  text-lg  "text-monza-800"
-              }`}
-          ></div>
+    <>
+      <Navbar />
+      <div className=" relative flex min-h-[100vh] items-center justify-center  overflow-x-hidden bg-prussian-blue-1000 py-10 px-2 pt-[7vh]">
+        <div className=" fixed w-[100%]  lg:w-[50%] ">
+          <Image
+            src={"logbg.svg"}
+            className="h-full w-full animate-wheel "
+            alt={""}
+            width={100}
+            height={100}
+          />
         </div>
+        <form
+          onSubmit={handleSubmit}
+          className={`${koulen.className} bg- borer-4 drop-shadow-gow z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl border-saffron-500 bg-[rgba(0,0,2,0)] py-6 px-12 backdrop-blur-[8px] md:px-16`}
+        >
+          <div className="text-white">
+            <div className=" text-center text-4xl">User Log-In</div>
+            <div
+              className={`"text-monza-800"  }  text-center
+              text-lg`}
+            ></div>
+          </div>
 
         <div className="w-full flex flex-col text-xl">
           <FormInput
@@ -98,36 +100,37 @@ const UserLogin = () => {
             id="Password"
             required
           /> */}
-        </div>
+          </div>
 
-        <div className="w-full flex flex-col text-2xl items-center">
-          <button
-            className={`bg-Safety-Orange-500 outline outline-[3px] rounded-lg outline-black mt-3 h-14 w-[100%] duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
-          >
-            {isLoading ? <Spinner /> : "Login"}
-          </button>
-        </div>
-        <div>
-          <span className="text-white">Login as a Admin Instead?</span>
-          <Link href={"/adminlogin" || "/"}>
-            <span className="text-Safety-Orange-100 tracking-wider  hover:scale-150 drop-shadow-md cursor-pointer">
-              {" Admin Login"}
-            </span>
-          </Link>
-        </div>
+          <div className="flex w-full flex-col items-center text-2xl">
+            <button
+              className={`mt-3 h-14 w-[100%] rounded-lg bg-Safety-Orange-500 text-white outline outline-[3px] outline-black transition-[transform] duration-100  hover:scale-[1.04]`}
+            >
+              {isLoading ? <Spinner /> : "Login"}
+            </button>
+          </div>
+          <div>
+            <span className="text-white">Login as a Admin Instead?</span>
+            <Link href={"/adminlogin" || "/"}>
+              <span className="cursor-pointer tracking-wider  text-Safety-Orange-100 drop-shadow-md hover:scale-150">
+                {" Admin Login"}
+              </span>
+            </Link>
+          </div>
 
-        {alert && (
-          <InlineAlert
-            success={alert === "success"}
-            className="w-full text-center text-white rounded drop-shadow-lg tracking-wider"
-          >
-            {alert === "success"
-              ? `Email Sent to ${UserEmail}`
-              : `An Error Occurred , try again Later`}
-          </InlineAlert>
-        )}
-      </form>
-    </div>
+          {alert && (
+            <InlineAlert
+              success={alert === "success"}
+              className="w-full rounded text-center tracking-wider text-white drop-shadow-lg"
+            >
+              {alert === "success"
+                ? `Email Sent to ${UserEmail}`
+                : `An Error Occurred , try again Later`}
+            </InlineAlert>
+          )}
+        </form>
+      </div>
+    </>
   );
 };
 

@@ -26,16 +26,16 @@ const EventColumn = (props: Props) => {
   ];
 
   return (
-    <div className="container px-4 md:px-8 lg:px-14 overflow-y-auto max-h-screen m-auto ">
-      <h1 className="text-5xl font-semibold drop-shadow-glow text-center mb-6 mt-6">
+    <div className="container m-auto max-h-screen overflow-y-auto px-4 md:px-8 lg:px-14 ">
+      <h1 className="mb-6 mt-6 text-center text-5xl font-semibold drop-shadow-glow">
         EVENTS
       </h1>
       <div className="w-full text-right">
-        <span className="bg-saffron-600 px-3 py-2 rounded-md font-medium">
+        <span className="rounded-md bg-saffron-600 px-3 py-2 font-medium">
           <button onClick={() => setEventModal(true)}>Create New Event</button>
         </span>
       </div>
-      <div className="flex flex-col gap-6 w-full ">
+      <div className="flex w-full flex-col gap-6 ">
         {Events.map((event, index) => (
           <EventCard {...event} key={index} />
         ))}
