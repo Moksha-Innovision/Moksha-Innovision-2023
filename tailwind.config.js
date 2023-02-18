@@ -66,6 +66,8 @@ module.exports = {
       },
       backgroundImage: {
         "event-pattern": "url('../public/bgPattern.svg')",
+        legacy: "url('../public/Landing/legacybg.svg')",
+        LandingEvent: "url('../public/Landing/ebgobj.svg')",
         "carosel-pattern": "url('../public/caroselSlide.svg')",
         "footer-texture": "url('/img/footer-texture.png')",
       },
