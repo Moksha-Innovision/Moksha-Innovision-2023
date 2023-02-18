@@ -3,7 +3,6 @@ import Navbar from "../components/ui/Navbar/Navbar";
 import { Koulen } from "@next/font/google";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import InlineAlert from "../components/Alerts/InlineAlert";
 import FormInput from "../components/dashboard/ui/Forms/FormInput";
@@ -51,6 +50,7 @@ const UserLogin = () => {
   };
 
   return (
+
     <>
       <Navbar />
       <div className=" relative flex min-h-[100vh] items-center justify-center  overflow-x-hidden bg-prussian-blue-1000 py-10 px-2 pt-[7vh]">
@@ -62,6 +62,7 @@ const UserLogin = () => {
             width={100}
             height={100}
           />
+
         </div>
         <form
           onSubmit={handleSubmit}
@@ -81,7 +82,7 @@ const UserLogin = () => {
             label="User Email"
             name="UserEmail"
             labelColor="white"
-            className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25 w-full"
+            className=" rounded-lg h-10 focus:outline-none md:h-10 p-2 focus:bg-white shadow-md bg-saffron-25 w-full"
             placeholder="user@email.com"
             onChange={handleChange}
             value={UserEmail}
@@ -102,21 +103,19 @@ const UserLogin = () => {
           /> */}
           </div>
 
-          <div className="flex w-full flex-col items-center text-2xl">
-            <button
-              className={`mt-3 h-14 w-[100%] rounded-lg bg-Safety-Orange-500 text-white outline outline-[3px] outline-black transition-[transform] duration-100  hover:scale-[1.04]`}
-            >
-              {isLoading ? <Spinner /> : "Login"}
-            </button>
-          </div>
-          <div>
-            <span className="text-white">Login as a Admin Instead?</span>
-            <Link href={"/adminlogin" || "/"}>
-              <span className="cursor-pointer tracking-wider  text-Safety-Orange-100 drop-shadow-md hover:scale-150">
-                {" Admin Login"}
-              </span>
-            </Link>
-          </div>
+
+        <div className="w-full flex flex-col text-2xl items-center">
+          <button
+            className={`bg-Safety-Orange-500  rounded-lg  mt-3 h-14 w-[100%] shadow-md duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
+          >
+            {isLoading ? <Spinner /> : "Login"}
+          </button>
+        </div>
+        <div>
+          <span className="text-white">Magic Link will be sent to your Email</span>
+
+        </div>
+
 
           {alert && (
             <InlineAlert
@@ -135,3 +134,11 @@ const UserLogin = () => {
 };
 
 export default UserLogin;
+/*<div>
+          <span className="text-white">Login as a Admin Instead?</span>
+          <Link href={"/adminlogin" || "/"}>
+            <span className="text-Safety-Orange-100 tracking-wider  hover:scale-150 drop-shadow-md cursor-pointer">
+              {" Admin Login"}
+            </span>
+          </Link>
+        </div> */

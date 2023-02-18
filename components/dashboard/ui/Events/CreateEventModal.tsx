@@ -13,111 +13,68 @@ const CreateEventModal = (props: Props) => {
           width={25}
           height={25}
           alt={"cross modal"}
-          className="absolute left-1 top-1"
+          className="absolute left-4 top-4"
         />
       </button>
       <h1 className="text-center text-4xl font-semibold text-black ">
         Create New Event
       </h1>
       <form action="" className="mt-2 overflow-y-scroll">
-        <FormInput
-          labelColor="black"
+        <FormInput labelColor="black"
           label="Event Name"
           type="text"
           id="Event Name"
           name="Event Name"
         />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
+        <FormInput labelColor="black"
+          label="Event Tagline"
           type="text"
-          id="Event Name"
-          name="Event Name"
+          id="Event Tagline"
+          name="Event Tagline"
         />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
+        <FormInput labelColor="black"
+          label="Event Description"
           type="text"
-          id="Event Name"
-          name="Event Name"
+          id="Description"
+          name="Description"
         />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
+        <FormInput labelColor="black"
+          label="Rules"
           type="text"
-          id="Event Name"
-          name="Event Name"
+          id="Rules"
+          name="Rules"
         />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
+        <FormInput labelColor="black"
+          label="Venue"
           type="text"
-          id="Event Name"
-          name="Event Name"
+          id="Venue"
+          name="Venue"
         />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
+        <FormInput labelColor="black"
+          label="Date Time"
+          type="datetime-local"
+          id="Date"
+          name="Date"
+        />
+        <FormInput labelColor="black"
+          label="Price Pool"
           type="text"
-          id="Event Name"
-          name="Event Name"
+          id="Price"
+          name="Price"
         />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
-          type="text"
-          id="Event Name"
-          name="Event Name"
+        <FormInput labelColor="black"
+          label="Team Size"
+          type="number"
+          id="Team Size"
+          name="Team Size"
         />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
-          type="text"
-          id="Event Name"
-          name="Event Name"
+        <FormInput labelColor="black"
+          label="Instagram"
+          type="url"
+          id="Instagram"
+          name="Instagram"
         />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
-          type="text"
-          id="Event Name"
-          name="Event Name"
-        />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
-          type="text"
-          id="Event Name"
-          name="Event Name"
-        />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
-          type="text"
-          id="Event Name"
-          name="Event Name"
-        />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
-          type="text"
-          id="Event Name"
-          name="Event Name"
-        />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
-          type="text"
-          id="Event Name"
-          name="Event Name"
-        />
-        <FormInput
-          labelColor="black"
-          label="Event Name"
-          type="text"
-          id="Event Name"
-          name="Event Name"
-        />
+
       </form>
       <span className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-saffron-600 px-3 py-2 font-medium">
         <button>Create New Event</button>
