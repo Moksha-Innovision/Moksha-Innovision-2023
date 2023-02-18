@@ -3,7 +3,6 @@ import EventCarosel from "../ui/newEventPage/EventCarosel";
 
 const LandingEvent = () => {
   return (
-
     <div className=" relative h-fit pt-[30%]  md:pt-[20%]">
       <div className="bg-LandingEvent  h-[100vh] bg-cover  bg-top bg-no-repeat absolute top-0 w-full"></div>
       <h1 className="text-4xl lg:text-5xl text-center  mb-7 md:mb-6  drop-shadow-lowGlowtext flex flex-col items-center text-white ">
@@ -21,7 +20,6 @@ const LandingEvent = () => {
         <EventCarosel></EventCarosel>
       </div>
     </div>
-
   );
 };
 

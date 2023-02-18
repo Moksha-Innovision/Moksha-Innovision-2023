@@ -18,7 +18,7 @@ const Navbar = (props: Props) => {
   const session = useSession();
 
   const [show, setShow] = useState(false);
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
   const router = useRouter();
   return (
     <div className="flex w-full flex-col relative">
@@ -81,8 +81,9 @@ const Navbar = (props: Props) => {
 
       {/*Ham menu */}
       <div
-        className={` ${show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
-          } md:hidden transition-[transform] duration-200 -left-[90vw] absolute top-[7vh] w-[60vw]  border-t-0 rounded-br-2xl shadow-2xl  z-30  h-[90vh]`}
+        className={` ${
+          show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
+        } md:hidden transition-[transform] duration-200 -left-[90vw] absolute top-[7vh] w-[60vw]  border-t-0 rounded-br-2xl shadow-2xl  z-30  h-[90vh]`}
       >
         <ul
           className={`flex flex-col justify-center ${koulen.className} pl-8 space-y-10 text-white bg-prussian-blue-1000 bg-event-pattern bg-contain h-full`}

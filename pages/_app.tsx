@@ -4,8 +4,6 @@ import { AppProps } from "next/app";
 import { useState } from "react";
 import "../styles/globals.scss";
 
-
-
 function MyApp({
   Component,
   pageProps,

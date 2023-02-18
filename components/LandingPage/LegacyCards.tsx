@@ -24,8 +24,9 @@ const LegacyCards = ({ id, active, artist }: any) => {
     >
       <div
         className={`h-[50%]  rounded-lg  w-[100%]  z-10   transition-all text-white flex flex-col justify-end pb-8 items-center
-        ${(pos == 0 && "absolute top-[10%] scale-110 opacity-100") || "scale-75"
-          }
+        ${
+          (pos == 0 && "absolute top-[10%] scale-110 opacity-100") || "scale-75"
+        }
         ${pos == -1 && "absolute top-[35%] -rotate-[30deg] opacity-70"}
         ${pos == 1 && "absolute top-[35%] rotate-[30deg] opacity-70"}
         ${pos == 2 && "opacity-80 absolute -bottom-[20%] rotate-[40deg] "}

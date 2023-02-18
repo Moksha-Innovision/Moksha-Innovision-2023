@@ -64,9 +64,11 @@ const LandingSponsers = () => {
               <SwiperSlide key={i}>
                 <div className="flex justify-center items-center h-40">
                   {/*<LandingSponserSlide />*/}
-                  {<SliderSlide key={i} className="h-32 " >
-                    Sponser {i}
-                  </SliderSlide>}
+                  {
+                    <SliderSlide key={i} className="h-32 ">
+                      Sponser {i}
+                    </SliderSlide>
+                  }
                 </div>
               </SwiperSlide>
             );

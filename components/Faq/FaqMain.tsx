@@ -2,14 +2,10 @@ import Image from "next/image";
 import { useRef } from "react";
 import FaqContainer from "./FaqContainer";
 
-
 const FaqMain = () => {
   const containerRef: any = useRef();
   return (
-    <div
-      className="w-full relative  pt-[7vh]"
-      ref={containerRef}
-    >
+    <div className="w-full relative  pt-[7vh]" ref={containerRef}>
       <div className="flex flex-col md:flex-row-reverse  md:px-[5vw]  lg:px-[8vw] items-center md:justify-between min-h-[93vh] pb-8">
         <div className="w-[50%] md:px-[5%] lg:px-[8%]">
           <div className="h-[30vh] md:h-[50%]   mt-10">
@@ -26,7 +22,6 @@ const FaqMain = () => {
           <FaqContainer />
         </div>
       </div>
-
     </div>
   );
 };

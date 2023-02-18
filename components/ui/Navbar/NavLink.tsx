@@ -17,8 +17,11 @@ const NavLink = (props: Props) => {
   return (
     <Link
       href={href}
-      className={`link relative uppercase  ${router.asPath === href ? "text-3xl w-fit min-w-[100px] text-center " : "text-xl"
-        } ${className}`}
+      className={`link relative uppercase  ${
+        router.asPath === href
+          ? "text-3xl w-fit min-w-[100px] text-center "
+          : "text-xl"
+      } ${className}`}
     >
       {children}
       {router.asPath === href && (
@@ -27,8 +30,9 @@ const NavLink = (props: Props) => {
           width={100}
           height={20}
           alt={"underlien "}
-          className={`absolute left-[2px] -bottom-2  ${underlineclassName} scale-${imgScale || "150"
-            } w-full`}
+          className={`absolute left-[2px] -bottom-2  ${underlineclassName} scale-${
+            imgScale || "150"
+          } w-full`}
         />
       )}
     </Link>

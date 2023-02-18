@@ -67,13 +67,25 @@ const FaqContainer = (props: Props) => {
           />
         );
       })}
-      <div className="text-white text-center hover:cursor-pointer" onMouseEnter={() => { setBounce(true) }} onMouseLeave={() => { setBounce(false) }}
-        onClick={
-          () => {
-            setMore(!more)
-          }
-        }
-      >{more ? 'View Less' : 'View More'} {more ? <AiFillCaretUp className={`${bounce && 'animate-bounce'} inline`} /> : <AiFillCaretDown className={`${bounce && 'animate-bounce'} inline`} />}</div>
+      <div
+        className="text-white text-center hover:cursor-pointer"
+        onMouseEnter={() => {
+          setBounce(true);
+        }}
+        onMouseLeave={() => {
+          setBounce(false);
+        }}
+        onClick={() => {
+          setMore(!more);
+        }}
+      >
+        {more ? "View Less" : "View More"}{" "}
+        {more ? (
+          <AiFillCaretUp className={`${bounce && "animate-bounce"} inline`} />
+        ) : (
+          <AiFillCaretDown className={`${bounce && "animate-bounce"} inline`} />
+        )}
+      </div>
     </div>
   );
 };

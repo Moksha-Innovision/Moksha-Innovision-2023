@@ -25,7 +25,9 @@ const EventCaroselSlides = ({ slide }: Props) => {
           <div className="text-3xl sm:text-4xl md:text-5xl mb-1 tracking-wide">
             {slide?.title}
           </div>
-          <div className="text-xs sm:text-sm font-light ">{slide?.description}</div>
+          <div className="text-xs sm:text-sm font-light ">
+            {slide?.description}
+          </div>
           <div
             className="text-prussian-blue-1000 rounded-md tracking-wide hover:cursor-pointer hover:scale-[1.01] hover:drop-shadow-lowGlowtext 
                     transition-[filter,transform] shadow-soft mt-3 text-lg md:text-xl bg-white w-fit px-5 py-1 "

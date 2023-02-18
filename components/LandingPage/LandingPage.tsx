@@ -10,10 +10,10 @@ const LandingPage = () => {
       <div className="flex justify-center items-start  h-[70vh]">
         <LandingEvent />
       </div>
-      <div className=" h-fit relative z-10 mt-[30%]" >
+      <div className=" h-fit relative z-10 mt-[30%]">
         <LandingSponsers />
       </div>
-      <div >
+      <div>
         <LandingContactUS />
       </div>
     </div>
