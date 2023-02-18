@@ -9,10 +9,10 @@ const Registrations = (props: Props) => {
   const session = useSession();
   const router = useRouter();
   useEffect(() => {
-    if (!session) {
+    /*if (!session) {
       router.push("/userlogin");
-    }
-  });
+    }*/
+  }, [session]);
   return (
     <>
       {/* <Navbar/> */}
