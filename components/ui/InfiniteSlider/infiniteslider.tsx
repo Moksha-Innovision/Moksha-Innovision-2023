@@ -7,16 +7,16 @@ const Infiniteslider = (props: Props) => {
   const { right, images } = props;
   return (
     <div className="flex h-full">
-      <div className="slider-holder w-[200%] overflow-x-hidden h-full relative">
+      <div className="slider-holder relative h-full w-[200%] overflow-x-hidden">
         <div
-          className={`slider w-[200%] flex items-center justify-around absolute right-0 gap-2 h-full ${
+          className={`slider absolute right-0 flex h-full w-[200%] items-center justify-around gap-2 ${
             right ? "animate-infinitescrollright" : "animate-infinitescrollleft"
           }`}
         >
           {images.map((i) => {
             return (
               <div
-                className={`flex justify-center items-center w-[20rem] h-full bg-white rounded-md text-3xl font-bold border-black border-[3px] ${koulen.className} `}
+                className={`flex h-full w-[20rem] items-center justify-center rounded-md border-[3px] border-black bg-white text-3xl font-bold ${koulen.className} `}
                 key={i}
               >
                 {i}
@@ -27,7 +27,7 @@ const Infiniteslider = (props: Props) => {
           {images.map((i) => {
             return (
               <div
-                className={`flex justify-center items-center w-[20rem] h-full bg-white rounded-md text-3xl font-bold border-black border-[3px] ${koulen.className}`}
+                className={`flex h-full w-[20rem] items-center justify-center rounded-md border-[3px] border-black bg-white text-3xl font-bold ${koulen.className}`}
                 key={i}
               >
                 {i}

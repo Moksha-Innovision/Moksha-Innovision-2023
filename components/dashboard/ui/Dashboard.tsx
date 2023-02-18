@@ -4,9 +4,9 @@ const Dashboard = (props: any) => {
   const { children } = props;
 
   return (
-    <div className="flex  bg-event-pattern bg-contain  bg-prussian-blue-1000 w-full h-screen ">
+    <div className="flex  h-screen w-full  bg-prussian-blue-1000 bg-event-pattern bg-contain ">
       <Sidebar />
-      <div className="content basis-full text-white relative sm:pl-36 pl-6">
+      <div className="content relative basis-full pl-6 text-white sm:pl-36">
         {children}
       </div>
     </div>

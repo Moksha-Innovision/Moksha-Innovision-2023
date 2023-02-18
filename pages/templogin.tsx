@@ -33,7 +33,7 @@ const Templogin = (props: Props) => {
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="outline-black outline"
+          className="outline outline-black"
         />
         <button>Submit</button>
       </form>

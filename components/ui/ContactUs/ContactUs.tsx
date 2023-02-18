@@ -15,19 +15,19 @@ const ContactUs = () => {
   return (
     <>
       <div
-        className={`${koulen.className} text-white min-h-screen bg-prussian-blue-1000 bg-event-pattern bg-contain justify-center items-center flex  overflow-x-hidden relative pt-[7vh]`}
+        className={`${koulen.className} relative flex min-h-screen items-center justify-center overflow-x-hidden bg-prussian-blue-1000 bg-event-pattern  bg-contain pt-[7vh] text-white`}
         ref={containerRef}
       >
         <div className="z-10"></div>
 
-        <div className="mt-6 md:mt-4 flex flex-col relative ">
-          <div className="absolute -bottom-16 transition-all duration-100  -right-[15%]  ">
+        <div className="relative mt-6 flex flex-col md:mt-4 ">
+          <div className="absolute -bottom-16 -right-[15%] transition-all  duration-100  ">
             <Image
               src="border-event-contact.svg"
               width={100}
               height={100}
               alt="border"
-              className=" w-28 lg:w-36 xl:w-42  rotate-[10deg] -scale-x-100 bird-1 md:scale-[1.4] scale-[1.1] animate-wheel"
+              className=" xl:w-42 bird-1 w-28  rotate-[10deg] scale-[1.1] -scale-x-100 animate-wheel md:scale-[1.4] lg:w-36"
             />
           </div>
           <div className="absolute -top-0 -left-[15%]  transition-all duration-100   ">
@@ -36,10 +36,10 @@ const ContactUs = () => {
               width={100}
               height={100}
               alt="border"
-              className=" w-28 lg:w-36 xl:w-42 bird-2 md:scale-[1.4] scale-[1.1] animate-wheel"
+              className=" xl:w-42 bird-2 w-28 scale-[1.1] animate-wheel md:scale-[1.4] lg:w-36"
             />
           </div>
-          <h1 className="text-4xl lg:text-5xl text-center  mb-7 md:mb-4 drop-shadow-xl contact-us">
+          <h1 className="contact-us mb-7 text-center  text-4xl drop-shadow-xl md:mb-4 lg:text-5xl">
             CONTACT US
           </h1>
           <ContactUsForm />

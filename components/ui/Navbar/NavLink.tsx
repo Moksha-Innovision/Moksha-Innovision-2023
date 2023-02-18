@@ -28,7 +28,7 @@ const NavLink = (props: Props) => {
           width={100}
           height={20}
           alt={"underlien "}
-          className={`absolute b-2 ${underlineclassName} scale-${
+          className={`b-2 absolute ${underlineclassName} scale-${
             imgScale || "150"
           } w-24`}
         />

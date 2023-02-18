@@ -21,10 +21,10 @@ const Navbar = (props: Props) => {
   useEffect(() => {}, []);
   const router = useRouter();
   return (
-    <div className="flex w-full flex-col relative">
-      <div className="navbar h-[7vh] absolute top-0 z-10 w-full flex justify-between items-center  px-6 ">
+    <div className="relative flex w-full flex-col">
+      <div className="navbar fixed top-0 z-10 flex h-[7vh] w-full items-center justify-between  px-6 ">
         <div
-          className={`h-12 py-2 w-12 md:hidden `}
+          className={`h-12 w-12 py-2 md:hidden `}
           onClick={() => setShow(!show)}
         >
           <Image
@@ -32,14 +32,14 @@ const Navbar = (props: Props) => {
             alt=""
             width={100}
             height={100}
-            className="outline outline-white outline-2 outline-offset-4 rounded-[1px] antialiased"
+            className="rounded-[1px] antialiased outline outline-2 outline-offset-4 outline-white"
           />
         </div>
-        <Link href="/" className="logo md:w-28 w-28">
+        <Link href="/" className="logo w-28 md:w-28">
           <Image width={500} height={500} src="/mokshalogo.svg" alt="" />
         </Link>
         <ul
-          className={`links hidden md:flex  items-center w-full gap-8 justify-center ${koulen.className} text-white`}
+          className={`links hidden w-full  items-center justify-center gap-8 md:flex ${koulen.className} text-white`}
         >
           <NavLink href="/events">Events</NavLink>
           <NavLink href="/sponsors">Sponsors</NavLink>
@@ -54,14 +54,14 @@ const Navbar = (props: Props) => {
 
         <div className="profile-btn flex ">
           <button
-            className="flex gap-3  h-[45px] rounded-full items-center justify-center lg:px-10 p-2"
+            className="flex h-[45px]  items-center justify-center gap-3 rounded-full p-2 lg:px-10"
             onClick={() => {
               session
                 ? router.push("/admin/events")
                 : router.push("/userlogin");
             }}
           >
-            <div className="profile-pic rounded-full w-10 h-6 flex items-center justify-center">
+            <div className="profile-pic flex h-6 w-10 items-center justify-center rounded-full">
               <Image
                 width={100}
                 height={100}
@@ -71,7 +71,7 @@ const Navbar = (props: Props) => {
               />
             </div>
             <span
-              className={`${koulen.className}  text-xl text-white hidden sm:block`}
+              className={`${koulen.className}  hidden text-xl text-white sm:block`}
             >
               {profile.name.split(" ")[0].slice(0, 8)}
             </span>
@@ -83,10 +83,10 @@ const Navbar = (props: Props) => {
       <div
         className={` ${
           show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
-        } md:hidden transition-[transform] duration-200 -left-[90vw] absolute top-[7vh] w-[60vw]  border-t-0 rounded-br-2xl shadow-2xl  z-30  h-[90vh]`}
+        } absolute -left-[90vw] top-[7vh] z-30 h-[90vh] w-[60vw] rounded-br-2xl  border-t-0 shadow-2xl transition-[transform]  duration-200  md:hidden`}
       >
         <ul
-          className={`flex flex-col justify-center ${koulen.className} pl-8 space-y-10 text-white bg-prussian-blue-1000 bg-event-pattern bg-contain h-full`}
+          className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain pl-8 text-white`}
         >
           <NavLink href="/events" imgScale={110} underlineclassName="-left-3">
             Events

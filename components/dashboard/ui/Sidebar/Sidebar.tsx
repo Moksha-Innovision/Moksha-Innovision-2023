@@ -33,26 +33,26 @@ const Sidebar = (props: Props) => {
     // <div className="flex  bg-event-pattern bg-contain  bg-prussian-blue-1000 w-full h-screen ">
 
     <div
-      className={` group w-64 sm:w-28 fixed left-0 z-10 bg-[rgba(255,255,255,.1)] rounded p-3 shadow-lg h-screen sm:hover:w-64 cursor-pointer  hover:bg-prussian-blue-1000  sm:translate-x-0 ${
+      className={` group fixed left-0 z-10 h-screen w-64 cursor-pointer rounded bg-[rgba(255,255,255,.1)] p-3 shadow-lg hover:bg-prussian-blue-1000 sm:w-28  sm:translate-x-0  sm:hover:w-64 ${
         sidebarOpen
           ? "translate-x-0 bg-prussian-blue-1000"
           : "-translate-x-full"
       }`}
     >
       <span
-        className="sm:hidden clickme absolute top-0 flex flex-col justify-center items-center  h-screen bg-transparent  text-white left-full"
+        className="clickme absolute top-0 left-full flex h-screen flex-col items-center  justify-center bg-transparent  text-white sm:hidden"
         onClick={() => setSidebarOpen(!sidebarOpen)}
         style={{ writingMode: "vertical-rl" }}
       >
-        <span className="font-bold text-lg bg-saffron-600 rounded-r-lg py-4">
+        <span className="rounded-r-lg bg-saffron-600 py-4 text-lg font-bold">
           {sidebarOpen ? "Close" : "Expand"}
         </span>
       </span>
 
-      <div className="flex items-center flex-col space-y-4 p-2 mb-5 mokshaLogo mt-5">
+      <div className="mokshaLogo mb-5 mt-5 flex flex-col items-center space-y-4 p-2">
         <Link
           href="/admin/registrations"
-          className="mb-8 sm:group-hover:w-auto w-auto"
+          className="mb-8 w-auto sm:group-hover:w-auto"
         >
           <Image
             src="/MokshaAdmin.svg"
@@ -72,17 +72,17 @@ const Sidebar = (props: Props) => {
           />
         </div>
         <div className="flex flex-col  items-center">
-          <h4 className="font-semibold  text-white capitalize font-poppins tracking-wide sm:text-base group-hover:w-auto sm:group-hover:text-2xl">
+          <h4 className="font-poppins  font-semibold capitalize tracking-wide text-white group-hover:w-auto sm:text-base sm:group-hover:text-2xl">
             {"Soc Name"}
           </h4>
-          <span className="text-sm tracking-wide flex items-center space-x-1">
-            <span className="text-white scale sm:text-xs sm:group-hover:text-sm">
+          <span className="flex items-center space-x-1 text-sm tracking-wide">
+            <span className="scale text-white sm:text-xs sm:group-hover:text-sm">
               {"Soc@eamil.com"}
             </span>
           </span>
         </div>
       </div>
-      <ul className="space-y-2 text-md  mt-10">
+      <ul className="text-md mt-10  space-y-2">
         {SidebarChips.map((chip) => (
           <li key={chip.href}>
             <SidebarChip {...chip} setSidebarOpen={setSidebarOpen} />

@@ -1,3 +1,4 @@
+
 import { Inter, Koulen } from "@next/font/google";
 import LandingPage from "../components/LandingPage/LandingPage";
 import Navbar from "../components/ui/Navbar/Navbar";

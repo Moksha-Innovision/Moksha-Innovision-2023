@@ -78,7 +78,7 @@ const slides = [
 ];
 const EventCarosel = () => {
   return (
-    <div className="relative w-[100vw] mx-[2vw] min-h-[20vh] overflow-hidden">
+    <div className="relative mx-[2vw] min-h-[20vh] w-[100vw] overflow-hidden">
       <Swiper
         centeredSlides={true}
         loopFillGroupWithBlank={true}
