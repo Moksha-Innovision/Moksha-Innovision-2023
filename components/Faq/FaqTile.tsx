@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Koulen, Montserrat } from "@next/font/google";
 import Image from "next/image";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
@@ -26,9 +25,8 @@ const FaqTile = (props: Props) => {
 
   return (
     <div
-      className={`outer  border-black border-2 bg-white ${
-        active ? "shadow-2xl" : ""
-      } rounded-md max-w-2xl grid grid-cols-12 transition-all   cursor-pointer`}
+      className={`outer  border-black border-2 bg-white ${active ? "shadow-2xl" : ""
+        } rounded-xl  grid grid-cols-12 transition-all   cursor-pointer`}
     >
       <div
         className="question  py-4 grid grid-cols-8 col-span-12 items-center"
@@ -49,11 +47,9 @@ const FaqTile = (props: Props) => {
         </h3>
       </div>
       <p
-        className={`answer col-start-3 col-span-10 -ml-4 sm:-ml-7  mb-1 ${
-          active ? "max-h-20" : "max-h-0"
-        } overflow-y-hidden transition-all duration-200 ease-linear ${
-          montserrat.className
-        }`}
+        className={`answer col-start-3 col-span-10 -ml-4 sm:-ml-7  mb-1 ${active ? "max-h-20" : "max-h-0"
+          } overflow-y-hidden transition-all duration-200 ease-linear ${montserrat.className
+          }`}
       >
         {ans}
       </p>

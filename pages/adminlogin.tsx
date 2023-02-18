@@ -1,15 +1,11 @@
 import { Koulen } from "@next/font/google";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import AdminLog from "../components/Login/AdminLog";
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
-import FormInput from "../components/dashboard/ui/Forms/FormInput";
-import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import Spinner from "../components/Loaders/Spinner";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import InlineAlert from "../components/Alerts/InlineAlert";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import FormInput from "../components/dashboard/ui/Forms/FormInput";
+const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const deafultFormFields = {
   AdminEmail: "",
@@ -32,6 +28,8 @@ const AdminLogin = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
+  const [isoading, setIsLoading] = useState<any>(false);
+  const [alert, setAlert] = useState<any>("");
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -108,7 +106,7 @@ const AdminLogin = () => {
           <button
             className={`bg-Safety-Orange-500 outline outline-[3px] rounded-lg outline-black mt-3 h-14 w-[100%] duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
           >
-            {isLoading ? <Spinner /> : "Login"}
+            {/*isLoading ? <Spinner /> : "Login"*/}
           </button>
         </div>
         <div>
@@ -120,16 +118,16 @@ const AdminLogin = () => {
           </Link>
         </div>
 
-        {alert && (
+        {/*alert && (
           <InlineAlert
-            success={alert === "success"}
+           { success={alert == "success"}}
             className="w-full text-center text-white rounded drop-shadow-lg tracking-wider"
           >
-            {alert === "success"
+            {/*(alert == "success")
               ? `Email Sent to ${AdminEmail}`
-              : `An Error Occurred , try again Later`}
+        : `An Error Occurred , try again Later`}
           </InlineAlert>
-        )}
+        )*/}
       </form>
     </div>
   );

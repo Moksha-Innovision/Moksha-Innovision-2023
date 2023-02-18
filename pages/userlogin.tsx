@@ -62,9 +62,10 @@ const UserLogin = () => {
         onSubmit={handleSubmit}
         className={`${koulen.className} z-10 w-[80vh] max-w-[500px] backdrop-blur-[8px] shadow-2xl bg-yellow-700 bg-opacity-20 bg- drop-shadow-glow flex flex-col items-center rounded-2xl py-6 md:px-16 px-12 space-y-2 `}
       >
-
         <div className="">
-          <div className=" text-4xl text-center text-white drop-shadow-lowGlowtext ">Log-In</div>
+          <div className=" text-4xl text-center text-white drop-shadow-lowGlowtext ">
+            Log-In
+          </div>
 
           <div
             className={`text-center  text-lg  "text-monza-800"
@@ -107,8 +108,9 @@ const UserLogin = () => {
           </button>
         </div>
         <div>
-          <span className="text-white">Magic Link will be sent to your Email</span>
-
+          <span className="text-white">
+            Magic Link will be sent to your Email
+          </span>
         </div>
 
         {alert && (

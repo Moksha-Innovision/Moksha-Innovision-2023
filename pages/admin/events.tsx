@@ -11,7 +11,7 @@ const Events = (props: Props) => {
   const session = useSession();
   const supabase = useSupabaseClient();
   const [userData, setUserData] = useState<any>("");
-  const [events, setEvents] = useState<any>("")
+  const [events, setEvents] = useState<any>("");
   const router = useRouter();
   useEffect(() => {
     /*if (!session) {
@@ -24,11 +24,10 @@ const Events = (props: Props) => {
         .select("*")
         .eq("soc_id", session?.user.id);
       if (data) {
-        console.log(data)
-        setEvents(data)
+        console.log(data);
+        setEvents(data);
       }
-      if (error)
-        console.log(error)
+      if (error) console.log(error);
     };
     const getUser = async () => {
       const { data, error } = await supabase
@@ -47,13 +46,13 @@ const Events = (props: Props) => {
           email: session?.user.email,
           name: "MOKSHA",
           soc_id: session?.user.id,
-          type: null
-        })
+          type: null,
+        });
       } else {
         setUserData(data[0]);
       }
       getEvents(session?.user.id);
-      console.log(userData)
+      console.log(userData);
     };
     if (session?.user.id) getUser();
   }, [session]);

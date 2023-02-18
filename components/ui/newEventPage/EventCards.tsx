@@ -17,9 +17,8 @@ const EventCards = ({ event }: Props) => {
     >
       <div className="bg-transparent flex items-center flex-col">
         <div
-          className={`${
-            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-          } rounded-2xl transition-[box-shadow] duration-75`}
+          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+            } rounded-2xl transition-[box-shadow] duration-75`}
         >
           <Image
             src={`events/${event.img}`}
@@ -30,9 +29,8 @@ const EventCards = ({ event }: Props) => {
           ></Image>
         </div>
         <div
-          className={`${
-            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-          } w-[100%] h-100%] mt-10 flex items-center transition-[box-shadow] duration-75`}
+          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+            } w-[100%] h-100%] mt-10 flex items-center transition-[box-shadow] duration-75`}
         >
           <Image
             src={`events/${event.ticket}`}

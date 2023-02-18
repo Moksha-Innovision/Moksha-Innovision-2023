@@ -5,11 +5,12 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
-
-    return (
-        <div className={`${koulen.className} bg-event-pattern bg-repeat bg-contain  bg-prussian-blue-1000 min-h-[150vh] overflow-x-hidden w-[100vw]`}>
-            <Navbar />
-            <LandingPage />
-        </div>
-    )
+  return (
+    <div
+      className={`${koulen.className} bg-event-pattern bg-repeat bg-contain  bg-prussian-blue-1000 min-h-[150vh] overflow-x-hidden w-[100vw]`}
+    >
+      <Navbar />
+      <LandingPage />
+    </div>
+  );
 }
