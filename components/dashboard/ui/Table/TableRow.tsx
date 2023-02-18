@@ -10,10 +10,10 @@ const TableRow = (props: Props) => {
   const { name, email, rollno } = props;
 
   return (
-    <tr className="bg-white  dark:border-gray-700 dark:bg-gray-900">
+    <tr className="bg-white  ">
       <th
         scope="row"
-        className="whitespace-nowrap border-r-2 border-black px-2 py-4 text-center font-medium text-gray-900 dark:text-white"
+        className="whitespace-nowrap border-r-2 border-black px-2 py-4 text-center font-medium text-gray-900 "
       >
         {name}
       </th>

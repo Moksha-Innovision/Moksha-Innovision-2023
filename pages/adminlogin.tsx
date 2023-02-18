@@ -23,12 +23,12 @@ const AdminLogin = () => {
   const router = useRouter();
   const [formFields, setFormFields] = useState(deafultFormFields);
   const [isLoading, setIsLoading] = useState(false);
-  const [alert, setAlert] = useState('git');
+  const [alert, setAlert] = useState("");
   const { AdminEmail, password } = formFields;
   useEffect(() => {
     console.log(session);
     if (session) router.push("/admin/events");
-  }, []);
+  }, [session]);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;

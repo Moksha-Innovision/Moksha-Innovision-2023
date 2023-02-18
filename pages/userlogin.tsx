@@ -2,7 +2,7 @@ import Image from "next/image";
 import Navbar from "../components/ui/Navbar/Navbar";
 import { Koulen } from "@next/font/google";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import InlineAlert from "../components/Alerts/InlineAlert";
 import FormInput from "../components/dashboard/ui/Forms/FormInput";
@@ -50,7 +50,6 @@ const UserLogin = () => {
   };
 
   return (
-
     <>
       <Navbar />
       <div className=" relative flex min-h-[100vh] items-center justify-center  overflow-x-hidden bg-prussian-blue-1000 py-10 px-2 pt-[7vh]">
@@ -62,7 +61,6 @@ const UserLogin = () => {
             width={100}
             height={100}
           />
-
         </div>
         <form
           onSubmit={handleSubmit}
@@ -76,21 +74,21 @@ const UserLogin = () => {
             ></div>
           </div>
 
-        <div className="w-full flex flex-col text-xl">
-          <FormInput
-            disable={isLoading}
-            label="User Email"
-            name="UserEmail"
-            labelColor="white"
-            className=" rounded-lg h-10 focus:outline-none md:h-10 p-2 focus:bg-white shadow-md bg-saffron-25 w-full"
-            placeholder="user@email.com"
-            onChange={handleChange}
-            value={UserEmail}
-            type="email"
-            id="User Email"
-            required
-          />
-          {/* <FormInput
+          <div className="flex w-full flex-col text-xl">
+            <FormInput
+              disable={isLoading}
+              label="User Email"
+              name="UserEmail"
+              labelColor="white"
+              className=" h-10 w-full rounded-lg bg-saffron-25 p-2 shadow-md focus:bg-white focus:outline-none md:h-10"
+              placeholder="user@email.com"
+              onChange={handleChange}
+              value={UserEmail}
+              type="email"
+              id="User Email"
+              required
+            />
+            {/* <FormInput
             label="Password"
             name="password"
             type="password"
@@ -103,19 +101,18 @@ const UserLogin = () => {
           /> */}
           </div>
 
-
-        <div className="w-full flex flex-col text-2xl items-center">
-          <button
-            className={`bg-Safety-Orange-500  rounded-lg  mt-3 h-14 w-[100%] shadow-md duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
-          >
-            {isLoading ? <Spinner /> : "Login"}
-          </button>
-        </div>
-        <div>
-          <span className="text-white">Magic Link will be sent to your Email</span>
-
-        </div>
-
+          <div className="flex w-full flex-col items-center text-2xl">
+            <button
+              className={`mt-3  h-14  w-[100%] rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04]`}
+            >
+              {isLoading ? <Spinner /> : "Login"}
+            </button>
+          </div>
+          <div>
+            <span className="text-white">
+              Magic Link will be sent to your Email
+            </span>
+          </div>
 
           {alert && (
             <InlineAlert

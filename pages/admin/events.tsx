@@ -1,5 +1,6 @@
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
 import CreateEventModal from "../../components/dashboard/ui/Events/CreateEventModal";
@@ -11,7 +12,7 @@ const Events = (props: Props) => {
   const session = useSession();
   const supabase = useSupabaseClient();
   const [userData, setUserData] = useState<any>("");
-  const [events, setEvents] = useState<any>("")
+  const [events, setEvents] = useState<any>([]);
   const router = useRouter();
   useEffect(() => {
     /*if (!session) {
@@ -24,11 +25,10 @@ const Events = (props: Props) => {
         .select("*")
         .eq("soc_id", session?.user.id);
       if (data) {
-        console.log(data)
-        setEvents(data)
+        console.log(data);
+        setEvents(data);
       }
-      if (error)
-        console.log(error)
+      if (error) console.log(error);
     };
     const getUser = async () => {
       const { data, error } = await supabase
@@ -39,6 +39,7 @@ const Events = (props: Props) => {
         console.log(error);
         return;
       }
+
       if (data.length == 0) {
         const { data, error } = await supabase
           .from("soc")
@@ -47,24 +48,32 @@ const Events = (props: Props) => {
           email: session?.user.email,
           name: "MOKSHA",
           soc_id: session?.user.id,
-          type: null
-        })
+          type: null,
+        });
       } else {
         setUserData(data[0]);
       }
       getEvents(session?.user.id);
-      console.log(userData)
+      console.log(userData);
     };
     if (session?.user.id) getUser();
-  }, [session]);
+  }, [session, userData]);
+
+  if (!session)
+    return (
+      <>
+        Please <Link href="/userlogin">Login</Link>First
+      </>
+    );
+
   return (
     <Dashboard>
       {EventModal && (
-        <div className="modal absolute top-0    grid h-screen w-full max-w-screen-2xl place-items-center bg-[rgba(0,0,34,0.8)]">
+        <div className="modal absolute top-0    grid h-screen w-[calc(100vw_-_26px)]  place-items-center bg-[#00000070] sm:w-[calc(100vw_-_150px)]">
           <CreateEventModal setEventModal={setEventModal} />
         </div>
       )}
-      <EventColumn setEventModal={setEventModal} />
+      <EventColumn setEventModal={setEventModal} events={events} />
     </Dashboard>
   );
 };
