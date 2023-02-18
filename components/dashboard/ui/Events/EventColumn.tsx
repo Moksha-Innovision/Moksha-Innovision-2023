@@ -1,29 +1,15 @@
 import EventCard from "./EventCard";
 import Link from "next/link";
 
-type Props = { setEventModal: (a: any) => any };
+type Props = {
+  setEventModal: (a: any) => any;
+  events: { [key: string]: any }[];
+};
 
 const EventColumn = (props: Props) => {
   const { setEventModal } = props;
 
-  const Events = [
-    {
-      name: "Event One",
-      desc: "This event is very noc Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium minima architecto magnam pariatur saepe vitae cumque in repudiandae? Doloremque voluptates adipisci praesentium eum quasi ipsum quod dignissimos iure officia.",
-    },
-    {
-      name: "Event One",
-      desc: "This event is very noc Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium minima architecto magnam pariatur saepe vitae cumque in repudiandae? Doloremque voluptates adipisci praesentium eum quasi ipsum quod dignissimos iure officia.",
-    },
-    {
-      name: "Event One",
-      desc: "This event is very noc Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium minima architecto magnam pariatur saepe vitae cumque in repudiandae? Doloremque voluptates adipisci praesentium eum quasi ipsum quod dignissimos iure officia.",
-    },
-    {
-      name: "Event One",
-      desc: "This event is very noc Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium minima architecto magnam pariatur saepe vitae cumque in repudiandae? Doloremque voluptates adipisci praesentium eum quasi ipsum quod dignissimos iure officia.",
-    },
-  ];
+  const Events = props.events;
 
   return (
     <div className="container m-auto max-h-screen overflow-y-auto px-4 md:px-8 lg:px-14 ">
@@ -37,7 +23,7 @@ const EventColumn = (props: Props) => {
       </div>
       <div className="flex w-full flex-col gap-6 ">
         {Events.map((event, index) => (
-          <EventCard {...event} key={index} />
+          <EventCard name={event.event_name} desc={event.desc} key={index} />
         ))}
       </div>
     </div>

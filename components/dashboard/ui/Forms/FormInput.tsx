@@ -22,7 +22,7 @@ const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
         className={` text-lg font-semibold text-${otherProps.labelColor} tracking-widest`}
       >
         {label}
-        <span className="font-serif text-xl text-red-500 italic ">
+        <span className="font-serif text-xl italic text-red-500 ">
           {otherProps.required && "*"}
         </span>
       </label>
@@ -32,7 +32,7 @@ const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
           {...otherProps}
           className={
             className ||
-            "w-full rounded bg-gray-200 px-3 py-2 text-gray-800 focus:outline-gray-300 placeholder:italic placeholder:font-bold "
+            "w-full rounded bg-gray-200 px-3 py-2 text-gray-800 placeholder:font-bold placeholder:italic focus:outline-gray-300 "
           }
         />
       ) : (
@@ -42,7 +42,7 @@ const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
           rows={5}
           className={
             className ||
-            "w-full rounded bg-gray-200 px-3 py-2 text-gray-800 focus:outline-gray-300 placeholder:italic placeholder:font-bold "
+            "w-full rounded bg-gray-200 px-3 py-2 text-gray-800 placeholder:font-bold placeholder:italic focus:outline-gray-300 "
           }
         ></textarea>
       )}

@@ -1,8 +1,18 @@
-import CreateEventModal from "../../components/dashboard/ui/Events/CreateEventModal";
+import { useSession } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
+import CreateEventModal from "../../components/dashboard/ui/Events/CreateEventModal";
 type Props = {};
 
 const newevent = (props: Props) => {
+  const session = useSession();
+  const router = useRouter();
+  useEffect(() => {
+    /*if (!session) {
+      router.push("/userlogin");
+    }*/
+  }, [session]);
   return (
     <Dashboard>
       <div className="container m-auto max-h-screen w-full overflow-y-auto px-4 md:px-8  lg:px-14">

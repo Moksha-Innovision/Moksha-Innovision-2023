@@ -12,13 +12,13 @@ const Choice = (props: Props) => {
       <div className="grid  h-screen w-screen place-items-center bg-prussian-blue-1000 bg-event-pattern bg-contain">
         <Link
           href={"/userlogin"}
-          className=" text-center flex justify-center items-center text-3xl font-bold bg-red-500 w-full h-40 hover:text-white"
+          className=" flex h-40 w-full items-center justify-center bg-red-500 text-center text-3xl font-bold hover:text-white"
         >
           User Login{" "}
         </Link>
         <Link
           href={"/adminlogin"}
-          className=" flex justify-center items-center text-3xl font-bold bg-saffron-500 w-full h-40 hover:text-white"
+          className=" flex h-40 w-full items-center justify-center bg-saffron-500 text-3xl font-bold hover:text-white"
         >
           Admin Login{" "}
         </Link>

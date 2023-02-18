@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { generateUUID } from "three/src/math/MathUtils";
 import { useState } from "react";
 import FormInput from "../Forms/FormInput";
 import Spinner from "../../../Loaders/Spinner";
@@ -28,8 +29,10 @@ const defaultFormFields: formFields = {
 
 const CreateEventModal = (props: Props) => {
   const session = useSession();
+  const randomID = generateUUID();
   const supabase = useSupabaseClient();
   const [formFields, setFormFields] = useState(defaultFormFields);
+  const [eventId, setEventId] = useState<any>(generateUUID());
   const [isLoading, setIsLoading] = useState("none");
   const [alert, setAlert] = useState("");
   const { setEventModal } = props;
@@ -65,7 +68,7 @@ const CreateEventModal = (props: Props) => {
 
     const { data } = await supabase.storage
       .from("event-posters")
-      .getPublicUrl(soc_id + "poster");
+      .getPublicUrl(eventId + "poster");
 
     poster = data.publicUrl;
     try {
@@ -89,6 +92,7 @@ const CreateEventModal = (props: Props) => {
       if (error) {
         throw error;
       } else {
+        setEventId(generateUUID());
         setAlert("success");
       }
     } catch (err) {
@@ -112,7 +116,7 @@ const CreateEventModal = (props: Props) => {
       const file = e.target.files[0];
       const { data, error } = await supabase.storage
         .from("event-posters")
-        .upload(session?.user.id + "poster", file, {
+        .upload(eventId + "poster", file, {
           cacheControl: "3600",
           upsert: false,
         });
@@ -133,7 +137,7 @@ const CreateEventModal = (props: Props) => {
           width={25}
           height={25}
           alt={"cross modal"}
-          className="absolute left-1 top-1"
+          className="absolute left-4 top-4"
         />
       </button>
       <h1 className="text-center text-4xl font-semibold text-black ">
@@ -269,7 +273,7 @@ const CreateEventModal = (props: Props) => {
             {" "}
             {isLoading === "image" ? <Spinner /> : "Create New Event"}
             {!formFields.event_name && (
-              <div className="overlay absolute rounded-lg text-center bg-[rgba(125,141,36,0.8)] p-2 font-bold">
+              <div className="overlay absolute rounded-lg bg-[rgba(125,141,36,0.8)] p-2 text-center font-bold">
                 Fill Event Name First
               </div>
             )}
@@ -285,7 +289,7 @@ const CreateEventModal = (props: Props) => {
       {alert && (
         <InlineAlert
           success={alert === "success"}
-          className="w-full rounded text-center tracking-wider font-bold mt-4 text-white drop-shadow-lg"
+          className="mt-4 w-full rounded text-center font-bold tracking-wider text-white drop-shadow-lg"
         >
           {alert === "success"
             ? `Congrats , Event Created `

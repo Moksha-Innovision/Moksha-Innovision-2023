@@ -27,7 +27,7 @@ const SidebarChip = (props: Props) => {
       <span className="scale-100 text-white">
         {<Image src={iconSrc} width={25} height={25} alt={name + " icon"} />}
       </span>
-      <span className="overflow-x-hidden group-hover:h-[24px] overflow-y-hidden  group-hover:w-auto x sm:h-0 sm:w-0 ">
+      <span className="x overflow-x-hidden overflow-y-hidden  group-hover:h-[24px] group-hover:w-auto sm:h-0 sm:w-0 ">
         {name}
       </span>
     </Link>

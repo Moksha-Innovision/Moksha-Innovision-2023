@@ -74,13 +74,13 @@ const UserLogin = () => {
             ></div>
           </div>
 
-          <div className="w-full flex flex-col text-xl">
+          <div className="flex w-full flex-col text-xl">
             <FormInput
               disable={isLoading}
               label="User Email"
               name="UserEmail"
               labelColor="white"
-              className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25 w-full"
+              className=" h-10 w-full rounded-lg bg-saffron-25 p-2 shadow-md focus:bg-white focus:outline-none md:h-10"
               placeholder="user@email.com"
               onChange={handleChange}
               value={UserEmail}
@@ -103,18 +103,15 @@ const UserLogin = () => {
 
           <div className="flex w-full flex-col items-center text-2xl">
             <button
-              className={`mt-3 h-14 w-[100%] rounded-lg bg-Safety-Orange-500 text-white outline outline-[3px] outline-black transition-[transform] duration-100  hover:scale-[1.04]`}
+              className={`mt-3  h-14  w-[100%] rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04]`}
             >
               {isLoading ? <Spinner /> : "Login"}
             </button>
           </div>
           <div>
-            <span className="text-white">Login as a Admin Instead?</span>
-            <Link href={"/adminlogin" || "/"}>
-              <span className="cursor-pointer tracking-wider  text-Safety-Orange-100 drop-shadow-md hover:scale-150">
-                {" Admin Login"}
-              </span>
-            </Link>
+            <span className="text-white">
+              Magic Link will be sent to your Email
+            </span>
           </div>
 
           {alert && (
@@ -134,3 +131,11 @@ const UserLogin = () => {
 };
 
 export default UserLogin;
+/*<div>
+          <span className="text-white">Login as a Admin Instead?</span>
+          <Link href={"/adminlogin" || "/"}>
+            <span className="text-Safety-Orange-100 tracking-wider  hover:scale-150 drop-shadow-md cursor-pointer">
+              {" Admin Login"}
+            </span>
+          </Link>
+        </div> */

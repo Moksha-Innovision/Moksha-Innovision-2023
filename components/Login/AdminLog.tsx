@@ -56,32 +56,32 @@ const AdminLog = () => {
     setIsLoading(false);
   };
   return (
-    <div className=" overflow-x-hidden relative min-h-[100vh] bg-[#300e2f]  flex justify-center items-center py-10">
+    <div className=" relative flex min-h-[100vh] items-center  justify-center overflow-x-hidden bg-[#300e2f] py-10">
       <div className=" fixed w-[100%] overflow-hidden  lg:w-[50%] ">
         <Image
           src={"logbg.svg"}
-          className="w-full h-full animate-wheel "
+          className="h-full w-full animate-wheel "
           alt={""}
           width={100}
           height={100}
         />
       </div>
       <form
-        className={`${koulen.className} z-10 w-[80vh] max-w-[500px] bg-Safety-Orange-100 flex flex-col items-center rounded-2xl py-6 md:px-16 px-12 space-y-2`}
+        className={`${koulen.className} z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl bg-Safety-Orange-100 py-6 px-12 md:px-16`}
       >
         <div className="">
-          <div className=" text-4xl text-center">Admin Log-In</div>
+          <div className=" text-center text-4xl">Admin Log-In</div>
           <div
-            className={`text-center  text-lg  "text-monza-800"
-              }`}
+            className={`"text-monza-800"  }  text-center
+              text-lg`}
           ></div>
         </div>
 
-        <div className="w-full flex flex-col text-xl">
+        <div className="flex w-full flex-col text-xl">
           <FormInput
             label="Admin Email"
             name="AdminEmail"
-            className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25 w-full"
+            className="h-8 w-full rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white md:h-10"
             placeholder="admin@email.com"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
@@ -90,10 +90,10 @@ const AdminLog = () => {
             required
           />
         </div>
-        <div className="w-full flex flex-col text-2xl items-center">
+        <div className="flex w-full flex-col items-center text-2xl">
           <button
             type="submit"
-            className={`bg-Safety-Orange-500 outline outline-[3px] rounded-lg outline-black mt-3 h-14 w-[100%] duration-100 transition-[transform] hover:scale-[1.04]  text-white`}
+            className={`mt-3 h-14 w-[100%] rounded-lg bg-Safety-Orange-500 text-white outline outline-[3px] outline-black transition-[transform] duration-100  hover:scale-[1.04]`}
             disabled={isLoading}
             onSubmit={handleLogin}
           >
@@ -104,7 +104,7 @@ const AdminLog = () => {
         <div>
           Not an Admin?
           <Link href={"/userlogin" || "/"}>
-            <span className="text-Safety-Orange-500 hover:scale-150 drop-shadow-md cursor-pointer">
+            <span className="cursor-pointer text-Safety-Orange-500 drop-shadow-md hover:scale-150">
               User Login
             </span>
           </Link>
@@ -113,7 +113,7 @@ const AdminLog = () => {
         {alert && (
           <InlineAlert
             success={alert === "success"}
-            className="w-full text-center text-white rounded drop-shadow-lg tracking-wider"
+            className="w-full rounded text-center tracking-wider text-white drop-shadow-lg"
           >
             {alert === "success"
               ? `Email Sent to ${email}`
