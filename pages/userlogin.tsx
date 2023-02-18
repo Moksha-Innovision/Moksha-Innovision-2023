@@ -2,7 +2,6 @@ import Image from "next/image";
 import Navbar from "../components/ui/Navbar/Navbar";
 import { Koulen } from "@next/font/google";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import InlineAlert from "../components/Alerts/InlineAlert";
@@ -75,21 +74,21 @@ const UserLogin = () => {
             ></div>
           </div>
 
-        <div className="w-full flex flex-col text-xl">
-          <FormInput
-            disable={isLoading}
-            label="User Email"
-            name="UserEmail"
-            labelColor="white"
-            className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25 w-full"
-            placeholder="user@email.com"
-            onChange={handleChange}
-            value={UserEmail}
-            type="email"
-            id="User Email"
-            required
-          />
-          {/* <FormInput
+          <div className="w-full flex flex-col text-xl">
+            <FormInput
+              disable={isLoading}
+              label="User Email"
+              name="UserEmail"
+              labelColor="white"
+              className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25 w-full"
+              placeholder="user@email.com"
+              onChange={handleChange}
+              value={UserEmail}
+              type="email"
+              id="User Email"
+              required
+            />
+            {/* <FormInput
             label="Password"
             name="password"
             type="password"
