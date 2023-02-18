@@ -5,7 +5,7 @@ import Dashboard from "../../components/dashboard/ui/Dashboard";
 import CreateEventModal from "../../components/dashboard/ui/Events/CreateEventModal";
 type Props = {};
 
-const newevent = (props: Props) => {
+const NewEvent = (props: Props) => {
   const session = useSession();
   const router = useRouter();
   useEffect(() => {
@@ -25,4 +25,4 @@ const newevent = (props: Props) => {
   );
 };
 
-export default newevent;
+export default NewEvent;

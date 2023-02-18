@@ -57,7 +57,7 @@ const Events = (props: Props) => {
       console.log(userData);
     };
     if (session?.user.id) getUser();
-  }, [session]);
+  }, [session, userData]);
 
   if (!session)
     return (
