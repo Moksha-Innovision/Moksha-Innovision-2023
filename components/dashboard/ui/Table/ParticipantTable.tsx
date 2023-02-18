@@ -5,24 +5,24 @@ type Props = {};
 const ParticipantTable = (props: Props) => {
   return (
     <>
-      <div className="relative overflow-x-auto max-w-full shadow-md rounded-lg overflow-y-auto max-h-[80vh] ">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400  ">
-          <thead className="text-xs text-gray-700 uppercase bg-saffron-500  ">
+      <div className="relative max-h-[80vh] max-w-full overflow-x-auto overflow-y-auto rounded-lg shadow-md ">
+        <table className="w-full text-left text-sm text-gray-500  ">
+          <thead className="bg-saffron-500 text-xs uppercase text-gray-700  ">
             <tr>
               <th scope="col" className="px-2 py-4 text-center">
-                <span className="bg-gray-200 p-2 rounded-md">Name</span>
+                <span className="rounded-md bg-gray-200 p-2">Name</span>
               </th>
               <th scope="col" className="px-2 py-4 text-center">
-                <span className="bg-gray-200 p-2 rounded-md">Email</span>
+                <span className="rounded-md bg-gray-200 p-2">Email</span>
               </th>
               <th scope="col" className="px-2 py-4 text-center">
-                <span className="bg-gray-200 p-2 rounded-md">Roll No.</span>
+                <span className="rounded-md bg-gray-200 p-2">Roll No.</span>
               </th>
               <th scope="col" className="px-2 py-4 text-center">
-                <span className="bg-gray-200 p-2 rounded-md">Branch</span>
+                <span className="rounded-md bg-gray-200 p-2">Branch</span>
               </th>
               <th scope="col" className="px-2 py-4 text-center">
-                <span className="bg-gray-200 p-2 rounded-md">Disqualify?</span>
+                <span className="rounded-md bg-gray-200 p-2">Disqualify?</span>
               </th>
             </tr>
           </thead>

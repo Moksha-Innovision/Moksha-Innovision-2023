@@ -14,12 +14,12 @@ export default function Home() {
   const [threed, setthreed] = useState(true);
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="min-h-screen bg-black">
       <Navbar />
 
       <div
         id="canvas-container"
-        className="h-[600px] w-[600px] m-auto rounded-full  -z-10 pt-[7vh] bg-black  shadow-2xl  shadow-saffron-500 "
+        className="-z-10 m-auto h-[600px] w-[600px]  rounded-full bg-black pt-[7vh]  shadow-2xl  shadow-saffron-500 "
       >
         <Canvas
           gl={{ logarithmicDepthBuffer: true, physicallyCorrectLights: true }}
@@ -54,17 +54,17 @@ export default function Home() {
         </Canvas>
       </div>
 
-      <h1 className="text-7xl text-center font-bold bg-gradient-to-b from-yellow-300 to-razzmatazz-600 text-transparent bg-clip-text drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)]">
+      <h1 className="bg-gradient-to-b from-yellow-300 to-razzmatazz-600 bg-clip-text text-center text-7xl font-bold text-transparent drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)]">
         Moksha Innovision
       </h1>
       <button
         onClick={() => setthreed(!threed)}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute top-[calc(_7vh_+_10px_)] cursor-pointer z-50"
+        className="absolute top-[calc(_7vh_+_10px_)] z-50 cursor-pointer rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
       >
         {threed ? "pause interactive" : "make interactive"}
       </button>
       <button
-        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded absolute top-[calc(_7vh_+_10px_)] right-3 cursor-pointer z-50"
+        className="absolute top-[calc(_7vh_+_10px_)] right-3 z-50 cursor-pointer rounded bg-red-500 py-2 px-4 font-bold text-white hover:bg-red-700"
         onClick={() => {
           console.log("clicked");
           setNight(!night);

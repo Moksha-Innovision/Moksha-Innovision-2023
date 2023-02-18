@@ -4,25 +4,17 @@
 
 *::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  background-color: #f5f5f5;
+  background-color: transparent;
   border-radius: 8px;
 }
 
 *::-webkit-scrollbar {
-  width: 8px;
+  width: 3px;
   border-radius: 10px;
-  background-color: #f5f5f5;
+  background-color: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background-color: #fff;
-  opacity: 0%;
-  background-image: -webkit-linear-gradient(
-    top,
-    #080242 0%,
-    #03174d 50%,
-    #090865 51%,
-    #030e51 100%
-  );
+  background-color: #b8b4b4;
 }

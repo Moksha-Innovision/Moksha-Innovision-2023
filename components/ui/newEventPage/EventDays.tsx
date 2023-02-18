@@ -13,7 +13,7 @@ const EventDays = ({ day, changeDay, isactive }: Props) => {
     <div
       className={`${
         isactive ? ACTIVE : ""
-      } px-5   h-10 lg:h-14 font-semibold rounded-lg cursor-pointer  text-2xl lg:text-3xl text-center  flex justify-center items-center hover:scale-105 transition-[transform] duration-100`}
+      } flex   h-10 cursor-pointer items-center justify-center rounded-lg  px-5 text-center text-2xl  font-semibold transition-[transform] duration-100 hover:scale-105 lg:h-14 lg:text-3xl`}
     >
       {" "}
       <span

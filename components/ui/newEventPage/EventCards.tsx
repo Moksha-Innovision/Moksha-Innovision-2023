@@ -7,7 +7,7 @@ const EventCards = ({ event }: Props) => {
   const [glow, setGlow] = useState(false);
   return (
     <div
-      className="bg-white bg-opacity-10 p-8 rounded-xl  "
+      className="rounded-xl bg-white bg-opacity-10 p-8  "
       onMouseOver={() => {
         setGlow(true);
       }}
@@ -15,7 +15,7 @@ const EventCards = ({ event }: Props) => {
         setGlow(false);
       }}
     >
-      <div className="bg-transparent flex items-center flex-col">
+      <div className="flex flex-col items-center bg-transparent">
         <div
           className={`${
             glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
@@ -26,20 +26,20 @@ const EventCards = ({ event }: Props) => {
             alt={event.img}
             width={100}
             height={100}
-            className=" w-[100%] h-[100%]"
+            className=" h-[100%] w-[100%]"
           ></Image>
         </div>
         <div
           className={`${
             glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-          } w-[100%] h-100%] mt-10 flex items-center transition-[box-shadow] duration-75`}
+          } h-100%] mt-10 flex w-[100%] items-center transition-[box-shadow] duration-75`}
         >
           <Image
             src={`events/${event.ticket}`}
             alt={event.img}
             width={100}
             height={100}
-            className=" w-[100%] h-[100%] "
+            className=" h-[100%] w-[100%] "
           ></Image>
         </div>
       </div>
