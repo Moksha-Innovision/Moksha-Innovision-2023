@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import LandingContactUS from "./LandingContactUS";
 import LandingEvent from "./LandingEvent";
 import LandingSponsers from "./LandingSponsers";
@@ -15,6 +16,9 @@ const LandingPage = () => {
       </div>
       <div>
         <LandingContactUS />
+      </div>
+      <div className="">
+        <Footer />
       </div>
     </div>
   );
