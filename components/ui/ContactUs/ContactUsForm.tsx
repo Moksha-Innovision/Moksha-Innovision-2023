@@ -88,4 +88,6 @@ const ContactUsForm = () => {
 };
 
 export default ContactUsForm;
-{/**h-14 w-[60%]  rounded-lg bg-prussian-blue-1000 text-white transition-[transform] duration-100 hover:scale-[1.04]  */ }
+{
+  /**h-14 w-[60%]  rounded-lg bg-prussian-blue-1000 text-white transition-[transform] duration-100 hover:scale-[1.04]  */
+}

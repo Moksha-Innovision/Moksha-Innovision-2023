@@ -96,7 +96,7 @@ const LegacyCarosel = () => {
             <SwiperSlide key={i} className=" flex justify-center ">
               {({ isActive }) => {
                 isActive && setActive(i);
-                console.log(active);
+                //console.log(active);
                 return <LegacyCards artist={A} id={i} active={active} />;
               }}
             </SwiperSlide>
