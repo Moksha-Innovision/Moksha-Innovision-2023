@@ -5,7 +5,7 @@ const LandingContactUS = () => {
   return (
     <div className="text-white justify-center items-center flex overflow-hidden   relative pt-[7vh] min-h-[70vh] pb-20">
       <div className="mt-6 md:mt-4 flex flex-col relative ">
-        <div className="absolute -bottom-16 transition-all duration-100  -right-[15%]  ">
+        {/*<div className="absolute -bottom-16 transition-all duration-100  -right-[15%]  ">
           <Image
             src="border-event-contact.svg"
             width={100}
@@ -22,7 +22,7 @@ const LandingContactUS = () => {
             alt="border"
             className=" w-28 lg:w-36 xl:w-42 bird-2 md:scale-[1.4] scale-[1.1] animate-wheel"
           />
-        </div>
+        </div>*/}
         <h1 className="text-4xl lg:text-5xl text-center  mb-7 md:mb-6   drop-shadow-lowGlowtext flex flex-col items-center text-white ">
           <div className="">CONTACT US</div>
           <Image

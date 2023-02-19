@@ -1,11 +1,34 @@
 import { Koulen } from "@next/font/google";
+import Image from "next/image";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const ContactUsForm = () => {
   return (
     <div
-      className={`${koulen.className} flex w-[80vw] max-w-[550px] flex-col items-center space-y-5 rounded-2xl border-4  border-yellow-500 bg-transparent py-6 px-12 text-black shadow-xl backdrop-blur-[2px] md:px-24`}
+      className={` relative  justify-center items-center bg-transparent overflow-hidden rounded-2xl border-4  border-yellow-500  w-[80vw] max-w-[550px] space-y-5 z-[1] py-6 px-12 md:px-24 text-black shadow-xl   `}
     >
+
+
+      <div className="xl:scale-[1.5] absolute -bottom-16 h-[150px] w-[150px] -right-[40px] transition-all  duration-100  ">
+        <Image
+          src="border-event-contact.svg"
+          width={100}
+          height={100}
+          alt="border"
+          className="  bird-1  w-full h-full rotate-[10deg] scale-[1.1] -scale-x-100 animate-wheel md:scale-[1.4] lg:w-36"
+        />
+      </div>
+
+      <div className=" xl:scale-[1.5] absolute -top-16 -left-[50px]  h-[150px] w-[150px] transition-all duration-100   ">
+        <Image
+          src="border-event-contact.svg"
+          width={100}
+          height={100}
+          alt="border"
+          className=" bird-2 w-full h-full scale-[1.1] animate-wheel md:scale-[1.4] lg:w-36"
+        />
+      </div>
+
       <div className="">
         <div className=" text-center text-[26px] leading-7 text-white">
           DROP US A MESSAGE
@@ -62,6 +85,8 @@ const ContactUsForm = () => {
           SEND MESSAGE
         </button>
       </div>
+
+
     </div>
   );
 };
