@@ -8,9 +8,9 @@ const Infiniteslider = (props: Props) => {
   const { right, images } = props;
   return (
     <div className="flex h-full">
-      <div className="slider-holder w-[200%] overflow-x-hidden h-full relative">
+      <div className="slider-holder relative h-full w-[200%] overflow-x-hidden">
         <div
-          className={`slider w-[200%] flex items-center justify-around absolute right-0 gap-2 h-full ${
+          className={`slider absolute right-0 flex h-full w-[200%] items-center justify-around gap-2 ${
             right ? "animate-infinitescrollright" : "animate-infinitescrollleft"
           }`}
         >

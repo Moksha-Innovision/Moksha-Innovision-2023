@@ -59,7 +59,7 @@ const Sponsors = (props: Props) => {
     <>
       <Navbar />
       <div
-        className="bg-blue-900 relative min-h-screen flex w-screen pt-[7vh]"
+        className="relative flex min-h-screen w-screen bg-blue-900 pt-[7vh]"
         ref={containerRef}
       >
         <Image
@@ -67,54 +67,54 @@ const Sponsors = (props: Props) => {
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-36 xl:w-44 left-0 hidden sm:inline-block borders-1"
+          className="borders-1 absolute left-0 hidden w-28 sm:inline-block lg:w-36 xl:w-44"
         />
         <Image
           src="borders.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-40 xl:w-44 right-0 -scale-x-100 hidden sm:inline-block borders-2"
+          className="borders-2 absolute right-0 hidden w-28 -scale-x-100 sm:inline-block lg:w-40 xl:w-44"
         />
         <Image
           src="borders.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-40 xl:w-44 bottom-0 -scale-y-100  borders-3"
+          className="borders-3 absolute bottom-0 w-28 -scale-y-100 lg:w-40  xl:w-44"
         />
         <Image
           src="borders.svg"
           width={100}
           height={100}
           alt="border"
-          className="absolute w-28 lg:w-40 xl:w-44 bottom-0 right-0 -scale-y-100 -scale-x-100 borders-4"
+          className="borders-4 absolute bottom-0 right-0 w-28 -scale-y-100 -scale-x-100 lg:w-40 xl:w-44"
         />
 
         <div
-          className={`max-w-full m-auto h-full ${koulen.className} w-full flex-col gap-8 md:gap-16 lg:gap-16 hidden sm:flex`}
+          className={`m-auto h-full max-w-full ${koulen.className} hidden w-full flex-col gap-8 sm:flex md:gap-16 lg:gap-16`}
         >
-          <h1 className="text-center text-6xl md:text-7xl drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] mb-auto text-white -mt-12">
+          <h1 className="mb-auto -mt-12 text-center text-6xl text-white drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] md:text-7xl">
             Past Sponsors
           </h1>
-          <div className="w-full top-row h-40">
+          <div className="top-row h-40 w-full">
             <Infiniteslider right={false} images={sponsorImages} />
           </div>
-          <div className="w-full bottom-row antialiased h-40">
+          <div className="bottom-row h-40 w-full antialiased">
             <Infiniteslider right={true} images={sponsorImages} />
           </div>
         </div>
 
-        <div className={`${koulen.className} w-full mobile mt-20 sm:hidden`}>
-          <h1 className="text-center text-6xl md:text-7xl drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] text-white ">
+        <div className={`${koulen.className} mobile mt-20 w-full sm:hidden`}>
+          <h1 className="text-center text-6xl text-white drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] md:text-7xl ">
             Past Sponsors
           </h1>
 
-          <div className="sponsors grid col-span-2 grid-cols-2 gap-3 px-6 my-16 pb-12">
+          <div className="sponsors col-span-2 my-16 grid grid-cols-2 gap-3 px-6 pb-12">
             {sponsorImages.map((sponsor) => {
               return (
                 <div
-                  className="flex w-full justify-center items-center h-28  top-row text-3xl bg-white rounded-lg border-[2px] border-black"
+                  className="top-row flex h-28 w-full items-center  justify-center rounded-lg border-[2px] border-black bg-white text-3xl"
                   key={sponsor}
                 >
                   {sponsor}
@@ -124,7 +124,7 @@ const Sponsors = (props: Props) => {
             {sponsorImages.map((sponsor) => {
               return (
                 <div
-                  className="flex w-full justify-center items-center h-28 text-3xl bottom-row bg-white rounded-lg border-[2px] border-black"
+                  className="bottom-row flex h-28 w-full items-center justify-center rounded-lg border-[2px] border-black bg-white text-3xl"
                   key={sponsor}
                 >
                   {sponsor}

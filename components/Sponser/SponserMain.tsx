@@ -56,7 +56,7 @@ const SponserMain = (props: Props) => {
   return (
     <>
       <div
-        className=" relative min-h-screen flex w-screen pt-[7vh]"
+        className=" relative flex min-h-screen w-screen pt-[7vh]"
         ref={containerRef}
       >
         {/*<Image
@@ -89,24 +89,24 @@ const SponserMain = (props: Props) => {
                 />*/}
 
         <div
-          className={`max-w-full m-auto h-full w-full flex-col gap-8 md:gap-16 lg:gap-16 hidden sm:flex`}
+          className={`m-auto hidden h-full w-full max-w-full flex-col gap-8 sm:flex md:gap-16 lg:gap-16`}
         >
-          <h1 className=" text-6xl md:text-7xl   md:mb-2 mb-1 lg:mb-3   drop-shadow-lowGlowtext flex flex-col items-center     text-center text-white   ">
+          <h1 className=" mb-1 flex   flex-col items-center text-center   text-6xl text-white drop-shadow-lowGlowtext md:mb-2     md:text-7xl lg:mb-3   ">
             Past Sponsors
           </h1>
-          <div className="w-full top-row h-40">
+          <div className="top-row h-40 w-full">
             <Infiniteslider right={false} images={sponsorImages} />
           </div>
-          <div className="w-full bottom-row antialiased h-40">
+          <div className="bottom-row h-40 w-full antialiased">
             <Infiniteslider right={true} images={sponsorImages} />
           </div>
         </div>
 
-        <div className={`w-full mobile mt-20 sm:hidden`}>
-          <h1 className=" text-6xl md:text-7xl   md:mb-2 mb-1 lg:mb-3   drop-shadow-lowGlowtext flex flex-col items-center     text-center text-white   ">
+        <div className={`mobile mt-20 w-full sm:hidden`}>
+          <h1 className=" mb-1 flex   flex-col items-center text-center   text-6xl text-white drop-shadow-lowGlowtext md:mb-2     md:text-7xl lg:mb-3   ">
             Past Sponsors
           </h1>
-          <div className="sponsors grid col-span-2 grid-cols-2 gap-3 px-6 my-16 pb-12">
+          <div className="sponsors col-span-2 my-16 grid grid-cols-2 gap-3 px-6 pb-12">
             {sponsorImages.map((sponsor) => {
               return (
                 <SliderSlideSm className="top-row" key={sponsor}>

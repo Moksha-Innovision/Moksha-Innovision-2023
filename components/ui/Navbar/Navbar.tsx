@@ -1,5 +1,5 @@
 import { Koulen } from "@next/font/google";
-import { useSession } from "@supabase/auth-helpers-react";
+import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -15,16 +15,16 @@ const profile = {
 const ACTIVELINKTYLE = "text-3xl";
 
 const Navbar = (props: Props) => {
-  const session = useSession();
+  const user = useUser();
+  const supabase = useSupabaseClient();
 
   const [show, setShow] = useState(false);
-  useEffect(() => {}, []);
   const router = useRouter();
   return (
     <div className="relative flex w-full flex-col">
-      <div className="navbar fixed top-3 z-[21] grid grid-cols-12 h-[7vh] w-full   px-6 ">
+      <div className="navbar fixed top-3 z-[21] grid h-[7vh] w-full grid-cols-12   px-6 ">
         <div
-          className={`h-12 w-12 py-2 md:hidden col-span-2 `}
+          className={`col-span-2 h-12 w-12 py-2 md:hidden `}
           onClick={() => setShow(!show)}
         >
           <Image
@@ -36,14 +36,14 @@ const Navbar = (props: Props) => {
           />
         </div>
 
-        <div className="col-span-8 md:col-span-2 flex justify-center md:justify-start">
+        <div className="col-span-8 flex justify-center md:col-span-2 md:justify-start">
           <Link href="/" className="  logo w-28 md:w-28">
             <Image width={500} height={500} src="/mokshalogo.svg" alt="" />
           </Link>
         </div>
 
         <ul
-          className={`links hidden w-full md:col-span-8 items-center justify-around gap-8 md:flex md:px-[10%] lg:px-[20%]  ${koulen.className} text-white`}
+          className={`links hidden w-full items-center justify-around gap-8 md:col-span-8 md:flex md:px-[10%] lg:px-[20%]  ${koulen.className} text-white`}
         >
           <NavLink href="/events">Events</NavLink>
           <NavLink href="/sponsors">Sponsors</NavLink>
@@ -56,13 +56,17 @@ const Navbar = (props: Props) => {
 
         {/* //Profile Button */}
 
-        <div className="col-span-2 profile-btn flex justify-center md:justify-end ">
+        <div className="profile-btn flex items-center">
           <button
             className="flex h-[45px]  items-center justify-center gap-3 rounded-full p-2 lg:px-10"
             onClick={() => {
-              session
-                ? router.push("/admin/events")
-                : router.push("/userlogin");
+              if (user) {
+                user?.user_metadata.isAdmin
+                  ? router.push("/admin/events")
+                  : router.push("/comingsoon");
+              } else {
+                router.push("/userlogin");
+              }
             }}
           >
             <div className="profile-pic flex h-6 w-10 items-center justify-center rounded-full">
@@ -80,6 +84,20 @@ const Navbar = (props: Props) => {
               {profile.name.split(" ")[0].slice(0, 8)}
             </span>
           </button>
+          {user && (
+            <button
+              className={`hidden w-[100%]  items-center rounded-lg   bg-Safety-Orange-500 py-2  px-3 text-white shadow-md transition-[transform] duration-100 hover:scale-[1.04]  disabled:pointer-events-none disabled:opacity-40 md:flex`}
+              onClick={async () => {
+                const { error } = await supabase.auth.signOut();
+              }}
+            >
+              <span
+                className={`${koulen.className}  hidden text-sm text-white sm:block`}
+              >
+                Logout
+              </span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -87,7 +105,7 @@ const Navbar = (props: Props) => {
       <div
         className={` ${
           show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
-        }  -left-[90vw]  z-20 h-[99vh] w-[60vw] fixed rounded-br-2xl  border-t-0 shadow-2xl transition-[transform] top-0 duration-200  md:hidden`}
+        }  fixed  -left-[90vw] top-0 z-20 h-[99vh] w-[60vw]  rounded-br-2xl border-t-0 shadow-2xl transition-[transform] duration-200  md:hidden`}
       >
         <ul
           className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain pl-8 text-white`}
@@ -104,9 +122,19 @@ const Navbar = (props: Props) => {
           <NavLink href="/contact" underlineclassName="left-3" imgScale={125}>
             Contact Us
           </NavLink>
-          {/*<NavLink href="/about" imgScale={110}>
-            About Us
-          </NavLink>*/}
+
+          {user && (
+            <button
+              className={`  flex w-fit  items-center rounded-lg bg-Safety-Orange-500 py-2 px-3 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04] disabled:pointer-events-none disabled:opacity-40`}
+              onClick={async () => {
+                const { error } = await supabase.auth.signOut();
+              }}
+            >
+              <span className={`${koulen.className} w-fit text-sm text-white`}>
+                Logout
+              </span>
+            </button>
+          )}
         </ul>
       </div>
     </div>

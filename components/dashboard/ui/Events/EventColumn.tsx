@@ -12,7 +12,7 @@ const EventColumn = (props: Props) => {
   const Events = props.events;
 
   return (
-    <div className="container m-auto max-h-screen overflow-y-auto px-4 md:px-8 lg:px-14 ">
+    <div className="container m-auto h-screen overflow-y-auto px-4 md:px-8 lg:px-14 ">
       <h1 className="mb-6 mt-6 text-center text-5xl font-semibold drop-shadow-glow">
         EVENTS
       </h1>

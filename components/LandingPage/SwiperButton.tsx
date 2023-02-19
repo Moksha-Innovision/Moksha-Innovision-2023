@@ -6,7 +6,7 @@ const SwiperButtonNxt = ({ className }: any) => {
   return (
     <div className={className}>
       <div
-        className="hover:scale-105 h-full w-full hover:cursor-pointer z-10 "
+        className="z-10 h-full w-full hover:scale-105 hover:cursor-pointer "
         onClick={() => {
           swiper.slideNext();
         }}
@@ -27,7 +27,7 @@ const SwiperButtonPre = ({ className }: any) => {
   return (
     <div className={className}>
       <div
-        className="hover:scale-105 h-full w-full hover:cursor-pointer rotate-180 z-10"
+        className="z-10 h-full w-full rotate-180 hover:scale-105 hover:cursor-pointer"
         onClick={() => {
           swiper.slidePrev();
         }}
