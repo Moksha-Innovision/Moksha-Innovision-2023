@@ -5,7 +5,7 @@ import Dashboard from "../../components/dashboard/ui/Dashboard";
 import CreateEventModal from "../../components/dashboard/ui/Events/CreateEventModal";
 type Props = {};
 
-const NewEvent = (props: Props) => {
+const Newevent = (props: Props) => {
   const session = useSession();
   const router = useRouter();
   useEffect(() => {
@@ -15,8 +15,8 @@ const NewEvent = (props: Props) => {
   }, [session]);
   return (
     <Dashboard>
-      <div className="container m-auto max-h-screen w-full overflow-y-auto px-4 md:px-8  lg:px-14">
-        <h1 className="mb-6 mt-8 text-center text-5xl font-semibold drop-shadow-glow">
+      <div className="container px-4 md:px-8 lg:px-14 overflow-y-auto max-h-screen w-full  m-auto">
+        <h1 className="text-5xl font-semibold drop-shadow-glow text-center mb-6 mt-8">
           Create New Event
         </h1>
         <CreateEventModal setEventModal={() => {}} />
@@ -25,4 +25,4 @@ const NewEvent = (props: Props) => {
   );
 };
 
-export default NewEvent;
+export default Newevent;

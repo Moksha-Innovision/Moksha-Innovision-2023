@@ -86,16 +86,17 @@ const LegacyCarosel = () => {
         modules={[Autoplay, Navigation, A11y]}
         className="mySwiper"
       >
-        <div className=" absolute top-[30%] z-10 flex w-full  justify-center ">
+        <div className=" top-[30%] w-full absolute flex justify-center  z-10 ">
           <SwiperButtonPre className={"w-[50px]"} />
           <div className="w-[150px] md:w-[200px] lg:w-[250px]"></div>
           <SwiperButtonNxt className={"w-[50px]"} />
         </div>
         {artists.map((A: any, i) => {
           return (
-            <SwiperSlide className=" flex justify-center " key={i}>
+            <SwiperSlide key={i} className=" flex justify-center ">
               {({ isActive }) => {
                 isActive && setActive(i);
+                console.log(active);
                 return <LegacyCards artist={A} id={i} active={active} />;
               }}
             </SwiperSlide>

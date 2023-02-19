@@ -1,12 +1,11 @@
-import Image from "next/image";
-import Navbar from "../components/ui/Navbar/Navbar";
 import { Koulen } from "@next/font/google";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import InlineAlert from "../components/Alerts/InlineAlert";
 import FormInput from "../components/dashboard/ui/Forms/FormInput";
 import Spinner from "../components/Loaders/Spinner";
+import Navbar from "../components/ui/Navbar/Navbar";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const deafultFormFields = {

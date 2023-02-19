@@ -10,25 +10,27 @@ interface Props {
 }
 const EventCaroselSlides = ({ slide }: Props) => {
   return (
-    <div className="min-h-30vh bg-white">
-      <div className="h-[200%] w-[200%] md:h-[100%] md:w-[100%]">
+    <div className="bg-white min-h-30vh">
+      <div className="md:w-[100%] md:h-[100%] w-[200%] h-[200%]">
         <Image
           src={`events/${slide?.poster}`}
           alt={"blur"}
           width={100}
           height={100}
-          className=" h-[100%] w-[100%] "
+          className=" w-[100%] h-[100%] "
         />
       </div>
-      <div className="md:pl-26 absolute top-0 flex h-[100%] w-[100%] flex-col justify-end bg-[#12123470] pb-10 pl-20 text-white ">
-        <div className="w-[70%] md:w-[50%] lg:w-[40%]">
-          <div className="mb-1 text-4xl tracking-wide md:text-5xl">
+      <div className="absolute h-[100%] w-[100%] flex flex-col justify-end pb-10 pl-20 md:pl-26 bg-[#12123470] top-0 text-white ">
+        <div className="lg:w-[40%] md:w-[50%] w-[70%]">
+          <div className="text-3xl sm:text-4xl md:text-5xl mb-1 tracking-wide">
             {slide?.title}
           </div>
-          <div className="text-sm font-thin ">{slide?.description}</div>
+          <div className="text-xs sm:text-sm font-light ">
+            {slide?.description}
+          </div>
           <div
-            className="mt-3 w-fit rounded-md bg-white px-5 py-1 
-                    text-lg tracking-wide text-prussian-blue-1000 shadow-soft transition-[filter,transform] hover:scale-[1.01] hover:cursor-pointer hover:drop-shadow-lowGlowtext md:text-xl "
+            className="text-prussian-blue-1000 rounded-md tracking-wide hover:cursor-pointer hover:scale-[1.01] hover:drop-shadow-lowGlowtext 
+                    transition-[filter,transform] shadow-soft mt-3 text-lg md:text-xl bg-white w-fit px-5 py-1 "
           >
             {slide?.regLink}Register Now
           </div>

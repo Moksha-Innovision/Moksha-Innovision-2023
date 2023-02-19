@@ -1,16 +1,14 @@
 import { Koulen } from "@next/font/google";
-import Image from "next/image";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import AdminLog from "../components/Login/AdminLog";
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
-import FormInput from "../components/dashboard/ui/Forms/FormInput";
-import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import Spinner from "../components/Loaders/Spinner";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import InlineAlert from "../components/Alerts/InlineAlert";
+import FormInput from "../components/dashboard/ui/Forms/FormInput";
+import Spinner from "../components/Loaders/Spinner";
 import Navbar from "../components/ui/Navbar/Navbar";
+const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const deafultFormFields = {
   AdminEmail: "",

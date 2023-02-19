@@ -1,11 +1,9 @@
 import { Koulen } from "@next/font/google";
 import Image from "next/image";
 
-import gsap from "gsap";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 
 import ContactUsForm from "./ContactUsForm";
-import Navbar from "../Navbar/Navbar";
 
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 

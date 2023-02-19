@@ -144,16 +144,16 @@ const Event = () => {
   const [day, setDay] = useState("I");
   return (
     <div
-      className={`${koulen.className} relative flex items-center justify-center overflow-x-hidden bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-repeat text-white`}
+      className={` text-white  justify-center items-center flex  overflow-x-hidden relative`}
     >
-      <div className="relative mt-[7vh] mb-4 flex w-full flex-col   items-center pt-10  md:mt-14">
-        <h1 className="mb-7 text-center text-4xl  drop-shadow-lowGlowtext md:mb-6  lg:text-5xl  ">
+      <div className="mt-[7vh] pt-10 md:mt-14 flex flex-col relative   w-full items-center  mb-4">
+        <h1 className="text-4xl lg:text-5xl text-center  mb-7 md:mb-6  drop-shadow-lowGlowtext  ">
           EVENTS
         </h1>
         <div className="">
           <EventCarosel></EventCarosel>
         </div>
-        <div className="mt-10 flex h-full space-x-1">
+        <div className="flex space-x-1 h-full mt-10">
           {days.map((d, i) => {
             return (
               <EventDays

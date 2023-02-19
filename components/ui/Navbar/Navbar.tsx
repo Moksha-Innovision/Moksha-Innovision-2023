@@ -94,7 +94,7 @@ const Navbar = (props: Props) => {
           <NavLink href="/sponsors" imgScale={110}>
             Sponsors
           </NavLink>
-          <NavLink href="/faq" imgScale={95} underlineclassName="-left-4">
+          <NavLink href="/faq" imgScale={110} underlineclassName="-left-4">
             Faq
           </NavLink>
           <NavLink href="/contact" underlineclassName="left-3" imgScale={125}>

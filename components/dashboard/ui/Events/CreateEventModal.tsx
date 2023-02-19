@@ -1,10 +1,10 @@
+import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import Image from "next/image";
-import { generateUUID } from "three/src/math/MathUtils";
 import { useState } from "react";
-import FormInput from "../Forms/FormInput";
-import Spinner from "../../../Loaders/Spinner";
+import { generateUUID } from "three/src/math/MathUtils";
 import InlineAlert from "../../../Alerts/InlineAlert";
-import { useSupabaseClient, useSession } from "@supabase/auth-helpers-react";
+import Spinner from "../../../Loaders/Spinner";
+import FormInput from "../Forms/FormInput";
 type Props = { setEventModal: (a: any) => any };
 
 interface formFields {

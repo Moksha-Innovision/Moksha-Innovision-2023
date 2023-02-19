@@ -18,7 +18,9 @@ const NavLink = (props: Props) => {
     <Link
       href={href}
       className={`link relative uppercase  ${
-        router.asPath === href ? "text-3xl" : "text-xl"
+        router.asPath === href
+          ? "text-3xl w-fit min-w-[100px] text-center "
+          : "text-xl"
       } ${className}`}
     >
       {children}
@@ -28,9 +30,9 @@ const NavLink = (props: Props) => {
           width={100}
           height={20}
           alt={"underlien "}
-          className={`b-2 absolute ${underlineclassName} scale-${
+          className={`absolute left-[2px] -bottom-2  ${underlineclassName} scale-${
             imgScale || "150"
-          } w-24`}
+          } w-full`}
         />
       )}
     </Link>

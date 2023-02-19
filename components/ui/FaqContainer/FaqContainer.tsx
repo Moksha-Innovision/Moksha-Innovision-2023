@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import FaqTile from "../FaqTile/FaqTile";
-import { Koulen, Montserrat } from "@next/font/google";
+import { Koulen } from "@next/font/google";
+import { useState } from "react";
+import FaqTile from "./FaqTile";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const Faqs = [

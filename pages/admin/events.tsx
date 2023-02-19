@@ -1,6 +1,5 @@
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
 import CreateEventModal from "../../components/dashboard/ui/Events/CreateEventModal";
@@ -12,7 +11,7 @@ const Events = (props: Props) => {
   const session = useSession();
   const supabase = useSupabaseClient();
   const [userData, setUserData] = useState<any>("");
-  const [events, setEvents] = useState<any>([]);
+  const [events, setEvents] = useState<any>("");
   const router = useRouter();
   useEffect(() => {
     /*if (!session) {
@@ -39,7 +38,6 @@ const Events = (props: Props) => {
         console.log(error);
         return;
       }
-
       if (data.length == 0) {
         const { data, error } = await supabase
           .from("soc")
@@ -57,23 +55,15 @@ const Events = (props: Props) => {
       console.log(userData);
     };
     if (session?.user.id) getUser();
-  }, [session, userData]);
-
-  if (!session)
-    return (
-      <>
-        Please <Link href="/userlogin">Login</Link>First
-      </>
-    );
-
+  }, [session]);
   return (
     <Dashboard>
       {EventModal && (
-        <div className="modal absolute top-0    grid h-screen w-[calc(100vw_-_26px)]  place-items-center bg-[#00000070] sm:w-[calc(100vw_-_150px)]">
+        <div className="modal absolute top-0    w-full max-w-screen-2xl h-screen bg-[rgba(0,0,34,0.8)] grid place-items-center">
           <CreateEventModal setEventModal={setEventModal} />
         </div>
       )}
-      <EventColumn setEventModal={setEventModal} events={events} />
+      <EventColumn setEventModal={setEventModal} events={[]} />
     </Dashboard>
   );
 };

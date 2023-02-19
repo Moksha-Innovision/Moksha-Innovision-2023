@@ -5,17 +5,19 @@ import Legacy from "./Legacy";
 
 const LandingPage = () => {
   return (
-    <div className="">
+    <div className=" flex flex-col">
       <Legacy />
-      <div className="flex justify-center">
+      <div className="flex justify-center items-start  h-[70vh]">
         <LandingEvent />
       </div>
-      <LandingSponsers />
-      <div className="">
+      <div className=" h-fit relative z-10 mt-[30%]">
+        <LandingSponsers />
+      </div>
+      <div>
         <LandingContactUS />
       </div>
     </div>
   );
 };
-
+//className="relative -top-60 sm:-top-20 md:-top-60 lg:-top-28 xl:-top-16 z-10 pt-[15%]"
 export default LandingPage;
