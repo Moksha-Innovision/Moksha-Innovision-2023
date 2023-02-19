@@ -5,7 +5,7 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 const ContactUsForm = () => {
   return (
     <div
-      className={` relative  justify-center items-center bg-transparent overflow-hidden rounded-2xl border-4  border-yellow-500  w-[80vw] max-w-[550px] space-y-5 z-[1] py-6 px-12 md:px-24 text-black shadow-xl   `}
+      className={` relative  justify-center items-center bg-transparent overflow-hidden rounded-2xl border-4  border-yellow-500  w-[80vw] max-w-[550px] space-y-5 z-[1] py-6 px-12 md:px-20 text-black shadow-xl   `}
     >
       <div className="xl:scale-[1.5] absolute -bottom-16 h-[150px] w-[150px] -right-[40px] transition-all  duration-100  ">
         <Image
@@ -42,7 +42,7 @@ const ContactUsForm = () => {
         <input
           type="text"
           className="h-8 rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white md:h-10"
-          placeholder="JAMES CHUCH"
+          placeholder="FULL NAME"
         />
       </div>
       <div className="flex w-full flex-col text-xl">
@@ -52,7 +52,7 @@ const ContactUsForm = () => {
         <input
           type="text"
           className="h-8 rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white md:h-10"
-          placeholder="JAMES CHUCH"
+          placeholder="user@email.com"
         />
       </div>
       <div className="flex w-full flex-col text-xl">
@@ -63,7 +63,7 @@ const ContactUsForm = () => {
         <input
           type="text"
           className="h-8 rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white md:h-10"
-          placeholder="JAMES CHUCH"
+          placeholder="CONTACT"
         />
       </div>
       <div className="flex w-full flex-col text-xl">
@@ -73,13 +73,13 @@ const ContactUsForm = () => {
         <textarea
           name=""
           id=""
-          placeholder="MOKSHA WAS REALLY FUN TO ATTEND! MOJ KARDI.."
+          placeholder="MOKSHA WAS REALLY FUN TO ATTEND!"
           className="  h-[100px] resize-none rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white"
           maxLength={250}
         ></textarea>
       </div>
       <div className="flex w-full flex-col items-center text-xl">
-        <button className="h-14 w-[60%]  rounded-lg bg-prussian-blue-1000 text-white transition-[transform] duration-100 hover:scale-[1.04] ">
+        <button className="h-14 w-[60%]  rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04]">
           SEND MESSAGE
         </button>
       </div>
@@ -88,3 +88,4 @@ const ContactUsForm = () => {
 };
 
 export default ContactUsForm;
+{/**h-14 w-[60%]  rounded-lg bg-prussian-blue-1000 text-white transition-[transform] duration-100 hover:scale-[1.04]  */ }

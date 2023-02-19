@@ -18,13 +18,14 @@ const Navbar = (props: Props) => {
   const session = useSession();
 
   const [show, setShow] = useState(false);
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   const router = useRouter();
   return (
     <div className="relative flex w-full flex-col">
-      <div className="navbar fixed top-3 z-[21] flex h-[7vh] w-full items-center justify-between  px-6 ">
+
+      <div className="navbar fixed top-3 z-[21] grid grid-cols-12 h-[7vh] w-full   px-6 ">
         <div
-          className={`h-12 w-12 py-2 md:hidden `}
+          className={`h-12 w-12 py-2 md:hidden col-span-2 `}
           onClick={() => setShow(!show)}
         >
           <Image
@@ -35,11 +36,15 @@ const Navbar = (props: Props) => {
             className="rounded-[1px] antialiased outline outline-2 outline-offset-4 outline-white"
           />
         </div>
-        <Link href="/" className="logo w-28 md:w-28">
-          <Image width={500} height={500} src="/mokshalogo.svg" alt="" />
-        </Link>
+
+        <div className="col-span-8 md:col-span-2 flex justify-center md:justify-start">
+          <Link href="/" className="  logo w-28 md:w-28">
+            <Image width={500} height={500} src="/mokshalogo.svg" alt="" />
+          </Link>
+        </div>
+
         <ul
-          className={`links hidden w-full  items-center justify-center gap-8 md:flex ${koulen.className} text-white`}
+          className={`links hidden w-full md:col-span-8 items-center justify-around gap-8 md:flex md:px-[10%] lg:px-[20%]  ${koulen.className} text-white`}
         >
           <NavLink href="/events">Events</NavLink>
           <NavLink href="/sponsors">Sponsors</NavLink>
@@ -47,12 +52,12 @@ const Navbar = (props: Props) => {
           <NavLink href="/contact" underlineclassName="left-3">
             Contact Us
           </NavLink>
-          <NavLink href="/about">About Us</NavLink>
+          {/*<NavLink href="/about">About Us</NavLink>*/}
         </ul>
 
         {/* //Profile Button */}
 
-        <div className="profile-btn flex ">
+        <div className="col-span-2 profile-btn flex justify-center md:justify-end ">
           <button
             className="flex h-[45px]  items-center justify-center gap-3 rounded-full p-2 lg:px-10"
             onClick={() => {
@@ -81,9 +86,8 @@ const Navbar = (props: Props) => {
 
       {/*Ham menu */}
       <div
-        className={` ${
-          show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
-        }  -left-[90vw]  z-20 h-[99vh] w-[60vw] fixed rounded-br-2xl  border-t-0 shadow-2xl transition-[transform] top-0 duration-200  md:hidden`}
+        className={` ${show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
+          }  -left-[90vw]  z-20 h-[99vh] w-[60vw] fixed rounded-br-2xl  border-t-0 shadow-2xl transition-[transform] top-0 duration-200  md:hidden`}
       >
         <ul
           className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain pl-8 text-white`}
@@ -100,9 +104,9 @@ const Navbar = (props: Props) => {
           <NavLink href="/contact" underlineclassName="left-3" imgScale={125}>
             Contact Us
           </NavLink>
-          <NavLink href="/about" imgScale={110}>
+          {/*<NavLink href="/about" imgScale={110}>
             About Us
-          </NavLink>
+          </NavLink>*/}
         </ul>
       </div>
     </div>
