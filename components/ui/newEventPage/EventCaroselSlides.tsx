@@ -10,8 +10,8 @@ interface Props {
 }
 const EventCaroselSlides = ({ slide }: Props) => {
   return (
-    <div className="bg-white min-h-30vh">
-      <div className="md:w-[100%] md:h-[100%] w-[200%] h-[200%]">
+    <div className="bg-white min-h-30vh relative ">
+      <div className=" md:w-[150%] md:h-[150%] lg:w-[100%] lg:h-[100%] w-[200%] h-[200%]">
         <Image
           src={`events/${slide?.poster}`}
           alt={"blur"}

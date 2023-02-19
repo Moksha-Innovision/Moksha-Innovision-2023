@@ -4,6 +4,7 @@ import Navbar from "../components/ui/Navbar/Navbar";
 const contact = () => {
   return (
     <div className="">
+
       <Navbar />
       <ContactUs />
     </div>
