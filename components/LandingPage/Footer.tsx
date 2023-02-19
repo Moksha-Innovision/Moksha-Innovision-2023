@@ -22,10 +22,13 @@ const Footer = () => {
           <li className="hover:underline-offset-2 hover:underline transition-all duration-100">
             <Link href="/contact">CONTACT US</Link>
           </li>
+
           <li className="hover:underline-offset-2 hover:underline transition-all duration-100">
             <Link href="/events">EVENTS</Link>
           </li>
-
+          <li className="hover:underline-offset-2 hover:underline transition-all duration-100">
+            <Link href="/faq">FAQ &apos; S</Link>
+          </li>
         </ul>
       </div>
       <div className="col-span-6 px-10 sm:px-0 sm:col-span-2 flex h-full justify-around items-center ">
