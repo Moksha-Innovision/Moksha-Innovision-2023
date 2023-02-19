@@ -7,8 +7,6 @@ const ContactUsForm = () => {
     <div
       className={` relative  justify-center items-center bg-transparent overflow-hidden rounded-2xl border-4  border-yellow-500  w-[80vw] max-w-[550px] space-y-5 z-[1] py-6 px-12 md:px-24 text-black shadow-xl   `}
     >
-
-
       <div className="xl:scale-[1.5] absolute -bottom-16 h-[150px] w-[150px] -right-[40px] transition-all  duration-100  ">
         <Image
           src="border-event-contact.svg"
@@ -85,8 +83,6 @@ const ContactUsForm = () => {
           SEND MESSAGE
         </button>
       </div>
-
-
     </div>
   );
 };

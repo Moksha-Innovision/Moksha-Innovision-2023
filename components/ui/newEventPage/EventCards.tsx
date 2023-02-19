@@ -7,7 +7,7 @@ const EventCards = ({ event }: Props) => {
   const [glow, setGlow] = useState(false);
   return (
     <div
-      className="rounded-xl bg-white bg-opacity-10 p-8  "
+      className="rounded-xl bg-yellow-400 bg-opacity-10 backdrop-blur-[3px] p-8  "
       onMouseOver={() => {
         setGlow(true);
       }}
@@ -17,8 +17,9 @@ const EventCards = ({ event }: Props) => {
     >
       <div className="flex flex-col items-center bg-transparent">
         <div
-          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-            } rounded-2xl transition-[box-shadow] duration-75`}
+          className={`${
+            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+          } rounded-2xl transition-[box-shadow] duration-75`}
         >
           <Image
             src={`events/${event.img}`}
@@ -30,8 +31,9 @@ const EventCards = ({ event }: Props) => {
         </div>
         {/******************************************************** */}
         <div
-          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-            } h-100%] mt-10 flex w-[100%] flip-card-front items-center transition-[box-shadow] duration-75 flip-card`}
+          className={`${
+            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+          } h-100%] mt-10 flex w-[100%] flip-card-front items-center transition-[box-shadow] duration-75 flip-card`}
         >
           <div className="flip-card-inner">
             <div className="flip-card-front relative">
@@ -43,10 +45,8 @@ const EventCards = ({ event }: Props) => {
                 className=" h-[100%] w-[100%]"
               ></Image>
               <div className="flex w-[100%] h-[100%] text-[#271300] absolute top-0">
-                <div className="w-[40%]">
-                </div>
-                <div className="w-[25%]">
-                </div>
+                <div className="w-[40%]"></div>
+                <div className="w-[25%]"></div>
                 <div className=" flex flex-col  text-left flex-wrap text-[20px] sm:text-[18px] md:text-[17px] lg:text-[16px] xl:text-[15px] justify-center w-[42%]">
                   <p className="">Time: </p>
                   <p className="">Venue:</p>
@@ -62,14 +62,12 @@ const EventCards = ({ event }: Props) => {
                 className=" h-[100%] w-[100%] "
               ></Image>
               <div className="flex w-[100%] h-[100%] text-[#271300] absolute top-0">
-                <div className="w-[10%]">
-                </div>
+                <div className="w-[10%]"></div>
 
                 <div className=" flex flex-col  text-left flex-wrap text-[20px] sm:text-[18px] md:text-[17px] lg:text-[16px] xl:text-[15px] justify-center w-[42%]">
                   <p className="">COMING SOON....</p>
                 </div>
-                <div className="w-[10%]">
-                </div>
+                <div className="w-[10%]"></div>
               </div>
             </div>
           </div>

@@ -22,7 +22,7 @@ const Navbar = (props: Props) => {
   const router = useRouter();
   return (
     <div className="relative flex w-full flex-col">
-      <div className="navbar fixed top-0 z-10 flex h-[7vh] w-full items-center justify-between  px-6 ">
+      <div className="navbar fixed top-3 z-[21] flex h-[7vh] w-full items-center justify-between  px-6 ">
         <div
           className={`h-12 w-12 py-2 md:hidden `}
           onClick={() => setShow(!show)}
@@ -83,7 +83,7 @@ const Navbar = (props: Props) => {
       <div
         className={` ${
           show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
-        } absolute -left-[90vw] top-[7vh] z-30 h-[90vh] w-[60vw] rounded-br-2xl  border-t-0 shadow-2xl transition-[transform]  duration-200  md:hidden`}
+        }  -left-[90vw]  z-20 h-[99vh] w-[60vw] fixed rounded-br-2xl  border-t-0 shadow-2xl transition-[transform] top-0 duration-200  md:hidden`}
       >
         <ul
           className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain pl-8 text-white`}
