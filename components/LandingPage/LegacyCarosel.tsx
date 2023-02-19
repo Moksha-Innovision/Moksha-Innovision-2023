@@ -86,7 +86,7 @@ const LegacyCarosel = () => {
         modules={[Autoplay, Navigation, A11y]}
         className="mySwiper"
       >
-        <div className=" top-[30%] w-full absolute flex justify-center  z-10 ">
+        <div className=" absolute top-[30%] z-10 flex w-full  justify-center ">
           <SwiperButtonPre className={"w-[50px]"} />
           <div className="w-[150px] md:w-[200px] lg:w-[250px]"></div>
           <SwiperButtonNxt className={"w-[50px]"} />

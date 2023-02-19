@@ -8,10 +8,10 @@ const LandingPage = () => {
   return (
     <div className=" flex flex-col">
       <Legacy />
-      <div className="flex justify-center items-start  h-[70vh]">
+      <div className="flex h-[70vh] items-start  justify-center">
         <LandingEvent />
       </div>
-      <div className=" h-fit relative z-10 mt-[30%]">
+      <div className=" relative z-10 mt-[30%] h-fit">
         <LandingSponsers />
       </div>
       <div>

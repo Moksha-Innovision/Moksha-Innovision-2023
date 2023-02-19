@@ -3,15 +3,15 @@ import LegacyCarosel from "./LegacyCarosel";
 
 const Legacy = () => {
   return (
-    <div className=" bg-legacy bg-repeat bg-cover bg-black w-[100vw] relative min-h-[60vh] md:h-[80vh] lg:h-[100vh]">
-      <div className="absolute -bottom-[40vh] lg:-bottom-[46vh] justify-center flex w-full">
-        <div className="w-[80vw] h-[80vh] lg:min-h-[700px] lg:min-w-[700px] min-h-[500px] min-w-[500px]   animate-wheel">
+    <div className=" relative min-h-[60vh] w-[100vw] bg-black bg-legacy bg-cover bg-repeat md:h-[80vh] lg:h-[100vh]">
+      <div className="absolute -bottom-[40vh] flex w-full justify-center lg:-bottom-[46vh]">
+        <div className="h-[80vh] min-h-[500px] w-[80vw] min-w-[500px] animate-wheel lg:min-h-[700px]   lg:min-w-[700px]">
           <Image
             src={"/Landing/Legecyrot.svg"}
             width={100}
             height={100}
             alt={"cross modal"}
-            className="w-full h-full "
+            className="h-full w-full "
           />
         </div>
       </div>

@@ -4,62 +4,62 @@ import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="h-fit w-full  bg-prussian-blue-1000 shadow-soft px-10  text-white grid grid-cols-12">
-      <div className="col-span-6 sm:col-span-2  py-4">
+    <div className="grid h-fit  w-full grid-cols-12 bg-prussian-blue-1000  px-10 text-white shadow-soft">
+      <div className="col-span-6 py-4  sm:col-span-2">
         <Image
           src={"/Landing/footerLogo.svg"}
           alt={"asa"}
           height={100}
           width={100}
-          className="w-full h-full"
+          className="h-full w-full"
         />
       </div>
-      <div className="col-span-0 hidden sm:block sm:col-span-8 px-10 md:px-20 lg:px-32 xl:px-40">
-        <ul className="w-full flex justify-around items-center h-full font-light ">
-          <li className="hover:underline-offset-2 hover:underline transition-all duration-100">
+      <div className="col-span-0 hidden px-10 sm:col-span-8 sm:block md:px-20 lg:px-32 xl:px-40">
+        <ul className="flex h-full w-full items-center justify-around font-light ">
+          <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
             <Link href="/userlogin">REGISTER</Link>
           </li>
-          <li className="hover:underline-offset-2 hover:underline transition-all duration-100">
+          <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
             <Link href="/contact">CONTACT US</Link>
           </li>
 
-          <li className="hover:underline-offset-2 hover:underline transition-all duration-100">
+          <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
             <Link href="/events">EVENTS</Link>
           </li>
-          <li className="hover:underline-offset-2 hover:underline transition-all duration-100">
+          <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
             <Link href="/faq">FAQ &apos; S</Link>
           </li>
         </ul>
       </div>
-      <div className="col-span-6 px-10 sm:px-0 sm:col-span-2 flex h-full justify-around items-center ">
+      <div className="col-span-6 flex h-full items-center justify-around px-10 sm:col-span-2 sm:px-0 ">
         <a
           href=""
-          className="w-[30px] sm:w-[25px] md:w-[32px] hover:scale-[1.08] transition-all duration-100"
+          className="w-[30px] transition-all duration-100 hover:scale-[1.08] sm:w-[25px] md:w-[32px]"
         >
           <FaFacebookF
             height={100}
             width={100}
-            className="w-full h-full"
+            className="h-full w-full"
           ></FaFacebookF>
         </a>
         <a
           href=""
-          className="w-[30px] sm:w-[25px] md:w-[32px] hover:scale-[1.08] transition-all duration-100"
+          className="w-[30px] transition-all duration-100 hover:scale-[1.08] sm:w-[25px] md:w-[32px]"
         >
           <FaTwitter
             height={100}
             width={100}
-            className="w-full h-full"
+            className="h-full w-full"
           ></FaTwitter>
         </a>
         <a
           href=""
-          className="w-[30px] sm:w-[25px] md:w-[32px] hover:scale-[1.08] transition-all duration-100"
+          className="w-[30px] transition-all duration-100 hover:scale-[1.08] sm:w-[25px] md:w-[32px]"
         >
           <FaInstagram
             height={100}
             width={100}
-            className="w-full h-full"
+            className="h-full w-full"
           ></FaInstagram>
         </a>
       </div>

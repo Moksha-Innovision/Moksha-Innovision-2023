@@ -19,7 +19,7 @@ const NavLink = (props: Props) => {
       href={href}
       className={`link relative uppercase  ${
         router.asPath === href
-          ? "text-3xl w-fit min-w-[100px] text-center "
+          ? "w-fit min-w-[100px] text-center text-3xl "
           : "text-xl"
       } ${className}`}
     >

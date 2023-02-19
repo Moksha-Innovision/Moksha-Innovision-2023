@@ -5,20 +5,20 @@ import FaqContainer from "./FaqContainer";
 const FaqMain = () => {
   const containerRef: any = useRef();
   return (
-    <div className="w-full relative  pt-[7vh]" ref={containerRef}>
-      <div className="flex flex-col md:flex-row-reverse  md:px-[5vw]  lg:px-[8vw] items-center md:justify-between min-h-[93vh] pb-8">
+    <div className="relative w-full  pt-[7vh]" ref={containerRef}>
+      <div className="flex min-h-[93vh] flex-col  items-center  pb-8 md:flex-row-reverse md:justify-between md:px-[5vw] lg:px-[8vw]">
         <div className="w-[50%] md:px-[5%] lg:px-[8%]">
-          <div className="h-[30vh] md:h-[50%]   mt-10">
+          <div className="mt-10 h-[30vh]   md:h-[50%]">
             <Image
               src={"peacock.svg"}
               alt=""
               width={100}
               height={100}
-              className="owl-big w-full h-full"
+              className="owl-big h-full w-full"
             />
           </div>
         </div>
-        <div className="md:w-[60vw] md:mt-10 flex  lg:w-[38vw]">
+        <div className="flex md:mt-10 md:w-[60vw]  lg:w-[38vw]">
           <FaqContainer />
         </div>
       </div>

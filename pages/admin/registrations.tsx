@@ -1,18 +1,34 @@
-import { useSession } from "@supabase/auth-helpers-react";
+import { useSession, useUser } from "@supabase/auth-helpers-react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
 import ParticipantTable from "../../components/dashboard/ui/Table/ParticipantTable";
+import Notadmin from "../../components/FallbackPages/notadmin";
 type Props = {};
 
 const Registrations = (props: Props) => {
   const session = useSession();
   const router = useRouter();
-  useEffect(() => {
-    /*if (!session) {
-      router.push("/userlogin");
-    }*/
-  }, [session]);
+
+  const user = useUser();
+  useEffect(() => {}, []);
+
+  if (user) {
+    if (!user.user_metadata.isAdmin) {
+      return (
+        <>
+          <Notadmin type={"not-authorized"} />
+        </>
+      );
+    }
+  } else {
+    return (
+      <>
+        <Notadmin type="login" />
+      </>
+    );
+  }
   return (
     <>
       {/* <Navbar/> */}

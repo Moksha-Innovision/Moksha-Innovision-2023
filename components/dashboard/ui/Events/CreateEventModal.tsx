@@ -1,4 +1,8 @@
-import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
+import {
+  useSession,
+  useSupabaseClient,
+  useUser,
+} from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import { useState } from "react";
 import { generateUUID } from "three/src/math/MathUtils";
@@ -29,7 +33,7 @@ const defaultFormFields: formFields = {
 
 const CreateEventModal = (props: Props) => {
   const session = useSession();
-  const randomID = generateUUID();
+  const user = useUser();
   const supabase = useSupabaseClient();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const [eventId, setEventId] = useState<any>(generateUUID());
@@ -45,7 +49,6 @@ const CreateEventModal = (props: Props) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(formFields);
     let {
       rules,
       poc1,
@@ -61,8 +64,8 @@ const CreateEventModal = (props: Props) => {
       instagram,
       poster,
     } = formFields;
-    setIsLoading("image");
-    let soc_id = session?.user.id;
+    setIsLoading("form");
+    let soc_id = user?.id;
     rules = rules.split("\n");
     let POCS = { ...formatPoc(poc1), ...formatPoc(poc2), ...formatPoc(poc3) };
 
@@ -233,6 +236,7 @@ const CreateEventModal = (props: Props) => {
           required
           onChange={handleChange}
           labelColor="black"
+          pattern="^[^:\s]+:\d+$"
           label="POC"
           placeholder="Name : 9833123434 , use : to separate phno."
           type="text"
@@ -242,6 +246,7 @@ const CreateEventModal = (props: Props) => {
         <FormInput
           onChange={handleChange}
           labelColor="black"
+          pattern="^[^:\s]+:\d+$"
           label="POC 2"
           type="text"
           placeholder="Name:9833123434 , use : to separate"
@@ -250,6 +255,7 @@ const CreateEventModal = (props: Props) => {
         />
         <FormInput
           onChange={handleChange}
+          pattern="^[^:\s]+:\d+$"
           labelColor="black"
           label="POC 3"
           placeholder="Name:9833123434 , use : to separate"

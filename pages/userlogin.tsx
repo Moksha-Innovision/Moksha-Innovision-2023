@@ -12,10 +12,10 @@ const deafultFormFields = {
   UserEmail: "",
   password: "",
 };
-
+const SECRET_PASS_KEY = "miavgfihiwbasbtd";
 const UserLogin = () => {
   const supabase = useSupabaseClient();
-
+  const [claimsAdmin, setClaimsAdmin] = useState(false);
   const [formFields, setFormFields] = useState(deafultFormFields);
   const [isLoading, setIsLoading] = useState(false);
   const [alert, setAlert] = useState("");
@@ -34,7 +34,11 @@ const UserLogin = () => {
       const { data, error } = await supabase.auth.signInWithOtp({
         email: UserEmail,
         options: {
-          emailRedirectTo: "http://localhost:3000/admin/events",
+          emailRedirectTo: `${window.location.origin}`,
+
+          data: {
+            isAdmin: claimsAdmin && password === SECRET_PASS_KEY,
+          },
         },
       });
 
@@ -87,22 +91,27 @@ const UserLogin = () => {
               id="User Email"
               required
             />
-            {/* <FormInput
-            label="Password"
-            name="password"
-            type="password"
-            className="outline outline-[3px] rounded-lg h-8 md:h-10 p-2 focus:bg-white bg-saffron-25 w-full"
-            placeholder="..."
-            onChange={handleChange}
-            value={password}
-            id="Password"
-            required
-          /> */}
+
+            {claimsAdmin && (
+              <FormInput
+                label="Enter Your Secret Admin Key"
+                name="password"
+                labelColor="white"
+                type="password"
+                className={`$ h-8 w-full rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white md:h-10`}
+                placeholder="XXXX-XXXX-XXXX"
+                onChange={handleChange}
+                value={password}
+                id="Password"
+                required
+              />
+            )}
           </div>
 
           <div className="flex w-full flex-col items-center text-2xl">
             <button
-              className={`mt-3  h-14  w-[100%] rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04]`}
+              disabled={password !== SECRET_PASS_KEY && claimsAdmin}
+              className={`mt-3  h-14  w-[100%] rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04] disabled:pointer-events-none disabled:opacity-40`}
             >
               {isLoading ? <Spinner /> : "Login"}
             </button>
@@ -110,6 +119,14 @@ const UserLogin = () => {
           <div>
             <span className="text-white">
               Magic Link will be sent to your Email
+            </span>
+          </div>
+          <div>
+            <span
+              className="pb-8 text-saffron-500 hover:cursor-pointer hover:underline"
+              onClick={() => setClaimsAdmin(!claimsAdmin)}
+            >
+              {claimsAdmin ? "Not an Admin ?" : "Login as admin instead?"}
             </span>
           </div>
 
