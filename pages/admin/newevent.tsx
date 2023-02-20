@@ -35,6 +35,12 @@ const Newevent = (props: Props) => {
           Create New Event
         </h1>
         <CreateEventModal setEventModal={() => {}} />
+        <Link
+          href={"/admin/events"}
+          className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-transparent bg-red-600   px-3 py-2 font-medium"
+        >
+          <button>Back To Events Page</button>
+        </Link>
       </div>
     </Dashboard>
   );

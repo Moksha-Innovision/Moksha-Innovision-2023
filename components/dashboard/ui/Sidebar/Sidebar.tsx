@@ -1,5 +1,6 @@
 import SidebarChip from "./SidebarChip";
 import Image from "next/image";
+import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
 import Link from "next/link";
 import { useState } from "react";
 type Props = {};
@@ -28,19 +29,24 @@ const SidebarChips = [
 ];
 
 const Sidebar = (props: Props) => {
+  const user = useUser();
+  const supabase = useSupabaseClient();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     // <div className="flex  bg-event-pattern bg-contain  bg-prussian-blue-1000 w-full h-screen ">
 
     <div
-      className={` group fixed left-0 z-10 h-screen w-64 cursor-pointer rounded rounded-r-[20px] bg-[#130d4185] shadow-lg  shadow-[rgba(255,255,255,0.2)] backdrop-blur-sm transition-all  duration-300 hover:backdrop-blur-sm  sm:w-28 sm:translate-x-0  sm:bg-[rgba(255,255,255,0.1)]  sm:hover:w-64 ${
+      className={` group fixed  left-0 z-10 h-screen w-64 cursor-pointer rounded rounded-r-[20px] bg-[#130d4185] shadow-lg  shadow-[rgba(255,255,255,0.2)] backdrop-blur-sm transition-all duration-300  hover:backdrop-blur-sm sm:w-28  sm:translate-x-0 sm:overflow-y-auto  sm:bg-[rgba(255,255,255,0.1)]  sm:hover:w-64 ${
         sidebarOpen
-          ? "translate-x-0 bg-prussian-blue-1000"
+          ? "translate-x-0 overflow-y-scroll bg-prussian-blue-1000"
           : "-translate-x-full"
-      }`}
+      } `}
     >
       <span
-        className="clickme absolute top-0 left-full flex h-screen flex-col items-center  justify-center bg-transparent  text-white sm:hidden"
+        className={`${
+          sidebarOpen ? "left-0" : "left-full"
+        } clickme fixed top-0   flex h-screen flex-col items-center  justify-center bg-transparent  text-white sm:hidden`}
         onClick={() => setSidebarOpen(!sidebarOpen)}
         style={{ writingMode: "vertical-rl" }}
       >
@@ -73,16 +79,30 @@ const Sidebar = (props: Props) => {
         </div>
         <div className="flex flex-col  items-center">
           <h4 className="font-poppins  font-semibold capitalize tracking-wide text-white transition-all duration-300 group-hover:w-auto sm:text-base sm:group-hover:text-2xl">
-            {"Soc Name"}
+            {user?.email?.slice(0, 7) + ".."}
           </h4>
           <span className="flex items-center space-x-1 text-sm tracking-wide">
             <span className="scale text-white sm:text-xs sm:group-hover:text-sm">
-              {"Soc@eamil.com"}
+              {user?.email?.slice(0, 12) + "..."}
             </span>
           </span>
         </div>
       </div>
-      <ul className="text-md mt-10  space-y-2">
+      {user && (
+        <div className="w-full text-center">
+          <span
+            className="rounded-md bg-saffron-600 p-2 font-bold text-white hover:scale-105"
+            onClick={() => {
+              async () => {
+                const { error } = await supabase.auth.signOut();
+              };
+            }}
+          >
+            Logout
+          </span>
+        </div>
+      )}
+      <ul className="text-md mt-10 mb-4  space-y-2 overflow-y-scroll">
         {SidebarChips.map((chip) => (
           <li key={chip.href}>
             <SidebarChip {...chip} setSidebarOpen={setSidebarOpen} />

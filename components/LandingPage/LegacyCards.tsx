@@ -11,7 +11,7 @@ const LegacyCards = ({ id, active, artist }: any) => {
     else if ((9 + active - 2) % 9 == id) setPos(-2);
     else if ((9 + active + 2) % 9 == id) setPos(2);
     else setPos(10);
-  });
+  }, []);
   return (
     <div
       className={`

@@ -21,19 +21,19 @@ const Events = (props: Props) => {
   const router = useRouter();
   const user = useUser();
 
-  useEffect(() => {
-    const getEvent = async () => {
-      const { data, error } = await supabase
-        .from("socevent")
-        .select("*")
-        .eq("soc_id", user?.id);
-      setEvents(data);
-    };
+  const getEvent = async () => {
+    const { data, error } = await supabase
+      .from("socevent")
+      .select("*")
+      .eq("soc_id", user?.id);
+    setEvents(data);
+  };
 
+  useEffect(() => {
     if (user && user.user_metadata.isAdmin) {
       getEvent();
     }
-  }, []);
+  }, [user]);
 
   if (user) {
     if (!user.user_metadata.isAdmin) {
@@ -54,8 +54,8 @@ const Events = (props: Props) => {
   return (
     <Dashboard>
       {EventModal && (
-        <div className="modal absolute top-0    grid h-screen w-full  max-w-screen-2xl place-items-center backdrop-blur-md">
-          <CreateEventModal setEventModal={setEventModal} />
+        <div className="modal z-3 absolute    top-0 grid h-[93vh] w-full  max-w-screen-2xl place-items-center backdrop-blur-md">
+          <CreateEventModal getEvent={getEvent} setEventModal={setEventModal} />
         </div>
       )}
       <EventColumn setEventModal={setEventModal} events={events} />
