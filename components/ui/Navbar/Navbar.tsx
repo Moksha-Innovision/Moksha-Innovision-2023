@@ -36,9 +36,8 @@ const Navbar = (props: Props) => {
   return (
     <div className="relative flex w-full flex-col">
       <div
-        className={`navbar fixed z-[21] grid grid-cols-12  ${
-          nav && "bg-yellow-900 bg-opacity-20 backdrop-blur-[10px]"
-        } w-full  py-1   px-6 `}
+        className={`navbar fixed z-[21] grid grid-cols-12  ${nav && "bg-yellow-900 bg-opacity-20 backdrop-blur-[10px]"
+          } w-full  py-1   px-6 `}
       >
         <div
           className={` col-span-2 flex h-full w-12 items-center justify-center py-2 md:hidden `}
@@ -75,6 +74,9 @@ const Navbar = (props: Props) => {
           <NavLink href="/contact" underlineclassName="">
             Contact Us
           </NavLink>
+          <NavLink href="/legacy" >
+            Legacy
+          </NavLink>
           {/*<NavLink href="/about">About Us</NavLink>*/}
         </ul>
 
@@ -109,9 +111,8 @@ const Navbar = (props: Props) => {
 
       {/*Ham menu */}
       <div
-        className={` ${
-          show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
-        }  fixed  -left-[90vw] top-0 z-20 h-[99vh] w-[60vw]  rounded-br-2xl border-t-0 shadow-2xl transition-[transform] duration-200  md:hidden`}
+        className={` ${show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
+          }  fixed  -left-[90vw] top-0 z-20 h-[99vh] w-[60vw]  rounded-br-2xl border-t-0 shadow-2xl transition-[transform] duration-200  md:hidden`}
       >
         <ul
           className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain pl-8 text-white`}
@@ -127,6 +128,9 @@ const Navbar = (props: Props) => {
           </NavLink>
           <NavLink href="/contact" underlineclassName="left-3" imgScale={125}>
             Contact Us
+          </NavLink>
+          <NavLink href="/legacy" underlineclassName="left-3" imgScale={125}>
+            Legacy
           </NavLink>
           {/*<NavLink href="/about" imgScale={110}>
             About Us

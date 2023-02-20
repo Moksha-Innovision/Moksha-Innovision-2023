@@ -1,3 +1,4 @@
+
 import { Koulen } from "@next/font/google";
 import Footer from "../components/LandingPage/Footer";
 import Navbar from "../components/ui/Navbar/Navbar";
