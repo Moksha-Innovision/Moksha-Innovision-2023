@@ -1,6 +1,5 @@
 import { Inter } from "@next/font/google";
 
-
 import { OrbitControls, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
@@ -11,13 +10,14 @@ const inter = Inter({ subsets: ["latin"] });
 import { Koulen } from "@next/font/google";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
-
 export default function Home() {
   const [night, setNight] = useState(true);
   const [threed, setthreed] = useState(true);
 
   return (
-    <div className={`${koulen.className} min-h-[100vh] bg-prussian-blue-900 bg-event-pattern bg-contain bg-repeat`}>
+    <div
+      className={`${koulen.className} min-h-[100vh] bg-prussian-blue-900 bg-event-pattern bg-contain bg-repeat`}
+    >
       <Navbar />
 
       <div

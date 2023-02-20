@@ -565,6 +565,8 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/3dmodelMoksha.gltf");
+useGLTF.preload(
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/3dmodelMoksha.gltf"
+);
 
 export default Model;
