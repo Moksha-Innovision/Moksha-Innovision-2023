@@ -42,6 +42,8 @@ const LegacyCards = ({ id, active, artist }: any) => {
             width={100}
             height={100}
             alt={"asad"}
+            quality={1}
+            priority
             className="h-[100%] w-[100%]"
           />
         </div>
