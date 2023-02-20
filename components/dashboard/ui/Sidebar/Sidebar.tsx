@@ -1,7 +1,7 @@
-import SidebarChip from "./SidebarChip";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import SidebarChip from "./SidebarChip";
 type Props = {};
 
 const SidebarChips = [
@@ -55,7 +55,7 @@ const Sidebar = (props: Props) => {
           className="mb-8 w-auto sm:group-hover:w-auto"
         >
           <Image
-            src="/MokshaAdmin.svg"
+            src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/MokshaAdmin.svg"
             width={150}
             height={150}
             alt={"moksha admin logo"}
@@ -65,7 +65,9 @@ const Sidebar = (props: Props) => {
         <div className="w-36 transition-all duration-500 sm:w-24 sm:group-hover:w-36">
           <Image
             className="w-full rounded-full  "
-            src={"/profilecircle.svg"}
+            src={
+              "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/profilecircle.svg"
+            }
             alt="James Bhatta"
             width={150}
             height={150}

@@ -6,13 +6,15 @@ const SwiperButtonNxt = ({ className }: any) => {
   return (
     <div className={className}>
       <div
-        className="hover:scale-105 h-full w-full hover:cursor-pointer z-10 "
+        className="z-10 h-full w-full hover:scale-105 hover:cursor-pointer "
         onClick={() => {
           swiper.slideNext();
         }}
       >
         <Image
-          src={"/Landing/arrownxt.svg"}
+          src={
+            "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/arrownxt.svg"
+          }
           alt={"asfa"}
           height={100}
           width={100}
@@ -27,13 +29,15 @@ const SwiperButtonPre = ({ className }: any) => {
   return (
     <div className={className}>
       <div
-        className="hover:scale-105 h-full w-full hover:cursor-pointer rotate-180 z-10"
+        className="z-10 h-full w-full rotate-180 hover:scale-105 hover:cursor-pointer"
         onClick={() => {
           swiper.slidePrev();
         }}
       >
         <Image
-          src={"/Landing/arrownxt.svg"}
+          src={
+            "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/arrownxt.svg"
+          }
           alt={"asfa"}
           height={100}
           width={100}

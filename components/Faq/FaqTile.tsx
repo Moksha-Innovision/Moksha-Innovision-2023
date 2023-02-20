@@ -25,12 +25,12 @@ const FaqTile = (props: Props) => {
 
   return (
     <div
-      className={`outer  border-black border-2 bg-white ${
+      className={`outer  border-2 bg-white ${
         active ? "shadow-2xl" : ""
-      } rounded-md max-w-2xl grid grid-cols-12 transition-all   cursor-pointer`}
+      } grid max-w-2xl cursor-pointer grid-cols-12 rounded-md   transition-all`}
     >
       <div
-        className="question  py-4 grid grid-cols-8 col-span-12 items-center"
+        className="question  col-span-12 grid grid-cols-8 items-center py-4"
         onClick={handleFaqClick}
       >
         <div className="faq-icon  col-start-1 col-end-2 m-auto">
@@ -38,7 +38,7 @@ const FaqTile = (props: Props) => {
             width={30}
             height={30}
             src={`${active ? "-" : "+"}.svg`}
-            alt="faq-icon"
+            alt="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/faq-icon"
           />
         </div>
         <h3
@@ -48,7 +48,7 @@ const FaqTile = (props: Props) => {
         </h3>
       </div>
       <p
-        className={`answer col-start-3 col-span-10 -ml-4 sm:-ml-7  mb-1 ${
+        className={`answer col-span-10 col-start-3 -ml-4 mb-1  sm:-ml-7 ${
           active ? "max-h-20" : "max-h-0"
         } overflow-y-hidden transition-all duration-200 ease-linear ${
           montserrat.className

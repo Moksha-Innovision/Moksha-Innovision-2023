@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <div
-      className={`${koulen.className} bg-event-pattern bg-repeat bg-contain  bg-prussian-blue-1000 min-h-[150vh] overflow-x-hidden w-[100vw]`}
+      className={`${koulen.className} min-h-[150vh] w-[100vw] overflow-x-hidden  bg-prussian-blue-1000 bg-event-pattern bg-contain bg-repeat`}
     >
       <Navbar />
       <LandingPage />

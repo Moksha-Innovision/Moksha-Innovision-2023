@@ -11,19 +11,20 @@ import Image from "next/image";
 import { Autoplay } from "swiper";
 
 const LandingSponsers = () => {
+  const spons = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
   return (
-    <div className="min-h-[10vh] z-10  h-full">
-      <h1 className="text-4xl lg:text-5xl text-center  mb-7 md:mb-6   drop-shadow-lowGlowtext flex flex-col items-center text-white ">
+    <div className="z-10 h-full  min-h-[10vh]">
+      <h1 className="mb-7 flex flex-col  items-center text-center   text-4xl text-white drop-shadow-lowGlowtext md:mb-6 lg:text-5xl ">
         <div className="">SPONSORS</div>
         <Image
-          src="/underline.svg"
+          src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/underline.svg"
           width={100}
           height={20}
           alt={"underlien "}
-          className={`b-2 inline scale-150 w-24`}
+          className={`b-2 inline w-24 scale-150`}
         />
       </h1>
-      <div className="w-[150%] h-[200px] mx-auto  ring-offset-4   my-5 rounded-md overflow-hidden swiper-box ">
+      <div className="swiper-box mx-auto my-5  h-[200px]   w-[150%] overflow-hidden rounded-md ring-offset-4 ">
         <Swiper
           spaceBetween={30}
           slidesPerGroup={1}
@@ -59,10 +60,10 @@ const LandingSponsers = () => {
           modules={[Autoplay]}
           className="mySwiper"
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((p: any, i) => {
+          {spons.map((p: any, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="flex justify-center items-center h-40">
+                <div className="flex h-40 items-center justify-center">
                   {/*<LandingSponserSlide />*/}
                   {
                     <SliderSlide key={i} className="h-32 ">

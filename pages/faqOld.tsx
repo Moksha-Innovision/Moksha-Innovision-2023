@@ -11,11 +11,11 @@ const Faq = (props: Props) => {
     <>
       <Navbar />
       <div
-        className="w-full bg-prussian-blue-1000  relative  pt-[7vh]"
+        className="relative w-full  bg-prussian-blue-1000  pt-[7vh]"
         ref={containerRef}
       >
-        <div className="grid grid-cols-12 grid-rows-6 max-w-7xl m-auto h-[93vh] bg-prussian-blue-1000 z-10 pt-8 transition ">
-          <div className="owl relative -ml-8 -mt-8  col-start-2 col-end-12 sm:col-end-5 md:col-end-6  row-start-1 row-end-7 flex items-center justify-center  w-0 md:w-80 lg:w-96  ">
+        <div className="z-10 m-auto grid h-[93vh] max-w-7xl grid-cols-12 grid-rows-6 bg-prussian-blue-1000 pt-8 transition ">
+          <div className="owl relative col-start-2 col-end-12  row-start-1 row-end-7 -ml-8 -mt-8  flex w-0 items-center justify-center sm:col-end-5  md:col-end-6 md:w-80 lg:w-96  ">
             <Image
               src={"peacock.svg"}
               alt=""
@@ -24,17 +24,17 @@ const Faq = (props: Props) => {
               className=" owl-big"
             />
           </div>
-          <div className="cloud col-start-9 col-end-12 md:col-start-5 md:col-end-7   items-start md:items-end sm:-mt-4 hidden md:flex row-start-2 md:row-start-2 z-[11]"></div>
-          <div className="Faqs  z-10 col-span-10  col-start-2 md:col-start-7 lg:col-start-7 col-end-12  row-start-3 md:row-start-2 faq-container">
+          <div className="cloud z-[11] col-start-9 col-end-12 row-start-2   hidden items-start sm:-mt-4 md:col-start-5 md:col-end-7 md:row-start-2 md:flex md:items-end"></div>
+          <div className="Faqs  faq-container z-10  col-span-10 col-start-2 col-end-12 row-start-3  md:col-start-7 md:row-start-2 lg:col-start-7">
             <FaqContainer />
           </div>
-          <div className="row-start-1 row-span-2 col-span-full flex mb-3 mx-auto sm:hidden">
+          <div className="col-span-full row-span-2 row-start-1 mx-auto mb-3 flex sm:hidden">
             <Image
               src={"peacock.svg"}
               alt=""
               width={500}
               height={500}
-              className=" relative owl-small"
+              className=" owl-small relative"
             />
           </div>
         </div>

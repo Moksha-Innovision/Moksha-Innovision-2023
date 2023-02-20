@@ -104,7 +104,7 @@ const From = ({ fsd }: Prop) => {
           <Image
             width={45}
             height={45}
-            src="google.svg"
+            src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/google.svg"
             alt={""}
             className="pr-4"
           />

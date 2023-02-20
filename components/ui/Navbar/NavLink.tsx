@@ -19,20 +19,18 @@ const NavLink = (props: Props) => {
       href={href}
       className={`link relative uppercase  ${
         router.asPath === href
-          ? "text-3xl w-fit min-w-[100px] text-center "
+          ? "w-fit  min-w-[90px] text-center text-3xl  "
           : "text-xl"
       } ${className}`}
     >
       {children}
       {router.asPath === href && (
         <Image
-          src="/underline.svg"
+          src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests//underline.svg"
           width={100}
           height={20}
           alt={"underlien "}
-          className={`absolute left-[2px] -bottom-2  ${underlineclassName} scale-${
-            imgScale || "150"
-          } w-full`}
+          className={` ${underlineclassName} scale-${imgScale || "150"} w-full`}
         />
       )}
     </Link>

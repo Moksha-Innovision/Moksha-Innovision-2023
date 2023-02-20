@@ -133,7 +133,9 @@ const CreateEventModal = (props: Props) => {
     <div className="relative m-auto flex max-h-[80vh] min-w-[350px] max-w-xl flex-col rounded-lg bg-white p-4 px-6 md:min-w-[500px]">
       <button onClick={() => setEventModal(false)}>
         <Image
-          src={"/modalcross.svg"}
+          src={
+            "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/modalcross.svg"
+          }
           width={25}
           height={25}
           alt={"cross modal"}
