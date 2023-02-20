@@ -9,7 +9,7 @@ import { generateUUID } from "three/src/math/MathUtils";
 import InlineAlert from "../../../Alerts/InlineAlert";
 import Spinner from "../../../Loaders/Spinner";
 import FormInput from "../Forms/FormInput";
-type Props = { setEventModal: (a: any) => any };
+type Props = { setEventModal: (a: any) => any; getEvent?: () => any };
 
 interface formFields {
   [key: string]: any;
@@ -29,6 +29,7 @@ const defaultFormFields: formFields = {
   poc2: "",
   poc3: "",
   poster: "",
+  form_question: "",
 };
 
 const CreateEventModal = (props: Props) => {
@@ -39,7 +40,7 @@ const CreateEventModal = (props: Props) => {
   const [eventId, setEventId] = useState<any>(generateUUID());
   const [isLoading, setIsLoading] = useState("none");
   const [alert, setAlert] = useState("");
-  const { setEventModal } = props;
+  const { setEventModal, getEvent } = props;
 
   const formatPoc = (text: string) => {
     let arr = text.split(":");
@@ -63,10 +64,14 @@ const CreateEventModal = (props: Props) => {
       team_size,
       instagram,
       poster,
+      form_question,
     } = formFields;
+
     setIsLoading("form");
+
     let soc_id = user?.id;
     rules = rules.split("\n");
+    form_question = form_question.split("\n");
     let POCS = { ...formatPoc(poc1), ...formatPoc(poc2), ...formatPoc(poc3) };
 
     const { data } = await supabase.storage
@@ -74,6 +79,7 @@ const CreateEventModal = (props: Props) => {
       .getPublicUrl(eventId + "poster");
 
     poster = data.publicUrl;
+
     try {
       const { data, error } = await supabase.from("socevent").insert([
         {
@@ -89,6 +95,7 @@ const CreateEventModal = (props: Props) => {
           instagram,
           poster,
           soc_id,
+          form_question,
         },
       ]);
 
@@ -97,13 +104,13 @@ const CreateEventModal = (props: Props) => {
       } else {
         setEventId(generateUUID());
         setAlert("success");
+        e.target.reset();
       }
     } catch (err) {
       setAlert("error");
       console.log(err);
     }
     setIsLoading("none");
-    setFormFields(defaultFormFields);
   };
 
   const handleChange = (e: any) => {
@@ -133,7 +140,7 @@ const CreateEventModal = (props: Props) => {
   };
 
   return (
-    <div className="relative m-auto flex max-h-[80vh] min-w-[350px] max-w-xl flex-col rounded-lg bg-white p-4 px-6 md:min-w-[500px]">
+    <div className="relative m-auto flex max-h-[700px] min-w-[350px] max-w-xl flex-col rounded-lg bg-white p-4 px-6 md:min-w-[500px]">
       <button onClick={() => setEventModal(false)}>
         <Image
           src={"/modalcross.svg"}
@@ -241,7 +248,7 @@ const CreateEventModal = (props: Props) => {
           placeholder="Name : 9833123434 , use : to separate phno."
           type="text"
           id="POC"
-          name="poc"
+          name="poc1"
         />
         <FormInput
           onChange={handleChange}
@@ -261,8 +268,19 @@ const CreateEventModal = (props: Props) => {
           placeholder="Name:9833123434 , use : to separate"
           type="text"
           id="POC 3"
-          name="poc2"
+          name="poc3"
         />
+
+        <FormInput
+          onChange={handleChange}
+          labelColor="black"
+          label="Form Questions"
+          placeholder={`Enter questions separated by ENTERT key !! \n For example \n Enter Some Of Your Past Works \n Enter your weight`}
+          type="textarea"
+          id="Form Questions"
+          name="form_question"
+        />
+
         <div className="flex items-baseline ">
           <FormInput
             required
@@ -279,8 +297,8 @@ const CreateEventModal = (props: Props) => {
             {" "}
             {isLoading === "image" ? <Spinner /> : "Create New Event"}
             {!formFields.event_name && (
-              <div className="overlay absolute rounded-lg bg-[rgba(125,141,36,0.8)] p-2 text-center font-bold">
-                Fill Event Name First
+              <div className="overlay absolute mt-3 rounded-lg bg-[rgba(141,36,36,0.8)] p-2 text-center font-bold">
+                Fill Form First
               </div>
             )}
           </span>
