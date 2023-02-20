@@ -18,6 +18,7 @@ const EventCaroselSlides = ({ slide }: Props) => {
           width={100}
           height={100}
           className=" h-[100%] w-[100%] "
+          priority
         />
       </div>
       <div className="md:pl-26 absolute top-0 flex h-[100%] w-[100%] flex-col justify-end bg-[#12123470] pb-10 pl-20 text-white ">
