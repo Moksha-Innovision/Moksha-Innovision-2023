@@ -11,7 +11,7 @@ const Newevent = (props: Props) => {
   const session = useSession();
   const router = useRouter();
   const user = useUser();
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   if (user) {
     if (!user.user_metadata.isAdmin) {
@@ -34,7 +34,7 @@ const Newevent = (props: Props) => {
         <h1 className="mb-6 mt-8 text-center text-5xl font-semibold drop-shadow-glow">
           Create New Event
         </h1>
-        <CreateEventModal setEventModal={() => { }} />
+        <CreateEventModal setEventModal={() => {}} />
         <Link
           href={"/admin/events"}
           className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-transparent bg-red-600   px-3 py-2 font-medium"

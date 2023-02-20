@@ -11,7 +11,7 @@ const Registrations = (props: Props) => {
   const router = useRouter();
 
   const user = useUser();
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   if (user) {
     if (!user.user_metadata.isAdmin) {

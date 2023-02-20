@@ -66,6 +66,7 @@ const LegacyCarosel = () => {
         loop={true}
         slidesPerView="auto"
         centeredSlides
+        speed={400}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,

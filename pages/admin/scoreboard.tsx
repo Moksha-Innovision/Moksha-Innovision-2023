@@ -7,7 +7,7 @@ type Props = {};
 
 const Scroreboard = (props: Props) => {
   const user = useUser();
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   if (user) {
     if (!user.user_metadata.isAdmin) {
