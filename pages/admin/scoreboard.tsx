@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { useEffect } from "react";
 import { useUser } from "@supabase/auth-helpers-react";
+import { useEffect } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
 import Notadmin from "../../components/FallbackPages/notadmin";
 
@@ -8,7 +7,7 @@ type Props = {};
 
 const Scroreboard = (props: Props) => {
   const user = useUser();
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   if (user) {
     if (!user.user_metadata.isAdmin) {
