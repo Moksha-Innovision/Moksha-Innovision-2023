@@ -1,20 +1,10 @@
 import { Inter } from "@next/font/google";
-import Navbar from "../components/ui/Navbar/Navbar";
-import Model from "../components/ui/Model/model";
-const inter = Inter({ subsets: ["latin"] });
+import { Loader, OrbitControls, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import {
-  Stage,
-  OrbitControls,
-  Sky,
-  Sparkles,
-  Float,
-  Grid,
-  CameraShake,
-  Loader,
-  Environment,
-} from "@react-three/drei";
 import { useState } from "react";
+import Model from "../components/ui/Model/model";
+import Navbar from "../components/ui/Navbar/Navbar";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function App() {
   const [popup, setPopup] = useState("none");

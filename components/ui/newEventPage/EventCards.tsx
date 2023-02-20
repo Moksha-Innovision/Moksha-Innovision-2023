@@ -1,7 +1,23 @@
 import Image from "next/image";
 import { useState } from "react";
 interface Props {
-  event: { name: string; img: string; ticket: string };
+  event: {
+    date: string,
+    desc: string,
+    event_id: string,
+    event_name: string,
+    form_question: string[],
+    instagram: string,
+    poc: any,
+    poster: string,
+    prize_pool: number
+    rules: string[],
+    soc_id: string,
+    tagline: string,
+    team_size: number
+    time: string,
+    venue: string,
+  };
 }
 const EventCards = ({ event }: Props) => {
   const [glow, setGlow] = useState(false);
@@ -17,13 +33,12 @@ const EventCards = ({ event }: Props) => {
     >
       <div className="flex flex-col items-center bg-transparent">
         <div
-          className={`${
-            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-          } rounded-2xl transition-[box-shadow] duration-75`}
+          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+            } rounded-2xl transition-[box-shadow] duration-75`}
         >
           <Image
-            src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/${event.img}`}
-            alt={event.img}
+            src={`${event.poster}`}
+            alt={event.event_name}
             width={100}
             height={100}
             className=" h-[100%] w-[100%]"
@@ -31,32 +46,31 @@ const EventCards = ({ event }: Props) => {
         </div>
         {/******************************************************** */}
         <div
-          className={`${
-            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-          } h-100%] flip-card-front flip-card mt-10 flex w-[100%] items-center transition-[box-shadow] duration-75`}
+          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+            } h-100%] flip-card-front flip-card mt-10 flex w-[100%] items-center transition-[box-shadow] duration-75`}
         >
           <div className="flip-card-inner">
             <div className="flip-card-front relative">
               <Image
-                src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/${event.ticket}`}
-                alt={event.img}
+                src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/ticket1.svg`}
+                alt={event.event_name}
                 width={100}
                 height={100}
                 className=" h-[100%] w-[100%]"
               ></Image>
-              <div className="absolute top-0 flex h-[100%] w-[100%] text-[#271300]">
+              <div className="absolute top-0 flex h-[100%] w-[100%]  text-[#271300]">
                 <div className="w-[40%]"></div>
                 <div className="w-[25%]"></div>
-                <div className=" flex w-[42%]  flex-col flex-wrap justify-center text-left text-[20px] sm:text-[18px] md:text-[17px] lg:text-[16px] xl:text-[15px]">
-                  <p className="">Time: </p>
-                  <p className="">Venue:</p>
+                <div className=" flex w-[42%]  flex-col flex-wrap justify-center text-left text-[15px] text sm:text-[12px] break-all overflow-hidden md:text-[15px] lg:text-[8px] xl:text-[12px] pr-[5px]">
+                  <p className="text-[100%]">Time: {event.time} </p>
+                  <p className="">Venue:Moksha ground{/*event.venue*/}</p>
                 </div>
               </div>
             </div>
             <div className="flip-card-back relative">
               <Image
                 src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/ticketBack.svg`}
-                alt={event.img}
+                alt={event.event_name}
                 width={100}
                 height={100}
                 className=" h-[100%] w-[100%] "

@@ -1,7 +1,7 @@
 import {
   useSession,
   useSupabaseClient,
-  useUser,
+  useUser
 } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -13,12 +13,13 @@ import Notadmin from "../../components/FallbackPages/notadmin";
 type Props = {};
 const Events = (props: Props) => {
   const [EventModal, setEventModal] = useState(false);
-  const session = useSession();
-  const supabase = useSupabaseClient();
   const [userData, setUserData] = useState<any>("");
+
   const [events, setEvents] = useState<any>([]);
   const router = useRouter();
   const user = useUser();
+  const session = useSession();
+  const supabase = useSupabaseClient();
 
   const getEvent = async () => {
     const { data, error } = await supabase
