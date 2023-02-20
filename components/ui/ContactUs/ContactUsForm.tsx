@@ -5,11 +5,11 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 const ContactUsForm = () => {
   return (
     <div
-      className={` relative  z-[1] w-[80vw] max-w-[550px] items-center justify-center space-y-5  overflow-hidden  rounded-2xl border-4 border-yellow-500 bg-transparent py-6 px-12 text-black shadow-xl md:px-20   `}
+      className={`relative z-[1] w-[80vw] max-w-[550px] items-center  justify-center space-y-5  overflow-hidden rounded-2xl border-4  border-yellow-500  bg-prussian-blue-1000 bg-event-pattern bg-contain bg-repeat py-6 px-12 text-black shadow-xl md:px-20   `}
     >
       <div className="absolute -bottom-16 -right-[40px] h-[150px] w-[150px] transition-all duration-100  xl:scale-[1.5]  ">
         <Image
-          src="border-event-contact.svg"
+          src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
@@ -19,7 +19,7 @@ const ContactUsForm = () => {
 
       <div className=" absolute -top-16 -left-[50px] h-[150px]  w-[150px] transition-all duration-100 xl:scale-[1.5]   ">
         <Image
-          src="border-event-contact.svg"
+          src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/border-event-contact.svg"
           width={100}
           height={100}
           alt="border"
@@ -79,7 +79,7 @@ const ContactUsForm = () => {
         ></textarea>
       </div>
       <div className="flex w-full flex-col items-center text-xl">
-        <button className="h-14 w-[60%]  rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04]">
+        <button className="h-14 w-[60%]  rounded-lg bg-[#BF932F] text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04]">
           SEND MESSAGE
         </button>
       </div>

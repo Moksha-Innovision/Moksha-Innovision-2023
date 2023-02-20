@@ -11,7 +11,7 @@ const LegacyCards = ({ id, active, artist }: any) => {
     else if ((9 + active - 2) % 9 == id) setPos(-2);
     else if ((9 + active + 2) % 9 == id) setPos(2);
     else setPos(10);
-  }, []);
+  });
   return (
     <div
       className={`
@@ -23,7 +23,7 @@ const LegacyCards = ({ id, active, artist }: any) => {
         relative flex min-h-[400px]  w-[100%] flex-col  md:h-[600px] lg:h-[700px] `}
     >
       <div
-        className={`z-10  flex  h-[50%]  w-[100%]   flex-col items-center justify-end rounded-lg pb-8 text-white transition-all
+        className={`z-10  flex  h-[50%]  w-[100%]   flex-col items-center justify-end rounded-lg pb-8 text-white transition-[transform]
         ${
           (pos == 0 && "absolute top-[10%] scale-110 opacity-100") || "scale-75"
         }
@@ -37,7 +37,7 @@ const LegacyCards = ({ id, active, artist }: any) => {
       >
         <div className="absolute top-0 h-[100%] w-[100%] ">
           <Image
-            src={`/Landing/${artist.img}`}
+            src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/${artist.img}`}
             width={100}
             height={100}
             alt={"asad"}
@@ -45,10 +45,10 @@ const LegacyCards = ({ id, active, artist }: any) => {
           />
         </div>
         <div className="relative bottom-5 text-center sm:bottom-0">
-          <div className="z-10 text-3xl leading-7 tracking-[10px] sm:text-5xl md:text-6xl md:leading-none lg:text-7xl">
+          <div className="z-10 text-2xl leading-7 tracking-[10px] sm:text-3xl md:text-5xl md:leading-none lg:text-6xl">
             {artist.name}
           </div>
-          <div className="z-10 text-xs  sm:text-2xl md:text-3xl lg:text-4xl">
+          <div className="sm:text-1xl z-10  text-xs md:text-2xl lg:text-3xl">
             {artist.event}
           </div>
         </div>

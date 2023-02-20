@@ -12,7 +12,9 @@ const SwiperButtonNxt = ({ className }: any) => {
         }}
       >
         <Image
-          src={"/Landing/arrownxt.svg"}
+          src={
+            "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/arrownxt.svg"
+          }
           alt={"asfa"}
           height={100}
           width={100}
@@ -33,7 +35,9 @@ const SwiperButtonPre = ({ className }: any) => {
         }}
       >
         <Image
-          src={"/Landing/arrownxt.svg"}
+          src={
+            "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/arrownxt.svg"
+          }
           alt={"asfa"}
           height={100}
           width={100}

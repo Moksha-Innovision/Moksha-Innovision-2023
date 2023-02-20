@@ -59,7 +59,9 @@ const AdminLog = () => {
     <div className=" relative flex min-h-[100vh] items-center  justify-center overflow-x-hidden bg-[#300e2f] py-10">
       <div className=" fixed w-[100%] overflow-hidden  lg:w-[50%] ">
         <Image
-          src={"logbg.svg"}
+          src={
+            "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/logbg.svg"
+          }
           className="h-full w-full animate-wheel "
           alt={""}
           width={100}

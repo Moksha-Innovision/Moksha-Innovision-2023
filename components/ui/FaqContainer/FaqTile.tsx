@@ -37,7 +37,9 @@ const FaqTile = (props: Props) => {
           <Image
             width={30}
             height={30}
-            src={`${active ? "-" : "+"}.svg`}
+            src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/${
+              active ? "-" : "+"
+            }.svg`}
             alt="faq-icon"
           />
         </div>

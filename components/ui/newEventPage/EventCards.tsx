@@ -22,7 +22,7 @@ const EventCards = ({ event }: Props) => {
           } rounded-2xl transition-[box-shadow] duration-75`}
         >
           <Image
-            src={`events/${event.img}`}
+            src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/${event.img}`}
             alt={event.img}
             width={100}
             height={100}
@@ -38,7 +38,7 @@ const EventCards = ({ event }: Props) => {
           <div className="flip-card-inner">
             <div className="flip-card-front relative">
               <Image
-                src={`events/${event.ticket}`}
+                src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/${event.ticket}`}
                 alt={event.img}
                 width={100}
                 height={100}
@@ -55,7 +55,7 @@ const EventCards = ({ event }: Props) => {
             </div>
             <div className="flip-card-back relative">
               <Image
-                src={`events/ticketBack.svg`}
+                src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/ticketBack.svg`}
                 alt={event.img}
                 width={100}
                 height={100}

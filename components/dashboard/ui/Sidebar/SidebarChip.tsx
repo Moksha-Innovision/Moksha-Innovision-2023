@@ -25,7 +25,14 @@ const SidebarChip = (props: Props) => {
       onClick={() => setSidebarOpen(false)}
     >
       <span className="scale-100 text-white">
-        {<Image src={iconSrc} width={25} height={25} alt={name + " icon"} />}
+        {
+          <Image
+            src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/${iconSrc}`}
+            width={25}
+            height={25}
+            alt={name + " icon"}
+          />
+        }
       </span>
       <span className="x overflow-x-hidden overflow-y-hidden  group-hover:h-[24px] group-hover:w-auto sm:h-0 sm:w-0 ">
         {name}

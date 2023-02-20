@@ -1,9 +1,9 @@
 import { Koulen } from "@next/font/google";
-import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useSession } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import NavLink from "./NavLink";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
@@ -13,22 +13,41 @@ const profile = {
 };
 
 const ACTIVELINKTYLE = "text-3xl";
-
 const Navbar = (props: Props) => {
-  const user = useUser();
-  const supabase = useSupabaseClient();
+  const session = useSession();
+
+  const [nav, setNav] = useState<any>(false);
+  const onScroll = useCallback((event: any) => {
+    const { scrollY } = window;
+    if (scrollY >= 20) setNav(true);
+    else setNav(false);
+  }, []);
+  useEffect(() => {
+    //add eventlistener to window
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // remove event on unmount to prevent a memory leak with the cleanup
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   const [show, setShow] = useState(false);
   const router = useRouter();
   return (
     <div className="relative flex w-full flex-col">
-      <div className="navbar fixed top-3 z-[21] grid h-[7vh] w-full grid-cols-12   px-6 ">
+      <div
+        className={`navbar fixed z-[21] grid grid-cols-12  ${
+          nav && "bg-yellow-900 bg-opacity-20 backdrop-blur-[10px]"
+        } w-full  py-1   px-6 `}
+      >
         <div
-          className={`col-span-2 h-12 w-12 py-2 md:hidden `}
+          className={` col-span-2 flex h-full w-12 items-center justify-center py-2 md:hidden `}
           onClick={() => setShow(!show)}
         >
           <Image
-            src={"/hamburger.svg"}
+            src={
+              "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/hamburger.svg"
+            }
             alt=""
             width={100}
             height={100}
@@ -38,7 +57,12 @@ const Navbar = (props: Props) => {
 
         <div className="col-span-8 flex justify-center md:col-span-2 md:justify-start">
           <Link href="/" className="  logo w-28 md:w-28">
-            <Image width={500} height={500} src="/mokshalogo.svg" alt="" />
+            <Image
+              width={500}
+              height={500}
+              src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/mokshalogo.svg"
+              alt=""
+            />
           </Link>
         </div>
 
@@ -48,7 +72,7 @@ const Navbar = (props: Props) => {
           <NavLink href="/events">Events</NavLink>
           <NavLink href="/sponsors">Sponsors</NavLink>
           <NavLink href="/faq">Faq</NavLink>
-          <NavLink href="/contact" underlineclassName="left-3">
+          <NavLink href="/contact" underlineclassName="">
             Contact Us
           </NavLink>
           {/*<NavLink href="/about">About Us</NavLink>*/}
@@ -56,24 +80,20 @@ const Navbar = (props: Props) => {
 
         {/* //Profile Button */}
 
-        <div className="profile-btn flex items-center">
+        <div className="profile-btn col-span-2 flex items-center justify-center md:justify-end">
           <button
             className="flex h-[45px]  items-center justify-center gap-3 rounded-full p-2 lg:px-10"
             onClick={() => {
-              if (user) {
-                user?.user_metadata.isAdmin
-                  ? router.push("/admin/events")
-                  : router.push("/comingsoon");
-              } else {
-                router.push("/userlogin");
-              }
+              session
+                ? router.push("/admin/events")
+                : router.push("/userlogin");
             }}
           >
             <div className="profile-pic flex h-6 w-10 items-center justify-center rounded-full">
               <Image
                 width={100}
                 height={100}
-                src="/thirteen.svg"
+                src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/thirteen.svg"
                 alt=""
                 className="w-8"
               />
@@ -84,20 +104,6 @@ const Navbar = (props: Props) => {
               {profile.name.split(" ")[0].slice(0, 8)}
             </span>
           </button>
-          {user && (
-            <button
-              className={`hidden w-[100%]  items-center rounded-lg   bg-Safety-Orange-500 py-2  px-3 text-white shadow-md transition-[transform] duration-100 hover:scale-[1.04]  disabled:pointer-events-none disabled:opacity-40 md:flex`}
-              onClick={async () => {
-                const { error } = await supabase.auth.signOut();
-              }}
-            >
-              <span
-                className={`${koulen.className}  hidden text-sm text-white sm:block`}
-              >
-                Logout
-              </span>
-            </button>
-          )}
         </div>
       </div>
 
@@ -122,19 +128,9 @@ const Navbar = (props: Props) => {
           <NavLink href="/contact" underlineclassName="left-3" imgScale={125}>
             Contact Us
           </NavLink>
-
-          {user && (
-            <button
-              className={`  flex w-fit  items-center rounded-lg bg-Safety-Orange-500 py-2 px-3 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04] disabled:pointer-events-none disabled:opacity-40`}
-              onClick={async () => {
-                const { error } = await supabase.auth.signOut();
-              }}
-            >
-              <span className={`${koulen.className} w-fit text-sm text-white`}>
-                Logout
-              </span>
-            </button>
-          )}
+          {/*<NavLink href="/about" imgScale={110}>
+            About Us
+          </NavLink>*/}
         </ul>
       </div>
     </div>

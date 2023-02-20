@@ -13,7 +13,7 @@ const ContactUs = () => {
   return (
     <>
       <div
-        className={`${koulen.className} relative flex min-h-screen items-center justify-center overflow-x-hidden bg-prussian-blue-1000 bg-event-pattern  bg-contain pt-[7vh] text-white`}
+        className={`${koulen.className} relative mt-[20px] flex min-h-[125vh] items-center justify-center  overflow-x-hidden text-white `}
         ref={containerRef}
       >
         <div className="fixed top-0 left-0 z-[1] h-[100vh] w-[100vw] backdrop-blur-[3px] "></div>
@@ -38,13 +38,13 @@ const ContactUs = () => {
               className=" xl:w-42 bird-2 w-28 scale-[1.1] animate-wheel md:scale-[1.4] lg:w-36"
             />
   </div>*/}
-          <h1 className="contact-us z-[1] mb-7  text-center text-4xl drop-shadow-xl md:mb-4 lg:text-5xl">
+          <h1 className="contact-us z-[1] mb-7  text-center  text-4xl drop-shadow-lowGlowtext md:mb-4 lg:text-5xl">
             CONTACT US
           </h1>
           <div className="relative">
             <div className="absolute -bottom-[60px] -right-[38px] h-[150px] w-[150px] transition-all duration-100  xl:scale-[1.5]  ">
               <Image
-                src="border-event-contact.svg"
+                src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/border-event-contact.svg"
                 width={100}
                 height={100}
                 alt="border"
@@ -54,7 +54,7 @@ const ContactUs = () => {
 
             <div className=" absolute -top-[40px] -left-[48px] h-[150px]  w-[150px] transition-all duration-100 xl:scale-[1.5]   ">
               <Image
-                src="border-event-contact.svg"
+                src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/border-event-contact.svg"
                 width={100}
                 height={100}
                 alt="border"

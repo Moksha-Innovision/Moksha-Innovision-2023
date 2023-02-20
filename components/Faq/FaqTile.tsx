@@ -25,7 +25,7 @@ const FaqTile = (props: Props) => {
 
   return (
     <div
-      className={`outer  border-2 border-black bg-white ${
+      className={`outer  border-2 bg-white ${
         active ? "shadow-2xl" : ""
       } grid max-w-2xl cursor-pointer grid-cols-12 rounded-md   transition-all`}
     >
@@ -38,7 +38,7 @@ const FaqTile = (props: Props) => {
             width={30}
             height={30}
             src={`${active ? "-" : "+"}.svg`}
-            alt="faq-icon"
+            alt="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/faq-icon"
           />
         </div>
         <h3

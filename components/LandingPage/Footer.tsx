@@ -7,7 +7,9 @@ const Footer = () => {
     <div className="grid h-fit  w-full grid-cols-12 bg-prussian-blue-1000  px-10 text-white shadow-soft">
       <div className="col-span-6 py-4  sm:col-span-2">
         <Image
-          src={"/Landing/footerLogo.svg"}
+          src={
+            "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/footerLogo.svg"
+          }
           alt={"asa"}
           height={100}
           width={100}

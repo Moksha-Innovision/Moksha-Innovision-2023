@@ -11,12 +11,13 @@ import Image from "next/image";
 import { Autoplay } from "swiper";
 
 const LandingSponsers = () => {
+  const spons = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
   return (
     <div className="z-10 h-full  min-h-[10vh]">
       <h1 className="mb-7 flex flex-col  items-center text-center   text-4xl text-white drop-shadow-lowGlowtext md:mb-6 lg:text-5xl ">
         <div className="">SPONSORS</div>
         <Image
-          src="/underline.svg"
+          src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/underline.svg"
           width={100}
           height={20}
           alt={"underlien "}
@@ -59,7 +60,7 @@ const LandingSponsers = () => {
           modules={[Autoplay]}
           className="mySwiper"
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((p: any, i) => {
+          {spons.map((p: any, i) => {
             return (
               <SwiperSlide key={i}>
                 <div className="flex h-40 items-center justify-center">
