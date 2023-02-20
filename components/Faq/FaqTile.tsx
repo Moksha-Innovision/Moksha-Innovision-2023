@@ -25,9 +25,8 @@ const FaqTile = (props: Props) => {
 
   return (
     <div
-      className={`outer  border-2 bg-white ${
-        active ? "shadow-2xl" : ""
-      } grid max-w-2xl cursor-pointer grid-cols-12 rounded-md   transition-all`}
+      className={`outer  border-2 bg-white ${active ? "shadow-2xl" : ""
+        } grid max-w-2xl cursor-pointer grid-cols-12 rounded-md   transition-all`}
     >
       <div
         className="question  col-span-12 grid grid-cols-8 items-center py-4"
@@ -48,11 +47,9 @@ const FaqTile = (props: Props) => {
         </h3>
       </div>
       <p
-        className={`answer col-span-10 col-start-3 -ml-4 mb-1  sm:-ml-7 ${
-          active ? "max-h-20" : "max-h-0"
-        } overflow-y-hidden transition-all duration-200 ease-linear ${
-          montserrat.className
-        }`}
+        className={`answer col-span-10 col-start-3 -ml-4 mb-1  sm:-ml-7 ${active ? "max-h-20" : "max-h-0"
+          } overflow-y-hidden transition-all duration-200 ease-linear ${montserrat.className
+          }`}
       >
         {ans}
       </p>

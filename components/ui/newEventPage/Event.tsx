@@ -127,19 +127,7 @@ const events = [
 
 const Event = () => {
   const supabase = useSupabaseClient();
-  useEffect(() => {
-    const getEvents = async () => {
-      const { data, error } = await supabase
-        .from("socevent")
-        .select("event_name");
-      if (error) {
-        console.log(error);
-        return;
-      }
-      console.log(data);
-    };
-    getEvents();
-  }, []);
+  useEffect(() => {}, []);
 
   const [day, setDay] = useState("I");
   return (

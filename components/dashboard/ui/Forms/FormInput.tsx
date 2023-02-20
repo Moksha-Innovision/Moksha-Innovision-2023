@@ -5,6 +5,7 @@ type Props = {
   id?: string;
   name?: string;
   className?: string;
+  pattern?: string;
   placeholder?: string;
   value?: string;
   accept?: string;

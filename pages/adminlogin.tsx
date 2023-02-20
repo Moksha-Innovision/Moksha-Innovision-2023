@@ -23,10 +23,7 @@ const AdminLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [alert, setAlert] = useState("");
   const { AdminEmail, password } = formFields;
-  useEffect(() => {
-    console.log(session);
-    if (session) router.push("/admin/events");
-  }, [session]);
+  useEffect(() => {});
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
