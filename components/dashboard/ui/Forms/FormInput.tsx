@@ -11,6 +11,8 @@ type Props = {
   accept?: string;
   disable?: boolean;
   title?: string;
+  max?: string;
+  min?: string;
   onChange?: (a: any) => any;
   required?: boolean;
 };

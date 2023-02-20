@@ -1,9 +1,9 @@
 import {
   useSession,
   useSupabaseClient,
-  useUser,
+  useUser
 } from "@supabase/auth-helpers-react";
-import Image from "next/image";
+import NextImage from 'next/image';
 import { useState } from "react";
 import { generateUUID } from "three/src/math/MathUtils";
 import InlineAlert from "../../../Alerts/InlineAlert";
@@ -21,7 +21,8 @@ const defaultFormFields: formFields = {
   desc: "",
   rules: "", //separate using commas
   venue: "",
-  date_time: "",
+  date: "",
+  time: "",
   prize_pool: 0,
   team_size: "",
   instagram: "",
@@ -33,11 +34,14 @@ const defaultFormFields: formFields = {
 };
 
 const CreateEventModal = (props: Props) => {
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
   const session = useSession();
   const user = useUser();
   const supabase = useSupabaseClient();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const [eventId, setEventId] = useState<any>(generateUUID());
+  const [imgEr, setImgEr] = useState('')
   const [isLoading, setIsLoading] = useState("none");
   const [alert, setAlert] = useState("");
   const { setEventModal, getEvent } = props;
@@ -59,7 +63,8 @@ const CreateEventModal = (props: Props) => {
       tagline,
       desc,
       venue,
-      date_time,
+      date,
+      time,
       prize_pool,
       team_size,
       instagram,
@@ -89,7 +94,8 @@ const CreateEventModal = (props: Props) => {
           tagline,
           desc,
           venue,
-          date_time,
+          date,
+          time,
           prize_pool,
           team_size,
           instagram,
@@ -105,6 +111,7 @@ const CreateEventModal = (props: Props) => {
         setEventId(generateUUID());
         setAlert("success");
         e.target.reset();
+        setImgEr('')
       }
     } catch (err) {
       setAlert("error");
@@ -113,6 +120,9 @@ const CreateEventModal = (props: Props) => {
     setIsLoading("none");
   };
 
+
+
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
 
@@ -120,29 +130,65 @@ const CreateEventModal = (props: Props) => {
   };
 
   const handleUpload = async (e: any) => {
-    setIsLoading("image");
-
-    try {
-      const file = e.target.files[0];
-      const { data, error } = await supabase.storage
-        .from("event-posters")
-        .upload(eventId + "poster", file, {
-          cacheControl: "3600",
-          upsert: false,
-        });
-      if (error) {
-        console.log(error);
+    console.log(e.target.files[0])
+    const file = e.target.files[0]
+    if (file) {
+      setIsLoading("image");
+      if (file.size > 4000000) {
+        setImgEr('Size should be upto 4 MB')
+        if (e.target.value)
+          e.target.value = null
+        setIsLoading("none");
+        return;
       }
-    } catch (err) {
-      console.log("error");
+      else {
+        let img = new Image();
+
+        img.src = window.URL.createObjectURL(file);
+
+        img.onload = async function () {
+          let width = img.naturalWidth,
+            height = img.naturalHeight;
+
+          window.URL.revokeObjectURL(img.src);
+          const ratio = width / height
+          if (ratio > 1.1 || ratio < 0.9) {
+            console.log(ratio)
+            setImgEr('Aspect Ratio of 1:1 needed')
+            e.target.value = null
+            setIsLoading("none");
+          }
+          else {
+            setImgEr('')
+            try {
+              const file = e.target.files[0];
+              const { data, error } = await supabase.storage
+                .from("event-posters")
+                .upload(eventId + "poster", file, {
+                  cacheControl: "3600",
+                  upsert: false,
+                });
+              console.log(data)
+              setIsLoading("none");
+              if (error) {
+                console.log(error);
+              }
+            } catch (err) {
+              console.log("error");
+            }
+          }
+        }
+      }
+
+
+
     }
-    setIsLoading("none");
   };
 
   return (
     <div className="relative m-auto flex max-h-[700px] min-w-[350px] max-w-xl flex-col rounded-lg bg-white p-4 px-6 md:min-w-[500px]">
       <button onClick={() => setEventModal(false)}>
-        <Image
+        <NextImage
           src={
             "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/modalcross.svg"
           }
@@ -211,10 +257,22 @@ const CreateEventModal = (props: Props) => {
           required
           onChange={handleChange}
           labelColor="black"
-          label="Date and Time"
-          type="datetime-local"
-          id="Date and Time"
-          name="date_time"
+          label="Date"
+          min="2023-03-23" max="2023-03-25"
+          type="date"
+          id="Date"
+          name="date"
+        />
+        <FormInput
+          required
+          onChange={handleChange}
+          labelColor="black"
+          label="Start Time "
+          min="07:59:00" max="23:59:00"
+          type="time"
+          placeholder="24 Hr format"
+          id="Time"
+          name="time"
         />
         <FormInput
           required
@@ -282,19 +340,29 @@ const CreateEventModal = (props: Props) => {
           id="Form Questions"
           name="form_question"
         />
-
         <div className="flex items-baseline ">
-          <FormInput
-            required
-            disable={!formFields.event_name}
-            onChange={handleUpload}
-            labelColor="black"
-            label="Poster Image"
-            type="file"
-            accept="image/png , image/jpeg"
-            id="Poster Image"
-            name="poster"
-          />
+          <div className="flex flex-col ">
+            <FormInput
+              required
+              disable={!formFields.event_name}
+              onChange={handleUpload}
+              labelColor="black"
+              label="Poster Image"
+              type="file"
+
+              accept=".svg, .png"
+              max="3MB"
+              id="Poster Image"
+              name="poster"
+            />
+            <span className="relative">
+              {imgEr && (
+                <div className="text-red-900">
+                  {imgEr}
+                </div>
+              )}
+            </span>
+          </div>
           <span className="relative">
             {" "}
             {isLoading === "image" ? <Spinner /> : "Create New Event"}
@@ -304,6 +372,8 @@ const CreateEventModal = (props: Props) => {
               </div>
             )}
           </span>
+
+
         </div>
         <span className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-saffron-600 px-3 py-2 font-medium">
           <button>
