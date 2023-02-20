@@ -1,5 +1,4 @@
 import { useSession, useUser } from "@supabase/auth-helpers-react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
@@ -12,7 +11,7 @@ const Registrations = (props: Props) => {
   const router = useRouter();
 
   const user = useUser();
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   if (user) {
     if (!user.user_metadata.isAdmin) {
