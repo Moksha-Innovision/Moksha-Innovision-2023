@@ -534,6 +534,53 @@ export function Model(props: any) {
         rotation={[Math.PI / 2, 0, 0]}
         scale={24.03}
       />
+      <spotLight
+        intensity={25.16}
+        angle={0.95}
+        penumbra={1}
+        decay={2}
+        distance={23.02}
+        color="#e83d0b"
+        position={[-2.2, 8.67, 0.64]}
+      />
+      <spotLight
+        intensity={29.64}
+        angle={0.97}
+        penumbra={0.18}
+        decay={2}
+        color="#1e4dff"
+        position={[7.73, 7.68, 13.91]}
+      />
+      <pointLight
+        intensity={6.12}
+        decay={2}
+        color="#ff5908"
+        position={[-1.28, 1.04, 7.36]}
+      />
+      <pointLight
+        intensity={3.88}
+        decay={2}
+        color="#f5752c"
+        position={[7.02, 0.91, 7.14]}
+      />
+      <pointLight
+        intensity={43.44}
+        decay={2}
+        color="#b4541e"
+        position={[-3.47, 3.43, -0.38]}
+      />
+      <pointLight
+        intensity={3.78}
+        decay={2}
+        color="#e85712"
+        position={[2.56, 0.81, 7.14]}
+      />
+      <pointLight
+        intensity={3.72}
+        decay={2}
+        color="#c74718"
+        position={[4.63, 1.1, 6.98]}
+      />
       <mesh
         castShadow
         receiveShadow
