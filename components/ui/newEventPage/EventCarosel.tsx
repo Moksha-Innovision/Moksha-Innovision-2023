@@ -84,7 +84,6 @@ const EventCarosel = () => {
         centeredSlides={true}
         loopFillGroupWithBlank={true}
         cssMode={true}
-
         pagination={true}
         mousewheel={true}
         keyboard={true}
@@ -96,13 +95,12 @@ const EventCarosel = () => {
         modules={[Navigation, Autoplay, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
-        <div className=" absolute top-0 z-10 flex w-full  justify-between items-center h-full px-[2%] ">
+        <div className=" absolute top-0 z-10 flex h-full  w-full items-center justify-between px-[2%] ">
           <SwiperBtnPre className={"w-[50px]"} />
           <SwiperBtnnxt className={"w-[50px]"} />
         </div>
         {slides.map((slide, i) => {
           return (
-
             <SwiperSlide key={i}>
               <EventCaroselSlides slide={slide}></EventCaroselSlides>
             </SwiperSlide>

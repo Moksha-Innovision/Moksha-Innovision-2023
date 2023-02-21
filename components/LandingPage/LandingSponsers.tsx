@@ -12,21 +12,21 @@ import Image from "next/image";
 const LandingSponsers = () => {
   //const spons = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
   const spons = [
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/aakash.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/BaskinRobbins.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/bingo.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/careerlauncher.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/codingblocks.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indianoil.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indigo.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/lakme.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/Maybelline.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/pizzahut.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/radisson.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/royalenfield.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/sbi.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/smaash.svg',
-    'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/thehindu.svg',
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/aakash.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/BaskinRobbins.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/bingo.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/careerlauncher.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/codingblocks.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indianoil.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indigo.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/lakme.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/Maybelline.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/pizzahut.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/radisson.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/royalenfield.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/sbi.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/smaash.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/thehindu.svg",
   ];
 
   // return (
@@ -110,13 +110,16 @@ const LandingSponsers = () => {
       </h1>
       <Marquee speed={50} gradient={false} style={{ marginBottom: "40px" }}>
         {spons.map((a, i) => (
-          <SliderSlide key={i} className={"mr-12 md:mr-20 p-2 h-36 w-60 sm:h-40 sm:w-72"}>
+          <SliderSlide
+            key={i}
+            className={"mr-12 h-36 w-60 p-2 sm:h-40 sm:w-72 md:mr-20"}
+          >
             <Image
               src={a}
               width={100}
               height={100}
               alt={"sponser"}
-              className={`w-full h-full`}
+              className={`h-full w-full`}
             />
           </SliderSlide>
         ))}

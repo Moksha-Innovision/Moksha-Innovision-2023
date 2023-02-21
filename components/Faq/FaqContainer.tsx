@@ -23,7 +23,7 @@ const Faqs = [
   {
     id: 4,
     ques: "When will Moksha - Innovation'23 be held ? What are the exact dates ?",
-    ans: " Moksha - innovation'23 is a 3 day annual cultural - tech  extravaganza, organised in the month of March.The dates are 25 - 28th March."
+    ans: " Moksha - innovation'23 is a 3 day annual cultural - tech  extravaganza, organised in the month of March.The dates are 25 - 28th March.",
   },
   {
     id: 5,
@@ -34,7 +34,6 @@ const Faqs = [
     id: 6,
     ques: "Why should I participate in those events ?",
     ans: "Participants are the people who make the fest what it is and for whom the fest is organised. \n Participating in the events will not only give you a chance to win exciting prizes and enjoy, but most importantly they will enhance your confidence, experience, learning and overall personality. \n So register in maximum possible events as they come up and do spread the word.",
-
   },
   {
     id: 7,
@@ -51,7 +50,7 @@ const FaqContainer = (props: Props) => {
   const [bounce, setBounce] = useState(false);
 
   return (
-    <div className=" flex w-[94%] sm:w-[90%] flex-col  gap-4 pt-8 opacity-100 ">
+    <div className=" flex w-[94%] flex-col gap-4  pt-8 opacity-100 sm:w-[90%] ">
       <h1 className=" mb-1 flex   flex-col items-center text-center   text-3xl text-white drop-shadow-lowGlowtext sm:text-5xl   md:mb-2  md:text-4xl lg:mb-3  lg:text-5xl ">
         Frequently Asked Questions
       </h1>
@@ -83,7 +82,9 @@ const FaqContainer = (props: Props) => {
         {more ? (
           <AiFillCaretUp className={`${!bounce && "animate-bounce"} inline`} />
         ) : (
-          <AiFillCaretDown className={`${!bounce && "animate-bounce"} inline`} />
+          <AiFillCaretDown
+            className={`${!bounce && "animate-bounce"} inline`}
+          />
         )}
       </div>
     </div>

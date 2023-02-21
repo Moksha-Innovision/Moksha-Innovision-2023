@@ -1,7 +1,7 @@
 import {
   useSession,
   useSupabaseClient,
-  useUser
+  useUser,
 } from "@supabase/auth-helpers-react";
 import NextImage from "next/image";
 import { useState } from "react";
@@ -80,7 +80,7 @@ const CreateEventModal = (props: Props) => {
     form_question = form_question.split("\n");
     let POCS = { ...formatPoc(poc1), ...formatPoc(poc2), ...formatPoc(poc3) };
 
-    poster = poaterPath
+    poster = poaterPath;
     try {
       const { data, error } = await supabase.from("socevent").insert([
         {
@@ -131,7 +131,7 @@ const CreateEventModal = (props: Props) => {
         setImgEr("Size should be upto 4 MB");
         if (e.target.value) e.target.value = null;
         setIsLoading("none");
-        setPosterPath('')
+        setPosterPath("");
         return;
       } else {
         let img = new Image();
@@ -148,7 +148,7 @@ const CreateEventModal = (props: Props) => {
             console.log(ratio);
             setImgEr("Aspect Ratio of 1:1 needed");
             e.target.value = null;
-            setPosterPath('')
+            setPosterPath("");
             setIsLoading("none");
           } else {
             setImgEr("");
@@ -165,7 +165,9 @@ const CreateEventModal = (props: Props) => {
               if (error) {
                 console.log(error);
               } else {
-                setPosterPath(`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/${data.path}`)
+                setPosterPath(
+                  `https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/${data.path}`
+                );
               }
             } catch (err) {
               console.log("error");
@@ -173,9 +175,8 @@ const CreateEventModal = (props: Props) => {
           }
         };
       }
-    }
-    else {
-      setPosterPath('')
+    } else {
+      setPosterPath("");
     }
   };
 

@@ -17,8 +17,9 @@ const EventCards = ({ event }: Props) => {
     >
       <div className="flex flex-col items-center bg-transparent">
         <div
-          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-            } rounded-2xl transition-[box-shadow] duration-75`}
+          className={`${
+            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+          } rounded-2xl transition-[box-shadow] duration-75`}
         >
           <Image
             src={`events/${event.img}`}
@@ -30,8 +31,9 @@ const EventCards = ({ event }: Props) => {
         </div>
         {/******************************************************** */}
         <div
-          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-            } h-100%] flip-card-front flip-card mt-10 flex w-[100%] items-center transition-[box-shadow] duration-75`}
+          className={`${
+            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+          } h-100%] flip-card-front flip-card mt-10 flex w-[100%] items-center transition-[box-shadow] duration-75`}
         >
           <div className="flip-card-inner">
             <div className="flip-card-front relative">

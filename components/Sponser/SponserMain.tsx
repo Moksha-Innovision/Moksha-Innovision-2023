@@ -9,21 +9,21 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 //const sponsorImages = ["sponsor 1", "sponsor 2", "sponsor 3", "sponsor 4"];
 const sponsorImages = [
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/aakash.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/BaskinRobbins.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/bingo.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/careerlauncher.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/codingblocks.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indianoil.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indigo.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/lakme.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/Maybelline.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/pizzahut.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/radisson.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/royalenfield.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/sbi.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/smaash.svg',
-  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/thehindu.svg',
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/aakash.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/BaskinRobbins.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/bingo.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/careerlauncher.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/codingblocks.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indianoil.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indigo.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/lakme.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/Maybelline.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/pizzahut.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/radisson.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/royalenfield.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/sbi.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/smaash.svg",
+  "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/thehindu.svg",
 ];
 
 const SponserMain = (props: Props) => {
@@ -113,7 +113,11 @@ const SponserMain = (props: Props) => {
             Past Sponsors
           </h1>
           <div className="top-row h-40 w-full">
-            <Infiniteslider direction={"right"} right={false} images={sponsorImages} />
+            <Infiniteslider
+              direction={"right"}
+              right={false}
+              images={sponsorImages}
+            />
           </div>
           <div className="bottom-row h-40 w-full antialiased">
             <Infiniteslider right={true} images={sponsorImages} />
@@ -127,24 +131,27 @@ const SponserMain = (props: Props) => {
 
           <div className="sponsors col-span-2 my-16 grid  grid-cols-2 gap-3 px-6 pb-12">
             {sponsorImages.slice(0, 8).map((a: any, i: any) => (
-              <SliderSlideSm key={i} className={"mr-12  top-row md:mr-20 p-2 "}>
+              <SliderSlideSm key={i} className={"top-row  mr-12 p-2 md:mr-20 "}>
                 <Image
                   src={a}
                   width={100}
                   height={100}
                   alt={"sponser"}
-                  className={`w-full h-full`}
+                  className={`h-full w-full`}
                 />
               </SliderSlideSm>
             ))}
             {sponsorImages.slice(8, 14).map((a: any, i: any) => (
-              <SliderSlideSm key={i} className={"mr-12 bottom-row  md:mr-20 p-2"}>
+              <SliderSlideSm
+                key={i}
+                className={"bottom-row mr-12  p-2 md:mr-20"}
+              >
                 <Image
                   src={a}
                   width={100}
                   height={100}
                   alt={"sponser"}
-                  className={`w-full h-full`}
+                  className={`h-full w-full`}
                 />
               </SliderSlideSm>
             ))}
