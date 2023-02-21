@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
 import EventCaroselSlides from "./EventCaroselSlides";
+import { SwiperBtnnxt, SwiperBtnPre } from "./SwiperBtn";
 const slides = [
   {
     title: "SILENT DJ",
@@ -83,7 +84,7 @@ const EventCarosel = () => {
         centeredSlides={true}
         loopFillGroupWithBlank={true}
         cssMode={true}
-        navigation={true}
+
         pagination={true}
         mousewheel={true}
         keyboard={true}
@@ -95,8 +96,13 @@ const EventCarosel = () => {
         modules={[Navigation, Autoplay, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
+        <div className=" absolute top-0 z-10 flex w-full  justify-between items-center h-full px-[2%] ">
+          <SwiperBtnPre className={"w-[50px]"} />
+          <SwiperBtnnxt className={"w-[50px]"} />
+        </div>
         {slides.map((slide, i) => {
           return (
+
             <SwiperSlide key={i}>
               <EventCaroselSlides slide={slide}></EventCaroselSlides>
             </SwiperSlide>

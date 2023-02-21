@@ -1,12 +1,30 @@
 import { Koulen } from "@next/font/google";
 import gsap from "gsap";
+import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 import Infiniteslider from "./infiniteslider";
 import { SliderSlideSm } from "./SliderSlide";
 type Props = {};
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
-const sponsorImages = ["sponsor 1", "sponsor 2", "sponsor 3", "sponsor 4"];
+//const sponsorImages = ["sponsor 1", "sponsor 2", "sponsor 3", "sponsor 4"];
+const sponsorImages = [
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/aakash.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/BaskinRobbins.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/bingo.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/careerlauncher.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/codingblocks.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indianoil.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indigo.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/lakme.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/Maybelline.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/pizzahut.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/radisson.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/royalenfield.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/sbi.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/smaash.svg',
+  'https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/thehindu.svg',
+];
 
 const SponserMain = (props: Props) => {
   const containerRef: any = useRef();
@@ -95,7 +113,7 @@ const SponserMain = (props: Props) => {
             Past Sponsors
           </h1>
           <div className="top-row h-40 w-full">
-            <Infiniteslider right={false} images={sponsorImages} />
+            <Infiniteslider direction={"right"} right={false} images={sponsorImages} />
           </div>
           <div className="bottom-row h-40 w-full antialiased">
             <Infiniteslider right={true} images={sponsorImages} />
@@ -106,21 +124,30 @@ const SponserMain = (props: Props) => {
           <h1 className=" mb-1 flex   flex-col items-center text-center   text-6xl text-white drop-shadow-lowGlowtext md:mb-2     md:text-7xl lg:mb-3   ">
             Past Sponsors
           </h1>
-          <div className="sponsors col-span-2 my-16 grid grid-cols-2 gap-3 px-6 pb-12">
-            {sponsorImages.map((sponsor) => {
-              return (
-                <SliderSlideSm className="top-row" key={sponsor}>
-                  {sponsor}
-                </SliderSlideSm>
-              );
-            })}
-            {sponsorImages.map((sponsor) => {
-              return (
-                <SliderSlideSm className="bottom-row " key={sponsor}>
-                  {sponsor}
-                </SliderSlideSm>
-              );
-            })}
+
+          <div className="sponsors col-span-2 my-16 grid  grid-cols-2 gap-3 px-6 pb-12">
+            {sponsorImages.slice(0, 8).map((a: any, i: any) => (
+              <SliderSlideSm key={i} className={"mr-12  top-row md:mr-20 p-2 "}>
+                <Image
+                  src={a}
+                  width={100}
+                  height={100}
+                  alt={"sponser"}
+                  className={`w-full h-full`}
+                />
+              </SliderSlideSm>
+            ))}
+            {sponsorImages.slice(8, 14).map((a: any, i: any) => (
+              <SliderSlideSm key={i} className={"mr-12 bottom-row  md:mr-20 p-2"}>
+                <Image
+                  src={a}
+                  width={100}
+                  height={100}
+                  alt={"sponser"}
+                  className={`w-full h-full`}
+                />
+              </SliderSlideSm>
+            ))}
           </div>
         </div>
       </div>

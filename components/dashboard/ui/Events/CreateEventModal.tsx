@@ -3,7 +3,7 @@ import {
   useSupabaseClient,
   useUser
 } from "@supabase/auth-helpers-react";
-import NextImage from 'next/image';
+import NextImage from "next/image";
 import { useState } from "react";
 import { generateUUID } from "three/src/math/MathUtils";
 import InlineAlert from "../../../Alerts/InlineAlert";
@@ -41,9 +41,10 @@ const CreateEventModal = (props: Props) => {
   const supabase = useSupabaseClient();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const [eventId, setEventId] = useState<any>(generateUUID());
-  const [imgEr, setImgEr] = useState('')
+  const [imgEr, setImgEr] = useState("");
   const [isLoading, setIsLoading] = useState("none");
   const [alert, setAlert] = useState("");
+  const [poaterPath, setPosterPath] = useState<any>("");
   const { setEventModal, getEvent } = props;
 
   const formatPoc = (text: string) => {
@@ -79,12 +80,7 @@ const CreateEventModal = (props: Props) => {
     form_question = form_question.split("\n");
     let POCS = { ...formatPoc(poc1), ...formatPoc(poc2), ...formatPoc(poc3) };
 
-    const { data } = await supabase.storage
-      .from("event-posters")
-      .getPublicUrl(eventId + "poster");
-
-    poster = data.publicUrl;
-
+    poster = poaterPath
     try {
       const { data, error } = await supabase.from("socevent").insert([
         {
@@ -111,7 +107,7 @@ const CreateEventModal = (props: Props) => {
         setEventId(generateUUID());
         setAlert("success");
         e.target.reset();
-        setImgEr('')
+        setImgEr("");
       }
     } catch (err) {
       setAlert("error");
@@ -120,9 +116,6 @@ const CreateEventModal = (props: Props) => {
     setIsLoading("none");
   };
 
-
-
-
   const handleChange = (e: any) => {
     const { name, value } = e.target;
 
@@ -130,18 +123,17 @@ const CreateEventModal = (props: Props) => {
   };
 
   const handleUpload = async (e: any) => {
-    console.log(e.target.files[0])
-    const file = e.target.files[0]
+    console.log(e.target.files[0]);
+    const file = e.target.files[0];
     if (file) {
       setIsLoading("image");
       if (file.size > 4000000) {
-        setImgEr('Size should be upto 4 MB')
-        if (e.target.value)
-          e.target.value = null
+        setImgEr("Size should be upto 4 MB");
+        if (e.target.value) e.target.value = null;
         setIsLoading("none");
+        setPosterPath('')
         return;
-      }
-      else {
+      } else {
         let img = new Image();
 
         img.src = window.URL.createObjectURL(file);
@@ -151,37 +143,39 @@ const CreateEventModal = (props: Props) => {
             height = img.naturalHeight;
 
           window.URL.revokeObjectURL(img.src);
-          const ratio = width / height
+          const ratio = width / height;
           if (ratio > 1.1 || ratio < 0.9) {
-            console.log(ratio)
-            setImgEr('Aspect Ratio of 1:1 needed')
-            e.target.value = null
+            console.log(ratio);
+            setImgEr("Aspect Ratio of 1:1 needed");
+            e.target.value = null;
+            setPosterPath('')
             setIsLoading("none");
-          }
-          else {
-            setImgEr('')
+          } else {
+            setImgEr("");
             try {
               const file = e.target.files[0];
               const { data, error } = await supabase.storage
                 .from("event-posters")
-                .upload(eventId + "poster", file, {
+                .upload(eventId + file.name, file, {
                   cacheControl: "3600",
-                  upsert: false,
+                  upsert: true,
                 });
-              console.log(data)
+
               setIsLoading("none");
               if (error) {
                 console.log(error);
+              } else {
+                setPosterPath(`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/${data.path}`)
               }
             } catch (err) {
               console.log("error");
             }
           }
-        }
+        };
       }
-
-
-
+    }
+    else {
+      setPosterPath('')
     }
   };
 
@@ -258,7 +252,8 @@ const CreateEventModal = (props: Props) => {
           onChange={handleChange}
           labelColor="black"
           label="Date"
-          min="2023-03-23" max="2023-03-25"
+          min="2023-03-23"
+          max="2023-03-25"
           type="date"
           id="Date"
           name="date"
@@ -268,7 +263,8 @@ const CreateEventModal = (props: Props) => {
           onChange={handleChange}
           labelColor="black"
           label="Start Time "
-          min="07:59:00" max="23:59:00"
+          min="07:59:00"
+          max="23:59:00"
           type="time"
           placeholder="24 Hr format"
           id="Time"
@@ -349,18 +345,13 @@ const CreateEventModal = (props: Props) => {
               labelColor="black"
               label="Poster Image"
               type="file"
-
-              accept=".svg, .png"
+              accept=".svg"
               max="3MB"
               id="Poster Image"
               name="poster"
             />
             <span className="relative">
-              {imgEr && (
-                <div className="text-red-900">
-                  {imgEr}
-                </div>
-              )}
+              {imgEr && <div className="text-red-900">{imgEr}</div>}
             </span>
           </div>
           <span className="relative">
@@ -372,8 +363,6 @@ const CreateEventModal = (props: Props) => {
               </div>
             )}
           </span>
-
-
         </div>
         <span className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-saffron-600 px-3 py-2 font-medium">
           <button>

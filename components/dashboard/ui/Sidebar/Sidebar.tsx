@@ -38,26 +38,23 @@ const Sidebar = (props: Props) => {
 
     <div
       className={` group fixed  left-0 z-10 h-screen w-64 cursor-pointer rounded rounded-r-[20px] bg-[#130d4185] shadow-lg  shadow-[rgba(255,255,255,0.2)] backdrop-blur-sm transition-all duration-300  hover:backdrop-blur-sm sm:w-28  sm:translate-x-0 sm:overflow-y-auto  sm:bg-[rgba(255,255,255,0.1)]  sm:hover:w-64 ${sidebarOpen
-          ? "translate-x-0 overflow-y-scroll bg-prussian-blue-1000"
-          : "-translate-x-full"
+        ? "translate-x-0 bg-prussian-blue-1000"
+        : "-translate-x-full"
         } `}
     >
       <span
-        className={`${sidebarOpen ? "left-0" : "left-full"
-          } clickme fixed top-0   flex h-screen flex-col items-center  justify-center bg-transparent  text-white sm:hidden`}
+        className={`${sidebarOpen ? "-right-7 " : "left-full"
+          } clickme fixed top-0   flex h-screen flex-col items-center  justify-center bg-transparent  text-white  sm:hidden`}
         onClick={() => setSidebarOpen(!sidebarOpen)}
         style={{ writingMode: "vertical-rl" }}
       >
-        <span className="rounded-r-lg bg-saffron-600 py-4 text-lg font-bold">
+        <span className="rounded-r-lg bg-saffron-600  py-4 text-lg font-bold">
           {sidebarOpen ? "Close" : "Expand"}
         </span>
       </span>
 
       <div className="mokshaLogo mb-5 mt-5 flex flex-col items-center space-y-4 p-2">
-        <Link
-          href="/"
-          className="mb-8 w-auto sm:group-hover:w-auto"
-        >
+        <Link href="/" className="mb-8 w-auto sm:group-hover:w-auto">
           <Image
             src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/MokshaAdmin.svg"
             width={150}
@@ -102,7 +99,7 @@ const Sidebar = (props: Props) => {
           </span>
         </div>
       )}
-      <ul className="text-md mt-10 mb-4  space-y-2 overflow-y-scroll">
+      <ul className="text-md mt-10 mb-4 space-y-2 overflow-y-scroll">
         {SidebarChips.map((chip) => (
           <li key={chip.href}>
             <SidebarChip {...chip} setSidebarOpen={setSidebarOpen} />

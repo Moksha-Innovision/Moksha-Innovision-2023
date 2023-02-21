@@ -1,29 +1,27 @@
 import { Koulen } from "@next/font/google";
+import Image from "next/image";
+import Marquee from "react-fast-marquee";
 import SliderSlide from "./SliderSlide";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
-type Props = { right: boolean; images: string[] };
+//type Props = { right: boolean; images: string[], ...prp:any };
 
-const Infiniteslider = (props: Props) => {
-  const { right, images } = props;
+const Infiniteslider = ({ right, images, ...prp }: any) => {
+
   return (
-    <div className="flex h-full">
-      <div className="slider-holder relative h-full w-[200%] overflow-x-hidden">
-        <div
-          className={`slider absolute right-0 flex h-full w-[200%] items-center justify-around gap-2 ${
-            right ? "animate-infinitescrollright" : "animate-infinitescrollleft"
-          }`}
-        >
-          {images.map((i) => {
-            return <SliderSlide key={i}>{i}</SliderSlide>;
-          })}
-
-          {images.map((i) => {
-            return <SliderSlide key={i}>{i}</SliderSlide>;
-          })}
-        </div>
-      </div>
-    </div>
+    <Marquee speed={50} gradient={false} {...prp} style={{ marginBottom: "40px" }}>
+      {images.map((a: any, i: any) => (
+        <SliderSlide key={i} className={"mr-12 md:mr-20 p-2 h-36 w-60 sm:h-40 sm:w-72"}>
+          <Image
+            src={a}
+            width={100}
+            height={100}
+            alt={"sponser"}
+            className={`w-full h-full`}
+          />
+        </SliderSlide>
+      ))}
+    </Marquee>
   );
 };
 
