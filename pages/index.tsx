@@ -20,7 +20,6 @@ export default function App() {
       <Navbar />
       <div className="flex min-h-screen flex-col bg-prussian-blue-1000  pt-[7vh] md:flex-row">
         <div className="h-[50vh] w-screen  bg-prussian-blue-1000  md:h-screen md:w-2/3 ">
-
           <Canvas
             gl={{ physicallyCorrectLights: true }}
             shadows
@@ -52,11 +51,11 @@ export default function App() {
               enableZoom={false}
             />
           </Canvas>
-          <Loader/>
+          <Loader />
         </div>
         <LandingPageCardContainer />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
