@@ -1,6 +1,5 @@
-import EventCard from "./EventCard";
-import { useUser } from "@supabase/auth-helpers-react";
 import Link from "next/link";
+import EventCard from "./EventCard";
 
 type Props = {
   setEventModal: (a: any) => any;
@@ -24,9 +23,10 @@ const EventColumn = (props: Props) => {
           </Link>
         </span>
       </div>
+
       <div className="flex w-full flex-col gap-6 ">
         {Events.map((event, index) => (
-          <EventCard name={event.event_name} desc={event.desc} key={index} />
+          <EventCard event={event} key={index} />
         ))}
       </div>
     </div>

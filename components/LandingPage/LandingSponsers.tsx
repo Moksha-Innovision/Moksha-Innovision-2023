@@ -1,7 +1,6 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import SliderSlide from "../Sponser/SliderSlide";
 import Marquee from "react-fast-marquee";
+import SliderSlide from "../Sponser/SliderSlide";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,10 +8,27 @@ import "swiper/css/pagination";
 
 // import required modules
 import Image from "next/image";
-import { Autoplay } from "swiper";
 
 const LandingSponsers = () => {
-  const spons = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  //const spons = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const spons = [
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/aakash.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/BaskinRobbins.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/bingo.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/careerlauncher.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/codingblocks.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indianoil.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/indigo.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/lakme.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/Maybelline.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/pizzahut.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/radisson.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/royalenfield.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/sbi.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/smaash.svg",
+    "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/thehindu.svg",
+  ];
+
   // return (
   //   <div className="z-10 h-full  min-h-[10vh]">
   //     <h1 className="mb-7 flex flex-col  items-center text-center   text-4xl text-white drop-shadow-lowGlowtext md:mb-6 lg:text-5xl ">
@@ -94,8 +110,17 @@ const LandingSponsers = () => {
       </h1>
       <Marquee speed={50} gradient={false} style={{ marginBottom: "40px" }}>
         {spons.map((a, i) => (
-          <SliderSlide key={i} className={"mr-4 h-36 w-60 sm:h-40 sm:w-72"}>
-            {a}
+          <SliderSlide
+            key={i}
+            className={"mr-12 h-36 w-60 p-2 sm:h-40 sm:w-72 md:mr-20"}
+          >
+            <Image
+              src={a}
+              width={100}
+              height={100}
+              alt={"sponser"}
+              className={`h-full w-full`}
+            />
           </SliderSlide>
         ))}
       </Marquee>

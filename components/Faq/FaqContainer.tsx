@@ -5,41 +5,40 @@ import FaqTile from "./FaqTile";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const Faqs = [
-  { id: 1, ques: "hello 1", ans: "hi i am moksha" },
+  {
+    id: 1,
+    ques: "What is Moksha ?",
+    ans: "Moksha is the annual cultural festival of NSUT, a 2 - day long fiesta that takes place in the month of March.More than a fest, it has been a symbolof ethereal gatherings and blasting triumphs. \n After a successful resurrection in 2022, we're back again.",
+  },
   {
     id: 2,
-    ques: "hello 2",
-    ans: "hi i am moksha",
+    ques: "What is Innovision ?",
+    ans: "Innovision is the annual technical festival of NSUT, a 3 - day long fiesta that shines across the month of March. \n The clicking of keyboards and the rumbling of brains, is the theme music of Innovision, which brings along a medley of mind - boggling technical events for all the geeks out. ",
   },
   {
     id: 3,
-    ques: "hello 3",
-    ans: "hi i am moksha",
+    ques: "What is Moksha - Innovison'23 ?",
+    ans: "A blast of colours, an outburst of dopamine, an augment of legacy;  Moksha - Innovison'23 is all set to take everyone for a deep dive into the ocean of bliss. \n This time, it will be the greatest and grandest ever, truly being salvation from enervation.",
   },
   {
     id: 4,
-    ques: "hello 4",
-    ans: "hi i am moksha",
+    ques: "When will Moksha - Innovation'23 be held ? What are the exact dates ?",
+    ans: " Moksha - innovation'23 is a 3 day annual cultural - tech  extravaganza, organised in the month of March.The dates are 25 - 28th March.",
   },
   {
     id: 5,
-    ques: "hello 5",
-    ans: "hi i am moksha",
+    ques: "What are the events in Moksha - Innovison'23 ?",
+    ans: "Every year Moksha and Innovision witness a plethora of events ranging from dramatics and dance to Hackathons and Robowars. \n It is these events that bring life to the fest with the ever so enthusiastics hosts and  participants. ",
   },
   {
     id: 6,
-    ques: "hello 5",
-    ans: "hi i am moksha",
+    ques: "Why should I participate in those events ?",
+    ans: "Participants are the people who make the fest what it is and for whom the fest is organised. \n Participating in the events will not only give you a chance to win exciting prizes and enjoy, but most importantly they will enhance your confidence, experience, learning and overall personality. \n So register in maximum possible events as they come up and do spread the word.",
   },
   {
     id: 7,
-    ques: "hello 5",
-    ans: "hi i am moksha",
-  },
-  {
-    id: 8,
-    ques: "hello 5",
-    ans: "hi i am moksha",
+    ques: "Why is the participation of female students low, especially in departments like security ?",
+    ans: "The representation and participation of female students in core organising team or as volunteers, irrespective of department, has always been at par with the gender ratio of the college and maybe even more.",
   },
 ];
 
@@ -51,7 +50,7 @@ const FaqContainer = (props: Props) => {
   const [bounce, setBounce] = useState(false);
 
   return (
-    <div className=" flex min-h-[calc(65vh_-_96px)] w-full flex-col  gap-4 pt-8 opacity-100 ">
+    <div className=" flex w-[94%] flex-col gap-4  pt-8 opacity-100 sm:w-[90%] ">
       <h1 className=" mb-1 flex   flex-col items-center text-center   text-3xl text-white drop-shadow-lowGlowtext sm:text-5xl   md:mb-2  md:text-4xl lg:mb-3  lg:text-5xl ">
         Frequently Asked Questions
       </h1>
@@ -81,9 +80,11 @@ const FaqContainer = (props: Props) => {
       >
         {more ? "View Less" : "View More"}{" "}
         {more ? (
-          <AiFillCaretUp className={`${bounce && "animate-bounce"} inline`} />
+          <AiFillCaretUp className={`${!bounce && "animate-bounce"} inline`} />
         ) : (
-          <AiFillCaretDown className={`${bounce && "animate-bounce"} inline`} />
+          <AiFillCaretDown
+            className={`${!bounce && "animate-bounce"} inline`}
+          />
         )}
       </div>
     </div>

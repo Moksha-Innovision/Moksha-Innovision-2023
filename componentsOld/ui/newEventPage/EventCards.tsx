@@ -42,8 +42,8 @@ const EventCards = ({ event }: Props) => {
                 alt={event.img}
                 width={100}
                 height={100}
-                className=" h-[100%] w-[100%]"
-              ></Image>
+                className="h-[100%] w-[100%]"
+              />
               <div className="absolute top-0 flex h-[100%] w-[100%] text-[#271300]">
                 <div className="w-[40%]"></div>
                 <div className="w-[25%]"></div>
@@ -60,7 +60,7 @@ const EventCards = ({ event }: Props) => {
                 width={100}
                 height={100}
                 className=" h-[100%] w-[100%] "
-              ></Image>
+              />
               <div className="absolute top-0 flex h-[100%] w-[100%] text-[#271300]">
                 <div className="w-[10%]"></div>
 

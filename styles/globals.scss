@@ -31,7 +31,7 @@
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-.flip-card:hover .flip-card-inner {
+.flip-card-head:hover .flip-card-inner {
   transform: rotateX(180deg);
 }
 .flip-card-front,

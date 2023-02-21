@@ -23,7 +23,7 @@ const EventCards = ({ event }: Props) => {
   const [glow, setGlow] = useState(false);
   return (
     <div
-      className="rounded-xl bg-yellow-400 bg-opacity-10 p-8 backdrop-blur-[3px]  "
+      className="flip-card-head rounded-xl bg-yellow-400 bg-opacity-10 p-8 backdrop-blur-[3px] "
       onMouseOver={() => {
         setGlow(true);
       }}
@@ -33,9 +33,8 @@ const EventCards = ({ event }: Props) => {
     >
       <div className="flex flex-col items-center bg-transparent">
         <div
-          className={`${
-            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-          } rounded-2xl transition-[box-shadow] duration-75`}
+          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+            } rounded-2xl transition-[filter] duration-150`}
         >
           <Image
             src={`${event.poster}`}
@@ -45,11 +44,11 @@ const EventCards = ({ event }: Props) => {
             className=" h-[100%] w-[100%]"
           ></Image>
         </div>
-        {/******************************************************** */}
+        {/************************"https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/faa091fe-7472-440b-b0bb-a34d1e6f31c9poster""https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/61ad23fe-fc84-4516-ac0e-d0beeeab335fposter"*******"https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/97257e65-a025-4361-9ee8-fa0b4b36e54fposter"
+         ************************* */}
         <div
-          className={`${
-            glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
-          } h-100%] flip-card-front flip-card mt-10 flex w-[100%] items-center transition-[box-shadow] duration-75`}
+          className={`${glow ? "drop-shadow-glow" : "drop-shadow-lowGlow"
+            } h-100%] flip-card-front flip-card mt-10 flex w-[100%] items-center transition-[filter] duration-150`}
         >
           <div className="flip-card-inner">
             <div className="flip-card-front relative">
@@ -107,3 +106,6 @@ const EventCards = ({ event }: Props) => {
 };
 
 export default EventCards;
+
+
+
