@@ -21,10 +21,10 @@ const LandingPageCards = (props: Props) => {
           glareEnable={true}
           glareMaxOpacity={0.45}
           glarePosition="all"
-          glareColor="red"
+          glareColor="white"
           tiltReverse
           scale={1.02}
-          className="  grid h-full w-full cursor-pointer place-items-center bg-[rgba(0,0,0,0.5)]"
+          className="  grid h-full w-full cursor-pointer place-items-center bg-[rgba(0,0,0,0.1)]"
         >
           <h1 className={`${koulen.className} text-center text-white`}>
             Welcome to Moksha 2022 <br />
