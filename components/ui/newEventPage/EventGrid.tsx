@@ -5,7 +5,7 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 interface Props {
   events?: { name: string; img: string; ticket: string }[];
   day: string;
-  e: any
+  e: any;
 }
 
 const EventGrid = ({ events, day, e }: Props) => {

@@ -7,12 +7,12 @@ type Props = {
   className?: string;
   pattern?: string;
   placeholder?: string;
-  value?: string;
+  value?: any;
   accept?: string;
   disable?: boolean;
   title?: string;
-  max?: string;
-  min?: string;
+  max?: any;
+  min?: any;
   onChange?: (a: any) => any;
   required?: boolean;
 };

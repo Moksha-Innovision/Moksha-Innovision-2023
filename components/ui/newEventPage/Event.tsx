@@ -128,49 +128,43 @@ const events = [
 ];
 
 const Event = () => {
-
   const [eventss, setEventss] = useState<any>([]);
   const router = useRouter();
   const user = useUser();
   const supabase = useSupabaseClient();
-  const [eData, setEData] = useState<any>('')
+  const [eData, setEData] = useState<any>("");
   const getEvent = async () => {
-    const { data, error } = await supabase
-      .from('socevent')
-      .select('*')
-    setEData(
-      [
-        {
-          day: "I",
-          events: data?.filter((e) => {
-            if (e.date == "2023-03-23")
-              return e
-          }) || []
-        },
-        {
-          day: "II",
-          events: data?.filter((e) => {
-            if (e.date == "2023-03-24")
-              return e
+    const { data, error } = await supabase.from("socevent").select("*");
+    setEData([
+      {
+        day: "I",
+        events:
+          data?.filter((e) => {
+            if (e.date == "2023-03-23") return e;
           }) || [],
-        },
-        {
-          day: "III",
-          events: data?.filter((e) => {
-            if (e.date == "2023-03-25")
-              return e
-          }) || []
-        }
-      ]
-    )
+      },
+      {
+        day: "II",
+        events:
+          data?.filter((e) => {
+            if (e.date == "2023-03-24") return e;
+          }) || [],
+      },
+      {
+        day: "III",
+        events:
+          data?.filter((e) => {
+            if (e.date == "2023-03-25") return e;
+          }) || [],
+      },
+    ]);
     //setEventss(data);
     console.log(eData);
   };
 
   useEffect(() => {
-    if (eData == '')
-      getEvent();
-    console.log(eData)
+    if (eData == "") getEvent();
+    console.log(eData);
   }, [eData]);
 
   /*if (user) {
@@ -189,11 +183,7 @@ const Event = () => {
     );
   }*/
 
-
-
-
-
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   const [day, setDay] = useState("I");
   return (
@@ -220,16 +210,15 @@ const Event = () => {
           })}
         </div>
         <div className="mt-2">
-          {eData &&
-            (<EventGrid
+          {eData && (
+            <EventGrid
               events={events.filter((e) => e.day == day).at(0)?.events}
               e={eData.filter((e: any) => e.day == day).at(0)?.events}
               day={day}
-            />)
-          }
+            />
+          )}
         </div>
       </div>
-
     </div>
   );
 };
