@@ -1,13 +1,13 @@
 import { Koulen } from "@next/font/google";
 import { Loader, OrbitControls, Stage } from "@react-three/drei";
 import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
-import Tilt from "react-parallax-tilt";
+import Footer from "../components/LandingPage/Footer";
 import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
-import { Grid } from "@react-three/drei";
+
 import Model from "../components/ui/Model/model";
 import Navbar from "../components/ui/Navbar/Navbar";
-import LandingPageCards from "../components/Cards/LandingPageCards";
+
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 export default function App() {
@@ -18,9 +18,9 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className="flex min-h-screen flex-col bg-prussian-blue-1000 pt-[7vh] md:flex-row">
-        <div className="h-[50vh] w-screen  bg-prussian-blue-1000 bg-legacy bg-cover bg-center md:h-screen md:w-2/3">
-          <div className="ovelay absolute h-full w-full bg-[rgba(0,0,20,0.5)]"></div>
+      <div className="flex min-h-screen flex-col bg-prussian-blue-1000  pt-[7vh] md:flex-row">
+        <div className="h-[50vh] w-screen  bg-prussian-blue-1000  md:h-screen md:w-2/3 ">
+
           <Canvas
             gl={{ physicallyCorrectLights: true }}
             shadows
@@ -52,9 +52,11 @@ export default function App() {
               enableZoom={false}
             />
           </Canvas>
+          <Loader/>
         </div>
         <LandingPageCardContainer />
       </div>
+      <Footer/>
     </>
   );
 }
