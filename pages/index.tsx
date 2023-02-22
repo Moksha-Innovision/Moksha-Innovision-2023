@@ -1,9 +1,9 @@
 import { Koulen } from "@next/font/google";
 import { Loader, OrbitControls, Stage } from "@react-three/drei";
-import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
-import Footer from "../components/LandingPage/Footer";
 import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
+import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
+import Footer from "../components/LandingPage/Footer";
 
 import Model from "../components/ui/Model/model";
 import Navbar from "../components/ui/Navbar/Navbar";

@@ -85,7 +85,7 @@ type GLTFResult = GLTF & {
 };
 
 export function Model(props: any) {
-  const { setPopup } = props;
+  const { setPopup, popup } = props;
 
   const { nodes, materials } = useGLTF(
     "/Moksha 23 Website Homepage No Lights.gltf"
@@ -194,8 +194,9 @@ export function Model(props: any) {
           material={materials["Material.010"]}
           onClick={() => {
             setPopup("something");
+            console.log(popup)
           }}
-          onPointerOver={() => {}}
+          onPointerOver={() => { }}
         />
       </group>
       <group position={[5.23, -0.14, 7.72]} scale={0.31}>

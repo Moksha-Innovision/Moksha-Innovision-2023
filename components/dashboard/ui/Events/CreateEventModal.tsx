@@ -1,7 +1,7 @@
 import {
   useSession,
   useSupabaseClient,
-  useUser
+  useUser,
 } from "@supabase/auth-helpers-react";
 import NextImage from "next/image";
 import { useState } from "react";
