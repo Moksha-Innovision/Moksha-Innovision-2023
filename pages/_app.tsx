@@ -3,7 +3,7 @@ import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import NextNProgress from "nextjs-progressbar";
 import { AppProps } from "next/app";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/globals.scss";
 
 function MyApp({
@@ -13,6 +13,13 @@ function MyApp({
   initialSession: Session;
 }>) {
   const [supabase] = useState(() => createBrowserSupabaseClient());
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const loader = document.getElementById("globalLoader");
+      if (loader) loader.remove();
+    }
+  }, []);
 
   return (
     <>
