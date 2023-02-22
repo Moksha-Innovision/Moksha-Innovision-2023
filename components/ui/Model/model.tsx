@@ -116,6 +116,7 @@ export function Model({ props, setPop }: any) {
         <mesh
           geometry={nodes.mesh_2_1.geometry}
           material={materials["Material.010"]}
+          onClick={() => console.log("clicked")}
         />
       </group>
       <group position={[5.23, -0.14, 7.72]} scale={0.31}>

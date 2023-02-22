@@ -17,6 +17,29 @@ module.exports = {
 
           "100%": { transform: "translateX(0px)", opacity: "1" },
         },
+        /*popupanimation: {
+          "0%": {
+            transform: 'scale(1)',
+          },
+          "50%": {
+            transform: 'scale(1.4)',
+          },
+          "60%": {
+            transform: 'scale(1.1)',
+          },
+          "70%": {
+            transform: 'scale(1.2)',
+          },
+          "80%": {
+            transform: 'scale(1)',
+          },
+          "90%": {
+            transform: 'scale(1.1)',
+          },
+          "100%": {
+            transform: 'scale(1)',
+          },
+        },*/
         infinitescrollleft: {
           "0%": { left: "0%" },
 
@@ -38,6 +61,7 @@ module.exports = {
         },
       },
       animation: {
+        //popup: "popupanimation 0.7s",
         carosel: "scroll 5s linear infinite",
         wheel: "wheel 70s linear infinite",
 
@@ -67,6 +91,8 @@ module.exports = {
       backgroundImage: {
         "event-pattern":
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/bgPattern.svg')",
+        "index-pattern":
+          "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/bgPatternindex.svg')",
         legacy:
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/legacybg.svg')",
         sparkle: "url('/thomas-galler--hH70nzkUQA-unsplash.jpg')",

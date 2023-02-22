@@ -4,18 +4,30 @@ import { useState } from "react";
 import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
 import Footer from "../components/LandingPage/Footer";
 
+import { Koulen } from "@next/font/google";
+const koulen = Koulen({ weight: "400", subsets: ["latin"] });
+
 import Model from "../components/ui/Model/model";
 import Navbar from "../components/ui/Navbar/Navbar";
 
 export default function App() {
   const [pop, setPop] = useState("");
+  const [zoom, setZoom] = useState<any>(1.1);
   return (
-    <>
+    <div className="bg-prussian-blue-900">
       <Navbar />
-      <div className="flex min-h-screen flex-col bg-prussian-blue-1000  pt-[7vh] md:flex-row">
+      <div
+        className={`${koulen.className} flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-opacity-5 bg-index-pattern  bg-contain pt-[2vh] md:flex-row`}
+      >
         <div
+          onClick={() => {
+            setZoom(zoom == 2 ? 1 : 2);
+            console.log(zoom);
+          }}
           // onClick={() => setPop("appear")}
-          className="h-[50vh] w-screen     bg-black  md:h-screen md:w-2/3 "
+          className={`${
+            pop != "" ? "h-[40vh]" : "h-[60vh]"
+          }  flex w-full md:h-screen md:w-2/3`}
         >
           <Canvas
             className="sticky top-0 h-full w-full"
@@ -23,8 +35,8 @@ export default function App() {
             shadows
             camera={{
               fov: 35,
-              zoom: 0.6,
-              near: 1,
+              zoom: 1.1,
+              near: 10,
               far: 1000,
               position: [-7, 2, 11],
             }}
@@ -56,6 +68,6 @@ export default function App() {
         {pop && <LandingPageCardContainer setPop={setPop} pop={pop} />}
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
