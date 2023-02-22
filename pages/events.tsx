@@ -7,7 +7,7 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 const events = () => {
   return (
     <div
-      className={`${koulen.className} min-h-[100vh] bg-prussian-blue-1000 bg-event-pattern bg-contain bg-repeat`}
+      className={`${koulen.className} min-h-[100vh] bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed bg-repeat`}
     >
       <Navbar />
       <Event />

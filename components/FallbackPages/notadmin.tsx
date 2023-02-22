@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Navbar from "../ui/Navbar/Navbar";
-import FormInput from "../dashboard/ui/Forms/FormInput";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import Spinner from "../Loaders/Spinner";
+import Link from "next/link";
 import { useState } from "react";
+import FormInput from "../dashboard/ui/Forms/FormInput";
+import Spinner from "../Loaders/Spinner";
+import Navbar from "../ui/Navbar/Navbar";
 
 type Props = {
   type: string;
@@ -39,7 +39,7 @@ const Notadmin = (props: Props) => {
   return (
     <>
       <Navbar />
-      <div className="flex h-screen flex-col-reverse items-center justify-center gap-16 overflow-x-hidden bg-black bg-event-pattern bg-contain px-4 py-24 text-white md:gap-28 md:py-20 md:px-44 lg:flex-row lg:px-24 lg:py-24">
+      <div className="flex h-screen flex-col-reverse items-center justify-center gap-16 overflow-x-hidden bg-black bg-event-pattern bg-contain  bg-fixed px-4 py-24 text-white md:gap-28 md:py-20 md:px-44 lg:flex-row lg:px-24 lg:py-24">
         <div className="relative w-full pb-12 lg:pb-0 xl:w-1/2 xl:pt-2">
           <div className="relative">
             <div className="absolute">

@@ -38,10 +38,10 @@ const Navbar = (props: Props) => {
       <div
         className={`navbar fixed z-[21] grid grid-cols-12  ${
           nav && "bg-yellow-900 bg-opacity-20 backdrop-blur-[10px]"
-        } w-full  py-1   px-6 `}
+        } flex  h-fit w-full items-center py-1 px-6`}
       >
         <div
-          className={` col-span-2 flex h-full w-12 items-center justify-center py-2 md:hidden `}
+          className={`col-span-2 flex   w-12 items-center justify-center  py-2 md:hidden `}
           onClick={() => setShow(!show)}
         >
           <Image
@@ -56,11 +56,19 @@ const Navbar = (props: Props) => {
           />
         </div>
 
-        <div className="col-span-8 flex justify-center md:col-span-2 md:justify-start">
+        <div className="col-span-8 flex justify-center  md:col-span-2 md:justify-start">
           <Link href="/" className="  logo w-28 md:w-28">
             <Image
-              width={500}
-              height={500}
+              width={80}
+              height={80}
+              className="ml-5  md:hidden"
+              src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/mokshalogo.svg"
+              alt=""
+            />
+            <Image
+              width={100}
+              height={100}
+              className="ml-5 hidden md:block"
               src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/mokshalogo.svg"
               alt=""
             />
@@ -68,21 +76,21 @@ const Navbar = (props: Props) => {
         </div>
 
         <ul
-          className={`links hidden w-full items-center justify-around gap-8 md:col-span-8 md:flex md:px-[10%] lg:px-[20%]  ${koulen.className} text-white`}
+          className={`links hidden w-full items-center justify-around gap-8 md:col-span-9 md:flex  md:px-[5%] lg:col-span-8 lg:px-[10%] xl:px-[20%]  ${koulen.className} text-white`}
         >
           <NavLink href="/events">Events</NavLink>
           <NavLink href="/sponsors">Sponsors</NavLink>
           <NavLink href="/faq">Faq</NavLink>
           <NavLink href="/contact" underlineclassName="">
-            Contact Us
+            Contact
           </NavLink>
-          <NavLink href="/legacy">Legacy</NavLink>
+          <NavLink href="/legacy">Our past</NavLink>
           {/*<NavLink href="/about">About Us</NavLink>*/}
         </ul>
 
         {/* //Profile Button */}
 
-        <div className="profile-btn col-span-2 flex items-center justify-center md:justify-end">
+        <div className="profile-btn col-span-2 flex items-center  justify-end   md:col-span-1 lg:col-span-2">
           <button
             className="flex h-[45px]  items-center justify-center gap-3 rounded-full p-2 lg:px-10"
             onClick={() => {
@@ -112,11 +120,22 @@ const Navbar = (props: Props) => {
       {/*Ham menu */}
       <div
         className={` ${
-          show ? "translate-x-[90vw] shadow-2xl shadow-black " : "translate-x-0"
-        }  fixed  -left-[90vw] top-0 z-20 h-[99vh] w-[60vw]  rounded-br-2xl border-t-0 shadow-2xl transition-[transform] duration-200  md:hidden`}
+          show
+            ? "origin-top translate-x-[35vw] rotate-[0]  shadow-black "
+            : "translate-x-0"
+        }  fixed -left-[35vw] top-0 z-20 h-[100vh] w-[35vw] origin-top rotate-[90deg]   transition-[transform] duration-500  md:hidden`}
       >
+        {/*
+          <div
+        className={` ${
+          show
+            ? "origin-top translate-x-[35vw] rotate-[0]  shadow-black "
+            : "translate-x-0"
+        }  fixed -left-[35vw] top-0 z-20 h-[99vh] w-[35vw] origin-top rotate-[90deg]   transition-[transform] duration-1000  md:hidden`}
+      >
+          */}
         <ul
-          className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain pl-8 text-white`}
+          className={`flex flex-col justify-center shadow-2xl ${koulen.className} h-full w-[50vw]  space-y-10 rounded-br-[50%] rounded-tr-[50%] bg-prussian-blue-950 bg-opacity-20  bg-contain pl-8 text-white backdrop-blur-[20px]`}
         >
           <NavLink href="/events" imgScale={110} underlineclassName="-left-3">
             Events
@@ -131,7 +150,7 @@ const Navbar = (props: Props) => {
             Contact Us
           </NavLink>
           <NavLink href="/legacy" underlineclassName="left-3" imgScale={125}>
-            Legacy
+            Our past
           </NavLink>
           {/*<NavLink href="/about" imgScale={110}>
             About Us
