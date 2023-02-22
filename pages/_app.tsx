@@ -1,5 +1,6 @@
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
+import { ParallaxProvider } from "react-scroll-parallax";
 import NextNProgress from "nextjs-progressbar";
 import { AppProps } from "next/app";
 import { useState } from "react";
@@ -16,12 +17,14 @@ function MyApp({
   return (
     <>
       <NextNProgress />
-      <SessionContextProvider
-        supabaseClient={supabase}
-        initialSession={pageProps.initialSession}
-      >
-        <Component {...pageProps} />
-      </SessionContextProvider>
+      <ParallaxProvider>
+        <SessionContextProvider
+          supabaseClient={supabase}
+          initialSession={pageProps.initialSession}
+        >
+          <Component {...pageProps} />
+        </SessionContextProvider>
+      </ParallaxProvider>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import LandingContactUS from "./LandingContactUS";
 import LandingEvent from "./LandingEvent";
+import { Parallax } from "react-scroll-parallax";
 import LandingSponsers from "./LandingSponsers";
 import Legacy from "./Legacy";
 
@@ -8,15 +9,15 @@ const LandingPage = () => {
   return (
     <div className=" flex flex-col">
       <Legacy />
-      <div className="flex h-[600px] items-start  justify-center lg:h-[650px]">
-        <LandingEvent />
-      </div>
+      <Parallax translateY={[-10, 20]} className="z-10">
+        <div className="flex h-[600px] w-full items-start  justify-center lg:h-[650px]">
+          <LandingEvent />
+        </div>
+      </Parallax>
       <div className=" relative z-10 mt-[30%] h-fit">
         <LandingSponsers />
       </div>
-      <div>
-        <LandingContactUS />
-      </div>
+
       <div className="">
         <Footer />
       </div>
