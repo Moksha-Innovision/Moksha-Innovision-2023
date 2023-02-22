@@ -100,11 +100,11 @@ const Navbar = (props: Props) => {
                 className="w-8"
               />
             </div>
-            <span
+            {/*            <span
               className={`${koulen.className}  hidden text-xl text-white sm:block`}
             >
               {profile.name.split(" ")[0].slice(0, 8)}
-            </span>
+          </span>*/}
           </button>
         </div>
       </div>
