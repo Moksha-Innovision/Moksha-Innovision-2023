@@ -1,12 +1,18 @@
-import Tilt from "react-parallax-tilt";
 import { Koulen } from "@next/font/google";
+import { GrClose } from "react-icons/gr";
+import Tilt from "react-parallax-tilt";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 type Props = {};
 
-const LandingPageCards = (props: Props) => {
+const LandingPageCards = ({ setPop }: any) => {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center text-5xl ">
+    <div className="flex h-full w-full flex-col items-center justify-center bg-white text-5xl ">
+      <GrClose
+        onClick={() => {
+          setPop("");
+        }}
+      />
       <Tilt
         perspective={1500}
         glareEnable={true}
