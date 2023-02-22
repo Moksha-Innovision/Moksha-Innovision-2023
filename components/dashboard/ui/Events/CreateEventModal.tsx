@@ -49,7 +49,10 @@ const CreateEventModal = (props: Props) => {
 
   const formatPoc = (text: string) => {
     let arr = text.split(":");
-    if (arr.length !== 2) return {};
+    if (arr.length !== 2) {
+      console.log(arr.length);
+      return {};
+    }
     return { [arr[0]]: arr[1] };
   };
 
@@ -106,7 +109,7 @@ const CreateEventModal = (props: Props) => {
       } else {
         setEventId(generateUUID());
         setAlert("success");
-        e.target.reset();
+        //e.target.reset();
         setImgEr("");
       }
     } catch (err) {

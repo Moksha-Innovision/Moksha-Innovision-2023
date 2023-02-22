@@ -1,10 +1,10 @@
+import { Koulen } from "@next/font/google";
 import { Loader, OrbitControls, Sparkles, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
-import Footer from "../components/LandingPage/Footer";
 import useWindowDimensions from "../components/Hooks/useWindowDimensions";
-import { Koulen } from "@next/font/google";
+import Footer from "../components/LandingPage/Footer";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 import Model from "../components/ui/Model/model";
@@ -15,7 +15,7 @@ export default function App() {
   const { height, width } = useWindowDimensions();
 
   return (
-    <div className="bg-prussian-blue-900">
+    <div className=" bg-[#012347]">
       <Navbar />
 
       <div
@@ -40,7 +40,7 @@ export default function App() {
             <Suspense fallback={null}>
               <Stage
                 adjustCamera={1}
-                environment={width && width > 500 ? "night" : "city"}
+                environment={width && width > 600 ? "night" : "city"}
               >
                 <Model setPop={setPop} />
               </Stage>
