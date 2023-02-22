@@ -69,6 +69,7 @@ module.exports = {
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/bgPattern.svg')",
         legacy:
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/legacybg.svg')",
+        sparkle: "url('/thomas-galler--hH70nzkUQA-unsplash.jpg')",
         LandingEvent:
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/ebgobj.svg')",
         "carosel-pattern":
