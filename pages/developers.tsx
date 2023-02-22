@@ -120,7 +120,6 @@ const developers = (props: Props) => {
         </div>
       </div>
     </div>
-    
   );
 };
 

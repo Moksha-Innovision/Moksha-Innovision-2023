@@ -7,7 +7,10 @@ export default function Document() {
         <link rel="shortcut icon" href="/mokshalogo.svg" />
       </Head>
       <body>
-        <div className="grid h-screen w-screen place-items-center bg-black" id="globalLoader">
+        <div
+          className="grid h-screen w-screen place-items-center bg-black"
+          id="globalLoader"
+        >
           <img
             src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/footerLogo.svg"
             width={300}
