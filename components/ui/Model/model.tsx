@@ -137,6 +137,7 @@ export function Model({ props, setPop }: any) {
         <mesh
           geometry={nodes.mesh_3.geometry}
           material={materials["Material.001"]}
+          onClick={() => setPop("sf")}
         />
         <mesh
           geometry={nodes.mesh_3_1.geometry}
