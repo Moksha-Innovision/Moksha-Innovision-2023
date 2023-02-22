@@ -1,6 +1,5 @@
-import { Koulen } from "@next/font/google";
-import * as THREE from "three";
-import { Loader, OrbitControls, Stage } from "@react-three/drei";
+
+import { CameraControls, Loader, OrbitControls, Stage } from "@react-three/drei";
 import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
 import Footer from "../components/LandingPage/Footer";
 import { Canvas } from "@react-three/fiber";
@@ -9,13 +8,9 @@ import { useState } from "react";
 import Model from "../components/ui/Model/model";
 import Navbar from "../components/ui/Navbar/Navbar";
 
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 export default function App() {
-  const [popup, setPopup] = useState("none");
-  // const [interactive,setInteractive]=useState(false)
-
-  const lookAtPos = new THREE.Vector3(0, 0, 0);
+ 
   return (
     <>
       <Navbar />
@@ -26,7 +21,7 @@ export default function App() {
             shadows
             camera={{
               fov: 35,
-              zoom: 1,
+              zoom: 0.6,
               near: 1,
               far: 1000,
               position: [-7, 2, 11],
@@ -35,13 +30,13 @@ export default function App() {
             <Stage adjustCamera={1} intensity={0} shadows environment={"night"}>
               <Model />
             </Stage>
-            <OrbitControls
-              makeDefault
-              autoRotate
-              autoRotateSpeed={0.5}
+            <CameraControls
+             
+
               minPolarAngle={-Math.PI / 2}
               maxPolarAngle={Math.PI / 2}
-              enableZoom={false}
+            
+              
             />
           </Canvas>
           <Loader />
