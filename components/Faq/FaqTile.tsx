@@ -49,7 +49,7 @@ const FaqTile = (props: Props) => {
       </div>
       <p
         className={`answer col-span-10 col-start-3 -ml-4 mb-1  sm:-ml-7 ${
-          active ? "max-h-20" : "max-h-0"
+          active ? "max-h-[600px]" : "max-h-0"
         } overflow-y-hidden transition-all duration-200 ease-linear ${
           montserrat.className
         }`}

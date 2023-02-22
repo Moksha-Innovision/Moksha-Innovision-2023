@@ -1,7 +1,7 @@
 import {
   useSession,
   useSupabaseClient,
-  useUser,
+  useUser
 } from "@supabase/auth-helpers-react";
 import NextImage from "next/image";
 import { useState } from "react";
@@ -44,6 +44,7 @@ const CreateEventModal = (props: Props) => {
   const [imgEr, setImgEr] = useState("");
   const [isLoading, setIsLoading] = useState("none");
   const [alert, setAlert] = useState("");
+  const [poaterPath, setPosterPath] = useState<any>("");
   const { setEventModal, getEvent } = props;
 
   const formatPoc = (text: string) => {
@@ -79,12 +80,7 @@ const CreateEventModal = (props: Props) => {
     form_question = form_question.split("\n");
     let POCS = { ...formatPoc(poc1), ...formatPoc(poc2), ...formatPoc(poc3) };
 
-    const { data } = await supabase.storage
-      .from("event-posters")
-      .getPublicUrl(eventId + "poster");
-
-    poster = data.publicUrl;
-
+    poster = poaterPath;
     try {
       const { data, error } = await supabase.from("socevent").insert([
         {
@@ -135,6 +131,7 @@ const CreateEventModal = (props: Props) => {
         setImgEr("Size should be upto 4 MB");
         if (e.target.value) e.target.value = null;
         setIsLoading("none");
+        setPosterPath("");
         return;
       } else {
         let img = new Image();
@@ -151,6 +148,7 @@ const CreateEventModal = (props: Props) => {
             console.log(ratio);
             setImgEr("Aspect Ratio of 1:1 needed");
             e.target.value = null;
+            setPosterPath("");
             setIsLoading("none");
           } else {
             setImgEr("");
@@ -158,14 +156,18 @@ const CreateEventModal = (props: Props) => {
               const file = e.target.files[0];
               const { data, error } = await supabase.storage
                 .from("event-posters")
-                .upload(eventId + "poster", file, {
+                .upload(eventId + file.name, file, {
                   cacheControl: "3600",
-                  upsert: false,
+                  upsert: true,
                 });
-              console.log(data);
+
               setIsLoading("none");
               if (error) {
                 console.log(error);
+              } else {
+                setPosterPath(
+                  `https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/${data.path}`
+                );
               }
             } catch (err) {
               console.log("error");
@@ -173,6 +175,8 @@ const CreateEventModal = (props: Props) => {
           }
         };
       }
+    } else {
+      setPosterPath("");
     }
   };
 
@@ -342,7 +346,7 @@ const CreateEventModal = (props: Props) => {
               labelColor="black"
               label="Poster Image"
               type="file"
-              accept=".svg, .png"
+              accept=".svg"
               max="3MB"
               id="Poster Image"
               name="poster"

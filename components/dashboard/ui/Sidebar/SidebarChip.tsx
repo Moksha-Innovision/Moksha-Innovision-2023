@@ -19,7 +19,7 @@ const SidebarChip = (props: Props) => {
   return (
     <Link
       href={href}
-      className={`flex items-center justify-center space-x-3 rounded-md py-2 font-medium text-white hover:bg-gray-900 hover:invert ${
+      className={`flex items-center justify-start space-x-3 rounded-md py-2 pl-10 font-medium text-white hover:bg-gray-900 hover:invert ${
         router.asPath === href ? ACTIVE_STYLE : ""
       }`}
       onClick={() => setSidebarOpen(false)}
