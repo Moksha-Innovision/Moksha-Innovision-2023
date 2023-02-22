@@ -50,10 +50,11 @@ const FaqContainer = (props: Props) => {
   const [bounce, setBounce] = useState(false);
 
   return (
-    <div className=" flex w-[94%] flex-col gap-4  pt-8 opacity-100 sm:w-[90%] ">
-      <h1 className=" mb-1 flex   flex-col items-center text-center   text-3xl text-white drop-shadow-lowGlowtext sm:text-5xl   md:mb-2  md:text-4xl lg:mb-3  lg:text-5xl ">
+    <div className="sfsdf relative flex w-[94%] flex-col gap-4   pt-8 opacity-100 sm:w-[90%] lg:h-[600px] lg:overflow-scroll lg:pt-0">
+      <h1 className=" mb-1 flex   flex-col items-center bg-fixed   py-2 text-center text-3xl text-white drop-shadow-lowGlowtext   sm:text-5xl  md:mb-2 md:text-4xl  lg:sticky lg:top-0  lg:mb-3 lg:bg-prussian-blue-1000 lg:bg-event-pattern lg:text-5xl lg:drop-shadow-none">
         Frequently Asked Questions
       </h1>
+
       {Faqs.slice(0, more ? Faqs.length : 5).map(({ id, ques, ans }) => {
         return (
           <FaqTile
@@ -67,7 +68,7 @@ const FaqContainer = (props: Props) => {
         );
       })}
       <div
-        className="text-center text-white hover:cursor-pointer"
+        className="text-center text-white hover:cursor-pointer "
         onMouseEnter={() => {
           setBounce(true);
         }}

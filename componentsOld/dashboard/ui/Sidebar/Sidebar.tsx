@@ -1,7 +1,7 @@
-import SidebarChip from "./SidebarChip";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import SidebarChip from "./SidebarChip";
 type Props = {};
 
 const SidebarChips = [
@@ -30,7 +30,7 @@ const SidebarChips = [
 const Sidebar = (props: Props) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    // <div className="flex  bg-event-pattern bg-contain  bg-prussian-blue-1000 w-full h-screen ">
+    // <div className="flex  bg-event-pattern bg-fixed bg-contain  bg-prussian-blue-1000 w-full h-screen ">
 
     <div
       className={` group fixed left-0 z-10 h-screen w-64 cursor-pointer rounded rounded-r-[20px] bg-[#130d4185] shadow-lg  shadow-[rgba(255,255,255,0.2)] backdrop-blur-sm transition-all  duration-300 hover:backdrop-blur-sm  sm:w-28 sm:translate-x-0  sm:bg-[rgba(255,255,255,0.1)]  sm:hover:w-64 ${

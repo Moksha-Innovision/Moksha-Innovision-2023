@@ -1,9 +1,9 @@
 import { Koulen } from "@next/font/google";
+const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 import Tilt from "react-parallax-tilt";
 
 import Image from "next/image";
 import { AiOutlineClose } from "react-icons/ai";
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 type Props = {};
 

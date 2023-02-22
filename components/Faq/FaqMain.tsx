@@ -20,7 +20,7 @@ const FaqMain = () => {
             />
           </div>
         </div>
-        <div className="flex justify-center md:mt-10 md:w-[60vw]  md:min-w-[600px] lg:w-[38vw]">
+        <div className="relative flex justify-center md:mt-10 md:w-[60vw] md:min-w-[600px] lg:w-[38vw]">
           <FaqContainer />
         </div>
       </div>
