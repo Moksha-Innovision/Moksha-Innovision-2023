@@ -23,7 +23,7 @@ export default function App() {
             shadows
             camera={{
               fov: 35,
-              zoom: 1,
+              zoom: 0.6,
               near: 1,
               far: 1000,
               position: [-7, 2, 11],
