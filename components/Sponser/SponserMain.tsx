@@ -107,9 +107,9 @@ const SponserMain = (props: Props) => {
                 />*/}
 
         <div
-          className={`m-auto hidden h-full w-full max-w-full flex-col gap-8 sm:flex md:gap-16 lg:gap-16`}
+          className={`m-auto mt-[8vh] hidden h-full min-h-[650px] w-full max-w-full flex-col gap-8 sm:flex md:gap-16 lg:gap-16`}
         >
-          <h1 className=" mb-1 flex   flex-col items-center text-center   text-6xl text-white drop-shadow-lowGlowtext md:mb-2     md:text-7xl lg:mb-3   ">
+          <h1 className=" mb-1 mt-5 flex   flex-col items-center text-center   text-6xl text-white drop-shadow-lowGlowtext md:mb-2     md:text-7xl lg:mb-3   ">
             Past Sponsors
           </h1>
           <div className="top-row h-40 w-full">

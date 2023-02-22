@@ -45,10 +45,7 @@ const Notadmin = (props: Props) => {
             <div className="absolute">
               <div className="">
                 <h1 className="my-2 text-3xl font-bold text-white lg:text-5xl xl:text-6xl">
-                  {props.type !== "login"
-                    ? `Looks like
-                                    Your are not allowed to visit this page`
-                    : "Looks Like You have not logged in"}
+                  Hello
                 </h1>
                 <p className="my-2  ">
                   Sorry about that! Please visit our homepage to get where you

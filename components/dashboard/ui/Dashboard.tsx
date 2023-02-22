@@ -5,7 +5,7 @@ const Dashboard = (props: any) => {
 
   return (
     <>
-      <div className="flex  h-screen w-full  bg-prussian-blue-1000 bg-event-pattern bg-contain   bg-fixed  ">
+      <div className="flex  h-screen w-full  bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed  ">
         <Sidebar />
         <div className="content relative basis-full pl-6 text-white sm:pl-36">
           {children}
