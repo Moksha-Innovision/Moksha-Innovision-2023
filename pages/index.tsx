@@ -62,7 +62,7 @@ export default function App() {
               ""
             )}
           </Canvas>
-          <Loader
+          {/* <Loader
             containerStyles={{
               backgroundColor: "rgba(0,0,50.0.5)",
               backgroundImage: "url(bgPattern.svg)",
@@ -70,7 +70,7 @@ export default function App() {
             }}
             innerStyles={{ backgroundColor: "red" }}
             barStyles={{}}
-          />
+          /> */}
           {/*<LandingPageCardContainer />*/}
         </div>
 

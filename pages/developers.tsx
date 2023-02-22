@@ -1,6 +1,7 @@
 import { Koulen } from "@next/font/google";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
+import PageLoader from "../components/Loaders/page";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 type Props = {};
