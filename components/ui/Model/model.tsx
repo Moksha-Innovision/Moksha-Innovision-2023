@@ -1,6 +1,7 @@
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { GLTF } from "three-stdlib";
+import { useRouter } from "next/router";
 
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 
@@ -105,6 +106,7 @@ type GLTFResult = GLTF & {
 };
 
 export function Model({ props, setPop }: any) {
+  const router = useRouter();
   const { width, height } = useWindowDimensions();
   const { nodes, materials } = useGLTF(
     "/Moksha 23 Website Homepage No Lights_compressed.gltf"
@@ -115,11 +117,14 @@ export function Model({ props, setPop }: any) {
         <mesh
           geometry={nodes.mesh_2.geometry}
           material={materials["Material.001"]}
+          onClick={() => {
+            router.push("/events");
+          }}
+          scale={1}
         />
         <mesh
           geometry={nodes.mesh_2_1.geometry}
           material={materials["Material.010"]}
-          onClick={() => console.log("clicked")}
         />
       </group>
       <group position={[5.23, -0.14, 7.72]} scale={0.31}>
@@ -157,6 +162,9 @@ export function Model({ props, setPop }: any) {
         <mesh
           geometry={nodes.mesh_4.geometry}
           material={materials["Material.001"]}
+          onClick={() => {
+            router.push("/sponsors");
+          }}
         />
         <mesh
           geometry={nodes.mesh_4_1.geometry}
@@ -167,6 +175,9 @@ export function Model({ props, setPop }: any) {
         <mesh
           geometry={nodes.mesh_5.geometry}
           material={materials["Material.001"]}
+          onClick={() => {
+            router.push("/contact");
+          }}
         />
         <mesh
           geometry={nodes.mesh_5_1.geometry}

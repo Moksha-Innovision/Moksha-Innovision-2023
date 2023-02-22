@@ -27,7 +27,7 @@ const FaqTile = (props: Props) => {
     <div
       className={`outer  border-2 bg-white ${
         active ? "shadow-2xl" : ""
-      } grid max-w-2xl cursor-pointer grid-cols-12 rounded-md   transition-all`}
+      } grid max-w-2xl cursor-pointer grid-cols-12 rounded-md   pr-3 pb-3 transition-all`}
     >
       <div
         className="question  col-span-12 grid grid-cols-8 items-center py-4"
