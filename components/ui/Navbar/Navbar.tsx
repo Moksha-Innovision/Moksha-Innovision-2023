@@ -52,6 +52,7 @@ const Navbar = (props: Props) => {
             width={100}
             height={100}
             className="rounded-[1px] antialiased outline outline-2 outline-offset-4 outline-white"
+            priority
           />
         </div>
 
