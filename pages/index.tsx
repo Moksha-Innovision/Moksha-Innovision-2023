@@ -1,4 +1,5 @@
 import { Koulen } from "@next/font/google";
+import * as THREE from "three";
 import { Loader, OrbitControls, Stage } from "@react-three/drei";
 import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
 import Footer from "../components/LandingPage/Footer";
@@ -14,7 +15,7 @@ export default function App() {
   const [popup, setPopup] = useState("none");
   // const [interactive,setInteractive]=useState(false)
 
-  const color = "#05055e";
+  const lookAtPos = new THREE.Vector3(0, 0, 0);
   return (
     <>
       <Navbar />
@@ -31,14 +32,8 @@ export default function App() {
               position: [-7, 2, 11],
             }}
           >
-            <Stage
-              adjustCamera={1}
-              intensity={0}
-              shadows
-              preset={"soft"}
-              environment={"night"}
-            >
-              <Model shadows castShadow />
+            <Stage adjustCamera={1} intensity={0} shadows environment={"night"}>
+              <Model />
             </Stage>
             <OrbitControls
               makeDefault
@@ -46,13 +41,12 @@ export default function App() {
               autoRotateSpeed={0.5}
               minPolarAngle={-Math.PI / 2}
               maxPolarAngle={Math.PI / 2}
-              minAzimuthAngle={-1.2 * Math.PI}
-              maxAzimuthAngle={0.5}
               enableZoom={false}
             />
           </Canvas>
           <Loader />
         </div>
+
         <LandingPageCardContainer />
       </div>
       <Footer />
