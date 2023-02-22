@@ -34,7 +34,7 @@ const Sidebar = (props: Props) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    // <div className="flex  bg-event-pattern bg-fixed bg-contain  bg-prussian-blue-1000 w-full h-screen ">
+    // <div className="flex  bg-event-pattern bg-fixed  bg-contain  bg-prussian-blue-1000 w-full h-screen ">
 
     <div
       className={` group fixed  left-0 z-10 h-screen w-64 cursor-pointer rounded rounded-r-[20px] bg-[#130d4185] shadow-lg  shadow-[rgba(255,255,255,0.2)] backdrop-blur-sm transition-all duration-300  hover:backdrop-blur-sm sm:w-28  sm:translate-x-0 sm:overflow-y-auto  sm:bg-[rgba(255,255,255,0.1)]  sm:hover:w-64 ${
@@ -89,16 +89,18 @@ const Sidebar = (props: Props) => {
       </div>
       {user && (
         <div className="w-full text-center">
-          <span
-            className="rounded-md bg-saffron-600 p-2 font-bold text-white hover:scale-105"
-            onClick={() => {
-              async () => {
-                const { error } = await supabase.auth.signOut();
-              };
-            }}
-          >
-            Logout
-          </span>
+          <Link href={"/userlogin"}>
+            <span
+              className="rounded-md bg-saffron-600 p-2 font-bold text-white hover:scale-105"
+              onClick={() => {
+                async () => {
+                  const { error } = await supabase.auth.signOut();
+                };
+              }}
+            >
+              Logout
+            </span>
+          </Link>
         </div>
       )}
       <ul className="text-md mt-10 mb-4 space-y-2 overflow-y-scroll">

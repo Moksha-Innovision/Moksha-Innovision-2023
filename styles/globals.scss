@@ -64,6 +64,9 @@
     transform: translateX(0) translateY(0) scale(1);
   }
 }
+.sfsdf::-webkit-scrollbar {
+  display: none;
+}
 @keyframes popup {
   0% {
     transform: translateY(-50%) scale(0);

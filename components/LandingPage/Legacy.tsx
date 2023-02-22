@@ -1,6 +1,6 @@
 import Image from "next/image";
-import LegacyCarosel from "./LegacyCarosel";
 import { Parallax } from "react-scroll-parallax";
+import LegacyCarosel from "./LegacyCarosel";
 
 const Legacy = () => {
   return (
@@ -23,7 +23,7 @@ const Legacy = () => {
             type="video/webm"
           ></source>
         </video>
-        <div className=" pointer-events-none absolute top-0  h-full w-full bg-gradient-to-t from-[rgba(2,3,4,0.5)] via-[rgba(1,2,4,0.3)] to-[rgba(0,0,0)] object-cover backdrop-blur-sm"></div>
+        <div className=" pointer-events-none absolute top-0  h-full w-full bg-gradient-to-t from-[rgba(2,3,4,0.5)] via-[rgba(1,2,4,0.3)] to-[rgba(0,0,0)] object-cover backdrop-blur-[5px]"></div>
       </Parallax>
 
       <div className="absolute -bottom-[40vh] flex w-full justify-center lg:-bottom-[46vh]">

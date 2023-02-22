@@ -70,7 +70,9 @@ const UserLogin = () => {
           className={`${koulen.className} bg- borer-4 drop-shadow-gow z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl border-saffron-500 bg-[rgba(0,0,2,0)] py-6 px-12 backdrop-blur-[8px] md:px-16`}
         >
           <div className="text-white">
-            <div className=" text-center text-4xl">User Log-In</div>
+            <div className=" text-center text-4xl">
+              {claimsAdmin ? "Admin Log-In" : "User Log-In"}
+            </div>
             <div
               className={`"text-monza-800"  }  text-center
               text-lg`}
@@ -110,11 +112,23 @@ const UserLogin = () => {
 
           <div className="flex w-full flex-col items-center text-2xl">
             <button
+              disabled={password !== SECRET_PASS_KEY && /*claimsAdmin*/ true}
+              className={`mt-3  h-14  w-[100%] rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04] disabled:pointer-events-none disabled:opacity-40`}
+            >
+              {isLoading ? (
+                <Spinner />
+              ) : claimsAdmin ? (
+                "Login"
+              ) : (
+                "Coming Soon..."
+              )}
+            </button>
+            {/*<button
               disabled={password !== SECRET_PASS_KEY && claimsAdmin}
               className={`mt-3  h-14  w-[100%] rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04] disabled:pointer-events-none disabled:opacity-40`}
             >
               {isLoading ? <Spinner /> : "Login"}
-            </button>
+              </button>*/}
           </div>
           <div>
             <span className="text-white">

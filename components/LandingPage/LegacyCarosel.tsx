@@ -11,48 +11,53 @@ import { SwiperButtonNxt, SwiperButtonPre } from "./SwiperButton";
 const artists = [
   {
     name: "KK",
-    event: "PRONITE-MOKSHA",
+    event: "fahrenheit",
     img: "KK 1.svg",
   },
   {
-    name: "KK",
+    name: "WCMT",
+    event: "Bandnight",
+    img: "loststories_11zon 1.svg",
+  },
+  {
+    name: "Salim–Sulaiman",
     event: "PRONITE-MOKSHA",
-    img: "KK 1.svg",
+    img: "ls2_11zon 1.svg",
+  },
+  {
+    name: "Sunburn",
+    event: "LOAST",
+    img: "roy_11zon 1.svg",
+  },
+  {
+    name: "Biswa",
+    event: "HUMOUR FEST",
+    img: "biswa.svg",
   },
   {
     name: "KK",
-    event: "PRONITE-MOKSHA",
+    event: "fahrenheit",
     img: "KK 1.svg",
   },
   {
-    name: "KK",
-    event: "PRONITE-MOKSHA",
-    img: "KK 1.svg",
+    name: "WCMT",
+    event: "Bandnight",
+    img: "loststories_11zon 1.svg",
   },
   {
-    name: "KK",
+    name: "Salim–Sulaiman",
     event: "PRONITE-MOKSHA",
-    img: "KK 1.svg",
+    img: "ls2_11zon 1.svg",
   },
   {
-    name: "KK",
-    event: "PRONITE-MOKSHA",
-    img: "KK 1.svg",
+    name: "Sunburn",
+    event: "LOAST",
+    img: "roy_11zon 1.svg",
   },
   {
-    name: "KK",
-    event: "PRONITE-MOKSHA",
-    img: "KK 1.svg",
-  },
-  {
-    name: "KK",
-    event: "PRONITE-MOKSHA",
-    img: "KK 1.svg",
-  },
-  {
-    name: "KK",
-    event: "PRONITE-MOKSHA",
-    img: "KK 1.svg",
+    name: "Biswa",
+    event: "HUMOUR FEST",
+    img: "biswa.svg",
   },
 ];
 

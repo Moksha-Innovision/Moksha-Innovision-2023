@@ -42,7 +42,7 @@ const EventCards = ({ event }: Props) => {
             alt={event.event_name}
             width={100}
             height={100}
-            className=" h-[100%] w-[100%]"
+            className=" h-[100%] w-[100%] rounded-xl"
           ></Image>
         </div>
         {/************************"https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/faa091fe-7472-440b-b0bb-a34d1e6f31c9poster""https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/61ad23fe-fc84-4516-ac0e-d0beeeab335fposter"*******"https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/97257e65-a025-4361-9ee8-fa0b4b36e54fposter"
@@ -66,7 +66,7 @@ const EventCards = ({ event }: Props) => {
                 <div className="w-[25%]"></div>
                 <div className=" text flex  w-[42%] flex-col flex-wrap justify-center overflow-hidden break-all pr-[5px] text-left text-[15px] sm:text-[12px] md:text-[15px] lg:text-[8px] xl:text-[12px]">
                   <p className="text-[100%]">Time: {event.time} </p>
-                  <p className="">Venue:Moksha ground{/*event.venue*/}</p>
+                  <p className="">Venue:Moksha{/*event.venue*/}</p>
                 </div>
               </div>
             </div>

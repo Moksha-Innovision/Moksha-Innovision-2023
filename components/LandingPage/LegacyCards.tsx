@@ -6,10 +6,10 @@ const LegacyCards = ({ id, active, artist }: any) => {
   const [pos, setPos] = useState(0);
   useEffect(() => {
     if (active == id) setPos(0);
-    else if ((9 + active - 1) % 9 == id) setPos(-1);
-    else if ((9 + active + 1) % 9 == id) setPos(1);
-    else if ((9 + active - 2) % 9 == id) setPos(-2);
-    else if ((9 + active + 2) % 9 == id) setPos(2);
+    else if ((10 + active - 1) % 10 == id) setPos(-1);
+    else if ((10 + active + 1) % 10 == id) setPos(1);
+    else if ((10 + active - 2) % 10 == id) setPos(-2);
+    else if ((10 + active + 2) % 10 == id) setPos(2);
     else setPos(10);
   });
   return (
@@ -38,7 +38,7 @@ const LegacyCards = ({ id, active, artist }: any) => {
       >
         <div className="absolute top-0 h-[100%] w-[100%] ">
           <Image
-            src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/${artist.img}`}
+            src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/carosel/${artist.img}`}
             width={100}
             height={100}
             alt={"asad"}

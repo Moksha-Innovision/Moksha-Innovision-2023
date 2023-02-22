@@ -107,7 +107,7 @@ const Navbar = (props: Props) => {
         }  fixed  -left-[90vw] top-0 z-20 h-[99vh] w-[60vw]  rounded-br-2xl border-t-0 shadow-2xl transition-[transform] duration-200  md:hidden`}
       >
         <ul
-          className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain bg-fixed pl-8 text-white`}
+          className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed pl-8 text-white`}
         >
           <NavLink href="/events" imgScale={110} underlineclassName="-left-3">
             Events

@@ -17,9 +17,9 @@ const NavLink = (props: Props) => {
   return (
     <Link
       href={href}
-      className={`link relative uppercase  ${
+      className={`link uppercasez relative  ${
         router.asPath === href
-          ? "w-fit  min-w-[90px] text-center text-3xl  "
+          ? "flex  w-fit min-w-[80px] flex-col items-center justify-center text-center text-3xl"
           : "text-xl"
       } ${className}`}
     >
