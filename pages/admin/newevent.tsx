@@ -32,7 +32,7 @@ const Newevent = (props: Props) => {
   return (
     <Dashboard>
       <Head>
-        <title>Moksha Innovision &apos; 23 | Dashboard</title>
+        <title>Moksha Innovision&apos;23 | Dashboard</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <div className="container m-auto max-h-screen w-full overflow-y-auto px-4 md:px-8  lg:px-14">

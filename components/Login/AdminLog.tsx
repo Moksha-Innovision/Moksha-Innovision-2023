@@ -69,7 +69,7 @@ const AdminLog = () => {
         />
       </div>
       <form
-        className={`${koulen.className} z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl bg-Safety-Orange-100 py-6 px-12 md:px-16`}
+        className={`${"font-koulen"} z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl bg-Safety-Orange-100 py-6 px-12 md:px-16`}
       >
         <div className="">
           <div className=" text-center text-4xl">Admin Log-In</div>

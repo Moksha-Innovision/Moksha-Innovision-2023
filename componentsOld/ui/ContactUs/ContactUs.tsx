@@ -13,7 +13,7 @@ const ContactUs = () => {
   return (
     <>
       <div
-        className={`${koulen.className} relative mt-[20px] flex min-h-[125vh] items-center justify-center  overflow-x-hidden text-white `}
+        className={`${"font-koulen"} relative mt-[20px] flex min-h-[125vh] items-center justify-center  overflow-x-hidden text-white `}
         ref={containerRef}
       >
         <div className="fixed top-0 left-0 z-[1] h-[100vh] w-[100vw] backdrop-blur-[3px] "></div>

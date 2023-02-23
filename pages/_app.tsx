@@ -14,10 +14,17 @@ function MyApp({
 }>) {
   const [supabase] = useState(() => createBrowserSupabaseClient());
 
+  let [show, setShow] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const loader = document.getElementById("globalLoader");
-      if (loader) loader.remove();
+
+      if (loader)
+        setTimeout(() => {
+          loader.remove();
+          setShow(true);
+        }, 2000);
     }
   }, []);
 
@@ -29,7 +36,7 @@ function MyApp({
           supabaseClient={supabase}
           initialSession={pageProps.initialSession}
         >
-          <Component {...pageProps} />
+          {show && <Component {...pageProps} />}
         </SessionContextProvider>
       </ParallaxProvider>
     </>

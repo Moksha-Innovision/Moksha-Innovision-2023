@@ -35,7 +35,7 @@ const FaqContainer = (props: Props) => {
   return (
     <div className="flex max-h-[calc(65vh_-_96px)] max-w-2xl flex-col gap-5 overflow-y-auto opacity-100 ">
       <h1
-        className={`${koulen.className} sticky top-0  mb-5 bg-prussian-blue-1000 text-center  text-3xl text-white sm:text-5xl md:text-4xl `}
+        className={`${"font-koulen"} sticky top-0  mb-5 bg-prussian-blue-1000 text-center  text-3xl text-white sm:text-5xl md:text-4xl `}
       >
         Frequently Asked Questions
       </h1>

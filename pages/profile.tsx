@@ -6,7 +6,7 @@ const profile = (props: Props) => {
   return (
     <>
       <Head>
-        <title>Moksha Innovision &apos; 23 | Profile</title>
+        <title>Moksha Innovision&apos;23 | Profile</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <Dashboard />

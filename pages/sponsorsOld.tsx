@@ -92,7 +92,7 @@ const Sponsors = (props: Props) => {
         />
 
         <div
-          className={`m-auto h-full max-w-full ${koulen.className} hidden w-full flex-col gap-8 sm:flex md:gap-16 lg:gap-16`}
+          className={`m-auto h-full max-w-full ${"font-koulen"} hidden w-full flex-col gap-8 sm:flex md:gap-16 lg:gap-16`}
         >
           <h1 className="mb-auto -mt-12 text-center text-6xl text-white drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] md:text-7xl">
             Past Sponsors
@@ -105,7 +105,7 @@ const Sponsors = (props: Props) => {
           </div>
         </div>
 
-        <div className={`${koulen.className} mobile mt-20 w-full sm:hidden`}>
+        <div className={`${"font-koulen"} mobile mt-20 w-full sm:hidden`}>
           <h1 className="text-center text-6xl text-white drop-shadow-[4.58px_4.58px_1.53px_rgba(231,7,41,1)] md:text-7xl ">
             Past Sponsors
           </h1>

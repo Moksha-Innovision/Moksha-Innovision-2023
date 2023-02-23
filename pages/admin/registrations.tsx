@@ -34,7 +34,7 @@ const Registrations = (props: Props) => {
       {/* <Navbar/> */}
       <Dashboard>
         <Head>
-          <title>Moksha Innovision &apos; 23 | Dashboard</title>
+          <title>Moksha Innovision&apos;23 | Dashboard</title>
           <meta property="og:title" content="" key="title" />
         </Head>
         <div className="container m-auto max-h-screen w-[350px] px-2 sm:w-[500px] md:w-full md:px-4 lg:px-4 ">
