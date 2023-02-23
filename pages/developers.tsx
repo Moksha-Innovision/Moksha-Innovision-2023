@@ -78,7 +78,10 @@ const developers = (props: Props) => {
               ]}
               name="Ayush Tenguria"
             />
-            <DevTile url={["", "", ""]} name="DEVESH AGARWAL" />
+            <DevTile
+              url={["", "", "https://github.com/Coder-Devesh-Agarwal"]}
+              name="DEVESH AGARWAL"
+            />
           </div>
         </div>
       </Tilt>
