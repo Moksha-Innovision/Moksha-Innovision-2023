@@ -1,4 +1,5 @@
 import { Inter, Koulen } from "@next/font/google";
+import Head from "next/head";
 import LandingPage from "../components/LandingPage/LandingPage";
 import Navbar from "../components/ui/Navbar/Navbar";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
@@ -9,6 +10,10 @@ export default function Home() {
     <div
       className={`${koulen.className} min-h-[150vh] w-[100vw] overflow-x-hidden  bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed bg-repeat`}
     >
+      <Head>
+        <title>Moksha Innovision &apos; 23 | Past</title>
+        <meta property="og:title" content="" key="title" />
+      </Head>
       <Navbar />
       <LandingPage />
     </div>

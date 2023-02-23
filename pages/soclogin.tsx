@@ -1,9 +1,10 @@
-import Image from "next/image";
 import { Koulen } from "@next/font/google";
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
-import FormInput from "../components/dashboard/ui/Forms/FormInput";
-import { useState } from "react";
+import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import FormInput from "../components/dashboard/ui/Forms/FormInput";
+const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const deafultFormFields = {
   SocEmail: "",
@@ -25,6 +26,10 @@ const SocLogin = () => {
 
   return (
     <div className=" relative flex min-h-[100vh] items-center  justify-center overflow-x-hidden bg-[#300e2f] py-10">
+      <Head>
+        <title>Moksha Innovision &apos; 23 | Login</title>
+        <meta property="og:title" content="" key="title" />
+      </Head>
       <div className=" fixed w-[100%] overflow-hidden  lg:w-[50%] ">
         <Image
           src={"logbg.svg"}

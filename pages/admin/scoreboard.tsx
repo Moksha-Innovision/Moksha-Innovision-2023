@@ -1,4 +1,5 @@
 import { useUser } from "@supabase/auth-helpers-react";
+import Head from "next/head";
 import { useEffect } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
 import Notadmin from "../../components/FallbackPages/notadmin";
@@ -25,7 +26,15 @@ const Scroreboard = (props: Props) => {
     );
   }
 
-  return <Dashboard>Scroreboard</Dashboard>;
+  return (
+    <Dashboard>
+      <Head>
+        <title>Moksha Innovision &apos; 23 | Dashboard</title>
+        <meta property="og:title" content="" key="title" />
+      </Head>
+      Scroreboard
+    </Dashboard>
+  );
 };
 
 export default Scroreboard;

@@ -48,7 +48,7 @@ const LegacyCards = ({ id, active, artist }: any) => {
           />
         </div>
         <div className="relative bottom-5 text-center sm:bottom-0">
-          <div className="z-10 text-2xl leading-7 tracking-[10px] sm:text-3xl md:text-5xl md:leading-none lg:text-6xl">
+          <div className="z-10 text-xl leading-7 tracking-[2px]  sm:text-3xl md:text-5xl md:leading-none lg:text-6xl">
             {artist.name}
           </div>
           <div className="sm:text-1xl z-10  text-xs md:text-2xl lg:text-3xl">

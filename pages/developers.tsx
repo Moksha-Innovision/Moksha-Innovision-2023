@@ -1,4 +1,5 @@
 import { Koulen } from "@next/font/google";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
@@ -12,6 +13,10 @@ const developers = (props: Props) => {
     <div
       className={`min-h-screen w-screen  bg-black  bg-event-pattern bg-contain bg-fixed px-[5vw] py-[5vh] md:h-screen  ${koulen.className}`}
     >
+      <Head>
+        <title>Moksha Innovision &apos; 23 | Developers</title>
+        <meta property="og:title" content="" key="title" />
+      </Head>
       <Tilt
         tiltMaxAngleX={3}
         tiltMaxAngleY={3}

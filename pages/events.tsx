@@ -1,4 +1,5 @@
 import { Koulen } from "@next/font/google";
+import Head from "next/head";
 import Footer from "../components/LandingPage/Footer";
 import Navbar from "../components/ui/Navbar/Navbar";
 import Event from "../components/ui/newEventPage/Event";
@@ -9,6 +10,10 @@ const events = () => {
     <div
       className={`${koulen.className} min-h-[100vh] bg-prussian-blue-1000 bg-event-pattern bg-contain bg-fixed bg-repeat`}
     >
+      <Head>
+        <title>Moksha Innovision &apos; 23 | Events</title>
+        <meta property="og:title" content="" key="title" />
+      </Head>
       <Navbar />
       <Event />
       <div className="">
