@@ -1,4 +1,5 @@
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import FormInput from "../dashboard/ui/Forms/FormInput";
@@ -88,11 +89,12 @@ const Notadmin = (props: Props) => {
           </div>
         </div>
         <div>
-          <img
+          <Image
             src="/logbg.svg"
             width={400}
             height={400}
             className="animate-wheel"
+            alt={""}
           />
         </div>
       </div>

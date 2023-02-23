@@ -10,8 +10,8 @@ interface Props {
 }
 const EventCaroselSlides = ({ slide }: Props) => {
   return (
-    <div className="min-h-30vh relative bg-white ">
-      <div className=" h-[200%] w-[200%] md:h-[150%] md:w-[150%] lg:h-[100%] lg:w-[100%]">
+    <div className={`min-h-30vh  relative bg-white `}>
+      <div className=" h-[200%] w-[200%]  md:h-[150%] md:w-[150%] lg:h-[100%] lg:w-[100%]">
         <Image
           src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/${slide?.poster}`}
           alt={"blur"}

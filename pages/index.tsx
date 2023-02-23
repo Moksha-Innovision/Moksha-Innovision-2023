@@ -33,29 +33,30 @@ export default function App() {
           }  flex w-full md:h-screen md:w-2/3`}
         >
           <Canvas
-            className="sticky top-0 h-full w-full"
+            className={`${
+              pop && "md:w-[60vw]"
+            } sticky top-0 h-full w-full md:w-[40vw]`}
             gl={{ physicallyCorrectLights: true }}
             shadows
             camera={{
               fov: 35,
-
               position: [-8, 0, 4],
             }}
           >
             <Suspense fallback={null}>
               <Stage
                 adjustCamera={1}
-                environment={width && width > 600 ? "night" : "city"}
+                environment={width && width > 680 ? "night" : "city"}
               >
                 <Model setPop={setPop} />
               </Stage>
             </Suspense>
-            {width && width > 500 ? (
+            {width && width > 680 ? (
               <Sparkles scale={20} size={30} color={"yellow"} />
             ) : (
               ""
             )}
-            {width && width > 500 ? (
+            {width && width > 680 ? (
               <OrbitControls
                 minPolarAngle={Math.PI / 3}
                 maxPolarAngle={Math.PI / 2}
