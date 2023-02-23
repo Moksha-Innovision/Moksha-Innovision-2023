@@ -1,9 +1,11 @@
 import { Koulen } from "@next/font/google";
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 import Tilt from "react-parallax-tilt";
+const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 import Image from "next/image";
 import { AiOutlineClose } from "react-icons/ai";
+import "swiper/css";
+import "swiper/css/pagination";
 
 type Props = {};
 
@@ -27,7 +29,7 @@ const LandingPageCards = ({ setPop }: any) => {
               setPop("");
             }}
           />
-          <div className="flex  flex-col items-center justify-center pt-10 text-center text-4xl md:text-3xl lg:text-5xl ">
+          <div className="flex   flex-col items-center justify-center pt-10 text-center text-4xl md:text-3xl lg:text-5xl ">
             ABOUT US
             <Image
               src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests//underline.svg"
@@ -37,7 +39,7 @@ const LandingPageCards = ({ setPop }: any) => {
               className={`w-full`}
             />
           </div>
-          <div className="sfsdf lg: my-8 mx-10   space-y-1  overflow-y-scroll text-sm md:h-[55%] lg:h-[70%]">
+          <div className="sfsdf lg: my-8 mx-10    space-y-1 overflow-y-scroll  text-sm md:h-[60%] lg:h-[70%]">
             <p className="">
               Mokhsha-Innovision is filled with social, cultural, and tech
               events thus incorporating every possible aspect of holistic

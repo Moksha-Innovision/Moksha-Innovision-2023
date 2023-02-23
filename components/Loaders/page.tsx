@@ -5,18 +5,20 @@ type Props = {};
 const PageLoader = (props: Props) => {
   return (
     <div className="grid h-screen w-screen place-items-center bg-black">
-      <img
+      <Image
         src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/footerLogo.svg"
         width={300}
         height={300}
         alt={"loader"}
+        priority
         className="animate-pulse"
       />
-      <img
+      <Image
         src="/logbg.svg"
         width={300}
         height={300}
         alt={"loader"}
+        priority
         className="absolute animate-wheel opacity-20"
       />
     </div>
