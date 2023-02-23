@@ -14,7 +14,7 @@ const developers = (props: Props) => {
       className={`min-h-screen w-screen  bg-black  bg-event-pattern bg-contain bg-fixed px-[5vw] py-[5vh] md:h-screen  ${koulen.className}`}
     >
       <Head>
-        <title>Moksha Innovision &apos; 23 | Developers</title>
+        <title>Moksha Innovision&apos;23 | Developers</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <Tilt

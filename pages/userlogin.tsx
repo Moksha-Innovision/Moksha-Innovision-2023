@@ -56,7 +56,7 @@ const UserLogin = () => {
   return (
     <>
       <Head>
-        <title>Moksha Innovision &apos; 23 | Login</title>
+        <title>Moksha Innovision&apos;23 | Login</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <Navbar />

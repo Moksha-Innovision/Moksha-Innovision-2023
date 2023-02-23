@@ -11,7 +11,7 @@ const Faq = () => {
       className={`${koulen.className} min-h-[100vh] bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed bg-repeat`}
     >
       <Head>
-        <title>Moksha Innovision &apos; 23 | FAQ &apos;s</title>
+        <title>Moksha Innovision&apos;23 | FAQ &apos;s</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <Navbar />

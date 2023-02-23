@@ -18,7 +18,7 @@ export default function App() {
   return (
     <div className=" bg-[#012347]">
       <Head>
-        <title>Moksha Innovision &apos; 23</title>
+        <title>Moksha Innovision&apos;23</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <Navbar />
@@ -38,24 +38,23 @@ export default function App() {
             shadows
             camera={{
               fov: 35,
-
               position: [-8, 0, 4],
             }}
           >
             <Suspense fallback={null}>
               <Stage
                 adjustCamera={1}
-                environment={width && width > 600 ? "night" : "city"}
+                environment={width && width > 680 ? "night" : "city"}
               >
                 <Model setPop={setPop} />
               </Stage>
             </Suspense>
-            {width && width > 500 ? (
+            {width && width > 680 ? (
               <Sparkles scale={20} size={30} color={"yellow"} />
             ) : (
               ""
             )}
-            {width && width > 500 ? (
+            {width && width > 680 ? (
               <OrbitControls
                 minPolarAngle={Math.PI / 3}
                 maxPolarAngle={Math.PI / 2}

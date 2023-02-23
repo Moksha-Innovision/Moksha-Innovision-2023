@@ -27,7 +27,7 @@ const SocLogin = () => {
   return (
     <div className=" relative flex min-h-[100vh] items-center  justify-center overflow-x-hidden bg-[#300e2f] py-10">
       <Head>
-        <title>Moksha Innovision &apos; 23 | Login</title>
+        <title>Moksha Innovision&apos;23 | Login</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <div className=" fixed w-[100%] overflow-hidden  lg:w-[50%] ">

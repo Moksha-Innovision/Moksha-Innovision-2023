@@ -95,8 +95,10 @@ const EventCarosel = () => {
         modules={[Navigation, Autoplay, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
-        <div className=" absolute top-0 z-10 flex h-full  w-full items-center justify-between px-[2%] ">
+        <div className=" absolute top-0 z-10 flex h-full   items-center justify-between px-[2%] ">
           <SwiperBtnPre className={"w-[50px]"} />
+        </div>
+        <div className=" absolute top-0 right-0 z-10 flex h-full   items-center justify-between px-[2%] ">
           <SwiperBtnnxt className={"w-[50px]"} />
         </div>
         {slides.map((slide, i) => {

@@ -29,7 +29,7 @@ const Scroreboard = (props: Props) => {
   return (
     <Dashboard>
       <Head>
-        <title>Moksha Innovision &apos; 23 | Dashboard</title>
+        <title>Moksha Innovision&apos;23 | Dashboard</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       Scroreboard

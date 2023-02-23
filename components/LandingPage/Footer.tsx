@@ -1,7 +1,9 @@
+import { Koulen } from "@next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const Footer = () => {
   const [bl1, setBl1] = useState(false);
@@ -10,7 +12,9 @@ const Footer = () => {
   const [bl4, setBl4] = useState(false);
 
   return (
-    <div className="min-h-20 grid  w-full grid-cols-12 bg-prussian-blue-1000  px-10 text-white shadow-soft">
+    <div
+      className={`${koulen.className} min-h-20 grid  w-full grid-cols-12 bg-prussian-blue-1000  px-10 text-white shadow-soft`}
+    >
       <div className="col-span-12 flex h-full  w-full justify-between  pt-4 md:hidden">
         <Image
           src={
@@ -25,6 +29,8 @@ const Footer = () => {
         />
         <div className=" hidden h-full items-center justify-between space-x-6 sm:flex sm:px-0 ">
           <a
+            target="_blank"
+            rel="noreferrer"
             href="https://www.facebook.com/mokshansut/"
             className="w-[18px] transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
           >
@@ -35,6 +41,8 @@ const Footer = () => {
             ></FaFacebookF>
           </a>
           <a
+            target="_blank"
+            rel="noreferrer"
             href="https://www.instagram.com/mokshansut/"
             className="w-[18px] transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
           >
@@ -45,6 +53,8 @@ const Footer = () => {
             ></FaInstagram>
           </a>
           <a
+            target="_blank"
+            rel="noreferrer"
             href="https://www.youtube.com/channel/UCBr3CDT0Yn-nZCcypyK-Fhw"
             className="w-[18px] transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
           >
@@ -76,13 +86,13 @@ const Footer = () => {
           onMouseOver={() => setBl1(true)}
           onMouseLeave={() => setBl1(false)}
         >
-          <div className="relative mb-1">
+          <div className="relative mb-1 ">
             <div
               className={`absolute  top-0  h-[2px] ${
                 bl1 ? "right-0 w-full" : " left-0  w-[0.01px]"
               }  bg-white transition-[width] duration-200`}
             ></div>
-            Cheif Convener:
+            Chief Convener:
             <div
               className={`absolute bottom-0  h-[2px] ${
                 bl1 ? "left-0  w-full" : "right-0 w-[0.01px]"
@@ -101,7 +111,7 @@ const Footer = () => {
           onMouseOver={() => setBl2(true)}
           onMouseLeave={() => setBl2(false)}
         >
-          <div className="relative mb-1">
+          <div className="relative mb-1 ">
             <div
               className={`absolute  top-0  h-[2px] ${
                 bl2 ? "right-0 w-full" : " left-0  w-[0.01px]"
@@ -116,7 +126,7 @@ const Footer = () => {
           </div>
           <div className="text-xs">
             <a href="mailto:Moksha@nsut.ac.in" className="">
-              Moksha@nsut.ac.in
+              moksha@nsut.ac.in
             </a>
           </div>
           <div className="flex h-full items-center justify-between sm:hidden  sm:px-0 ">
@@ -157,7 +167,7 @@ const Footer = () => {
           onMouseOver={() => setBl3(true)}
           onMouseLeave={() => setBl3(false)}
         >
-          <div className="relative mb-1">
+          <div className="relative mb-1 ">
             <div
               className={`absolute  top-0  h-[2px] ${
                 bl3 ? "right-0 w-full" : " left-0  w-[0.01px]"
@@ -174,13 +184,13 @@ const Footer = () => {
             <Link href="/userlogin">REGISTER</Link>
           </div>
           <div className="text-xs transition-all duration-100 ">
-            <Link href="/faq">FAQ &apos; S</Link>
+            <Link href="/faq">FAQs</Link>
           </div>
           <div
             className={`${
               bl3
-                ? "scale-[1.1] text-yellow-400 drop-shadow-lowGlow"
-                : "text-yellow-300"
+                ? "scale-[1.1] text-yellow-300 drop-shadow-lowGlow"
+                : "text-yellow-400"
             } text-xs transition-all duration-100 `}
           >
             <Link href="/developers">DEVELOPERS</Link>

@@ -11,7 +11,7 @@ const Sponsors = () => {
       className={`${koulen.className} min-h-[100vh] bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed bg-repeat`}
     >
       <Head>
-        <title>Moksha Innovision &apos; 23 | Sponser</title>
+        <title>Moksha Innovision&apos;23 | Sponser</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <Navbar />
