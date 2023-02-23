@@ -27,7 +27,7 @@ const SocLogin = () => {
   return (
     <div className=" relative flex min-h-[100vh] items-center  justify-center overflow-x-hidden bg-[#300e2f] py-10">
       <Head>
-        <title>Moksha Innovision &apos; 23 | Login</title>
+        <title>Moksha Innovision&apos;23 | Login</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <div className=" fixed w-[100%] overflow-hidden  lg:w-[50%] ">
@@ -41,7 +41,7 @@ const SocLogin = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className={`${koulen.className} z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl bg-Safety-Orange-100 py-6 px-12 md:px-16 `}
+        className={`${"font-koulen"} z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl bg-Safety-Orange-100 py-6 px-12 md:px-16 `}
       >
         <div className="">
           <div className=" text-center text-4xl">Log-In</div>

@@ -39,25 +39,30 @@ const LandingPageCards = ({ setPop }: any) => {
               className={`w-full`}
             />
           </div>
-          <div className="sfsdf lg: my-8 mx-10    space-y-1 overflow-y-scroll  text-sm md:h-[60%] lg:h-[70%]">
+          <div className="sfsdf lg: my-8 mx-10    space-y-1 overflow-y-scroll  text-[17px] leading-[21px] md:h-[60%] lg:h-[70%]">
             <p className="">
-              Mokhsha-Innovision is filled with social, cultural, and tech
-              events thus incorporating every possible aspect of holistic
-              development and letting the talent of every child shine through.
+              Moksha, the annual cultural festival of Netaji Subhas University
+              of Technology &#91;NSUT&#93;, &#91;formerly NSIT, University of
+              Delhi&#93;, was inaugurated in 2003. It is organised in the month
+              of March and is a three-day national cultural extravaganza held at
+              NSUT.
             </p>
-            <p className="">
-              Social events have always been popular including solo/duet
-              singling, &lsquo;AVALANCHE&lsquo;- the battle of bands,
-              &lsquo;ROGUE&lsquo;- the fashion parade, dramatics events like -
-              &lsquo;SOCH&lsquo; and &lsquo;PARWAZ&lsquo;, Moksha&lsquo;s got
-              talent, and numerous events for dancing including street dancing,
-              choreography, western dancing, and group dancing.
+
+            <p className="pt-2">
+              &nbsp;Moksha involves participation from colleges from all over
+              India, making it one of the largest college festivals of North
+              India. In it&apos;s previous iterations, Moksha has witnessed a
+              grand participation and a huge footfall in multifarious events and
+              competitions.
             </p>
-            <p className="">
-              There are also entrepreneurial events, technological events
-              including coding contests and hackathons, and cultural events
-              organized by various societies of the college as well as anyone
-              who has the will to organize a successful event.
+            <p className="pt-2">
+              Moksha observes an average footfall of over 70,000 students over
+              the span of 3 days. The event has been graced by the likes of KK,
+              Divine, Ritviz, Nucleya, Bohemia, Shaan, Edward Maya, Kailash
+              Kher, Mohit Chauhan, Akcent, The Indian Ocean,
+              Salim&#8209;Sulaiman, Monali Thakur, Sunburn Campus,
+              Tomorrowland&apos;s DJ&apos;s and many more exotic artists &
+              Comedians.
             </p>
           </div>
         </div>

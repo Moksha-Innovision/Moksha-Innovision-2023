@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        koulen: ["Koulen", "sans-serif"],
+      },
       keyframes: {
         slideinbottom: {
           "0%": { transform: "translateY(100%)", opacity: "0" },

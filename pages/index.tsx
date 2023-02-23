@@ -18,13 +18,13 @@ export default function App() {
   return (
     <div className=" bg-[#012347]">
       <Head>
-        <title>Moksha Innovision &apos; 23</title>
+        <title>Moksha Innovision&apos;23</title>
         <meta property="og:title" content="" key="title" />
       </Head>
       <Navbar />
 
       <div
-        className={`${koulen.className} flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-opacity-5 bg-index-pattern  bg-contain pt-[2vh] md:flex-row`}
+        className={`${"font-koulen"} flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-opacity-5 bg-index-pattern  bg-contain pt-[2vh] md:flex-row`}
       >
         <div
           // onClick={() => setPop("appear")}
