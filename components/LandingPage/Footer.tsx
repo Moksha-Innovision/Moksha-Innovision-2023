@@ -25,7 +25,8 @@ const Footer = () => {
         />
         <div className="hidden  h-full items-center justify-between space-x-6 font-koulen sm:flex sm:px-0 ">
           <a
-            target={"_blank"}  rel="noreferrer"
+            target={"_blank"}
+            rel="noreferrer"
             href="https://www.facebook.com/mokshansut/"
             className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
           >
@@ -36,7 +37,8 @@ const Footer = () => {
             ></FaFacebookF>
           </a>
           <a
-            target={"_blank"}  rel="noreferrer"
+            target={"_blank"}
+            rel="noreferrer"
             href="https://www.instagram.com/mokshansut/"
             className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
           >
@@ -47,7 +49,8 @@ const Footer = () => {
             ></FaInstagram>
           </a>
           <a
-            target={"_blank"}  rel="noreferrer"
+            target={"_blank"}
+            rel="noreferrer"
             href="https://www.youtube.com/channel/UCBr3CDT0Yn-nZCcypyK-Fhw"
             className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
           >
@@ -95,7 +98,8 @@ const Footer = () => {
           <div className="font-koulen text-xs font-medium">Pranshu Birla </div>
           <div className="font-koulen text-xs">
             <a
-              target={"_blank"}  rel="noreferrer"
+              target={"_blank"}
+              rel="noreferrer"
               href="tel:+91 78916 61335"
               className="font-sans font-medium"
             >
@@ -123,7 +127,8 @@ const Footer = () => {
           </div>
           <div className="font-sans text-xs">
             <a
-              target={"_blank"}  rel="noreferrer"
+              target={"_blank"}
+              rel="noreferrer"
               href="mailto:Moksha@nsut.ac.in"
               className="font-sans font-medium"
             >
@@ -132,7 +137,8 @@ const Footer = () => {
           </div>
           <div className="flex h-full items-center justify-between font-koulen sm:hidden  sm:px-0 ">
             <a
-              target={"_blank"}  rel="noreferrer"
+              target={"_blank"}
+              rel="noreferrer"
               href="https://www.facebook.com/mokshansut/"
               className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
             >
@@ -143,7 +149,8 @@ const Footer = () => {
               ></FaFacebookF>
             </a>
             <a
-              target={"_blank"}  rel="noreferrer"
+              target={"_blank"}
+              rel="noreferrer"
               href="https://www.instagram.com/mokshansut/"
               className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
             >
@@ -154,7 +161,8 @@ const Footer = () => {
               ></FaInstagram>
             </a>
             <a
-              target={"_blank"}  rel="noreferrer"
+              target={"_blank"}
+              rel="noreferrer"
               href="https://www.youtube.com/channel/UCBr3CDT0Yn-nZCcypyK-Fhw"
               className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
             >
@@ -220,7 +228,8 @@ const Footer = () => {
           </div>
           <div className="hidden  h-full items-center justify-start space-x-5 font-koulen sm:flex sm:px-0 ">
             <a
-              target={"_blank"}  rel="noreferrer"
+              target={"_blank"}
+              rel="noreferrer"
               href="https://www.facebook.com/mokshansut/"
               className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
             >
@@ -231,7 +240,8 @@ const Footer = () => {
               ></FaFacebookF>
             </a>
             <a
-              target={"_blank"}  rel="noreferrer"
+              target={"_blank"}
+              rel="noreferrer"
               href="https://www.instagram.com/mokshansut/"
               className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
             >
@@ -242,7 +252,8 @@ const Footer = () => {
               ></FaInstagram>
             </a>
             <a
-              target={"_blank"}  rel="noreferrer"
+              target={"_blank"}
+              rel="noreferrer"
               href="https://www.youtube.com/channel/UCBr3CDT0Yn-nZCcypyK-Fhw"
               className="w-[18px] font-koulen transition-all duration-100 hover:scale-[1.08] sm:w-[20px] md:w-[25px]"
             >
