@@ -1,6 +1,7 @@
 import { Koulen } from "@next/font/google";
-import { Loader, OrbitControls, Sparkles, Stage } from "@react-three/drei";
+import { OrbitControls, Sparkles, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import Head from "next/head";
 import { Suspense, useState } from "react";
 import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
 import useWindowDimensions from "../components/Hooks/useWindowDimensions";
@@ -16,6 +17,10 @@ export default function App() {
 
   return (
     <div className=" bg-[#012347]">
+      <Head>
+        <title>Moksha Innovision &apos; 23</title>
+        <meta property="og:title" content="" key="title" />
+      </Head>
       <Navbar />
 
       <div

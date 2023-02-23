@@ -1,5 +1,6 @@
 import { Koulen } from "@next/font/google";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import InlineAlert from "../components/Alerts/InlineAlert";
@@ -54,6 +55,10 @@ const UserLogin = () => {
 
   return (
     <>
+      <Head>
+        <title>Moksha Innovision &apos; 23 | Login</title>
+        <meta property="og:title" content="" key="title" />
+      </Head>
       <Navbar />
       <div className=" relative flex min-h-[100vh] items-center justify-center  overflow-x-hidden bg-prussian-blue-1000 py-10 px-2 pt-[7vh]">
         <div className=" fixed w-[100%]  lg:w-[50%] ">

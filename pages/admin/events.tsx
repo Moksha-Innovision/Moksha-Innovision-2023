@@ -3,6 +3,7 @@ import {
   useSupabaseClient,
   useUser,
 } from "@supabase/auth-helpers-react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
@@ -53,6 +54,10 @@ const Events = (props: Props) => {
 
   return (
     <Dashboard>
+      <Head>
+        <title>Moksha Innovision &apos; 23 | Dashboard</title>
+        <meta property="og:title" content="" key="title" />
+      </Head>
       {EventModal && (
         <div className="modal z-3 absolute    top-0 grid h-[93vh] w-full  max-w-screen-2xl place-items-center backdrop-blur-md">
           <CreateEventModal getEvent={getEvent} setEventModal={setEventModal} />
