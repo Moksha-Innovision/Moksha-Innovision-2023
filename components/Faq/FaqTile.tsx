@@ -42,7 +42,7 @@ const FaqTile = (props: Props) => {
           />
         </div>
         <h3
-          className={`col-start-2 col-end-9 gap-1 text-xl ${koulen.className} tracking-wider`}
+          className={`col-start-2 col-end-9 gap-1 text-xl ${"font-koulen"} tracking-wider`}
         >
           {ques}
         </h3>

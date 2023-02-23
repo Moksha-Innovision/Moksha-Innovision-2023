@@ -76,7 +76,7 @@ const Navbar = (props: Props) => {
         </div>
 
         <ul
-          className={`links hidden w-full items-center justify-around gap-8 md:col-span-9 md:flex  md:px-[5%] lg:col-span-8 lg:px-[10%] xl:px-[20%]  ${koulen.className} text-white`}
+          className={`links hidden w-full items-center justify-around gap-8 md:col-span-9 md:flex  md:px-[5%] lg:col-span-8 lg:px-[10%] xl:px-[20%]  ${"font-koulen"} text-white`}
         >
           <NavLink href="/events">Events</NavLink>
           <NavLink href="/sponsors">Sponsors</NavLink>
@@ -109,7 +109,7 @@ const Navbar = (props: Props) => {
               />
             </div>
             {/*            <span
-              className={`${koulen.className}  hidden text-xl text-white sm:block`}
+              className={`${'font-koulen'}  hidden text-xl text-white sm:block`}
             >
               {profile.name.split(" ")[0].slice(0, 8)}
           </span>*/}
@@ -135,7 +135,7 @@ const Navbar = (props: Props) => {
       >
           */}
         <ul
-          className={`flex flex-col justify-center shadow-2xl ${koulen.className} h-full w-[50vw]  space-y-10 rounded-br-[50%] rounded-tr-[50%] bg-prussian-blue-950 bg-opacity-20  bg-contain pl-8 text-white backdrop-blur-[20px]`}
+          className={`flex flex-col justify-center shadow-2xl ${"font-koulen"} h-full w-[50vw]  space-y-10 rounded-br-[50%] rounded-tr-[50%] bg-prussian-blue-950 bg-opacity-20  bg-contain pl-8 text-white backdrop-blur-[20px]`}
         >
           <NavLink href="/events" imgScale={110} underlineclassName="-left-3">
             Events

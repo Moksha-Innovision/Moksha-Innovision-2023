@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <div
-      className={`${koulen.className} min-h-[150vh] w-[100vw] overflow-x-hidden  bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed bg-repeat`}
+      className={`${"font-koulen"} min-h-[150vh] w-[100vw] overflow-x-hidden  bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed bg-repeat`}
     >
       <Head>
         <title>Moksha Innovision&apos;23 | Past</title>

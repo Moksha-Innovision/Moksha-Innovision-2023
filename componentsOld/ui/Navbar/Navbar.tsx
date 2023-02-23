@@ -60,7 +60,7 @@ const Navbar = (props: Props) => {
         </div>
 
         <ul
-          className={`links hidden w-full items-center justify-around gap-8 md:col-span-8 md:flex md:px-[10%] lg:px-[20%]  ${koulen.className} text-white`}
+          className={`links hidden w-full items-center justify-around gap-8 md:col-span-8 md:flex md:px-[10%] lg:px-[20%]  ${"font-koulen"} text-white`}
         >
           <NavLink href="/events">Events</NavLink>
           <NavLink href="/sponsors">Sponsors</NavLink>
@@ -92,7 +92,7 @@ const Navbar = (props: Props) => {
               />
             </div>
             <span
-              className={`${koulen.className}  hidden text-xl text-white sm:block`}
+              className={`${"font-koulen"}  hidden text-xl text-white sm:block`}
             >
               {profile.name.split(" ")[0].slice(0, 8)}
             </span>
@@ -107,7 +107,7 @@ const Navbar = (props: Props) => {
         }  fixed  -left-[90vw] top-0 z-20 h-[99vh] w-[60vw]  rounded-br-2xl border-t-0 shadow-2xl transition-[transform] duration-200  md:hidden`}
       >
         <ul
-          className={`flex flex-col justify-center ${koulen.className} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed pl-8 text-white`}
+          className={`flex flex-col justify-center ${"font-koulen"} h-full space-y-10 bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed pl-8 text-white`}
         >
           <NavLink href="/events" imgScale={110} underlineclassName="-left-3">
             Events

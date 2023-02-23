@@ -67,7 +67,7 @@ const AdminLogin = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className={`${koulen.className} bg- z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl border-4 border-saffron-500 bg-[rgba(0,0,2,0.0)] py-6 px-12 drop-shadow-glow  backdrop-blur-[8px] md:px-16`}
+          className={`${"font-koulen"} bg- z-10 flex w-[80vh] max-w-[500px] flex-col items-center space-y-2 rounded-2xl border-4 border-saffron-500 bg-[rgba(0,0,2,0.0)] py-6 px-12 drop-shadow-glow  backdrop-blur-[8px] md:px-16`}
         >
           <div className="text-white">
             <div className=" text-center text-4xl">Admin Log-In</div>
