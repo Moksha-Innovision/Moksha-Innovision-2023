@@ -61,7 +61,8 @@ const LandingPageCards = ({ setPop }: any) => {
               Divine, Ritviz, Nucleya, Bohemia, Shaan, Edward Maya, Kailash
               Kher, Mohit Chauhan, Akcent, The Indian Ocean,
               Salim&#8209;Sulaiman, Monali Thakur, Sunburn Campus,
-              Tomorrowland&apos;s DJ&apos;s and many more exotic artists & Comedians.
+              Tomorrowland&apos;s DJ&apos;s and many more exotic artists &
+              Comedians.
             </p>
           </div>
         </div>
