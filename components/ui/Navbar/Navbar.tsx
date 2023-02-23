@@ -122,8 +122,8 @@ const Navbar = (props: Props) => {
         className={` ${
           show
             ? "origin-top translate-x-[35vw] rotate-[0]  shadow-black "
-            : "translate-x-0"
-        }  fixed -left-[35vw] top-0 z-20 h-[100vh] w-[35vw] origin-top rotate-[90deg]   transition-[transform] duration-500  md:hidden`}
+            : "translate-x-0 rotate-[90deg]"
+        }  fixed -left-[35vw] top-0 z-20 h-[100vh] w-[35vw] origin-top    transition-[transform] duration-500  md:hidden`}
       >
         {/*
           <div

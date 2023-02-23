@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -32,6 +32,9 @@ const Footer = () => {
           </li>
           <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
             <Link href="/faq">FAQ &apos; S</Link>
+          </li>
+          <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
+            <Link href="/developers">DEVELOPERS</Link>
           </li>
         </ul>
       </div>
@@ -67,7 +70,6 @@ const Footer = () => {
           ></FaYoutube>
         </a>
       </div>
-
       <ul className="-ml-10 flex  h-full w-screen items-center justify-around bg-prussian-blue-1000 pb-2 font-light sm:hidden ">
         <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
           <Link href="/userlogin">REGISTER</Link>
@@ -81,6 +83,9 @@ const Footer = () => {
         </li>
         <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
           <Link href="/faq">FAQ &apos; S</Link>
+        </li>
+        <li className="transition-all duration-100 hover:underline hover:underline-offset-2">
+          <Link href="/developers">DEVELOPERS</Link>
         </li>
       </ul>
     </div>
