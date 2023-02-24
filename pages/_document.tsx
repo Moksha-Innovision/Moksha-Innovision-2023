@@ -20,7 +20,6 @@ export default function Document() {
             alt={"loader"}
             className="animate-pulse"
           />
-         
         </div>
         <Main />
         <NextScript />

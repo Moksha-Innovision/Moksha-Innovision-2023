@@ -32,13 +32,28 @@ const DevTile = ({ url, name }: any) => {
           bl ? " py-3" : " py-2"
         }`}
       >
-        <a  target='_blank' rel='noreferrer' href={url[0]} className=" hover:scale-110">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={url[0]}
+          className=" hover:scale-110"
+        >
           <AiOutlineLinkedin />
         </a>
-        <a  target='_blank' rel='noreferrer' href={url[1]} className=" hover:scale-110">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={url[1]}
+          className=" hover:scale-110"
+        >
           <AiOutlineInstagram />
         </a>
-        <a  target='_blank' rel='noreferrer' href={url[2]} className=" hover:scale-110">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={url[2]}
+          className=" hover:scale-110"
+        >
           <AiOutlineGithub />
         </a>
       </div>

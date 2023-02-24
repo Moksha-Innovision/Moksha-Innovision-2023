@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         koulen: ["Koulen", "sans-serif"],
-     
+
         montserrat: ["montserrat", "sans-serif"],
       },
       keyframes: {
