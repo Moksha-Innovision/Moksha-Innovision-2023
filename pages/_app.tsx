@@ -1,10 +1,12 @@
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
-import { ParallaxProvider } from "react-scroll-parallax";
-import NextNProgress from "nextjs-progressbar";
 import { AppProps } from "next/app";
+import NextNProgress from "nextjs-progressbar";
 import { useEffect, useState } from "react";
+import { ParallaxProvider } from "react-scroll-parallax";
 import "../styles/globals.scss";
+
+import Script from "next/script";
 
 function MyApp({
   Component,
@@ -24,12 +26,27 @@ function MyApp({
         setTimeout(() => {
           loader.remove();
           setShow(true);
-        }, 2000);
+        }, 3000);
     }
   }, []);
 
   return (
     <>
+      <Script
+        id="my-script"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-S34Q7PDGZS"
+        strategy="afterInteractive"
+      ></Script>
+      <Script id="my-scrip">
+        {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S34Q7PDGZS');
+`}
+      </Script>
       <NextNProgress />
       <ParallaxProvider>
         <SessionContextProvider
