@@ -11,13 +11,13 @@ interface Props {
 const EventCaroselSlides = ({ slide }: Props) => {
   return (
     <div className={`min-h-30vh  relative bg-white `}>
-      <div className=" h-[200%] w-[200%]  md:h-[150%] md:w-[150%] lg:h-[100%] lg:w-[100%]">
+      <div className=" flex h-[200%]  w-[200%] justify-center md:h-[150%] md:w-[150%] lg:h-[100%] lg:w-[100%]">
         <Image
           src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/${slide?.poster}`}
           alt={"blur"}
           width={100}
           height={100}
-          className=" h-[100%] w-[100%] "
+          className=" h-[100%] w-[100%] object-cover"
           priority
         />
       </div>
@@ -26,15 +26,16 @@ const EventCaroselSlides = ({ slide }: Props) => {
           <div className="mb-1 text-3xl tracking-wide sm:text-4xl md:text-5xl">
             {slide?.title}
           </div>
-          <div className="text-xs font-light sm:text-sm ">
+          <div className="text-xs font-light tracking-wide sm:text-sm">
             {slide?.description}
           </div>
-          <div
+          <button
+            disabled={!Boolean(slide?.regLink)}
             className="mt-3 w-fit rounded-md bg-white px-5 py-1 
-                    text-lg tracking-wide text-prussian-blue-1000 shadow-soft transition-[filter,transform] hover:scale-[1.01] hover:cursor-pointer hover:drop-shadow-lowGlowtext md:text-xl "
+                    text-lg tracking-wide text-prussian-blue-1000 shadow-soft transition-[filter,transform] hover:scale-[1.01] hover:cursor-pointer hover:drop-shadow-lowGlowtext disabled:pointer-events-none disabled:cursor-default disabled:opacity-50 md:text-xl"
           >
-            {slide?.regLink}Register Now
-          </div>
+            {slide?.regLink ? "Register Now" : "Coming Soon"}
+          </button>
         </div>
       </div>
     </div>

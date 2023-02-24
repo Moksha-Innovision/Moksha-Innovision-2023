@@ -16,63 +16,42 @@ const slides = [
   {
     title: "SILENT DJ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Silent DJ is a unique party concept where guests wear wireless headphones to listen to music,creating a silent atmosphere",
     poster: "caroselSlide.svg",
     regLink: "",
   },
   {
     title: "SILENT DJ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Silent DJ is a unique party concept where guests wear wireless headphones to listen to music,creating a silent atmosphere",
     poster: "caroselSlide.svg",
     regLink: "",
   },
   {
     title: "SILENT DJ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Silent DJ is a unique party concept where guests wear wireless headphones to listen to music,creating a silent atmosphere",
     poster: "caroselSlide.svg",
     regLink: "",
   },
   {
     title: "SILENT DJ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Silent DJ is a unique party concept where guests wear wireless headphones to listen to music,creating a silent atmosphere",
     poster: "caroselSlide.svg",
     regLink: "",
   },
   {
     title: "SILENT DJ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Silent DJ is a unique party concept where guests wear wireless headphones to listen to music,creating a silent atmosphere",
     poster: "caroselSlide.svg",
     regLink: "",
   },
   {
     title: "SILENT DJ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    poster: "caroselSlide.svg",
-    regLink: "",
-  },
-  {
-    title: "SILENT DJ",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    poster: "caroselSlide.svg",
-    regLink: "",
-  },
-  {
-    title: "SILENT DJ",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    poster: "caroselSlide.svg",
-    regLink: "",
-  },
-  {
-    title: "SILENT DJ",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Silent DJ is a unique party concept where guests wear wireless headphones to listen to music,creating a silent atmosphere",
     poster: "caroselSlide.svg",
     regLink: "",
   },
@@ -90,7 +69,7 @@ const EventCarosel = () => {
         loop={true}
         autoplay={{
           delay: 8000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         modules={[Navigation, Autoplay, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
