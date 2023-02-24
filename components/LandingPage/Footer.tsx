@@ -205,7 +205,7 @@ const Footer = () => {
                 : "text-yellow-400"
             } text-xs transition-all duration-100 `}
           >
-            <Link href="/developers">DEVELOPERS</Link>
+            {/* <Link href="/developers">DEVELOPERS</Link> */}
           </div>
         </div>
         <div
@@ -282,7 +282,7 @@ const Footer = () => {
           <Link href="/faq">FAQ &apos; S</Link>
         </li>
         <li className="font-koulen text-yellow-300 transition-all duration-100 hover:underline hover:underline-offset-2">
-          <Link href="/developers">DEVELOPERS</Link>
+          {/* <Link href="/developers">DEVELOPERS</Link> */}
         </li>
       </ul>
     </div>
