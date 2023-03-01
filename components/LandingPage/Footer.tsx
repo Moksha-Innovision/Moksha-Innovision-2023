@@ -103,7 +103,7 @@ const Footer = () => {
               <a
                 target={"_blank"}
                 rel="noreferrer"
-                href="tel:+91 78916 61335"
+                href="tel:+91 9278003999"
                 className="font-sans font-medium"
               >
                 +91 9278003999
@@ -114,7 +114,7 @@ const Footer = () => {
               <a
                 target={"_blank"}
                 rel="noreferrer"
-                href="tel:+91 78916 61335"
+                href="tel:+91 8447382447"
                 className="font-sans font-medium"
               >
                 +91 8447382447
@@ -127,7 +127,7 @@ const Footer = () => {
               <a
                 target={"_blank"}
                 rel="noreferrer"
-                href="tel:+91 78916 61335"
+                href="tel:+91 9990265202"
                 className="font-sans font-medium"
               >
                 +91 9990265202

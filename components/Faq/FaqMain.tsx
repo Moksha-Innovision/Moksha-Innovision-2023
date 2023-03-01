@@ -10,9 +10,7 @@ const FaqMain = () => {
         <div className="w-[50%] md:px-[5%] lg:px-[8%]">
           <div className="mt-10 h-[30vh]   md:h-[50%]">
             <Image
-              src={
-                "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/peacock.svg"
-              }
+              src={"/peacock.svg"}
               alt=""
               width={100}
               height={100}
