@@ -11,7 +11,7 @@ const FaqMain = () => {
           <div className="mt-10 h-[30vh]   md:h-[50%]">
             <Image
               src={
-                "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/peacock.svg"
+                "/peacock.svg"
               }
               alt=""
               width={100}
