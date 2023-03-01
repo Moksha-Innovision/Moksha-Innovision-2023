@@ -100,9 +100,8 @@ module.exports = {
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/bgPatternindex.svg')",
         legacy:
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/legacybg.svg')",
-        
-        LandingEvent:
-          "url('/Landing/ebgobj.svg')",
+
+        LandingEvent: "url('/Landing/ebgobj.svg')",
         "carosel-pattern":
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/caroselSlide.svg')",
         "footer-texture": "url('/img/footer-texture.png')",

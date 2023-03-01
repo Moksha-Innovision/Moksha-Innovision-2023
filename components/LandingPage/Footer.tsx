@@ -96,44 +96,44 @@ const Footer = () => {
             ></div>
           </div>
           <div className="flex max-w-[200px] flex-wrap gap-1">
-
-          <div className="font-koulen text-xs font-medium">Daksh Panchal </div>
-          <div className="font-koulen text-xs">
-            <a
-              target={"_blank"}
-              rel="noreferrer"
-              href="tel:+91 78916 61335"
-              className="font-sans font-medium"
+            <div className="font-koulen text-xs font-medium">
+              Daksh Panchal{" "}
+            </div>
+            <div className="font-koulen text-xs">
+              <a
+                target={"_blank"}
+                rel="noreferrer"
+                href="tel:+91 78916 61335"
+                className="font-sans font-medium"
               >
-              +91 9278003999
-            </a>
-          </div>
-          <div className="font-koulen text-xs font-medium">Priyanshi </div>
-          <div className="font-koulen text-xs">
-            <a
-              target={"_blank"}
-              rel="noreferrer"
-              href="tel:+91 78916 61335"
-              className="font-sans font-medium"
+                +91 9278003999
+              </a>
+            </div>
+            <div className="font-koulen text-xs font-medium">Priyanshi </div>
+            <div className="font-koulen text-xs">
+              <a
+                target={"_blank"}
+                rel="noreferrer"
+                href="tel:+91 78916 61335"
+                className="font-sans font-medium"
               >
-              +91 8447382447
-            </a>
-          </div>
-          <div className="font-koulen text-xs font-medium">
-            Janvi Ahluwalia{" "}
-          </div>
-          <div className="font-koulen text-xs">
-            <a
-              target={"_blank"}
-              rel="noreferrer"
-              href="tel:+91 78916 61335"
-              className="font-sans font-medium"
+                +91 8447382447
+              </a>
+            </div>
+            <div className="font-koulen text-xs font-medium">
+              Janvi Ahluwalia{" "}
+            </div>
+            <div className="font-koulen text-xs">
+              <a
+                target={"_blank"}
+                rel="noreferrer"
+                href="tel:+91 78916 61335"
+                className="font-sans font-medium"
               >
-              +91 9990265202
-
-            </a>
+                +91 9990265202
+              </a>
+            </div>
           </div>
-        </div>
         </div>
         <div
           className="font-koulen "

@@ -8,12 +8,12 @@ const LandingPage = () => {
   return (
     <div className=" flex flex-col">
       <Legacy />
-      
-         <div className="flex h-[600px] w-full items-start  justify-center lg:h-[650px]">
-          <LandingEvent />
-        </div>
-      
-     <div className=" relative z-10 mt-[20%] mb-[5%] h-fit">
+
+      <div className="flex h-[600px] w-full items-start  justify-center lg:h-[650px]">
+        <LandingEvent />
+      </div>
+
+      <div className=" relative z-10 mt-[20%] mb-[5%] h-fit">
         <LandingSponsers />
       </div>
 
