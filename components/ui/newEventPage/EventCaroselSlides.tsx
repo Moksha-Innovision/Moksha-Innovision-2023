@@ -17,6 +17,7 @@ const EventCaroselSlides = ({ slide }: Props) => {
           alt={"blur"}
           width={100}
           height={100}
+          quality={1}
           className=" h-[100%] w-[100%] object-cover"
           priority
         />

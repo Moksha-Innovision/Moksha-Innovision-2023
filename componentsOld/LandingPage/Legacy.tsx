@@ -3,7 +3,7 @@ import LegacyCarosel from "./LegacyCarosel";
 
 const Legacy = () => {
   return (
-    <div className=" relative min-h-[540px] w-[100vw] bg-black bg-legacy bg-cover bg-repeat md:h-[85vh]  md:min-h-[680px] lg:h-[100vh] lg:min-h-[750px]">
+    <div className=" bcy relative min-h-[540px] w-[100vw] bg-black bg-cover bg-repeat md:h-[85vh]  md:min-h-[680px] lg:h-[100vh] lg:min-h-[750px]">
       <div className="absolute -bottom-[40vh] flex w-full justify-center lg:-bottom-[46vh]">
         <div className="h-[80vh] min-h-[500px] w-[80vw] min-w-[500px] animate-wheel lg:min-h-[700px]   lg:min-w-[700px]">
           <Image

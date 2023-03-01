@@ -88,23 +88,51 @@ const Footer = () => {
                 bl1 ? "right-0 w-full" : " left-0  w-[0.01px]"
               }  bg-white transition-[width] duration-200`}
             ></div>
-            Chief Convener:
+            Co-ordinators:
             <div
               className={`absolute bottom-0 h-[2px]  font-koulen ${
                 bl1 ? "left-0  w-full" : "right-0 w-[0.01px]"
               }  bg-white transition-[width] duration-200`}
             ></div>
           </div>
-          <div className="font-koulen text-xs font-medium">Pranshu Birla </div>
-          <div className="font-koulen text-xs">
-            <a
-              target={"_blank"}
-              rel="noreferrer"
-              href="tel:+91 78916 61335"
-              className="font-sans font-medium"
-            >
-              +91 78916 61335
-            </a>
+          <div className="flex max-w-[200px] flex-wrap gap-1">
+            <div className="font-koulen text-xs font-medium">
+              Daksh Panchal{" "}
+            </div>
+            <div className="font-koulen text-xs">
+              <a
+                target={"_blank"}
+                rel="noreferrer"
+                href="tel:+91 78916 61335"
+                className="font-sans font-medium"
+              >
+                +91 9278003999
+              </a>
+            </div>
+            <div className="font-koulen text-xs font-medium">Priyanshi </div>
+            <div className="font-koulen text-xs">
+              <a
+                target={"_blank"}
+                rel="noreferrer"
+                href="tel:+91 78916 61335"
+                className="font-sans font-medium"
+              >
+                +91 8447382447
+              </a>
+            </div>
+            <div className="font-koulen text-xs font-medium">
+              Janvi Ahluwalia{" "}
+            </div>
+            <div className="font-koulen text-xs">
+              <a
+                target={"_blank"}
+                rel="noreferrer"
+                href="tel:+91 78916 61335"
+                className="font-sans font-medium"
+              >
+                +91 9990265202
+              </a>
+            </div>
           </div>
         </div>
         <div

@@ -8,11 +8,11 @@ const LandingPage = () => {
   return (
     <div className=" flex flex-col">
       <Legacy />
-      <Parallax translateY={[-10, 5]} className="z-10">
-        <div className="flex h-[600px] w-full items-start  justify-center lg:h-[650px]">
-          <LandingEvent />
-        </div>
-      </Parallax>
+
+      <div className="flex h-[600px] w-full items-start  justify-center lg:h-[650px]">
+        <LandingEvent />
+      </div>
+
       <div className=" relative z-10 mt-[20%] mb-[5%] h-fit">
         <LandingSponsers />
       </div>
