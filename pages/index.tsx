@@ -32,7 +32,7 @@ export default function App() {
             pop != "" ? "h-[40vh]" : "h-[60vh]"
           }  flex w-full md:h-screen md:w-2/3`}
         >
-          <Canvas
+          {/* <Canvas
             className={`${
               pop && "md:w-[60vw]"
             } sticky top-0 h-full w-full md:w-[40vw]`}
@@ -67,7 +67,7 @@ export default function App() {
             ) : (
               ""
             )}
-          </Canvas>
+          </Canvas> */}
           {/* <Loader
             containerStyles={{
               backgroundColor: "rgba(0,0,50.0.5)",

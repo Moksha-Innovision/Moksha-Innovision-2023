@@ -23,7 +23,7 @@ const EventCards = ({ event }: Props) => {
   const [glow, setGlow] = useState(false);
   return (
     <div
-      className="flip-card-head rounded-xl bg-yellow-400 bg-opacity-10 p-8 backdrop-blur-[3px] "
+      className="flip-card-head rounded-xl bg-yellow-400 bg-opacity-10 p-8  "
       onMouseOver={() => {
         setGlow(true);
       }}
@@ -59,6 +59,7 @@ const EventCards = ({ event }: Props) => {
                 alt={event.event_name}
                 width={100}
                 height={100}
+                quality={1}
                 className=" h-[100%] w-[100%]"
               ></Image>
               <div className="absolute top-0 flex h-[100%] w-[100%]  text-[#271300]">
@@ -76,6 +77,7 @@ const EventCards = ({ event }: Props) => {
                 alt={event.event_name}
                 width={100}
                 height={100}
+                quality={1}
                 className=" h-[100%] w-[100%] "
               ></Image>
               <div className="absolute top-0 flex h-[100%] w-[100%] text-[#271300]">
