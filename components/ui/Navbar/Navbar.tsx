@@ -38,7 +38,7 @@ const Navbar = (props: Props) => {
       <div
         className={`navbar fixed z-[21] grid grid-cols-12  ${
           nav && "bg-yellow-900 bg-opacity-20 backdrop-blur-[10px]"
-        } flex  h-fit w-full items-center py-1 px-6`}
+        } flex  h-[50px] w-full items-center py-1 px-6 md:h-[58px]`}
       >
         <div
           className={`col-span-2 flex   w-12 items-center justify-center  py-2 md:hidden `}
