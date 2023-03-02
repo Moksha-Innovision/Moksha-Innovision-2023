@@ -1,4 +1,3 @@
-import { Koulen } from "@next/font/google";
 import { OrbitControls, Sparkles, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
@@ -6,7 +5,6 @@ import { Suspense, useState } from "react";
 import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
 import useWindowDimensions from "../components/Hooks/useWindowDimensions";
 import Footer from "../components/LandingPage/Footer";
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 import Model from "../components/ui/Model/model";
 import Navbar from "../components/ui/Navbar/Navbar";

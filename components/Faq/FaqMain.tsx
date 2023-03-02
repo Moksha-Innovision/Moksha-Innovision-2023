@@ -1,4 +1,5 @@
 import Image from "next/image";
+import peacock from "/public/peacock.svg";
 import { useRef } from "react";
 import FaqContainer from "./FaqContainer";
 
@@ -10,7 +11,7 @@ const FaqMain = () => {
         <div className="w-[50%] md:px-[5%] lg:px-[8%]">
           <div className="mt-10 h-[30vh]   md:h-[50%]">
             <Image
-              src={"/peacock.svg"}
+              src={peacock}
               alt=""
               width={100}
               height={100}

@@ -24,7 +24,7 @@ const Legacy = () => {
       <div className="absolute -bottom-[40vh] flex w-full justify-center lg:-bottom-[46vh]">
         <div className="h-[80vh] min-h-[500px] w-[80vw] min-w-[500px] animate-wheel lg:min-h-[700px]   lg:min-w-[700px]">
           <Image
-            src={"/Landing/Legecyrot1.svg"}
+            src={"/Landing/Legecyrot2.svg"}
             width={100}
             height={100}
             alt={"cross modal"}

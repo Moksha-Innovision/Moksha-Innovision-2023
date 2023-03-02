@@ -1,4 +1,5 @@
 import { Koulen } from "@next/font/google";
+import footerLogo from "/public/WEBSITE footer_1.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -17,7 +18,7 @@ const Footer = () => {
     >
       <div className="col-span-12 flex h-full  w-full justify-between  pt-4 md:hidden">
         <Image
-          src={"/WEBSITE footer_1.svg"}
+          src={footerLogo}
           alt={"asa"}
           height={10}
           quality={1}
@@ -68,7 +69,7 @@ const Footer = () => {
       <div className="col-span-12 flex w-full items-start justify-around pb-6  pt-4 font-koulen sm:pb-4 ">
         <div className="hidden font-koulen  font-light md:block">
           <Image
-            src={"/WEBSITE footer_1.svg"}
+            src={footerLogo}
             alt={"asa"}
             height={10}
             quality={1}
