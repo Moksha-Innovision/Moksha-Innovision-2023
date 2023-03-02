@@ -5,7 +5,7 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 const ContactUsForm = () => {
   return (
     <div
-      className={`relative z-[1] w-[80vw] max-w-[550px] items-center  justify-center space-y-5  overflow-hidden rounded-2xl border-4  border-yellow-500  bg-prussian-blue-1000 bg-event-pattern bg-contain bg-fixed bg-repeat py-6 px-12 text-black shadow-xl md:px-20   `}
+      className={`relative z-[1] w-[80vw] max-w-[550px] items-center  justify-center space-y-5  overflow-hidden rounded-2xl border-4  border-yellow-500  bg-prussian-blue-1000   bg-event-pattern bg-pattern      bg-repeat py-6 px-12 text-black shadow-xl md:px-20   `}
     >
       <div className="absolute -bottom-16 -right-[40px] h-[150px] w-[150px] transition-all duration-100  xl:scale-[1.5]  ">
         <Image

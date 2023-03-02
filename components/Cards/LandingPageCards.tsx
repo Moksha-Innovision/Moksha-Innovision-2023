@@ -19,7 +19,7 @@ type Props = {};
 
 const LandingPageCards = ({ setPop }: any) => {
   return (
-    <div className="popup  flex h-full  w-full flex-col items-center justify-center bg-contain  p-10 text-5xl md:h-full ">
+    <div className="popup  flex h-full  w-full flex-col items-center justify-center    p-10 text-5xl md:h-full ">
       <Tilt
         tiltMaxAngleX={6}
         tiltMaxAngleY={6}
@@ -174,7 +174,7 @@ const LandingPageCards = ({ setPop }: any) => {
 };
 {
   /*
-  <div className="popup  flex h-full w-full flex-col items-center justify-center bg-contain  p-10 text-5xl md:h-full ">
+  <div className="popup  flex h-full w-full flex-col items-center justify-center    p-10 text-5xl md:h-full ">
       <Tilt
         tiltMaxAngleX={6}
         tiltMaxAngleY={6}

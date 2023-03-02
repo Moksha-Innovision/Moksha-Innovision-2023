@@ -22,7 +22,7 @@ export default function App() {
       <Navbar />
 
       <div
-        className={`${"font-koulen"} flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-opacity-5 bg-index-pattern  bg-contain pt-[2vh] md:flex-row`}
+        className={`${"font-koulen"} flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-opacity-5 bg-index-pattern   bg-pattern pt-[2vh] md:flex-row`}
       >
         <div
           // onClick={() => setPop("appear")}

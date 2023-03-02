@@ -7,7 +7,7 @@ type Props = {};
 const PageLoader = (props: Props) => {
   return (
     <div
-      className="grid h-screen w-screen place-items-center bg-black bg-event-pattern bg-contain bg-fixed"
+      className="grid h-screen w-screen place-items-center bg-black   bg-event-pattern bg-pattern    "
       id="globalLoader"
     >
       <Image

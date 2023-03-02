@@ -14,7 +14,7 @@ const Choice = (props: Props) => {
         <meta property="og:title" content="" key="title" />
       </Head>
       <Navbar />
-      <div className="grid  h-screen w-screen place-items-center bg-prussian-blue-1000 bg-event-pattern bg-contain  bg-fixed">
+      <div className="grid  h-screen w-screen place-items-center bg-prussian-blue-1000   bg-event-pattern bg-pattern      ">
         <Link
           href={"/userlogin"}
           className=" flex h-40 w-full items-center justify-center bg-red-500 text-center text-3xl font-bold hover:text-white"
