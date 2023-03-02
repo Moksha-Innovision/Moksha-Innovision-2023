@@ -1,7 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 import PageLoader from "../components/Loaders/page";
 
-
 export default function Document() {
   return (
     <Html lang="en">
