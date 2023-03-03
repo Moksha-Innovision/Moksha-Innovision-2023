@@ -8,7 +8,7 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 const contact = () => {
   return (
     <div
-      className={`${"font-koulen"} min-h-[100vh] bg-prussian-blue-1000 bg-event-pattern bg-contain bg-fixed bg-repeat`}
+      className={`${"font-koulen"} min-h-[100vh] bg-prussian-blue-1000   bg-event-pattern bg-pattern      bg-repeat`}
     >
       <Head>
         <title>Moksha Innovision&apos;23 | Contact</title>

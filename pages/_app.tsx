@@ -19,14 +19,15 @@ function MyApp({
   let [show, setShow] = useState(false);
 
   useEffect(() => {
+    let t;
     if (typeof window !== "undefined") {
       const loader = document.getElementById("globalLoader");
-
-      if (loader)
-        setTimeout(() => {
+      if (loader) {
+        t = setTimeout(() => {
           loader.remove();
           setShow(true);
-        }, 3000);
+        }, 1000);
+      }
     }
   }, []);
 

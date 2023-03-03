@@ -94,10 +94,8 @@ module.exports = {
           "0px -5px 60px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 50px 10px rgba(255, 255, 255, 0.5) ",
       },
       backgroundImage: {
-        "event-pattern":
-          "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/bgPattern.svg')",
-        "index-pattern":
-          "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/bgPatternindex.svg')",
+        "event-pattern": "url('/bgPatternindex.svg')",
+        "index-pattern": "url('/bgPatternindex.svg')",
         legacy:
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/legacybg.svg')",
 
@@ -105,6 +103,9 @@ module.exports = {
         "carosel-pattern":
           "url('https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/caroselSlide.svg')",
         "footer-texture": "url('/img/footer-texture.png')",
+      },
+      backgroundSize: {
+        pattern: "100px",
       },
       swiperSlideActive: {
         width: "400px",

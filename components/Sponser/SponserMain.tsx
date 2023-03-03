@@ -1,11 +1,8 @@
-import { Koulen } from "@next/font/google";
-import gsap from "gsap";
 import Image from "next/image";
-import { useLayoutEffect, useRef } from "react";
+
 import Infiniteslider from "./infiniteslider";
 import { SliderSlideSm } from "./SliderSlide";
 type Props = {};
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 //const sponsorImages = ["sponsor 1", "sponsor 2", "sponsor 3", "sponsor 4"];
 const sponsorImages = [
@@ -27,56 +24,9 @@ const sponsorImages = [
 ];
 
 const SponserMain = (props: Props) => {
-  const containerRef: any = useRef();
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.from(
-        [
-          ".borders-1",
-          ".borders-2",
-          ".borders-3",
-          ".borders-4",
-          ".cloud-small",
-          ".owl-small",
-        ],
-        {
-          scale: 0,
-          duration: 1,
-          opacity: 0,
-          delay: 0,
-          stagger: 0.2,
-          ease: "expo",
-        }
-      );
-
-      gsap.from(".top-row", {
-        opacity: 0,
-        y: -150,
-        ease: "power4",
-        duration: 0.5,
-        delay: 1.3,
-      });
-      gsap.from(".bottom-row", {
-        opacity: 0,
-        y: 150,
-        ease: "power4",
-        duration: 0.5,
-        delay: 1,
-      });
-    }, containerRef);
-
-    return () => {
-      return ctx.revert();
-    };
-  }, []);
-
   return (
     <>
-      <div
-        className=" relative flex min-h-screen w-screen pt-[7vh]"
-        ref={containerRef}
-      >
+      <div className=" relative flex min-h-screen w-screen pt-[7vh]">
         {/*<Image
                     src="borders.svg"
                     width={100}
@@ -138,6 +88,7 @@ const SponserMain = (props: Props) => {
                   height={100}
                   alt={"sponser"}
                   className={`h-full w-full`}
+                  quality={1}
                 />
               </SliderSlideSm>
             ))}
@@ -152,6 +103,7 @@ const SponserMain = (props: Props) => {
                   height={100}
                   alt={"sponser"}
                   className={`h-full w-full`}
+                  quality={1}
                 />
               </SliderSlideSm>
             ))}

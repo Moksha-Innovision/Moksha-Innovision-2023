@@ -1,4 +1,3 @@
-import { Koulen } from "@next/font/google";
 import { OrbitControls, Sparkles, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
@@ -6,7 +5,6 @@ import { Suspense, useState } from "react";
 import LandingPageCardContainer from "../components/Cards/LandingPageCardContainer";
 import useWindowDimensions from "../components/Hooks/useWindowDimensions";
 import Footer from "../components/LandingPage/Footer";
-const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 import Model from "../components/ui/Model/model";
 import Navbar from "../components/ui/Navbar/Navbar";
@@ -24,7 +22,7 @@ export default function App() {
       <Navbar />
 
       <div
-        className={`${"font-koulen"} flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-opacity-5 bg-index-pattern  bg-contain pt-[2vh] md:flex-row`}
+        className={`${"font-koulen"} flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-opacity-5 bg-index-pattern   bg-pattern pt-[2vh] md:flex-row`}
       >
         <div
           // onClick={() => setPop("appear")}

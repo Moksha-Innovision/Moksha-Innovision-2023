@@ -1,25 +1,22 @@
 import Image from "next/image";
 
+import pageLoader from "/public/WEBSITE loader.svg";
+
 type Props = {};
 
 const PageLoader = (props: Props) => {
   return (
-    <div className="grid h-screen w-screen place-items-center bg-black">
+    <div
+      className="grid h-screen w-screen place-items-center bg-black   bg-event-pattern bg-pattern    "
+      id="globalLoader"
+    >
       <Image
-        src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/Landing/footerLogo.svg"
+        src={pageLoader}
         width={300}
+        priority={true}
         height={300}
         alt={"loader"}
-        priority
         className="animate-pulse"
-      />
-      <Image
-        src="/logbg.svg"
-        width={300}
-        height={300}
-        alt={"loader"}
-        priority
-        className="absolute animate-wheel opacity-20"
       />
     </div>
   );

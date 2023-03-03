@@ -11,7 +11,7 @@ type Props = {};
 const developers = (props: Props) => {
   return (
     <div
-      className={`min-h-screen w-screen  bg-black  bg-event-pattern bg-contain bg-fixed px-[5vw] py-[5vh] md:h-screen  ${"font-koulen"}`}
+      className={`min-h-screen w-screen  bg-black    bg-event-pattern bg-pattern      px-[5vw] py-[5vh] md:h-screen  ${"font-koulen"}`}
     >
       <Head>
         <title>Moksha Innovision&apos;23 | Developers</title>

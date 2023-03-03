@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import NavLink from "./NavLink";
+import hamburger from "/public/hamburger.svg";
+import logo from "/public/mokshalogo.svg";
+import profilePic from "/public/thirteen.svg";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 type Props = {};
@@ -45,9 +48,7 @@ const Navbar = (props: Props) => {
           onClick={() => setShow(!show)}
         >
           <Image
-            src={
-              "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/hamburger.svg"
-            }
+            src={hamburger}
             alt=""
             width={100}
             height={100}
@@ -59,17 +60,10 @@ const Navbar = (props: Props) => {
         <div className="col-span-8 flex justify-center  md:col-span-2 md:justify-start">
           <Link href="/" className="  logo w-28 md:w-28">
             <Image
-              width={80}
-              height={80}
-              className="ml-5  md:hidden"
-              src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/mokshalogo.svg"
-              alt=""
-            />
-            <Image
+              className="ml-5 "
               width={100}
               height={100}
-              className="ml-5 hidden md:block"
-              src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/mokshalogo.svg"
+              src={logo}
               alt=""
             />
           </Link>
@@ -103,7 +97,7 @@ const Navbar = (props: Props) => {
               <Image
                 width={100}
                 height={100}
-                src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/thirteen.svg"
+                src={profilePic}
                 alt=""
                 className="w-8"
               />
@@ -135,7 +129,7 @@ const Navbar = (props: Props) => {
       >
           */}
         <ul
-          className={`flex flex-col justify-center shadow-2xl ${"font-koulen"} h-full w-[50vw]  space-y-10 rounded-br-[50%] rounded-tr-[50%] bg-prussian-blue-950 bg-opacity-20  bg-contain pl-8 text-white backdrop-blur-[20px]`}
+          className={`flex flex-col justify-center shadow-2xl ${"font-koulen"} h-full w-[50vw]  space-y-10 rounded-br-[50%] rounded-tr-[50%] bg-prussian-blue-950 bg-opacity-20    pl-8 text-white backdrop-blur-[20px]`}
         >
           <NavLink href="/events" imgScale={110} underlineclassName="-left-3">
             Events
