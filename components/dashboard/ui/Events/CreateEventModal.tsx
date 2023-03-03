@@ -369,7 +369,7 @@ const CreateEventModal = (props: Props) => {
           </span>
         </div>
         <span className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-saffron-600 px-3 py-2 font-medium">
-          <button>
+          <button disabled>
             {" "}
             {isLoading === "form" ? <Spinner /> : "Create New Event"}
           </button>
