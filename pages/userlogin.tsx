@@ -13,7 +13,7 @@ const deafultFormFields = {
   UserEmail: "",
   password: "",
 };
-const SECRET_PASS_KEY = "miavgfihiwbasbtd";
+const SECRET_PASS_KEY = "iamadmin";
 const UserLogin = () => {
   const supabase = useSupabaseClient();
   const [claimsAdmin, setClaimsAdmin] = useState(false);
