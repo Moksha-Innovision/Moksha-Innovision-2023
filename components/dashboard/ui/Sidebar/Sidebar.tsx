@@ -1,4 +1,6 @@
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import MokshaProfileLogo from "/public/MokshaProfile.svg";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -22,9 +24,19 @@ const SidebarChips = [
     iconSrc: "/Scoreboard.svg",
   },
   {
-    name: "Create Event",
-    href: "/admin/newevent",
-    iconSrc: "/Registration.svg",
+    name: "Profile",
+    href: "/user/profile",
+    iconSrc: "/profile.svg",
+  },
+  {
+    name: "Registered Events",
+    href: "/user/regevents",
+    iconSrc: "/Events.svg",
+  },
+  {
+    name: "QR-Code",
+    href: "/user/qrcode",
+    iconSrc: "/qrcode.svg",
   },
 ];
 
@@ -56,9 +68,13 @@ const Sidebar = (props: Props) => {
       </span>
 
       <div className="mokshaLogo mb-5 mt-5 flex flex-col items-center space-y-4 p-2">
-        <Link href="/" className="mb-8 w-auto sm:group-hover:w-auto">
+        <Link href="/" className="mb-8 w-auto sm:group-hover:w-48">
           <Image
-            src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/MokshaAdmin.svg"
+            src={
+              user?.user_metadata.isAdmin
+                ? "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/MokshaAdmin.svg"
+                : MokshaProfileLogo
+            }
             width={150}
             height={150}
             alt={"moksha admin logo"}
@@ -92,6 +108,7 @@ const Sidebar = (props: Props) => {
           <span
             className="rounded-md bg-saffron-600 p-2 font-bold text-white hover:scale-105"
             onClick={async () => {
+              sessionStorage.clear();
               const { error } = await supabase.auth.signOut();
             }}
           >
@@ -100,11 +117,16 @@ const Sidebar = (props: Props) => {
         </div>
       )}
       <ul className="text-md mt-10 mb-4 space-y-2 overflow-y-scroll">
-        {SidebarChips.map((chip) => (
-          <li key={chip.href}>
-            <SidebarChip {...chip} setSidebarOpen={setSidebarOpen} />
-          </li>
-        ))}
+        {SidebarChips.map(
+          (chip) =>
+            chip.href.includes(
+              user?.user_metadata?.isAdmin ? "/admin" : "/user"
+            ) && (
+              <li key={chip.href}>
+                <SidebarChip {...chip} setSidebarOpen={setSidebarOpen} />
+              </li>
+            )
+        )}
       </ul>
     </div>
     // </div>

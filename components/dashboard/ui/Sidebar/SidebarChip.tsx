@@ -27,8 +27,9 @@ const SidebarChip = (props: Props) => {
       <span className="scale-100 text-white">
         {
           <Image
-            src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/${iconSrc}`}
+            src={`${iconSrc}`}
             width={25}
+            className={"text-white"}
             height={25}
             alt={name + " icon"}
           />

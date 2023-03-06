@@ -33,7 +33,7 @@ const EventRegistrationForm = (props: Props) => {
     let finalData: any = {
       t_name: formdata.get("t_name"),
       e_id: eventId,
-      t_id: [user?.id],
+      t_id: user?.id,
     };
 
     let form_data = {};

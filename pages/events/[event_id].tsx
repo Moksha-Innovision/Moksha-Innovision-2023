@@ -22,7 +22,7 @@ const IndividualEventPage = (props: Props) => {
   const supabase = useSupabaseClient();
   const { event_id } = router.query;
   const [currentEventData, setCurrentEventData] = useState<any>("");
-  const [userProfileData, setUserProfileData] = useState<any>("");
+  const [userProfileData, setUserProfileData] = useState<any>([]);
   const [showForm, setShowForm] = useState("event");
 
   const getEvent = async () => {
@@ -56,10 +56,12 @@ const IndividualEventPage = (props: Props) => {
       );
     }
 
-    if (!Array.isArray(userData) && Object.keys(userData).length === 0) {
-      getUserProfile();
-    } else {
-      setUserProfileData(userData);
+    if (user) {
+      if (!Array.isArray(userData) && Object.keys(userData).length === 0) {
+        getUserProfile();
+      } else {
+        setUserProfileData(userData);
+      }
     }
   }, []);
 

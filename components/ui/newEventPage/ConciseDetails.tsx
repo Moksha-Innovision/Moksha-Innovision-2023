@@ -37,16 +37,18 @@ const ConciseDetails = (props: any) => {
         </div>
       </div>
 
-      <div className="buttons ml-auto flex flex-col items-center justify-center gap-3">
-        <button className="rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl">
-          Register
-        </button>
-        <span className="text-xs sm:text-sm">Team Size</span>
-        <div className="chip flex items-center gap-2">
-          <AiOutlineTeam className="text-base" />{" "}
-          <span className="text-xs sm:text-sm">{props.eventTeam}</span>
+      {!props.hide && (
+        <div className="buttons ml-auto flex flex-col items-center justify-center gap-3">
+          <button className="rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl">
+            Register
+          </button>
+          <span className="text-xs sm:text-sm">Team Size</span>
+          <div className="chip flex items-center gap-2">
+            <AiOutlineTeam className="text-base" />{" "}
+            <span className="text-xs sm:text-sm">{props.eventTeam}</span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

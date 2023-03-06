@@ -13,7 +13,6 @@ import hamburger from "/public/hamburger.svg";
 import logo from "/public/mokshalogo.svg";
 import profilePic from "/public/thirteen.svg";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
-
 type Props = {};
 const profile = {
   name: "John snow",
@@ -43,6 +42,7 @@ const Navbar = (props: Props) => {
   const [show, setShow] = useState(false);
 
   const handleLogout = async () => {
+    sessionStorage.clear();
     const { error } = await supabase.auth.signOut();
   };
 
@@ -113,26 +113,26 @@ const Navbar = (props: Props) => {
                   </button>
                 )}
                 {!session && (
-                  <Link href="/userLogin">
+                  <Link href="/userlogin">
                     <button className="w-24 rounded-md bg-saffron-500 px-4 py-1 font-koulen">
                       LogIn
                     </button>
                   </Link>
                 )}
 
-                {
+                {user && (
                   <Link
                     href={
                       user?.user_metadata.isAdmin
                         ? "admin/events"
-                        : "/comingsoon"
+                        : "/user/regevents"
                     }
                   >
                     <button className="w-24 rounded-md bg-saffron-500 px-4 py-1 font-koulen">
                       Dashboard
                     </button>
                   </Link>
-                }
+                )}
               </div>
             )}
 
