@@ -13,7 +13,7 @@ const EventPoc = (props: Props) => {
         Event POCs
       </h1>
       <ul className="desc max-w-3xl px-4 font-montserrat text-base tracking-wide ">
-        {Object.keys(poc).map((p,idx) => {
+        {Object.keys(poc).map((p, idx) => {
           return (
             <li key={idx} className="mb-1 flex w-full items-center gap-2">
               <AiOutlinePhone className="text-2xl text-white" />
