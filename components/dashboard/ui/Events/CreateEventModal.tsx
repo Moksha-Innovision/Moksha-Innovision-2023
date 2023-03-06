@@ -185,17 +185,6 @@ const CreateEventModal = (props: Props) => {
 
   return (
     <div className="relative m-auto flex max-h-[700px] min-w-[350px] max-w-xl flex-col rounded-lg bg-white p-4 px-6 md:min-w-[500px]">
-      <button onClick={() => setEventModal(false)}>
-        <NextImage
-          src={
-            "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/modalcross.svg"
-          }
-          width={25}
-          height={25}
-          alt={"cross modal"}
-          className="absolute left-4 top-4"
-        />
-      </button>
       <h1 className="text-center text-4xl font-semibold text-black ">
         Create New Event
       </h1>
@@ -368,6 +357,7 @@ const CreateEventModal = (props: Props) => {
             )}
           </span>
         </div>
+
         <span className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-saffron-600 px-3 py-2 font-medium">
           <button disabled>
             {" "}

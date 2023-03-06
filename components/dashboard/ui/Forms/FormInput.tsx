@@ -22,7 +22,7 @@ const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
     <div className={"group my-4 flex flex-col items-start gap-2"}>
       <label
         htmlFor={label}
-        className={` text-lg font-semibold text-${otherProps.labelColor} tracking-widest`}
+        className={`font-koulen text-lg text-${otherProps.labelColor} tracking-widest`}
       >
         {label}
         <span className="font-serif text-xl italic text-red-500 ">
@@ -35,7 +35,7 @@ const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
           {...otherProps}
           className={
             className ||
-            "w-full rounded bg-gray-200 px-3 py-2 text-gray-800 placeholder:font-bold placeholder:italic focus:outline-gray-300 "
+            "w-full rounded bg-gray-200 bg-opacity-70 px-3 py-2 text-gray-800 placeholder:font-bold placeholder:italic focus:outline-gray-300 "
           }
         />
       ) : (

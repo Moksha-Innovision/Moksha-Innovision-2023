@@ -32,7 +32,7 @@ const Events = (props: Props) => {
 
   useEffect(() => {
     if (user && user.user_metadata.isAdmin) {
-      //getEvent();
+      getEvent();
     }
   }, [user]);
 

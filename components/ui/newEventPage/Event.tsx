@@ -127,6 +127,30 @@ const events = [
   },
 ];
 
+const processData = (data: any) => [
+  {
+    day: "I",
+    events:
+      data?.filter((e: any) => {
+        if (e.date == "2023-03-23") return e;
+      }) || [],
+  },
+  {
+    day: "II",
+    events:
+      data?.filter((e: any) => {
+        if (e.date == "2023-03-24") return e;
+      }) || [],
+  },
+  {
+    day: "III",
+    events:
+      data?.filter((e: any) => {
+        if (e.date == "2023-03-25") return e;
+      }) || [],
+  },
+];
+
 const Event = () => {
   const [eventss, setEventss] = useState<any>([]);
   const router = useRouter();
@@ -135,55 +159,21 @@ const Event = () => {
   const [eData, setEData] = useState<any>("");
   const getEvent = async () => {
     const { data, error } = await supabase.from("socevent").select("*");
-    setEData([
-      {
-        day: "I",
-        events:
-          data?.filter((e) => {
-            if (e.date == "2023-03-23") return e;
-          }) || [],
-      },
-      {
-        day: "II",
-        events:
-          data?.filter((e) => {
-            if (e.date == "2023-03-24") return e;
-          }) || [],
-      },
-      {
-        day: "III",
-        events:
-          data?.filter((e) => {
-            if (e.date == "2023-03-25") return e;
-          }) || [],
-      },
-    ]);
-    //setEventss(data);
-    console.log(eData);
+
+    sessionStorage.setItem("eData", JSON.stringify(data));
+    const processedData = processData(data);
+
+    setEData(processedData);
   };
 
   useEffect(() => {
-    if (eData == "") getEvent();
-    console.log(eData);
-  }, [eData]);
-
-  /*if (user) {
-    if (!user.user_metadata.isAdmin) {
-      return (
-        <>
-          <Notadmin type={"not-authorized"} />
-        </>
-      );
+    if (!sessionStorage.getItem("eData")) getEvent();
+    else {
+      const rawData = JSON.parse(sessionStorage.getItem("eData") || "");
+      const processedData = processData(rawData);
+      setEData(processedData);
     }
-  } else {
-    return (
-      <>
-        <Notadmin type="login" />
-      </>
-    );
-  }*/
-
-  useEffect(() => {}, []);
+  }, []);
 
   const [day, setDay] = useState("I");
   return (

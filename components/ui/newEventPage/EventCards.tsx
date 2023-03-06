@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 interface Props {
   event: {
@@ -22,7 +23,8 @@ interface Props {
 const EventCards = ({ event }: Props) => {
   const [glow, setGlow] = useState(false);
   return (
-    <div
+    <Link
+      href={{ pathname: `/events/${event.event_id}` }}
       className="flip-card-head rounded-xl bg-yellow-400 bg-opacity-10 p-8  "
       onMouseOver={() => {
         setGlow(true);
@@ -105,7 +107,7 @@ const EventCards = ({ event }: Props) => {
           ></Image>
         </div>*/}
       </div>
-    </div>
+    </Link>
   );
 };
 
