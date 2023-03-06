@@ -113,7 +113,7 @@ const Navbar = (props: Props) => {
                   </button>
                 )}
                 {!session && (
-                  <Link href="/userLogin">
+                  <Link href="/userlogin">
                     <button className="w-24 rounded-md bg-saffron-500 px-4 py-1 font-koulen">
                       LogIn
                     </button>
