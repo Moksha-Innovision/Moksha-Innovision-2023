@@ -1,12 +1,17 @@
 import { useRouter } from "next/router";
 import EventRegistrationForm from "../../components/EventRegistrationForm.tsx/EventRegistrationForm";
 import UserRegistrationForm from "../../components/UserRegistrationForm/UserRegistrationForm";
+import EventPoc from "../../components/ui/newEventPage/EventPoc";
+import EventRules from "../../components/ui/newEventPage/EventRules";
+import EventDesc from "../../components/ui/newEventPage/EventDesc";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
+import ConciseDetails from "../../components/ui/newEventPage/ConciseDetails";
 import FormInput from "../../components/dashboard/ui/Forms/FormInput";
 import Navbar from "../../components/ui/Navbar/Navbar";
+import Image from "next/image";
 
 type Props = {};
 
@@ -65,9 +70,25 @@ const IndividualEventPage = (props: Props) => {
         className="parent min-h-screen w-screen bg-prussian-blue-1000 bg-event-pattern bg-pattern pb-4 pt-[7vh] text-white"
         ref={animationParent}
       >
-        <pre>
+        {/* <pre>
           IndividualEventPage {JSON.stringify(currentEventData, null, 4)}
-        </pre>
+        </pre> */}
+
+        <div className="m-auto max-w-5xl px-2">
+          <ConciseDetails
+            imgSrc={currentEventData.poster}
+            eventName={currentEventData.event_name}
+            eventTagline={currentEventData.tagline}
+            eventTime={currentEventData.time}
+            eventDate={currentEventData.date}
+            eventVenue={currentEventData.venue}
+            eventTeam={currentEventData.team_size}
+          />
+
+          <EventDesc desc={currentEventData.desc} />
+          <EventRules rules={currentEventData.rules || []} />
+          <EventPoc poc={currentEventData.poc || {}} />
+        </div>
 
         {/* //------------------------------------------------------------------------------------------------------- */}
 
