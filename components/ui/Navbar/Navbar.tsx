@@ -1,5 +1,9 @@
 import { Koulen } from "@next/font/google";
-import { useSession } from "@supabase/auth-helpers-react";
+import {
+  useSession,
+  useUser,
+  useSupabaseClient,
+} from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -18,7 +22,9 @@ const profile = {
 const ACTIVELINKTYLE = "text-3xl";
 const Navbar = (props: Props) => {
   const session = useSession();
-
+  const user = useUser();
+  const supabase = useSupabaseClient();
+  const [profileMenu, setProfileMenu] = useState(false);
   const [nav, setNav] = useState<any>(false);
   const onScroll = useCallback((event: any) => {
     const { scrollY } = window;
@@ -35,6 +41,11 @@ const Navbar = (props: Props) => {
   }, []);
 
   const [show, setShow] = useState(false);
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+  };
+
   const router = useRouter();
   return (
     <div className="relative flex w-full flex-col">
@@ -84,15 +95,47 @@ const Navbar = (props: Props) => {
 
         {/* //Profile Button */}
 
-        <div className="profile-btn col-span-2 flex items-center  justify-end   md:col-span-1 lg:col-span-2">
+        <div className="profile-btn relative col-span-2 flex  items-center   justify-end md:col-span-1 lg:col-span-2">
           <button
             className="flex h-[45px]  items-center justify-center gap-3 rounded-full p-2 lg:px-10"
             onClick={() => {
-              session
-                ? router.push("/admin/events")
-                : router.push("/userlogin");
+              setProfileMenu(!profileMenu);
             }}
           >
+            {profileMenu && (
+              <div className=" absolute top-full right-0 flex w-40 flex-col items-center gap-2 rounded bg-white py-2">
+                {session && (
+                  <button
+                    onClick={handleLogout}
+                    className="w-24 rounded-md bg-saffron-500 px-4 py-1 font-koulen"
+                  >
+                    LogOut
+                  </button>
+                )}
+                {!session && (
+                  <Link href="/userLogin">
+                    <button className="w-24 rounded-md bg-saffron-500 px-4 py-1 font-koulen">
+                      LogIn
+                    </button>
+                  </Link>
+                )}
+
+                {
+                  <Link
+                    href={
+                      user?.user_metadata.isAdmin
+                        ? "admin/events"
+                        : "/comingsoon"
+                    }
+                  >
+                    <button className="w-24 rounded-md bg-saffron-500 px-4 py-1 font-koulen">
+                      Dashboard
+                    </button>
+                  </Link>
+                }
+              </div>
+            )}
+
             <div className="profile-pic flex h-6 w-10 items-center justify-center rounded-full">
               <Image
                 width={100}

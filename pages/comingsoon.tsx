@@ -6,23 +6,6 @@ import Navbar from "../components/ui/Navbar/Navbar";
 type Props = {};
 
 const ComingSoon = (props: Props) => {
-  const user = useUser();
-  if (user) {
-    if (!user.user_metadata.isAdmin) {
-      return (
-        <>
-          <Notadmin type={"not-authorized"} />
-        </>
-      );
-    }
-  } else {
-    return (
-      <>
-        <Notadmin type="login" />
-      </>
-    );
-  }
-
   return (
     <>
       <Head>

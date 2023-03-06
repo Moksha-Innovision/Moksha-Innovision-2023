@@ -79,7 +79,7 @@ const FaqContainer = (props: Props) => {
           setMore(!more);
         }}
       >
-        {more ? "View Less" : "View More"}{" "}
+        {more ? "View Less" : "View More"}
         {more ? (
           <AiFillCaretUp className={`${!bounce && "animate-bounce"} inline`} />
         ) : (

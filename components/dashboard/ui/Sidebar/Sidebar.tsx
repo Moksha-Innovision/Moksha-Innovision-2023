@@ -89,18 +89,14 @@ const Sidebar = (props: Props) => {
       </div>
       {user && (
         <div className="w-full text-center">
-          <Link href={"/userlogin"}>
-            <span
-              className="rounded-md bg-saffron-600 p-2 font-bold text-white hover:scale-105"
-              onClick={() => {
-                async () => {
-                  const { error } = await supabase.auth.signOut();
-                };
-              }}
-            >
-              Logout
-            </span>
-          </Link>
+          <span
+            className="rounded-md bg-saffron-600 p-2 font-bold text-white hover:scale-105"
+            onClick={async () => {
+              const { error } = await supabase.auth.signOut();
+            }}
+          >
+            Logout
+          </span>
         </div>
       )}
       <ul className="text-md mt-10 mb-4 space-y-2 overflow-y-scroll">
