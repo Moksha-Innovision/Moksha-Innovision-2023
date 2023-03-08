@@ -75,7 +75,7 @@ const EventRegistrationForm = (props: Props) => {
         <div className="prompt">You have already registered for the event</div>
       )}
 
-      {user?.user_metadata?.regEvents?.includes(eventId) && (
+      {!user?.user_metadata?.regEvents?.includes(eventId) && (
         <div className="mx-auto my-4 w-[95%] rounded-md  bg-yellow-400 bg-opacity-5  px-6 py-5 pb-3 drop-shadow-lowGlow  backdrop-blur-sm ">
           <h2 className="mb-6 text-center font-koulen text-3xl ">
             Register For This Event
