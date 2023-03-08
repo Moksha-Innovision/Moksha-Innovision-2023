@@ -13,7 +13,7 @@ type Props = {
 };
 const EventRegistrationForm = (props: Props) => {
   const [alert, setAlert] = useState<any>("success");
-  const user = useUser();
+  let user = useUser();
   const supabase = useSupabaseClient();
 
   const {
@@ -44,7 +44,7 @@ const EventRegistrationForm = (props: Props) => {
       }
     }
 
-    finalData = { ...finalData, form_data: form_data };
+    finalData = { ...finalData, form_data: [form_data] };
 
     console.log(finalData);
 
@@ -58,19 +58,24 @@ const EventRegistrationForm = (props: Props) => {
 
     const currentRegEvents = user?.user_metadata.regEvents;
     const newRegEvents = currentRegEvents.push(eventId);
+
     const { data: otherData, error: otherError } =
       await supabase.auth.updateUser({
-        data: { regEvents: newRegEvents },
+        data: { regEvents: [...currentRegEvents, eventId] },
       });
+
+    console.log(data);
   };
+
+  console.log({ user: useUser() });
 
   return (
     <>
-      {user?.user_metadata.regEvents.includes(eventId) && (
+      {user?.user_metadata?.regEvents?.includes(eventId) && (
         <div className="prompt">You have already registered for the event</div>
       )}
 
-      {!user?.user_metadata.regEvents.includes(eventId) && (
+      {!user?.user_metadata?.regEvents?.includes(eventId) && (
         <div className="mx-auto my-4 w-[95%] rounded-md  bg-yellow-400 bg-opacity-5  px-6 py-5 pb-3 drop-shadow-lowGlow  backdrop-blur-sm ">
           <h2 className="mb-6 text-center font-koulen text-3xl ">
             Register For This Event
@@ -142,10 +147,7 @@ const EventRegistrationForm = (props: Props) => {
             <button
               className="mx-auto block rounded-md bg-Safety-Orange-500 px-4 py-2 font-semibold uppercase disabled:opacity-60"
               disabled={
-                false
-                /*!user ||
-              user.user_metadata.inAdmin ||
-              profileData.length === 0 */
+                !user || user.user_metadata.isAdmin || profileData.length === 0
               }
             >
               Register
