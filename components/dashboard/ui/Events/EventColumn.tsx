@@ -1,5 +1,5 @@
 import Link from "next/link";
-import EventCard from "./EventCard";
+import ConciseDetails from "../../../ui/newEventPage/ConciseDetails";
 
 type Props = {
   setEventModal: (a: any) => any;
@@ -24,9 +24,20 @@ const EventColumn = (props: Props) => {
         </span>
       </div>
 
-      <div className="flex w-full flex-col gap-6 ">
+      <div className="flex w-full flex-col gap-6 pt-8">
         {Events.map((event, index) => (
-          <EventCard event={event} key={index} />
+          <ConciseDetails
+            key={index}
+            event_id={event.event_id}
+            imgSrc={event.poster}
+            eventName={event.event_name}
+            eventTagline={event.tagline}
+            eventTime={event.time}
+            eventDate={event.date}
+            eventVenue={event.venue}
+            eventTeam={event.team_size}
+            hideReg={true}
+          />
         ))}
       </div>
     </div>

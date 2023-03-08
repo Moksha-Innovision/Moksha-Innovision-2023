@@ -13,6 +13,7 @@ interface Props {
     poster: string;
     prize_pool: number;
     rules: string[];
+    ticket: string;
     soc_id: string;
     tagline: string;
     team_size: number;
@@ -21,6 +22,7 @@ interface Props {
   };
 }
 const EventCards = ({ event }: Props) => {
+  console.log(event.ticket);
   const [glow, setGlow] = useState(false);
   return (
     <Link
@@ -56,22 +58,26 @@ const EventCards = ({ event }: Props) => {
         >
           <div className="flip-card-inner">
             <div className="flip-card-front relative">
+              {/*`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/ticket1.svg`*/}
               <Image
-                src={`https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/ticket1.svg`}
+                src={
+                  event.ticket ||
+                  `https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/ticket1.svg`
+                }
                 alt={event.event_name}
                 width={100}
                 height={100}
                 quality={1}
                 className=" h-[100%] w-[100%]"
               ></Image>
-              <div className="absolute top-0 flex h-[100%] w-[100%]  text-[#271300]">
+              {/*<div className="absolute top-0 flex h-[100%] w-[100%]  text-[#271300]">
                 <div className="w-[40%]"></div>
                 <div className="w-[25%]"></div>
                 <div className=" text flex  w-[42%] flex-col flex-wrap justify-center overflow-hidden break-all pr-[5px] text-left text-[15px] sm:text-[12px] md:text-[15px] lg:text-[8px] xl:text-[12px]">
                   <p className="text-[100%]">Time: {event.time} </p>
-                  <p className="">Venue:Moksha{/*event.venue*/}</p>
+                  <p className="">Venue:Moksha{/*event.venue}</p>
                 </div>
-              </div>
+              </div>*/}
             </div>
             <div className="flip-card-back relative">
               <Image

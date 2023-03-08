@@ -63,6 +63,7 @@ const Events = (props: Props) => {
           <CreateEventModal getEvent={getEvent} setEventModal={setEventModal} />
         </div>
       )}
+
       <EventColumn setEventModal={setEventModal} events={events} />
     </Dashboard>
   );

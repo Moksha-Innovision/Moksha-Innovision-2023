@@ -1,8 +1,8 @@
 import { Koulen } from "@next/font/google";
 import {
   useSession,
-  useUser,
   useSupabaseClient,
+  useUser,
 } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -124,7 +124,7 @@ const Navbar = (props: Props) => {
                   <Link
                     href={
                       user?.user_metadata.isAdmin
-                        ? "admin/events"
+                        ? "/admin/events"
                         : "/user/regevents"
                     }
                   >

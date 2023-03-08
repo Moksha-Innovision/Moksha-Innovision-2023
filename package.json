@@ -16,7 +16,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@formkit/auto-animate": "^1.0.0-beta.6",
+    "@mui/material": "^5.11.12",
     "@next/font": "13.1.1",
     "@react-three/drei": "^9.56.17",
     "@react-three/fiber": "^8.10.4",
@@ -29,6 +33,7 @@
     "@types/three": "^0.149.0",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
+    "framer-motion": "^10.2.3",
     "gsap": "^3.11.4",
     "husky": "^8.0.2",
     "lodash": "^4.17.21",
