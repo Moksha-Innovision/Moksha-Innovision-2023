@@ -117,7 +117,7 @@ const UserLogin = () => {
 
           <div className="flex w-full flex-col items-center text-2xl">
             <button
-              disabled={password !== SECRET_PASS_KEY && /*claimsAdmin*/ true}
+              disabled={password !== SECRET_PASS_KEY && claimsAdmin}
               className={`mt-3  h-14  w-[100%] rounded-lg bg-Safety-Orange-500 text-white shadow-md transition-[transform] duration-100  hover:scale-[1.04] disabled:pointer-events-none disabled:opacity-40`}
             >
               {isLoading ? (
