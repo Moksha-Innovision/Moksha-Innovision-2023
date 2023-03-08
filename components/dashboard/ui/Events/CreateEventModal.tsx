@@ -123,7 +123,6 @@ const CreateEventModal = (props: Props) => {
         setEventId(generateUUID());
         setAlert("success");
         e.target.reset();
-        //setImgEr("");
       }
     } catch (err) {
       setAlert("error");
