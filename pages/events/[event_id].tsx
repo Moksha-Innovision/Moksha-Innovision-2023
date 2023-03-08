@@ -87,7 +87,7 @@ const IndividualEventPage = (props: Props) => {
         <div className="m-auto max-w-5xl px-2">
           <div className=" w-[100%] rounded-md border border-solid p-1 ">
             <Image
-              src={currentEventData.banner}
+              src={currentEventData.banner || ""}
               width="200"
               height="200"
               alt="event-poster"
