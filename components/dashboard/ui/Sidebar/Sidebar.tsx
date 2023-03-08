@@ -19,9 +19,9 @@ const SidebarChips = [
     iconSrc: "/Events.svg",
   },
   {
-    name: "Scoreboard",
-    href: "/admin/scoreboard",
-    iconSrc: "/Scoreboard.svg",
+    name: "Create Event",
+    href: "/admin/newevent",
+    iconSrc: "/addEvent.svg",
   },
   {
     name: "Profile",
@@ -87,7 +87,7 @@ const Sidebar = (props: Props) => {
             src={
               "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/profilecircle.svg"
             }
-            alt="James Bhatta"
+            alt="SUNNY"
             width={150}
             height={150}
           />

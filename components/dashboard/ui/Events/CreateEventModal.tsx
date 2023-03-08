@@ -3,12 +3,12 @@ import {
   useSupabaseClient,
   useUser,
 } from "@supabase/auth-helpers-react";
-import NextImage from "next/image";
 import { useState } from "react";
 import { generateUUID } from "three/src/math/MathUtils";
 import InlineAlert from "../../../Alerts/InlineAlert";
 import Spinner from "../../../Loaders/Spinner";
 import FormInput from "../Forms/FormInput";
+import ImageInput from "./ImageInput";
 type Props = { setEventModal: (a: any) => any; getEvent?: () => any };
 
 interface formFields {
@@ -26,6 +26,8 @@ const defaultFormFields: formFields = {
   prize_pool: 0,
   team_size: "",
   instagram: "",
+  banner: "",
+  ticket: "",
   poc1: "",
   poc2: "",
   poc3: "",
@@ -41,10 +43,14 @@ const CreateEventModal = (props: Props) => {
   const supabase = useSupabaseClient();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const [eventId, setEventId] = useState<any>(generateUUID());
-  const [imgEr, setImgEr] = useState("");
+  //const [imgEr, setImgEr] = useState("");
   const [isLoading, setIsLoading] = useState("none");
   const [alert, setAlert] = useState("");
+  //img paths+++++
   const [poaterPath, setPosterPath] = useState<any>("");
+  const [bannerPath, setBannerPath] = useState<any>("");
+  const [ticketPath, setTicketPath] = useState<any>("");
+  //img paths-----
   const { setEventModal, getEvent } = props;
 
   const formatPoc = (text: string) => {
@@ -58,6 +64,7 @@ const CreateEventModal = (props: Props) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    console.log(e);
     let {
       rules,
       poc1,
@@ -68,6 +75,8 @@ const CreateEventModal = (props: Props) => {
       desc,
       venue,
       date,
+      banner,
+      ticket,
       time,
       prize_pool,
       team_size,
@@ -84,6 +93,8 @@ const CreateEventModal = (props: Props) => {
     let POCS = { ...formatPoc(poc1), ...formatPoc(poc2), ...formatPoc(poc3) };
 
     poster = poaterPath;
+    banner = bannerPath;
+    ticket = ticketPath;
     try {
       const { data, error } = await supabase.from("socevent").insert([
         {
@@ -95,6 +106,8 @@ const CreateEventModal = (props: Props) => {
           venue,
           date,
           time,
+          banner,
+          ticket,
           prize_pool,
           team_size,
           instagram,
@@ -109,8 +122,8 @@ const CreateEventModal = (props: Props) => {
       } else {
         setEventId(generateUUID());
         setAlert("success");
-        //e.target.reset();
-        setImgEr("");
+        e.target.reset();
+        //setImgEr("");
       }
     } catch (err) {
       setAlert("error");
@@ -125,7 +138,8 @@ const CreateEventModal = (props: Props) => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const handleUpload = async (e: any) => {
+  {
+    /*  const handleUpload = async (e: any) => {
     console.log(e.target.files[0]);
     const file = e.target.files[0];
     if (file) {
@@ -182,9 +196,10 @@ const CreateEventModal = (props: Props) => {
       setPosterPath("");
     }
   };
-
+*/
+  }
   return (
-    <div className="relative m-auto flex max-h-[700px] min-w-[350px] max-w-xl flex-col rounded-lg bg-white p-4 px-6 md:min-w-[500px]">
+    <div className="relative m-auto mb-3 flex  min-w-[350px] max-w-xl flex-col rounded-lg bg-white p-4 px-6 md:min-w-[500px]">
       <h1 className="text-center text-4xl font-semibold text-black ">
         Create New Event
       </h1>
@@ -319,7 +334,6 @@ const CreateEventModal = (props: Props) => {
           id="POC 3"
           name="poc3"
         />
-
         <FormInput
           onChange={handleChange}
           labelColor="black"
@@ -329,37 +343,48 @@ const CreateEventModal = (props: Props) => {
           id="Form Questions"
           name="form_question"
         />
-        <div className="flex items-baseline ">
-          <div className="flex flex-col ">
-            <FormInput
-              required
-              disable={!formFields.event_name}
-              onChange={handleUpload}
-              labelColor="black"
-              label="Poster Image"
-              type="file"
-              accept=".svg"
-              max="3MB"
-              id="Poster Image"
-              name="poster"
-            />
-            <span className="relative">
-              {imgEr && <div className="text-red-900">{imgEr}</div>}
-            </span>
-          </div>
-          <span className="relative">
-            {" "}
-            {isLoading === "image" ? <Spinner /> : "Create New Event"}
-            {!formFields.event_name && (
-              <div className="overlay absolute mt-3 rounded-lg bg-[rgba(141,36,36,0.8)] p-2 text-center font-bold">
-                Fill Form First
-              </div>
-            )}
-          </span>
-        </div>
+        <ImageInput
+          eventId={eventId}
+          isLoading={isLoading}
+          dis={formFields.event_name}
+          id="Poster Image"
+          name="poster"
+          label="Poster Image"
+          ratio={1}
+          w={1}
+          h={1}
+          bucket={"event-posters"}
+          path={setPosterPath}
+        ></ImageInput>
+        <ImageInput
+          eventId={eventId}
+          isLoading={isLoading}
+          dis={formFields.event_name}
+          id="banner"
+          name="banner"
+          label="banner Image"
+          ratio={2.83}
+          w={17}
+          h={6}
+          bucket={"event-banner"}
+          path={setBannerPath}
+        ></ImageInput>
+        <ImageInput
+          eventId={eventId}
+          isLoading={isLoading}
+          dis={formFields.event_name}
+          id="Ticket"
+          name="ticket"
+          label="ticket Image"
+          ratio={2.74}
+          w={11}
+          h={4}
+          bucket={"event-ticket"}
+          path={setTicketPath}
+        ></ImageInput>
 
         <span className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-saffron-600 px-3 py-2 font-medium">
-          <button disabled>
+          <button>
             {" "}
             {isLoading === "form" ? <Spinner /> : "Create New Event"}
           </button>

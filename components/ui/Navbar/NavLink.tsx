@@ -13,18 +13,18 @@ type Props = {
 const NavLink = (props: Props) => {
   const { href, className, imgScale, children, underlineclassName } = props;
   const router = useRouter();
-
+  //console.log(router.asPath.split("/").at(1));
   return (
     <Link
       href={href}
       className={`link uppercasez relative  ${
-        router.asPath === href
+        router.asPath.split("/").at(1) === href.split("/").at(1)
           ? "flex  w-fit min-w-[80px] flex-col items-center justify-center text-center text-3xl"
           : "text-xl"
       } ${className}`}
     >
       {children}
-      {router.asPath === href && (
+      {router.asPath.split("/").at(1) === href.split("/").at(1) && (
         <Image
           src="https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests//underline.svg"
           width={100}
