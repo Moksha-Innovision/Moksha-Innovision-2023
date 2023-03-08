@@ -53,7 +53,11 @@ const EventRegistrationForm = (props: Props) => {
       .insert([finalData]);
 
     if (error) {
-      setAlert("error");
+      if (error.code == "23505")
+        setAlert("You have already registered to this event");
+      else {
+        setAlert("Error Occured! try agin later");
+      }
     }
 
     const currentRegEvents = user?.user_metadata.regEvents;
