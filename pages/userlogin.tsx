@@ -39,7 +39,7 @@ const UserLogin = () => {
 
           data: {
             isAdmin: claimsAdmin && password === SECRET_PASS_KEY,
-            regEvents :[]
+            regEvents: [],
           },
         },
       });
