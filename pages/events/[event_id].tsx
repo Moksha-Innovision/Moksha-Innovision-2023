@@ -110,7 +110,7 @@ const IndividualEventPage = (props: Props) => {
                 <TabList className="space-x-5 rounded-md bg-yellow-400 bg-opacity-10 px-4 py-1 text-xl shadow-soft backdrop-blur-[2px] ">
                   <Tab className="text-xl">Description</Tab>
                   <Tab>Rules</Tab>
-                  <Tab isDisabled={user ? false : false}>Register</Tab>
+                  <Tab isDisabled={user ? false : true}>Register</Tab>
                 </TabList>
                 <TabPanels>
                   <TabPanel>
