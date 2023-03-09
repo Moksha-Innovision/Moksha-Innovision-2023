@@ -13,7 +13,7 @@ const deafultFormFields = {
   UserEmail: "",
   password: "",
 };
-const SECRET_PASS_KEY = "iamadmin";
+const SECRET_PASS_KEY = process.env.NEXT_PUBLIC_SECRET_KEY;
 const UserLogin = () => {
   const supabase = useSupabaseClient();
   const [claimsAdmin, setClaimsAdmin] = useState(false);
@@ -126,7 +126,7 @@ const UserLogin = () => {
               ) : claimsAdmin ? (
                 "Login"
               ) : (
-                "Coming Soon..."
+                "Login as User"
               )}
             </button>
             {/*<button
