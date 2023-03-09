@@ -1,11 +1,23 @@
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { AiOutlineCalendar, AiOutlineTeam } from "react-icons/ai";
 import { HiOutlineClock, HiOutlineLocationMarker } from "react-icons/hi";
 
 const ConciseDetails = (props: any) => {
+  const supabase = useSupabaseClient();
   const { imgSrc, eventName, eventTagline } = props;
-
+  const [status, setStatus] = useState(props.eventStatus);
+  const disEvent = async () => {
+    const { data, error } = await supabase
+      .from("socevent")
+      .update({ disable: !status })
+      .eq("event_id", props.event_id);
+    console.log(data);
+    if (error) console.log(error);
+    setStatus(!status);
+  };
   return (
     <div
       className={`flex w-full gap-3 ${
@@ -47,8 +59,12 @@ const ConciseDetails = (props: any) => {
         <div className="buttons ml-auto flex flex-col-reverse items-center justify-center gap-2 md:flex-row md:gap-10  ">
           <div className="flex flex-col items-center justify-center gap-3 ">
             {!props.hideReg && (
-              <button className="rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl">
-                Register
+              <button
+                className={`rounded ${
+                  props.disable ? "bg-red-600 " : "bg-green-600"
+                }  rounded-xl px-2 py-1 font-koulen sm:text-lg md:text-xl`}
+              >
+                <span>{props.disable ? "Closed" : "Open"}</span>
               </button>
             )}
             {props.hideReg && (
@@ -78,7 +94,7 @@ const ConciseDetails = (props: any) => {
                 </button>
               </Link>
 
-              <Link
+              {/*<Link
                 href={{ pathname: `/events/${props.event_id}` }}
                 className="w-full"
               >
@@ -86,15 +102,23 @@ const ConciseDetails = (props: any) => {
                   Update
                 </button>
               </Link>
-
               <Link
                 href={{ pathname: `/events/${props.event_id}` }}
                 className="w-full"
+                ></Link>*/}
+              <button
+                className="w-full rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl"
+                onClick={disEvent}
               >
-                <button className="w-full rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl">
-                  Delete
-                </button>
-              </Link>
+                {status ? "Enable" : "Disable"}
+              </button>
+              <span
+                className={`rounded-xl p-1 px-2 font-semibold ${
+                  status ? "bg-red-600 " : "bg-green-600"
+                }`}
+              >
+                {status ? "Disabled" : "Enabled"}
+              </span>
             </div>
           )}
         </div>

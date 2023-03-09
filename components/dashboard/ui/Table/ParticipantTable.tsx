@@ -19,6 +19,9 @@ const ParticipantTable = (props: any) => {
             <span className="text-sm font-semibold">Get .XLS</span>
           </button>
         </DownloadTableExcel>
+        <span className="flex flex-col items-center justify-center rounded-md  bg-yellow-200 bg-opacity-30 p-2 font-semibold hover:bg-opacity-40">
+          Registrations : {props.data.length}
+        </span>
       </div>
       <div className="relative max-h-[80vh] max-w-full overflow-x-auto overflow-y-auto rounded-lg shadow-md ">
         <table
