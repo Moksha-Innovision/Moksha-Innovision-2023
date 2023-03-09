@@ -77,24 +77,6 @@ const ConciseDetails = (props: any) => {
                   Preview
                 </button>
               </Link>
-
-              <Link
-                href={{ pathname: `/events/${props.event_id}` }}
-                className="w-full"
-              >
-                <button className="w-full rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl">
-                  Update
-                </button>
-              </Link>
-
-              <Link
-                href={{ pathname: `/events/${props.event_id}` }}
-                className="w-full"
-              >
-                <button className="w-full rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl">
-                  Delete
-                </button>
-              </Link>
             </div>
           )}
         </div>

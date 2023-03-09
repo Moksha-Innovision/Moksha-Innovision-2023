@@ -10,7 +10,7 @@ type Props = {
   type: string;
 };
 
-const SECRET_PASS_KEY = "miavgfihiwbasbtd";
+const SECRET_PASS_KEY = process.env.NEXT_PUBLIC_SECRET_KEY;
 
 const Notadmin = (props: Props) => {
   const supabase = useSupabaseClient();
@@ -49,8 +49,9 @@ const Notadmin = (props: Props) => {
                   Hello
                 </h1>
                 <p className="my-2  ">
-                  Sorry about that! Please visit our homepage to get where you
-                  need to go.
+                  {props.type === "login"
+                    ? "Seems You are not Logged In- Please Login first"
+                    : "Seems You are not authorized for this action ! Review you access rights"}
                 </p>
                 <Link href="/">
                   <button className="md my-2 rounded border bg-saffron-600 py-4 px-8 text-center text-white hover:bg-saffron-700 focus:outline-none focus:ring-2 focus:ring-saffron-700 focus:ring-opacity-50 sm:w-full lg:w-auto">
