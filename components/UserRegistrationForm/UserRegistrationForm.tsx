@@ -1,3 +1,10 @@
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  ChakraProvider,
+} from "@chakra-ui/react";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 import FormInput from "../dashboard/ui/Forms/FormInput";
@@ -29,6 +36,7 @@ const UserRegistrationForm = (props: Props) => {
     const { data, error } = await supabase
       .from("profiles")
       .insert([{ p_id: user?.id, ...formFields }]);
+
     sessionStorage.setItem(
       "userProfileData",
       JSON.stringify([{ p_id: user?.id, ...formFields }])
@@ -40,6 +48,21 @@ const UserRegistrationForm = (props: Props) => {
   return (
     <div className="mx-auto my-4 w-[95%] max-w-2xl rounded-md border border-solid bg-transparent px-6 py-5 drop-shadow-lowGlow backdrop-blur-sm">
       <h2 className="mb-6 text-center font-koulen text-3xl ">Create Profile</h2>
+      <ChakraProvider>
+        <Alert
+          status="error"
+          backgroundColor={"red.300"}
+          className="rounded-md"
+        >
+          <AlertIcon color={"red.600"} />
+          <AlertTitle className="text-white">
+            Fill Correct Details !!
+          </AlertTitle>
+          <AlertDescription className="text-white">
+            These details might be verified on Entry
+          </AlertDescription>
+        </Alert>
+      </ChakraProvider>
       <form onSubmit={handleSubmit}>
         <FormInput
           onChange={handleChange}
