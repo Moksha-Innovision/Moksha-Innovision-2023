@@ -126,7 +126,7 @@ const UserLogin = () => {
               ) : claimsAdmin ? (
                 "Login"
               ) : (
-                "Coming Soon..."
+                "Login as User"
               )}
             </button>
             {/*<button
