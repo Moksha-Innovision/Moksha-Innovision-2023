@@ -12,6 +12,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import EventRegistrationForm from "../../components/EventRegistrationForm.tsx/EventRegistrationForm";
+import Spinner from "../../components/Loaders/Spinner";
 import Navbar from "../../components/ui/Navbar/Navbar";
 import ConciseDetails from "../../components/ui/newEventPage/ConciseDetails";
 import EventDesc from "../../components/ui/newEventPage/EventDesc";
@@ -33,9 +34,14 @@ const IndividualEventPage = (props: Props) => {
   const [showForm, setShowForm] = useState("event");
 
   const getEvent = async () => {
-    const { data, error } = await supabase.from("socevent").select("*");
-    sessionStorage.setItem("eData", JSON.stringify(data));
-    setCurrentEventData(data?.filter((e) => e.event_id === event_id).at(0));
+    const { data, error } = await supabase
+      .from("socevent")
+      .select("*")
+      .eq("event_id", event_id);
+    //sessionStorage.setItem("eData", JSON.stringify(data));
+    // setCurrentEventData(data?.filter((e) => e.event_id === event_id).at(0));
+    setCurrentEventData(data?.at(0));
+    //console.log("selleted", data?.at(0));
   };
 
   const getUserProfile = async () => {
@@ -54,13 +60,16 @@ const IndividualEventPage = (props: Props) => {
       sessionStorage.getItem("userProfileData") || "{}"
     );
     console.log(userData);
-
+    if (currentEventData == "") getEvent();
+    {
+      /*
     if (!Array.isArray(eventData) && Object.keys(eventData).length === 0) {
       getEvent();
     } else {
       setCurrentEventData(
         eventData?.filter((e: any) => e.event_id === event_id).at(0)
       );
+    }*/
     }
 
     if (user) {
@@ -71,15 +80,16 @@ const IndividualEventPage = (props: Props) => {
       }
       console.log(userProfileData);
     }
-  }, []);
+  }, [currentEventData]);
 
   return (
-    <>
+    <div className="">
       <Navbar />
       <div
-        className="parent min-h-screen w-screen bg-prussian-blue-1000 bg-event-pattern bg-pattern pb-4 pt-[7vh] text-white"
+        className="parent h-[150ch] w-fit overflow-y-hidden bg-prussian-blue-1000 bg-event-pattern bg-pattern pb-4 pt-[7vh] text-white sm:min-h-screen sm:w-screen"
         ref={animationParent}
       >
+        {!currentEventData && <Spinner />}
         {/* <pre>
           IndividualEventPage {JSON.stringify(currentEventData, null, 4)}
         </pre> */}
@@ -101,6 +111,7 @@ const IndividualEventPage = (props: Props) => {
               eventDate={currentEventData.date}
               eventVenue={currentEventData.venue}
               eventTeam={currentEventData.team_size}
+              disable={currentEventData.disable}
             />
           </div>
 
@@ -110,7 +121,13 @@ const IndividualEventPage = (props: Props) => {
                 <TabList className="space-x-5 rounded-md bg-yellow-400 bg-opacity-10 px-4 py-1 text-xl shadow-soft backdrop-blur-[2px] ">
                   <Tab className="text-xl">Description</Tab>
                   <Tab>Rules</Tab>
-                  <Tab isDisabled={user ? false : true}>Register</Tab>
+                  <Tab
+                    isDisabled={
+                      (user ? false : true) || currentEventData.disable
+                    }
+                  >
+                    Register
+                  </Tab>
                 </TabList>
                 <TabPanels>
                   <TabPanel>
@@ -142,7 +159,7 @@ const IndividualEventPage = (props: Props) => {
 
         {/* //------------------------------------------------------------------------------------------------------- */}
       </div>
-    </>
+    </div>
   );
 };
 

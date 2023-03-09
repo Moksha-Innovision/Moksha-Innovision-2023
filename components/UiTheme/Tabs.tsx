@@ -21,9 +21,17 @@ const sizes = {
   xl: definePartsStyle({
     // define the parts that will change for each size
     tab: {
-      fontSize: "xl",
+      fontSize: "lg",
       py: "2",
       px: "6",
+    },
+  }),
+  sm: definePartsStyle({
+    // define the parts that will change for each size
+    tab: {
+      fontSize: "sm",
+      py: "2",
+      px: "",
     },
   }),
 };

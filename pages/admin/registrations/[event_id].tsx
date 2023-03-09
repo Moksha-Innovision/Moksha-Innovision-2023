@@ -80,11 +80,7 @@ const Registrations = (props: Props) => {
             </button>
           </h1>
 
-          {regsData ? (
-            <ParticipantTable data={regsData} ref={tableRef} />
-          ) : (
-            "NO DATA"
-          )}
+          {regsData ? <ParticipantTable data={regsData} /> : "NO DATA"}
         </div>
       </Dashboard>
     </>

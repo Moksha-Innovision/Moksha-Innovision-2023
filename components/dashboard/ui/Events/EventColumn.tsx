@@ -36,6 +36,7 @@ const EventColumn = (props: Props) => {
             eventDate={event.date}
             eventVenue={event.venue}
             eventTeam={event.team_size}
+            eventStatus={event.disable}
             hideReg={true}
           />
         ))}
