@@ -29,10 +29,9 @@ const AdminLog = () => {
           })
                 await supabase.auth.signInWithPassword({ email, password })
             if (!error && !data) alert('Check your email for the login link!')
-            if (error) console.log('Error returned:', error.message)
-            if (data) console.log("reiceved", data)
+            if (error) {}
+            if (data) {}
         } catch (error: any) {
-            console.log('Error thrown:', error.message)
             alert(error.error_description || error)
         }
         setIsLoading(false);

@@ -133,10 +133,8 @@ const Event = () => {
         .from("socevent")
         .select("event_name");
       if (error) {
-        console.log(error);
         return;
       }
-      console.log(data);
     };
     getEvents();
   }, []);

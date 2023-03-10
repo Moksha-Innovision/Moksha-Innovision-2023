@@ -72,17 +72,17 @@ const developers = (props: Props) => {
             />
             <DevTile
               url={[
-                "",
-                "https://www.instagram.com/ayushtenguria/",
-                "https://github.com/ayushtenguria",
+                "https://www.linkedin.com/in/harshkumarnsut/",
+                "https://www.instagram.com/_itsharshithere_/",
+                "https://github.com/DeveHk",
               ]}
               name="Ayush Tenguria"
             />
             <DevTile
               url={[
-                "https://www.linkedin.com/in/devesh-agarwal-1b1800203/",
-                "https://www.instagram.com/deveshagarwal1729/",
-                "https://github.com/Coder-Devesh-Agarwal",
+                "https://www.linkedin.com/in/anitjha/",
+                "https://www.instagram.com/anitjhaaa/",
+                "https://github.com/AnitKrJha",
               ]}
               name="DEVESH AGARWAL"
             />
@@ -95,7 +95,14 @@ const developers = (props: Props) => {
 
 export default developers;
 {
-  /*<div className="m-auto flex h-full max-w-7xl flex-col items-center gap-6 md:flex-row">
+  /*
+  "https://www.linkedin.com/in/devesh-agarwal-1b1800203/",
+                "https://www.instagram.com/deveshagarwal1729/",
+                "https://github.com/Coder-Devesh-Agarwal",
+  "",
+                "https://www.instagram.com/ayushtenguria/",
+                "https://github.com/ayushtenguria",
+  <div className="m-auto flex h-full max-w-7xl flex-col items-center gap-6 md:flex-row">
         <div className="columns flex h-2/3 w-full flex-col bg-[rgba(0,0,0,0.5)] px-4 text-white drop-shadow-lowGlow">
           <h1 className="name text-center text-3xl lg:text-5xl">
             HARSH KUMAR 🏀

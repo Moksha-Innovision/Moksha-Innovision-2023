@@ -19,8 +19,6 @@ interface event {
   venue: string;
 }
 const EventCard = ({ event }: any) => {
-  console.log(event);
-
   return (
     <div
       className={`card-container relative my-6 flex w-full flex-col items-center gap-4 overflow-hidden rounded-lg border-2 border-white px-6 py-3 md:px-10 lg:px-20`}

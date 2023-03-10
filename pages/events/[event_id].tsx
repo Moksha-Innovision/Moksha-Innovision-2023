@@ -42,7 +42,6 @@ const IndividualEventPage = (props: Props) => {
     //sessionStorage.setItem("eData", JSON.stringify(data));
     // setCurrentEventData(data?.filter((e) => e.event_id === event_id).at(0));
     setCurrentEventData(data?.at(0));
-    //console.log("selleted", data?.at(0));
   };
 
   const getUserProfile = async () => {
@@ -50,7 +49,6 @@ const IndividualEventPage = (props: Props) => {
       .from("profiles")
       .select("*")
       .eq("p_id", user?.id);
-    console.log(data, error);
     sessionStorage.setItem("userProfileData", JSON.stringify(data));
     setUserProfileData(data);
   };
@@ -60,7 +58,6 @@ const IndividualEventPage = (props: Props) => {
     let userData = JSON.parse(
       sessionStorage.getItem("userProfileData") || "{}"
     );
-    console.log(userData);
     if (currentEventData == "") getEvent();
     {
       /*
@@ -79,7 +76,6 @@ const IndividualEventPage = (props: Props) => {
       } else {
         setUserProfileData(userData);
       }
-      console.log(userProfileData);
     }
   }, [currentEventData]);
 

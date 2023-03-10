@@ -10,7 +10,6 @@ const useScrollAnimation = (clas: any, clasdel: any) => {
     };
     const callback = (entries: any, observer: any) => {
       entries.forEach((entry: any) => {
-        console.log(entry.intersectionRatio);
         if (entry.intersectionRatio > 0) {
           clas.forEach((c: any) => {
             entry.target.classList.add(c);

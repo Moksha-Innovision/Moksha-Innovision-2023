@@ -1,7 +1,6 @@
-import Dashboard from "../../components/dashboard/ui/Dashboard";
-import RegEventCard from "../../components/dashboard/ui/userDashboard/regEventCard";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
+import Dashboard from "../../components/dashboard/ui/Dashboard";
 import RegEventColumn from "../../components/dashboard/ui/userDashboard/regEventColumn";
 
 type Props = {};
@@ -17,7 +16,6 @@ const RegEvents = (props: Props) => {
       .from("profiles")
       .select("*")
       .eq("p_id", user?.id);
-    console.log(data, error);
     sessionStorage.setItem("userProfileData", JSON.stringify(data));
     setUserProfileData(data);
   };
@@ -27,7 +25,6 @@ const RegEvents = (props: Props) => {
       .from("event_registerations")
       .select("socevent(*)")
       .eq("t_id", user?.id);
-    console.log(data, error);
     sessionStorage.setItem("regEvents", JSON.stringify(data));
     setRegEvents(data);
   };

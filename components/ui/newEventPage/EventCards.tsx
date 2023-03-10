@@ -22,7 +22,6 @@ interface Props {
   };
 }
 const EventCards = ({ event }: Props) => {
-  console.log(event.ticket);
   const [glow, setGlow] = useState(false);
   return (
     <Link
@@ -91,8 +90,10 @@ const EventCards = ({ event }: Props) => {
               <div className="absolute top-0 flex h-[100%] w-[100%] text-[#271300]">
                 <div className="w-[10%]"></div>
 
-                <div className=" flex w-[42%]  flex-col flex-wrap justify-center text-left text-[20px] sm:text-[18px] md:text-[17px] lg:text-[16px] xl:text-[15px]">
-                  <p className="">COMING SOON....</p>
+                <div className=" flex w-full flex-col flex-wrap  items-center  justify-center text-left text-[20px] sm:text-[18px] md:text-[17px] lg:text-[16px] xl:text-[15px]">
+                  <p className="rounded-xl border-2 border-dashed border-green-700 bg-green-600 bg-opacity-10 p-1 hover:bg-opacity-30">
+                    Check Event
+                  </p>
                 </div>
                 <div className="w-[10%]"></div>
               </div>
