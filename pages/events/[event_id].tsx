@@ -17,6 +17,7 @@ import Spinner from "../../components/Loaders/Spinner";
 import Navbar from "../../components/ui/Navbar/Navbar";
 import ConciseDetails from "../../components/ui/newEventPage/ConciseDetails";
 import EventDesc from "../../components/ui/newEventPage/EventDesc";
+import EventInsta from "../../components/ui/newEventPage/EventInsta";
 import EventPoc from "../../components/ui/newEventPage/EventPoc";
 import EventRules from "../../components/ui/newEventPage/EventRules";
 import theme from "../../components/UiTheme";
@@ -130,6 +131,10 @@ const IndividualEventPage = (props: Props) => {
                   <TabPanel>
                     <EventDesc desc={currentEventData.desc} />
                     <EventPoc poc={currentEventData.poc || {}} />
+                    <EventInsta
+                      insta={currentEventData.instagram}
+                      prize={currentEventData.prize_pool}
+                    />
                   </TabPanel>
                   <TabPanel>
                     <EventRules rules={currentEventData.rules || []} />
