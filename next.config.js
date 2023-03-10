@@ -5,6 +5,7 @@ const nextConfig = {
     domains: [
       "odlfyjrswlruygfdauic.supabase.co",
       "odlfyjrswlruygfdauic.supabase.co",
+      "unsplash.it",
     ],
   },
 };

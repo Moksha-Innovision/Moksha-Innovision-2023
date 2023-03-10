@@ -15,6 +15,8 @@ type Props = {
   min?: any;
   onChange?: (a: any) => any;
   required?: boolean;
+  sublabel?: string;
+  defaultValue?: any;
 };
 
 const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
@@ -34,15 +36,19 @@ const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
     <div className={"group my-4 flex flex-col items-start gap-2"}>
       <label
         htmlFor={label}
-        className={`font-koulen text-lg text-${otherProps.labelColor} tracking-widest`}
+        className={`flex items-center gap-3 font-koulen text-lg text-${otherProps.labelColor} tracking-widest`}
       >
         {label}
         <span className="font-serif text-xl italic text-red-500 ">
           {otherProps.required && "*"}
         </span>
+        <span className="font-koulen text-sm text-gray-600 ">
+          {otherProps.sublabel}
+        </span>
       </label>
       {otherProps.type !== "textarea" ? (
         <input
+          defaultValue={otherProps.defaultValue}
           onWheel={numberInputOnWheelPreventChange}
           disabled={disable}
           {...otherProps}
@@ -56,6 +62,7 @@ const FormInput = ({ label, className, disable, ...otherProps }: Props) => {
           disabled={disable}
           {...otherProps}
           rows={5}
+          defaultValue={otherProps.defaultValue}
           className={
             className ||
             "w-full rounded bg-gray-200 px-3 py-2 text-gray-800 placeholder:font-bold placeholder:italic focus:outline-gray-300 "

@@ -7,7 +7,7 @@ const ParticipantTable = (props: any) => {
   const tableRef = useRef(null);
   console.log(props.data);
   return (
-    <div className="">
+    <div className="w-full pt-4">
       <div className="mb-2 flex gap-3 ">
         <DownloadTableExcel
           filename="User Registrations"
@@ -20,15 +20,15 @@ const ParticipantTable = (props: any) => {
           </button>
         </DownloadTableExcel>
         <span className="flex flex-col items-center justify-center rounded-md  bg-yellow-200 bg-opacity-30 p-2 font-semibold hover:bg-opacity-40">
-          Registrations : {props.data.length}
+          Registrations : {props.data?.length}
         </span>
       </div>
-      <div className="relative max-h-[80vh] max-w-full overflow-x-auto overflow-y-auto rounded-lg shadow-md ">
+      <div className="relative min-h-screen max-w-full overflow-x-auto overflow-y-auto rounded-lg shadow-md ">
         <table
           ref={tableRef}
           className="w-full text-left text-sm text-gray-500  "
         >
-          <thead className="bg-saffron-500 text-xs uppercase text-gray-700  ">
+          <thead className="w-full bg-saffron-500 text-xs uppercase text-gray-700">
             <tr>
               <th scope="col" className=" p-1 px-2 py-4 text-center">
                 <div className="h-full w-full rounded-lg bg-yellow-200  p-2">
@@ -50,43 +50,44 @@ const ParticipantTable = (props: any) => {
                   <span className="rounded-md  p-2">College</span>
                 </div>
               </th>
-              {props.data[0].t_name && (
+              {props.data[0]?.t_name && (
                 <th scope="col" className="px-2 py-4 text-center">
                   <div className="h-full w-full rounded-lg bg-yellow-200 p-2">
                     <span className="rounded-md  p-2">Team</span>
                   </div>
                 </th>
               )}
-              {Object.keys(props.data[0].form_data[0]).map((obj, k) => (
-                <th scope="col" key={k} className="  px-2 py-4 text-center">
-                  <div className="h-full w-full rounded-lg bg-yellow-200 p-2">
-                    <span className="rounded-md  p-2">{obj}</span>
-                  </div>
-                </th>
-              ))}
+              {props.data[0] &&
+                Object.keys(props.data[0]?.form_data[0]).map((obj, k) => (
+                  <th scope="col" key={k} className="  px-2 py-4 text-center">
+                    <div className="h-full w-full rounded-lg bg-yellow-200 p-2">
+                      <span className="rounded-md  p-2">{obj}</span>
+                    </div>
+                  </th>
+                ))}
             </tr>
           </thead>
           <tbody>
-            {props.data.map((dobj: any, i: any) => (
+            {props.data?.map((dobj: any, i: any) => (
               <tr key={i} className="bg-white  ">
                 <td className="border-r-2 border-black px-2 py-4 text-center text-gray-900">
-                  {dobj.profiles.name}
+                  {dobj?.profiles?.name}
                 </td>
                 <td className="border-r-2 border-black px-2 py-4 text-center text-gray-900">
-                  {dobj.profiles.contact}
+                  {dobj?.profiles?.contact}
                 </td>
                 <td className="border-r-2 border-black px-2 py-4 text-center text-gray-900">
-                  {dobj.profiles.email}
+                  {dobj?.profiles?.email}
                 </td>
                 <td className="border-r-2 border-black px-2 py-4 text-center text-gray-900">
-                  {dobj.profiles.college}
+                  {dobj?.profiles?.college}
                 </td>
-                {dobj.t_name && (
+                {dobj?.t_name && (
                   <td className="border-r-2 border-black px-2 py-4 text-center text-gray-900">
-                    {dobj.t_name}
+                    {dobj?.t_name}
                   </td>
                 )}
-                {Object.keys(dobj.form_data[0]).map((obj, k) => (
+                {Object.keys(dobj?.form_data[0]).map((obj, k) => (
                   <td
                     key={k}
                     className="border-r-2 border-black px-2 py-4 text-center text-gray-900"
