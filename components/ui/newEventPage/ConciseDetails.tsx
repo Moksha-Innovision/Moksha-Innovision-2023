@@ -20,7 +20,9 @@ const ConciseDetails = (props: any) => {
   };
   return (
     <div
-      className={`flex w-full gap-3 ${
+      className={`flex w-full  items-center gap-3 sm:flex-row ${
+        props.hideReg ? "flex-col" : ""
+      } ${
         props.hideReg
           ? "rounded-md border border-solid backdrop-blur-sm"
           : " rounded-md bg-yellow-400 bg-opacity-10 shadow-soft backdrop-blur-[2px]"
@@ -56,15 +58,23 @@ const ConciseDetails = (props: any) => {
         </div>
       </div>
       {!props.hide && (
-        <div className="buttons ml-auto flex flex-col-reverse items-center justify-center gap-2 md:flex-row md:gap-10  ">
+        <div
+          className={`buttons ml flex ${
+            !props.hideReg ? "" : "w-full"
+          }  flex-col-reverse items-center justify-around gap-2 sm:ml-auto sm:w-auto md:flex-row md:gap-10  `}
+        >
           <div className="flex flex-col items-center justify-center gap-3 ">
             {!props.hideReg && (
               <button
                 className={`rounded ${
                   props.disable ? "bg-red-600 " : "bg-green-600"
-                }  rounded-xl px-2 py-1 font-koulen sm:text-lg md:text-xl`}
+                }  rounded px-2 py-1 font-koulen sm:text-lg md:text-xl`}
               >
-                <span>{props.disable ? "Closed" : "Open"}</span>
+                <span className="font-light tracking-wider">
+                  {props.disable
+                    ? "Registrations Closed"
+                    : " Registrations Open"}
+                </span>
               </button>
             )}
             {props.hideReg && (
@@ -73,7 +83,7 @@ const ConciseDetails = (props: any) => {
                 className="w-full"
               >
                 <button className="rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl">
-                  Registrations
+                  Participants
                 </button>
               </Link>
             )}
@@ -84,7 +94,7 @@ const ConciseDetails = (props: any) => {
             </div>
           </div>
           {props.hideReg && (
-            <div className="flex w-full min-w-[90px] flex-col items-center justify-center gap-3">
+            <div className="flex w-full min-w-[90px] items-center justify-center gap-3 sm:flex-col">
               <Link
                 href={{ pathname: `/events/${props.event_id}` }}
                 className="w-full"
@@ -106,19 +116,20 @@ const ConciseDetails = (props: any) => {
                 href={{ pathname: `/events/${props.event_id}` }}
                 className="w-full"
                 ></Link>*/}
+
               <button
-                className="w-full rounded bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl"
+                className="relative mt-5 w-full rounded-b bg-saffron-600 px-2 py-1 font-koulen sm:text-lg md:text-xl"
                 onClick={disEvent}
               >
-                {status ? "Enable" : "Disable"}
+                {status ? "Enable Reg" : "Disable Reg"}
+                <span
+                  className={` absolute bottom-full left-0 w-full rounded-t-md py-0.5 px-1 text-xs  font-thin tracking-widest ${
+                    status ? "bg-red-600 " : "bg-green-600"
+                  }`}
+                >
+                  {status ? "Reg Disabled" : "Reg Enabled"}
+                </span>
               </button>
-              <span
-                className={`rounded-xl p-1 px-2 font-semibold ${
-                  status ? "bg-red-600 " : "bg-green-600"
-                }`}
-              >
-                {status ? "Disabled" : "Enabled"}
-              </span>
             </div>
           )}
         </div>

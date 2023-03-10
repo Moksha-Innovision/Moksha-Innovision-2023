@@ -44,8 +44,8 @@ const EventCards = ({ event }: Props) => {
           <Image
             src={`${event.poster}`}
             alt={event.event_name}
-            width={100}
-            height={100}
+            width={1000}
+            height={1000}
             className=" h-[100%] w-[100%] rounded-xl"
           ></Image>
         </div>
@@ -65,8 +65,8 @@ const EventCards = ({ event }: Props) => {
                   `https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/events/ticket1.svg`
                 }
                 alt={event.event_name}
-                width={100}
-                height={100}
+                width={1100}
+                height={400}
                 quality={1}
                 className=" h-[100%] w-[100%]"
               ></Image>

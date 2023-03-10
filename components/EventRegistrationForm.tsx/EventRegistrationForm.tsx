@@ -19,6 +19,7 @@ type Props = {
   setProfileData: any;
   showForm: any;
   setShowForm: any;
+  disable: boolean;
 };
 const EventRegistrationForm = (props: Props) => {
   const [alert, setAlert] = useState<any>("none");
@@ -34,6 +35,7 @@ const EventRegistrationForm = (props: Props) => {
     setProfileData,
     showForm,
     eventId,
+    disable,
   } = props;
 
   const handleFormSubmit = async (e: any) => {
@@ -93,11 +95,13 @@ const EventRegistrationForm = (props: Props) => {
   return (
     <>
       {user?.user_metadata?.regEvents?.includes(eventId) && (
-        <div className="prompt">You have already registered for the event</div>
+        <div className="prompt">
+          You have already registered for the event ! Check your dashboard
+        </div>
       )}
 
       {!user?.user_metadata?.regEvents?.includes(eventId) && (
-        <div className="mx-auto my-4 w-[95%] rounded-md  bg-yellow-400 bg-opacity-5  px-6 py-5 pb-3 drop-shadow-lowGlow  backdrop-blur-sm ">
+        <div className="mx-auto my-4 w-[95%] overflow-y-scroll  rounded-md bg-yellow-400  bg-opacity-5 px-6 py-5 pb-3  drop-shadow-lowGlow backdrop-blur-sm">
           <h2 className="mb-6 text-center font-koulen text-3xl ">
             Register For This Event
           </h2>
@@ -203,9 +207,13 @@ const EventRegistrationForm = (props: Props) => {
               display="block"
               type="submit"
               isLoading={isLoading}
-              className="mx-auto block rounded-md bg-Safety-Orange-500 px-4 py-2 font-semibold uppercase disabled:opacity-60"
-              disabled={
-                !user || user.user_metadata.isAdmin || profileData.length === 0
+              _disabled={{ pointerEvents: "none", opacity: "0.5" }}
+              className="mx-auto block rounded-md  bg-Safety-Orange-500 px-4 py-2 font-semibold uppercase disabled:opacity-60"
+              isDisabled={
+                !user ||
+                user.user_metadata.isAdmin ||
+                profileData.length === 0 ||
+                !disable
               }
             >
               Register

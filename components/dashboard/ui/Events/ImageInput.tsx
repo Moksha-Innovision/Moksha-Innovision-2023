@@ -1,19 +1,21 @@
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Spinner from "../../../Loaders/Spinner";
 import FormInput from "../Forms/FormInput";
 
 const ImageInput = (props: any) => {
   const supabase = useSupabaseClient();
   const [isLoading, setIsLoading] = useState("none");
+  const previewImage = useRef<any>();
   const [imgEr, setImgEr] = useState("");
   //const [poaterPath, setPosterPath] = useState<any>("");
   const handleUpload = async (e: any) => {
+    let preview = document.getElementById("preview");
     console.log(e.target.files[0]);
     const file = e.target.files[0];
     if (file) {
       setIsLoading("image");
-      if (file.size > 4000000) {
+      if (file.size > 4100000) {
         setImgEr("Size should be upto 4 MB");
         if (e.target.value) e.target.value = null;
         setIsLoading("none");
@@ -37,6 +39,7 @@ const ImageInput = (props: any) => {
             props.path("");
             setIsLoading("none");
           } else {
+            previewImage.current.src = window.URL.createObjectURL(file);
             setImgEr("");
             try {
               const file = e.target.files[0];
@@ -70,30 +73,34 @@ const ImageInput = (props: any) => {
     <div className="flex items-baseline ">
       <div className="flex flex-col ">
         <FormInput
-          required
+          required={props.mode === "create"}
           disable={!props.dis}
           onChange={handleUpload}
           labelColor="black"
           label={props.label}
+          sublabel={props.sublabel}
           type="file"
-          accept=".svg"
-          max="3MB"
+          accept=".svg,.png,.jpg,.jpeg"
+          max="4MB"
           id={props.id}
           name={props.name}
         />
         <span className="relative">
           {imgEr && <div className="text-red-900">{imgEr}</div>}
         </span>
+        <div
+          className={`preview aspect-[${props.w}/${props.h}] max-w-[300px] `}
+        >
+          <img
+            id="preview"
+            ref={previewImage}
+            src={props.mode === "edit" ? props.image : ""}
+          />
+        </div>
       </div>
-
       <span className="relative">
         {" "}
         {isLoading === "image" ? <Spinner /> : "Create New Event"}
-        {!props.dis && (
-          <div className="overlay absolute mt-3 rounded-lg bg-[rgba(141,36,36,0.8)] p-2 text-center font-bold">
-            Fill Form First
-          </div>
-        )}
       </span>
     </div>
   );
