@@ -38,7 +38,7 @@ const Newevent = (props: Props) => {
         <h1 className="mb-6 mt-8 text-center text-5xl font-semibold drop-shadow-glow">
           Create New Event
         </h1>
-        <CreateEventModal setEventModal={() => {}} />
+        <CreateEventModal mode="create" setEventModal={() => {}} />
       </div>
     </Dashboard>
   );

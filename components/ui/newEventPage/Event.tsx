@@ -2,6 +2,7 @@ import { Koulen } from "@next/font/google";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { AiOutlineReload } from "react-icons/ai";
 import EventCarosel from "./EventCarosel";
 import EventDays from "./EventDays";
 import EventGrid from "./EventGrid";
@@ -153,17 +154,20 @@ const processData = (data: any) => [
 
 const Event = () => {
   const [eventss, setEventss] = useState<any>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const user = useUser();
   const supabase = useSupabaseClient();
   const [eData, setEData] = useState<any>("");
   const getEvent = async () => {
+    setIsLoading(true);
     const { data, error } = await supabase.from("socevent").select("*");
 
     sessionStorage.setItem("eData", JSON.stringify(data));
     const processedData = processData(data);
 
     setEData(processedData);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -181,13 +185,26 @@ const Event = () => {
       className={` relative  flex items-center justify-center  overflow-x-hidden text-white`}
     >
       <div className="relative mt-[7vh] mb-4 flex w-full flex-col   items-center pt-10  md:mt-14">
-        <h1 className="mb-7 text-center text-4xl  drop-shadow-lowGlowtext md:mb-6  lg:text-5xl  ">
-          EVENTS
+        <h1 className=" relative mb-7 block w-full text-center  text-4xl drop-shadow-lowGlowtext  md:mb-6  lg:text-5xl">
+          EVENTS{" "}
         </h1>
         <div className="">
           <EventCarosel></EventCarosel>
         </div>
-        <div className="mt-10 flex h-full space-x-1">
+        <div>
+          <div className="ml-auto flex w-screen justify-end pr-4">
+            <button
+              className="mt-5 flex items-center  gap-3 rounded bg-white bg-opacity-20 px-2 py-1"
+              onClick={getEvent}
+            >
+              <AiOutlineReload
+                className={`${isLoading ? "animate-spin text-3xl" : ""}`}
+              />{" "}
+              <span>Get Recent Events</span>
+            </button>
+          </div>
+        </div>
+        <div className="mt-3 flex h-full space-x-1">
           {days.map((d, i) => {
             return (
               <EventDays

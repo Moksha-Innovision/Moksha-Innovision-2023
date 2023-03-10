@@ -12,6 +12,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import EventRegistrationForm from "../../components/EventRegistrationForm.tsx/EventRegistrationForm";
+import Footer from "../../components/LandingPage/Footer";
 import Spinner from "../../components/Loaders/Spinner";
 import Navbar from "../../components/ui/Navbar/Navbar";
 import ConciseDetails from "../../components/ui/newEventPage/ConciseDetails";
@@ -86,7 +87,7 @@ const IndividualEventPage = (props: Props) => {
     <div className="">
       <Navbar />
       <div
-        className="parent h-[150ch] w-fit overflow-y-hidden bg-prussian-blue-1000 bg-event-pattern bg-pattern pb-4 pt-[7vh] text-white sm:min-h-screen sm:w-screen"
+        className="parent min-h-screen w-fit overflow-y-hidden bg-prussian-blue-1000 bg-event-pattern bg-pattern pb-4 pt-[12vh] text-white sm:min-h-screen sm:w-screen"
         ref={animationParent}
       >
         {!currentEventData && <Spinner />}
@@ -98,8 +99,8 @@ const IndividualEventPage = (props: Props) => {
           <div className=" w-[100%] rounded-md border border-solid p-1 ">
             <Image
               src={currentEventData.banner || ""}
-              width="200"
-              height="200"
+              width="1700"
+              height="600"
               alt="event-poster"
               className="h-full w-full rounded pb-1 "
             />
@@ -147,6 +148,7 @@ const IndividualEventPage = (props: Props) => {
                         TeamMenber={currentEventData.team_size || 1}
                         profileData={userProfileData}
                         setProfileData={setUserProfileData}
+                        disable={currentEventData.disable}
                       />
                     )}
                     {showForm === "profile" && <UserRegistrationForm />}
@@ -159,6 +161,7 @@ const IndividualEventPage = (props: Props) => {
 
         {/* //------------------------------------------------------------------------------------------------------- */}
       </div>
+      <Footer />
     </div>
   );
 };

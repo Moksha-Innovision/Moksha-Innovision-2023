@@ -7,7 +7,6 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Dashboard from "../../components/dashboard/ui/Dashboard";
-import CreateEventModal from "../../components/dashboard/ui/Events/CreateEventModal";
 import EventColumn from "../../components/dashboard/ui/Events/EventColumn";
 import Notadmin from "../../components/FallbackPages/notadmin";
 
@@ -27,12 +26,24 @@ const Events = (props: Props) => {
       .from("socevent")
       .select("*")
       .eq("soc_id", user?.id);
+    sessionStorage.setItem("createdEvents", JSON.stringify(data));
     setEvents(data);
   };
 
   useEffect(() => {
     if (user && user.user_metadata.isAdmin) {
-      getEvent();
+      let createdEvents = JSON.parse(
+        sessionStorage.getItem("createdEvents") || "{}"
+      );
+
+      if (
+        !Array.isArray(createdEvents) &&
+        Object.keys(createdEvents).length === 0
+      ) {
+        getEvent();
+      } else {
+        setEvents(createdEvents);
+      }
     }
   }, [user]);
 
@@ -58,13 +69,12 @@ const Events = (props: Props) => {
         <title>Moksha Innovision&apos;23 | Dashboard</title>
         <meta property="og:title" content="" key="title" />
       </Head>
-      {EventModal && (
-        <div className="modal z-3 absolute    top-0 grid h-[93vh] w-full  max-w-screen-2xl place-items-center backdrop-blur-md">
-          <CreateEventModal getEvent={getEvent} setEventModal={setEventModal} />
-        </div>
-      )}
 
-      <EventColumn setEventModal={setEventModal} events={events} />
+      <EventColumn
+        setEventModal={setEventModal}
+        events={events}
+        getEvents={getEvent}
+      />
     </Dashboard>
   );
 };

@@ -24,6 +24,11 @@ const SidebarChips = [
     iconSrc: "/addEvent.svg",
   },
   {
+    name: "Edit Event",
+    href: "/admin/edit",
+    iconSrc: "/editEvent.svg",
+  },
+  {
     name: "Profile",
     href: "/user/profile",
     iconSrc: "/profile.svg",
