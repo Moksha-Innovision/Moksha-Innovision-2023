@@ -11,7 +11,7 @@ const ImageInput = (props: any) => {
   //const [poaterPath, setPosterPath] = useState<any>("");
   const handleUpload = async (e: any) => {
     let preview = document.getElementById("preview");
-    console.log(e.target.files[0]);
+
     const file = e.target.files[0];
     if (file) {
       setIsLoading("image");
@@ -33,7 +33,6 @@ const ImageInput = (props: any) => {
           window.URL.revokeObjectURL(img.src);
           const ratio = width / height;
           if (ratio > props.ratio + 0.1 || ratio < props.ratio - 0.1) {
-            console.log(ratio);
             setImgEr(`Aspect Ratio of ${props.w}:${props.h} needed`);
             e.target.value = null;
             props.path("");
@@ -52,15 +51,12 @@ const ImageInput = (props: any) => {
 
               setIsLoading("none");
               if (error) {
-                console.log(error);
               } else {
                 props.path(
                   `https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/${props.bucket}/${data.path}`
                 );
               }
-            } catch (err) {
-              console.log("error");
-            }
+            } catch (err) {}
           }
         };
       }

@@ -1,8 +1,7 @@
-import Dashboard from "../../components/dashboard/ui/Dashboard";
-import QRCode from "react-qr-code";
-import QRCodeContainer from "../../components/dashboard/ui/userDashboard/qrcodecontainer";
-import { useEffect, useState } from "react";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import { useEffect, useState } from "react";
+import Dashboard from "../../components/dashboard/ui/Dashboard";
+import QRCodeContainer from "../../components/dashboard/ui/userDashboard/qrcodecontainer";
 type Props = {};
 
 const QrCode = (props: Props) => {
@@ -16,7 +15,6 @@ const QrCode = (props: Props) => {
       .from("profiles")
       .select("*")
       .eq("p_id", user?.id);
-    console.log(data, error);
     sessionStorage.setItem("userProfileData", JSON.stringify(data));
     setUserProfileData(data);
   };

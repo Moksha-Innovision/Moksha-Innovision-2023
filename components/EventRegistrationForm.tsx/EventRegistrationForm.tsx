@@ -42,7 +42,6 @@ const EventRegistrationForm = (props: Props) => {
     e.preventDefault();
     setIsLoading(true);
     const formdata: any = new FormData(e.currentTarget);
-    console.log(formdata);
     let finalData: any = {
       t_name: formdata.get("t_name"),
       e_id: eventId,
@@ -58,8 +57,6 @@ const EventRegistrationForm = (props: Props) => {
     }
 
     finalData = { ...finalData, form_data: [form_data] };
-
-    console.log(finalData);
 
     const { data, error } = await supabase
       .from("event_registerations")
@@ -84,13 +81,10 @@ const EventRegistrationForm = (props: Props) => {
         data: { regEvents: [...currentRegEvents, eventId] },
       });
 
-    console.log(data);
     setIsLoading(false);
     setAlert("success");
     e.target.reset();
   };
-
-  console.log({ user: useUser() });
 
   return (
     <>
@@ -152,14 +146,14 @@ const EventRegistrationForm = (props: Props) => {
                       className="fromgroup my-1 flex flex-wrap gap-4 gap-y-0 rounded-md  p-2 "
                     >
                       <FormInput
-                        required
+                        required={k == 0}
                         label={`Member ${k + 1} Name`}
                         name={`Member ${k} Name`}
                         id={`Member ${k} Name`}
                         className="w-full rounded-md bg-white bg-opacity-30 px-3 py-2 font-koulen tracking-wider text-white"
                       />
                       <FormInput
-                        required
+                        required={k == 0}
                         type="tel"
                         //pattern=" \d{10}"
                         label={`Member ${k + 1} Phone`}
@@ -213,7 +207,7 @@ const EventRegistrationForm = (props: Props) => {
                 !user ||
                 user.user_metadata.isAdmin ||
                 profileData.length === 0 ||
-                !disable
+                disable
               }
             >
               Register

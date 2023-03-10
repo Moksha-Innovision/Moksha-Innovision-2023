@@ -5,7 +5,6 @@ type Props = {};
 
 const ParticipantTable = (props: any) => {
   const tableRef = useRef(null);
-  console.log(props.data);
   return (
     <div className="w-full pt-4">
       <div className="mb-2 flex gap-3 ">

@@ -115,7 +115,6 @@ const CreateEventModal = (props: Props) => {
     let trimmedText = text?.replaceAll(" ", "");
     let arr = trimmedText?.split(":");
     if (arr?.length !== 2) {
-      console.log(arr?.length);
       return {};
     }
     return { [arr[0]]: arr[1] };
@@ -123,7 +122,7 @@ const CreateEventModal = (props: Props) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(e);
+
     let {
       rules,
       poc1,
@@ -186,13 +185,12 @@ const CreateEventModal = (props: Props) => {
           setAlert("success");
           e.target.reset();
         }
-      } catch (err) {
-        setAlert("error");
-        console.log(err);
+      } catch (err: any) {
+        if (err?.code == "42501") setAlert("42501");
+        else setAlert("error");
       }
     } else {
       try {
-        console.log(formFields);
         const { data, error } = await supabase
           .from("socevent")
           .update({
@@ -219,7 +217,6 @@ const CreateEventModal = (props: Props) => {
         }
       } catch (err) {
         setAlert("error");
-        console.log(err);
       }
     }
 
@@ -234,7 +231,6 @@ const CreateEventModal = (props: Props) => {
 
   {
     /*  const handleUpload = async (e: any) => {
-    console.log(e.target.files[0]);
     const file = e.target.files[0];
     if (file) {
       setIsLoading("image");
@@ -256,7 +252,7 @@ const CreateEventModal = (props: Props) => {
           window.URL.revokeObjectURL(img.src);
           const ratio = width / height;
           if (ratio > 1.1 || ratio < 0.9) {
-            console.log(ratio);
+     
             setImgEr("Aspect Ratio of 1:1 needed");
             e.target.value = null;
             setPosterPath("");
@@ -274,14 +270,12 @@ const CreateEventModal = (props: Props) => {
 
               setIsLoading("none");
               if (error) {
-                console.log(error);
               } else {
                 setPosterPath(
                   `https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/${data.path}`
                 );
               }
             } catch (err) {
-              console.log("error");
             }
           }
         };
@@ -523,6 +517,8 @@ const CreateEventModal = (props: Props) => {
         >
           {alert === "success"
             ? `Congrats , Event ${mode === "create" ? "created" : "updated"}`
+            : alert == "42501"
+            ? "You cant create Event.. Contact EM Team"
             : `An Error Occurred , Reload and try again`}
         </InlineAlert>
       )}
