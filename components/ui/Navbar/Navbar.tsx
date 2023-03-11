@@ -99,9 +99,16 @@ const Navbar = (props: Props) => {
           <button
             className="flex h-[45px]  items-center justify-center gap-3 rounded-full p-2 lg:px-10"
             onClick={() => {
-              setProfileMenu(!profileMenu);
+              if (session) setProfileMenu(!profileMenu);
             }}
           >
+            {!session && (
+              <Link href="/userlogin">
+                <button className="w-24 rounded-md bg-saffron-500 px-4 py-1 font-koulen">
+                  LogIn
+                </button>
+              </Link>
+            )}
             {profileMenu && (
               <div className=" absolute top-full right-0 flex w-40 flex-col items-center gap-2 rounded bg-white py-2">
                 {session && (
@@ -136,15 +143,17 @@ const Navbar = (props: Props) => {
               </div>
             )}
 
-            <div className="profile-pic flex h-6 w-10 items-center justify-center rounded-full">
-              <Image
-                width={100}
-                height={100}
-                src={profilePic}
-                alt=""
-                className="w-8"
-              />
-            </div>
+            {session && (
+              <div className="profile-pic flex h-6 w-10 items-center justify-center rounded-full">
+                <Image
+                  width={100}
+                  height={100}
+                  src={profilePic}
+                  alt=""
+                  className="w-8"
+                />
+              </div>
+            )}
             {/*            <span
               className={`${'font-koulen'}  hidden text-xl text-white sm:block`}
             >

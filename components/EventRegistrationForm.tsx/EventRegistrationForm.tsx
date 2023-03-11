@@ -8,6 +8,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import Link from "next/link";
 import { useState } from "react";
 import InlineAlert from "../Alerts/InlineAlert";
 import FormInput from "../dashboard/ui/Forms/FormInput";
@@ -218,8 +219,19 @@ const EventRegistrationForm = (props: Props) => {
                 success={false}
                 className="mt-4 flex items-center justify-center rounded-md text-center font-koulen font-semibold tracking-wider"
               >
+                {!user && (
+                  <div className="">
+                    <Link
+                      className="underline hover:scale-105"
+                      href={"/userlogin"}
+                    >
+                      Login
+                    </Link>
+                    &#160;
+                  </div>
+                )}
                 {!user
-                  ? "Login First To Register for event"
+                  ? "First To Register for event"
                   : user.user_metadata.isAdmin
                   ? "Admin Cannot Register For events"
                   : profileData.length === 0
@@ -242,7 +254,9 @@ const EventRegistrationForm = (props: Props) => {
                 success={alert === "success"}
                 className="mt-4 flex items-center justify-center rounded-md text-center font-koulen font-semibold tracking-wider"
               >
-                {"You have already registered for this event"}
+                {
+                  "You have already registered for this event, View in your dashboard"
+                }
               </InlineAlert>
             )}
 

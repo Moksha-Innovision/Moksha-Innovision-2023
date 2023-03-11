@@ -34,7 +34,7 @@ const IndividualEventPage = (props: Props) => {
   const [currentEventData, setCurrentEventData] = useState<any>("");
   const [userProfileData, setUserProfileData] = useState<any>([]);
   const [showForm, setShowForm] = useState("event");
-
+  const [logfirst, setLogfirst] = useState(false);
   const getEvent = async () => {
     const { data, error } = await supabase
       .from("socevent")
@@ -79,7 +79,17 @@ const IndividualEventPage = (props: Props) => {
       }
     }
   }, [currentEventData]);
-
+  {
+    /* const loginfirst = () => {
+    console.log("heyd");
+    if (!user) {
+      setLogfirst(true);
+      setTimeout(() => {
+        setLogfirst(false);
+      }, 2000);
+    }
+  };*/
+  }
   return (
     <div className="">
       <Navbar />
@@ -112,20 +122,15 @@ const IndividualEventPage = (props: Props) => {
               disable={currentEventData.disable}
             />
           </div>
-
+          {/*{logfirst && <div className="">Login first to register</div>}*/}
           <div className="mt-5 rounded-md border border-solid py-1 px-2 ">
             <ChakraProvider theme={theme}>
               <Tabs>
                 <TabList className="space-x-5 rounded-md bg-yellow-400 bg-opacity-10 px-4 py-1 text-xl shadow-soft backdrop-blur-[2px] ">
                   <Tab className="text-xl">Description</Tab>
                   <Tab>Rules</Tab>
-                  <Tab
-                    isDisabled={
-                      (user ? false : true) || currentEventData.disable
-                    }
-                  >
-                    Register
-                  </Tab>
+                  {/*<div className=" " onClick={loginfirst}>*/}
+                  <Tab isDisabled={currentEventData.disable}> Register</Tab>
                 </TabList>
                 <TabPanels>
                   <TabPanel>
