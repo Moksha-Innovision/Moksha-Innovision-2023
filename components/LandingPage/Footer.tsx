@@ -1,9 +1,9 @@
 import { Koulen } from "@next/font/google";
-import footerLogo from "/public/WEBSITE footer_1.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import footerLogo from "/public/WEBSITE footer_1.svg";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const Footer = () => {

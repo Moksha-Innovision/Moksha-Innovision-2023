@@ -466,7 +466,7 @@ const CreateEventModal = (props: Props) => {
           id="Poster Image"
           name="poster"
           label="Poster Image"
-          sublabel={"aspect 1:1"}
+          sublabel={"800px * 800px "}
           ratio={1}
           w={1}
           h={1}
@@ -482,7 +482,7 @@ const CreateEventModal = (props: Props) => {
           id="banner"
           name="banner"
           label="banner Image"
-          sublabel={"Aspect 17:6"}
+          sublabel={"1500px * 530px"}
           ratio={2.83}
           w={17}
           h={6}
@@ -498,7 +498,7 @@ const CreateEventModal = (props: Props) => {
           id="Ticket"
           name="ticket"
           label="ticket Image"
-          sublabel={"Aspect 11:4"}
+          sublabel={"1100px * 600px"}
           ratio={2.75}
           w={11}
           h={4}

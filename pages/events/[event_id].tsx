@@ -81,7 +81,8 @@ const IndividualEventPage = (props: Props) => {
   }, [currentEventData]);
 
   return (
-    <div className="">
+    <>
+      {" "}
       <Navbar />
       <div
         className="parent min-h-screen w-fit overflow-y-hidden bg-prussian-blue-1000 bg-event-pattern bg-pattern pb-4 pt-[12vh] text-white sm:min-h-screen sm:w-screen"
@@ -119,13 +120,7 @@ const IndividualEventPage = (props: Props) => {
                 <TabList className="space-x-5 rounded-md bg-yellow-400 bg-opacity-10 px-4 py-1 text-xl shadow-soft backdrop-blur-[2px] ">
                   <Tab className="text-xl">Description</Tab>
                   <Tab>Rules</Tab>
-                  <Tab
-                    isDisabled={
-                      (user ? false : true) || currentEventData.disable
-                    }
-                  >
-                    Register
-                  </Tab>
+                  <Tab>Register</Tab>
                 </TabList>
                 <TabPanels>
                   <TabPanel>
@@ -159,11 +154,12 @@ const IndividualEventPage = (props: Props) => {
             </ChakraProvider>
           </div>
         </div>
-
+        <div className="w-screen">
+          <Footer />
+        </div>
         {/* //------------------------------------------------------------------------------------------------------- */}
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
