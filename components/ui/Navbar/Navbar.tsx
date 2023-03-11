@@ -97,14 +97,14 @@ const Navbar = (props: Props) => {
 
         <div className="profile-btn relative col-span-2 flex  items-center   justify-end md:col-span-1 lg:col-span-2">
           <button
-            className="flex h-[45px]  items-center justify-center gap-3 rounded-full p-2 lg:px-10"
+            className="flex h-[45px]  items-center justify-center gap-3 rounded-full  lg:px-10"
             onClick={() => {
               if (session) setProfileMenu(!profileMenu);
             }}
           >
             {!session && (
               <Link href="/userlogin">
-                <button className="w-24 rounded-md bg-saffron-500 px-4 py-1 font-koulen">
+                <button className="relative -right-1 w-24 rounded-md  bg-saffron-500 px-4 py-1 font-koulen">
                   LogIn
                 </button>
               </Link>
