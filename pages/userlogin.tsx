@@ -124,9 +124,9 @@ const UserLogin = () => {
               {isLoading ? (
                 <Spinner />
               ) : claimsAdmin ? (
-                "Login"
+                "Login as admin"
               ) : (
-                "Login as User"
+                "Login"
               )}
             </button>
             {/*<button
