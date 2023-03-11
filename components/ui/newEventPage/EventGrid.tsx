@@ -11,6 +11,12 @@ interface Props {
 const EventGrid = ({ events, day, e }: Props) => {
   return (
     <div className="grid w-[100vw] grid-cols-1 gap-14 p-10 sm:grid-cols-2 md:gap-14  lg:grid-cols-3 lg:gap-16 xl:grid-cols-4 ">
+      {e.length == 0 && (
+        <div className="col-span-4 flex w-full justify-center bg-white text-black">
+          NO EVENT ADDED FOR DAY {day}
+        </div>
+      )}
+
       {e?.map((e: any, i: any) => {
         return <EventCards event={e} key={i} />;
       })}
