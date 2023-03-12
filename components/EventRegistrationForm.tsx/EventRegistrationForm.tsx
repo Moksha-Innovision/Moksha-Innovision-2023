@@ -103,7 +103,7 @@ const EventRegistrationForm = (props: Props) => {
           <h2 className="mb-6 text-center font-koulen text-3xl ">
             Register For This Event
           </h2>
-          {redirect !== "NA" ? (
+          {(redirect || redirect  !== "NA") ? (
             <RedirectButton
               hasProfileData={profileData.length !== 0}
               externalLink={redirect}
