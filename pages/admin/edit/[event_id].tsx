@@ -103,6 +103,7 @@ const EditEventForm = (props: Props) => {
             rules={eventData.rules}
             venue={eventData.venue}
             event_id={event_id}
+            redirect={eventData.redirect}
             mode="edit"
             setEventModal={() => {}}
           />

@@ -21,6 +21,7 @@ type Props = {
   showForm: any;
   setShowForm: any;
   disable: boolean;
+  redirect: string;
 };
 const EventRegistrationForm = (props: Props) => {
   const [alert, setAlert] = useState<any>("none");

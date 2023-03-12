@@ -40,7 +40,7 @@ const EventInsta = (props: any) => {
           <AiOutlineTrophy className="text-2xl text-white" />
           <p className="flex w-full rounded-lg  bg-white bg-opacity-5 p-3 pl-3 transition-[--tw-bg-opacity] duration-150 hover:bg-opacity-10 ">
             <span className="ml-2 font-semibold">
-              Prize Pool : &#x20B9; {prize}
+              Prize Pool : &#x20B9; {prize ? prize : "NA"}
             </span>
           </p>
         </li>

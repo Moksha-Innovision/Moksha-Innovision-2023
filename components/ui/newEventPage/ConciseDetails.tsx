@@ -67,6 +67,9 @@ const ConciseDetails = (props: any) => {
           <div className="flex flex-col items-center justify-center gap-3 ">
             {!props.hideReg && (
               <button
+                onClick={() => {
+                  if (!props.disable) props.regTab(2);
+                }}
                 className={`rounded ${
                   props.disable ? "bg-red-600 " : "bg-green-600"
                 }  rounded px-2 py-1 font-koulen sm:text-lg md:text-xl`}
