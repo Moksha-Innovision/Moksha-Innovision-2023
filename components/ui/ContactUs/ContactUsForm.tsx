@@ -122,7 +122,7 @@ const ContactUsForm = () => {
             handleChange(e);
           }}
           id=""
-          placeholder="MOKSHA WAS REALLY FUN TO ATTEND!"
+          placeholder="This website is awsome!!" //MOKSHA WAS REALLY FUN TO ATTEND!"
           className="  h-[100px] resize-none rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white"
           maxLength={250}
         ></textarea>
