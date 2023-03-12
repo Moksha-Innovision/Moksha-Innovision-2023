@@ -115,7 +115,6 @@ const CreateEventModal = (props: Props) => {
     let trimmedText = text?.replaceAll(" ", "");
     let arr = trimmedText?.split(":");
     if (arr?.length !== 2) {
-      console.log(arr?.length);
       return {};
     }
     return { [arr[0]]: arr[1] };
@@ -123,7 +122,7 @@ const CreateEventModal = (props: Props) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(e);
+
     let {
       rules,
       poc1,
@@ -186,13 +185,12 @@ const CreateEventModal = (props: Props) => {
           setAlert("success");
           e.target.reset();
         }
-      } catch (err) {
-        setAlert("error");
-        console.log(err);
+      } catch (err: any) {
+        if (err?.code == "42501") setAlert("42501");
+        else setAlert("error");
       }
     } else {
       try {
-        console.log(formFields);
         const { data, error } = await supabase
           .from("socevent")
           .update({
@@ -219,7 +217,6 @@ const CreateEventModal = (props: Props) => {
         }
       } catch (err) {
         setAlert("error");
-        console.log(err);
       }
     }
 
@@ -234,7 +231,6 @@ const CreateEventModal = (props: Props) => {
 
   {
     /*  const handleUpload = async (e: any) => {
-    console.log(e.target.files[0]);
     const file = e.target.files[0];
     if (file) {
       setIsLoading("image");
@@ -256,7 +252,7 @@ const CreateEventModal = (props: Props) => {
           window.URL.revokeObjectURL(img.src);
           const ratio = width / height;
           if (ratio > 1.1 || ratio < 0.9) {
-            console.log(ratio);
+     
             setImgEr("Aspect Ratio of 1:1 needed");
             e.target.value = null;
             setPosterPath("");
@@ -274,14 +270,12 @@ const CreateEventModal = (props: Props) => {
 
               setIsLoading("none");
               if (error) {
-                console.log(error);
               } else {
                 setPosterPath(
                   `https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/event-posters/${data.path}`
                 );
               }
             } catch (err) {
-              console.log("error");
             }
           }
         };
@@ -308,6 +302,7 @@ const CreateEventModal = (props: Props) => {
           defaultValue={mode === "edit" ? event_name : null}
           labelColor="black"
           label="Event Name"
+          placeholder="Enter Full Name of Event"
           type="text"
           id="Event Name"
           name="event_name"
@@ -317,6 +312,7 @@ const CreateEventModal = (props: Props) => {
           defaultValue={mode === "edit" ? tagline : null}
           labelColor="black"
           label="Tagline"
+          placeholder="Enter Tagline (if any)"
           type="text"
           id="Tagline"
           name="tagline"
@@ -327,6 +323,7 @@ const CreateEventModal = (props: Props) => {
           defaultValue={mode === "edit" ? desc : null}
           labelColor="black"
           label="Description"
+          placeholder="Description should include all the things that participant must know before registering for the event"
           type="textarea"
           id="Description"
           name="desc"
@@ -350,6 +347,7 @@ const CreateEventModal = (props: Props) => {
           onChange={handleChange}
           labelColor="black"
           label="Venue"
+          placeholder="eg: Moksha ground"
           type="text"
           id="Venue"
           name="venue"
@@ -387,6 +385,7 @@ const CreateEventModal = (props: Props) => {
             onChange={handleChange}
             labelColor="black"
             label="Team size"
+            placeholder="1 if not a team event"
             type="number"
             id="Team Size"
             name="team_size"
@@ -398,6 +397,7 @@ const CreateEventModal = (props: Props) => {
           defaultValue={mode === "edit" ? prize : null}
           labelColor="black"
           label="Prize Pool"
+          placeholder="Total prize pool"
           type="number"
           id="Prize Pool"
           name="prize_pool"
@@ -407,7 +407,8 @@ const CreateEventModal = (props: Props) => {
           defaultValue={mode === "edit" ? instagram : null}
           labelColor="black"
           label="Instagram"
-          type="text"
+          type="url"
+          placeholder="eg: https://www.instagram.com/mokshatechteam (full url including http://)"
           id="Instagram"
           name="instagram"
         />
@@ -419,7 +420,7 @@ const CreateEventModal = (props: Props) => {
               labelColor="black"
               pattern="^[^:\s]+:\d+$"
               label="POC"
-              placeholder="Name : 9833123434 , use : to separate phno."
+              placeholder="Name:9833123434 , (no space between name, seprator(':') and number"
               type="text"
               id="POC"
               name="poc1"
@@ -430,7 +431,7 @@ const CreateEventModal = (props: Props) => {
               pattern="^[^:\s]+:\d+$"
               label="POC 2"
               type="text"
-              placeholder="Name:9833123434 , use : to separate"
+              placeholder="Name:9833123434 , (no space between name, seprator(':') and number"
               id="POC 2"
               name="poc2"
             />
@@ -439,7 +440,7 @@ const CreateEventModal = (props: Props) => {
               pattern="^[^:\s]+:\d+$"
               labelColor="black"
               label="POC 3"
-              placeholder="Name:9833123434 , use : to separate"
+              placeholder="Name:9833123434 , (no space between name, seprator(':') and number"
               type="text"
               id="POC 3"
               name="poc3"
@@ -465,7 +466,7 @@ const CreateEventModal = (props: Props) => {
           id="Poster Image"
           name="poster"
           label="Poster Image"
-          sublabel={"aspect 1:1"}
+          sublabel={"800px * 800px "}
           ratio={1}
           w={1}
           h={1}
@@ -481,7 +482,7 @@ const CreateEventModal = (props: Props) => {
           id="banner"
           name="banner"
           label="banner Image"
-          sublabel={"Aspect 17:6"}
+          sublabel={"1500px * 530px"}
           ratio={2.83}
           w={17}
           h={6}
@@ -497,7 +498,7 @@ const CreateEventModal = (props: Props) => {
           id="Ticket"
           name="ticket"
           label="ticket Image"
-          sublabel={"Aspect 11:4"}
+          sublabel={"1100px * 600px"}
           ratio={2.75}
           w={11}
           h={4}
@@ -523,6 +524,8 @@ const CreateEventModal = (props: Props) => {
         >
           {alert === "success"
             ? `Congrats , Event ${mode === "create" ? "created" : "updated"}`
+            : alert == "42501"
+            ? "You cant create Event.. Contact EM Team"
             : `An Error Occurred , Reload and try again`}
         </InlineAlert>
       )}

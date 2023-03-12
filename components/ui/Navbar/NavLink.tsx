@@ -13,7 +13,7 @@ type Props = {
 const NavLink = (props: Props) => {
   const { href, className, imgScale, children, underlineclassName } = props;
   const router = useRouter();
-  //console.log(router.asPath.split("/").at(1));
+  //
   return (
     <Link
       href={href}

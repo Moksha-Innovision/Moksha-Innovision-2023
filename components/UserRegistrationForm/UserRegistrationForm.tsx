@@ -59,7 +59,7 @@ const UserRegistrationForm = (props: Props) => {
             Fill Correct Details !!
           </AlertTitle>
           <AlertDescription className="text-white">
-            These details might be verified on Entry
+            These details will be verified at the time of entry to the fest{" "}
           </AlertDescription>
         </Alert>
       </ChakraProvider>

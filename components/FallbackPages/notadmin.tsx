@@ -30,9 +30,7 @@ const Notadmin = (props: Props) => {
       const { data, error } = await supabase.auth.updateUser({
         data: { isAdmin: true },
       });
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
 
     setIsLoading(false);
   };

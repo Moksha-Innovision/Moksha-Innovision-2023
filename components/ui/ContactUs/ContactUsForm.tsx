@@ -1,4 +1,5 @@
 import { Koulen } from "@next/font/google";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import { useState } from "react";
 import InlineAlert from "../../Alerts/InlineAlert";
@@ -6,11 +7,35 @@ const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const ContactUsForm = () => {
   const [alert, setAlert] = useState("none");
+  const defaultFormFields = {
+    name: "",
+    email: "",
+    contact: "",
+    msg: "",
+  };
+
+  const [formFields, setFormFields] = useState(defaultFormFields);
+
+  const supabase = useSupabaseClient();
+  const handleChange = (e: any) => {
+    const { value, name } = e.target;
+    setFormFields({ ...formFields, [name]: value });
+  };
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const { data, error } = await supabase
+      .from("feedback")
+      .insert([formFields]);
+
+    e.target.reset();
+    //window.location.reload();
+  };
 
   return (
     <form
-      onSubmit={() => {
+      onSubmit={(e) => {
         setAlert("success");
+        handleSubmit(e);
       }}
       className={`relative z-[1] w-[80vw] max-w-[550px] items-center  justify-center space-y-5  overflow-hidden rounded-2xl border-4  border-yellow-500  bg-prussian-blue-1000   bg-event-pattern bg-pattern      bg-repeat py-6 px-12 text-black shadow-xl md:px-20   `}
     >
@@ -48,6 +73,10 @@ const ContactUsForm = () => {
         </label>
         <input
           type="text"
+          onChange={(e) => {
+            handleChange(e);
+          }}
+          name="name"
           required
           className="h-8 rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white md:h-10"
           placeholder="FULL NAME"
@@ -58,7 +87,11 @@ const ContactUsForm = () => {
           email Address*
         </label>
         <input
+          name="email"
           type="text"
+          onChange={(e) => {
+            handleChange(e);
+          }}
           required
           className="h-8 rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white md:h-10"
           placeholder="user@email.com"
@@ -69,6 +102,10 @@ const ContactUsForm = () => {
           Contact Number <span className="text-lg text-gray-500"></span>
         </label>
         <input
+          name="contact"
+          onChange={(e) => {
+            handleChange(e);
+          }}
           type="text"
           required
           className="h-8 rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white md:h-10"
@@ -80,9 +117,12 @@ const ContactUsForm = () => {
           YOUR MESSAGE*
         </label>
         <textarea
-          name=""
+          name="msg"
+          onChange={(e) => {
+            handleChange(e);
+          }}
           id=""
-          placeholder="MOKSHA WAS REALLY FUN TO ATTEND!"
+          placeholder="This website is awsome!!" //MOKSHA WAS REALLY FUN TO ATTEND!"
           className="  h-[100px] resize-none rounded-lg bg-saffron-25 p-2 outline outline-[3px] focus:bg-white"
           maxLength={250}
         ></textarea>

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const LegacyCards = ({ id, active, artist }: any) => {
-  //console.log(id, active);
   const [pos, setPos] = useState(0);
   useEffect(() => {
     if (active == id) setPos(0);

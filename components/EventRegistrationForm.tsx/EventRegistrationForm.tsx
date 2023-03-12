@@ -8,6 +8,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import Link from "next/link";
 import { useState } from "react";
 import InlineAlert from "../Alerts/InlineAlert";
 import FormInput from "../dashboard/ui/Forms/FormInput";
@@ -42,7 +43,6 @@ const EventRegistrationForm = (props: Props) => {
     e.preventDefault();
     setIsLoading(true);
     const formdata: any = new FormData(e.currentTarget);
-    console.log(formdata);
     let finalData: any = {
       t_name: formdata.get("t_name"),
       e_id: eventId,
@@ -58,8 +58,6 @@ const EventRegistrationForm = (props: Props) => {
     }
 
     finalData = { ...finalData, form_data: [form_data] };
-
-    console.log(finalData);
 
     const { data, error } = await supabase
       .from("event_registerations")
@@ -84,13 +82,10 @@ const EventRegistrationForm = (props: Props) => {
         data: { regEvents: [...currentRegEvents, eventId] },
       });
 
-    console.log(data);
     setIsLoading(false);
     setAlert("success");
     e.target.reset();
   };
-
-  console.log({ user: useUser() });
 
   return (
     <>
@@ -152,14 +147,14 @@ const EventRegistrationForm = (props: Props) => {
                       className="fromgroup my-1 flex flex-wrap gap-4 gap-y-0 rounded-md  p-2 "
                     >
                       <FormInput
-                        required
+                        required={k == 0}
                         label={`Member ${k + 1} Name`}
                         name={`Member ${k} Name`}
                         id={`Member ${k} Name`}
                         className="w-full rounded-md bg-white bg-opacity-30 px-3 py-2 font-koulen tracking-wider text-white"
                       />
                       <FormInput
-                        required
+                        required={k == 0}
                         type="tel"
                         //pattern=" \d{10}"
                         label={`Member ${k + 1} Phone`}
@@ -213,7 +208,7 @@ const EventRegistrationForm = (props: Props) => {
                 !user ||
                 user.user_metadata.isAdmin ||
                 profileData.length === 0 ||
-                !disable
+                disable
               }
             >
               Register
@@ -224,8 +219,19 @@ const EventRegistrationForm = (props: Props) => {
                 success={false}
                 className="mt-4 flex items-center justify-center rounded-md text-center font-koulen font-semibold tracking-wider"
               >
+                {!user && (
+                  <div className="">
+                    <Link
+                      className="underline hover:scale-105"
+                      href={"/userlogin"}
+                    >
+                      Login
+                    </Link>
+                    &#160;
+                  </div>
+                )}
                 {!user
-                  ? "Login First To Register for event"
+                  ? "First To Register for event"
                   : user.user_metadata.isAdmin
                   ? "Admin Cannot Register For events"
                   : profileData.length === 0
@@ -248,7 +254,9 @@ const EventRegistrationForm = (props: Props) => {
                 success={alert === "success"}
                 className="mt-4 flex items-center justify-center rounded-md text-center font-koulen font-semibold tracking-wider"
               >
-                {"You have already registered for this event"}
+                {
+                  "You have already registered for this event, View in your dashboard"
+                }
               </InlineAlert>
             )}
 

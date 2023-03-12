@@ -51,7 +51,6 @@ const EditEventForm = (props: Props) => {
     setIsLoading(false);
 
     setEventData(processData(data));
-    console.log(eventData);
   };
 
   useEffect(() => {

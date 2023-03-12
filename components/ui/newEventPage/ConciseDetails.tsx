@@ -14,8 +14,9 @@ const ConciseDetails = (props: any) => {
       .from("socevent")
       .update({ disable: !status })
       .eq("event_id", props.event_id);
-    console.log(data);
-    if (error) console.log(error);
+
+    if (error) {
+    }
     setStatus(!status);
   };
   return (

@@ -21,7 +21,6 @@ const Registrations = (props: Props) => {
   const router = useRouter();
   const supabase = useSupabaseClient();
   const { event_id } = router.query;
-  //console.log(event_id);
   const user = useUser();
   const [regsData, setRegsData] = useState<any>("");
 
@@ -37,8 +36,6 @@ const Registrations = (props: Props) => {
     setRegsData(data);
     setAlert("success");
     setIsLoading(false);
-    //console.log(regsData);
-    console.log(error);
   };
   useEffect(() => {
     let regData = JSON.parse(
@@ -49,7 +46,6 @@ const Registrations = (props: Props) => {
     } else {
       setRegsData(regData);
     }
-    //console.log(regData);
   }, []);
 
   if (user) {

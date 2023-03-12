@@ -17,6 +17,7 @@ import Spinner from "../../components/Loaders/Spinner";
 import Navbar from "../../components/ui/Navbar/Navbar";
 import ConciseDetails from "../../components/ui/newEventPage/ConciseDetails";
 import EventDesc from "../../components/ui/newEventPage/EventDesc";
+import EventInsta from "../../components/ui/newEventPage/EventInsta";
 import EventPoc from "../../components/ui/newEventPage/EventPoc";
 import EventRules from "../../components/ui/newEventPage/EventRules";
 import theme from "../../components/UiTheme";
@@ -33,7 +34,7 @@ const IndividualEventPage = (props: Props) => {
   const [currentEventData, setCurrentEventData] = useState<any>("");
   const [userProfileData, setUserProfileData] = useState<any>([]);
   const [showForm, setShowForm] = useState("event");
-
+  const [logfirst, setLogfirst] = useState(false);
   const getEvent = async () => {
     const { data, error } = await supabase
       .from("socevent")
@@ -42,7 +43,6 @@ const IndividualEventPage = (props: Props) => {
     //sessionStorage.setItem("eData", JSON.stringify(data));
     // setCurrentEventData(data?.filter((e) => e.event_id === event_id).at(0));
     setCurrentEventData(data?.at(0));
-    //console.log("selleted", data?.at(0));
   };
 
   const getUserProfile = async () => {
@@ -50,7 +50,6 @@ const IndividualEventPage = (props: Props) => {
       .from("profiles")
       .select("*")
       .eq("p_id", user?.id);
-    console.log(data, error);
     sessionStorage.setItem("userProfileData", JSON.stringify(data));
     setUserProfileData(data);
   };
@@ -60,7 +59,6 @@ const IndividualEventPage = (props: Props) => {
     let userData = JSON.parse(
       sessionStorage.getItem("userProfileData") || "{}"
     );
-    console.log(userData);
     if (currentEventData == "") getEvent();
     {
       /*
@@ -79,12 +77,22 @@ const IndividualEventPage = (props: Props) => {
       } else {
         setUserProfileData(userData);
       }
-      console.log(userProfileData);
     }
   }, [currentEventData]);
-
+  {
+    /* const loginfirst = () => {
+    console.log("heyd");
+    if (!user) {
+      setLogfirst(true);
+      setTimeout(() => {
+        setLogfirst(false);
+      }, 2000);
+    }
+  };*/
+  }
   return (
-    <div className="">
+    <>
+      {" "}
       <Navbar />
       <div
         className="parent min-h-screen w-fit overflow-y-hidden bg-prussian-blue-1000 bg-event-pattern bg-pattern pb-4 pt-[12vh] text-white sm:min-h-screen sm:w-screen"
@@ -115,25 +123,26 @@ const IndividualEventPage = (props: Props) => {
               disable={currentEventData.disable}
             />
           </div>
-
+          {/*{logfirst && <div className="">Login first to register</div>}*/}
           <div className="mt-5 rounded-md border border-solid py-1 px-2 ">
             <ChakraProvider theme={theme}>
               <Tabs>
                 <TabList className="space-x-5 rounded-md bg-yellow-400 bg-opacity-10 px-4 py-1 text-xl shadow-soft backdrop-blur-[2px] ">
                   <Tab className="text-xl">Description</Tab>
                   <Tab>Rules</Tab>
-                  <Tab
-                    isDisabled={
-                      (user ? false : true) || currentEventData.disable
-                    }
-                  >
-                    Register
-                  </Tab>
+
+                  {/*<div className=" " onClick={loginfirst}>*/}
+                  <Tab isDisabled={currentEventData.disable}> Register</Tab>
+
                 </TabList>
                 <TabPanels>
                   <TabPanel>
                     <EventDesc desc={currentEventData.desc} />
                     <EventPoc poc={currentEventData.poc || {}} />
+                    <EventInsta
+                      insta={currentEventData.instagram}
+                      prize={currentEventData.prize_pool}
+                    />
                   </TabPanel>
                   <TabPanel>
                     <EventRules rules={currentEventData.rules || []} />
@@ -158,11 +167,12 @@ const IndividualEventPage = (props: Props) => {
             </ChakraProvider>
           </div>
         </div>
-
+        <div className="w-screen">
+          <Footer />
+        </div>
         {/* //------------------------------------------------------------------------------------------------------- */}
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 

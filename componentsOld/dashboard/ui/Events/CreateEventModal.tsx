@@ -45,7 +45,6 @@ const CreateEventModal = (props: Props) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(formFields);
     let {
       rules,
       poc1,
@@ -97,7 +96,6 @@ const CreateEventModal = (props: Props) => {
       }
     } catch (err) {
       setAlert("error");
-      console.log(err);
     }
     setIsLoading("none");
     setFormFields(defaultFormFields);
@@ -121,11 +119,8 @@ const CreateEventModal = (props: Props) => {
           upsert: false,
         });
       if (error) {
-        console.log(error);
       }
-    } catch (err) {
-      console.log("error");
-    }
+    } catch (err) {}
     setIsLoading("none");
   };
 
