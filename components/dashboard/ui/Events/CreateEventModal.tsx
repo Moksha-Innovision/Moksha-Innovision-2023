@@ -21,6 +21,7 @@ type Props = {
   prize?: string;
   instagram?: string;
   form_question?: string;
+  redirect?: string;
   poster?: string;
   banner?: string;
   ticket?: string;
@@ -49,6 +50,7 @@ const defaultFormFields: formFields = {
   poc3: "",
   poster: "",
   form_question: "",
+  redirect: "",
 };
 
 const CreateEventModal = (props: Props) => {
@@ -62,6 +64,7 @@ const CreateEventModal = (props: Props) => {
     prize,
     instagram,
     form_question,
+    redirect,
     banner,
     ticket,
     poster,
@@ -85,6 +88,7 @@ const CreateEventModal = (props: Props) => {
 
     poster: poster,
     form_question: form_question,
+    redirect: redirect,
   };
 
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -141,6 +145,7 @@ const CreateEventModal = (props: Props) => {
       instagram,
       poster,
       form_question,
+      redirect,
     } = formFields;
 
     setIsLoading("form");
@@ -176,6 +181,7 @@ const CreateEventModal = (props: Props) => {
             poster,
             soc_id,
             form_question,
+            redirect,
           },
         ]);
         if (error) {
@@ -205,6 +211,7 @@ const CreateEventModal = (props: Props) => {
             banner,
             ticket,
             form_question,
+            redirect,
           })
           .eq("event_id", event_id);
 
@@ -393,11 +400,12 @@ const CreateEventModal = (props: Props) => {
         )}
 
         <FormInput
+          required
           onChange={handleChange}
           defaultValue={mode === "edit" ? prize : null}
           labelColor="black"
           label="Prize Pool"
-          placeholder="Total prize pool"
+          placeholder="Total prize pool (0 if no prize)"
           type="number"
           id="Prize Pool"
           name="prize_pool"
@@ -457,6 +465,16 @@ const CreateEventModal = (props: Props) => {
           id="Form Questions"
           name="form_question"
         />
+        <FormInput
+          onChange={handleChange}
+          defaultValue={mode === "edit" ? redirect : null}
+          labelColor="black"
+          label="Redirect Link"
+          placeholder={`eg: https://www.instagram.com/mokshatechteam (if any)`}
+          type={"url"}
+          id="redirect"
+          name="redirect"
+        />
         <ImageInput
           mode={mode}
           image={poster}
@@ -505,17 +523,16 @@ const CreateEventModal = (props: Props) => {
           bucket={"event-ticket"}
           path={setTicketPath}
         ></ImageInput>
-
-        <span className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-saffron-600 px-3 py-2 font-medium">
-          <button>
+        <button>
+          <span className="m-auto mt-3 flex w-[250px] justify-center rounded-md bg-saffron-600 px-3 py-2 font-medium">
             {" "}
             {isLoading === "form" ? (
               <Spinner />
             ) : (
               `${mode === "create" ? "Create New Event" : "Update "} Event`
             )}
-          </button>
-        </span>
+          </span>
+        </button>
       </form>
       {alert && (
         <InlineAlert

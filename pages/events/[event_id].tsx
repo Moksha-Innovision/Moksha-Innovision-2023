@@ -26,6 +26,7 @@ import UserRegistrationForm from "../../components/UserRegistrationForm/UserRegi
 type Props = {};
 
 const IndividualEventPage = (props: Props) => {
+  const [tabIndex, setTabIndex] = useState(0);
   const [animationParent] = useAutoAnimate();
   const router = useRouter();
   const user = useUser();
@@ -35,6 +36,9 @@ const IndividualEventPage = (props: Props) => {
   const [userProfileData, setUserProfileData] = useState<any>([]);
   const [showForm, setShowForm] = useState("event");
   const [logfirst, setLogfirst] = useState(false);
+  const handleTabsChange = (index: any) => {
+    setTabIndex(index);
+  };
   const getEvent = async () => {
     const { data, error } = await supabase
       .from("socevent")
@@ -113,6 +117,7 @@ const IndividualEventPage = (props: Props) => {
               className="h-full w-full rounded pb-1 "
             />
             <ConciseDetails
+              regTab={handleTabsChange}
               imgSrc={currentEventData.poster}
               eventName={currentEventData.event_name}
               eventTagline={currentEventData.tagline}
@@ -126,14 +131,13 @@ const IndividualEventPage = (props: Props) => {
           {/*{logfirst && <div className="">Login first to register</div>}*/}
           <div className="mt-5 rounded-md border border-solid py-1 px-2 ">
             <ChakraProvider theme={theme}>
-              <Tabs>
+              <Tabs index={tabIndex} onChange={handleTabsChange}>
                 <TabList className="space-x-5 rounded-md bg-yellow-400 bg-opacity-10 px-4 py-1 text-xl shadow-soft backdrop-blur-[2px] ">
                   <Tab className="text-xl">Description</Tab>
                   <Tab>Rules</Tab>
 
                   {/*<div className=" " onClick={loginfirst}>*/}
                   <Tab isDisabled={currentEventData.disable}> Register</Tab>
-
                 </TabList>
                 <TabPanels>
                   <TabPanel>
@@ -151,6 +155,7 @@ const IndividualEventPage = (props: Props) => {
                     {showForm === "event" && (
                       <EventRegistrationForm
                         eventId={event_id || ""}
+                        redirect={currentEventData.redirect}
                         setShowForm={setShowForm}
                         showForm={showForm}
                         questions={currentEventData.form_question}
