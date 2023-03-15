@@ -220,7 +220,6 @@ const CreateEventModal = (props: Props) => {
         } else {
           setEventId(generateUUID());
           setAlert("success");
-          e.target.reset();
         }
       } catch (err) {
         setAlert("error");
@@ -469,8 +468,9 @@ const CreateEventModal = (props: Props) => {
           onChange={handleChange}
           defaultValue={mode === "edit" ? redirect : null}
           labelColor="black"
+          sublabel="if you want your event registrations to happen on different platform"
           label="Redirect Link"
-          placeholder={`eg: https://www.instagram.com/mokshatechteam (if any)`}
+          placeholder={`eg: https://www.extRegistrationlink.com/mokshatechteam (if any)`}
           type={"url"}
           id="redirect"
           name="redirect"
