@@ -37,8 +37,8 @@ const Faqs = [
   },
   {
     id: 7,
-    ques: "Why is the participation of female students low, especially in departments like security ?",
-    ans: "The representation and participation of female students in core organising team or as volunteers, irrespective of department, has always been at par with the gender ratio of the college and maybe even more.",
+    ques: "Why is the participation of female students low, especially in departments like security?",
+    ans: "The representation and participation of female students in the core organising team or as volunteers, irrespective of department, has always been at par with the gender ratio of the college and maybe even more. With the strict increase of female representation in recent new batches and in Team Moksha-Innovision, higher levels and new epitomes of work-culture have been set by them. ",
   },
 ];
 
