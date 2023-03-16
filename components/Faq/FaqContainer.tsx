@@ -8,7 +8,7 @@ const Faqs = [
   {
     id: 1,
     ques: "What is Moksha ?",
-    ans: "Moksha is the annual cultural festival of NSUT, a 2 - day long fiesta that takes place in the month of March.More than a fest, it has been a symbolof ethereal gatherings and blasting triumphs. \n After a successful resurrection in 2022, we're back again.",
+    ans: "Moksha is the annual cultural festival of NSUT, a 3 - day long fiesta that takes place in the month of March. More than a fest, it has been a symbol of ethereal gatherings and blasting triumphs. \n After a successful resurrection in 2022, we're back again.",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const Faqs = [
   {
     id: 5,
     ques: "What are the events in Moksha - Innovison'23 ?",
-    ans: "Every year Moksha and Innovision witness a plethora of events ranging from dramatics and dance to Hackathons and Robowars. \n It is these events that bring life to the fest with the ever so enthusiastics hosts and  participants. ",
+    ans: "Every year Moksha and Innovision witness a plethora of events ranging from dramatics and dance to Hackathons and Robowars. \n It is these events that bring life to the fest with the ever so enthusiastic hosts and  participants. ",
   },
   {
     id: 6,
