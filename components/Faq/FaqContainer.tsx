@@ -23,7 +23,7 @@ const Faqs = [
   {
     id: 4,
     ques: "When will Moksha - Innovation'23 be held ? What are the exact dates ?",
-    ans: " Moksha - innovation'23 is a 3 day annual cultural - tech  extravaganza, organised in the month of March.The dates are 23rd- 25th March.",
+    ans: " Moksha - innovation'23 is a 3 day annual cultural - tech  extravaganza, organised in the month of March.The dates are 6th-8th April..",
   },
   {
     id: 5,
