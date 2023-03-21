@@ -3,6 +3,7 @@ import {
   useSupabaseClient,
   useUser,
 } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { generateUUID } from "three/src/math/MathUtils";
 import InlineAlert from "../../../Alerts/InlineAlert";
@@ -54,6 +55,7 @@ const defaultFormFields: formFields = {
 };
 
 const CreateEventModal = (props: Props) => {
+  const router = useRouter();
   const {
     setEventModal,
     getEvent,
@@ -79,9 +81,9 @@ const CreateEventModal = (props: Props) => {
     desc: desc,
     rules: rules, //separate using commas
     venue: venue,
-
+    date: "",
     prize_pool: prize,
-
+    time: "",
     instagram: instagram,
     banner: banner,
     ticket: ticket,
@@ -90,8 +92,6 @@ const CreateEventModal = (props: Props) => {
     form_question: form_question,
     redirect: redirect,
   };
-
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   const session = useSession();
   const user = useUser();
@@ -189,6 +189,7 @@ const CreateEventModal = (props: Props) => {
         } else {
           setEventId(generateUUID());
           setAlert("success");
+          router.push("/admin/events");
           e.target.reset();
         }
       } catch (err: any) {
@@ -203,6 +204,8 @@ const CreateEventModal = (props: Props) => {
             rules,
             event_name,
             desc,
+            date,
+            time,
             venue,
             tagline,
             prize_pool,
@@ -358,33 +361,32 @@ const CreateEventModal = (props: Props) => {
           id="Venue"
           name="venue"
         />
-        {mode === "create" && (
-          <FormInput
-            required
-            onChange={handleChange}
-            labelColor="black"
-            label="Date"
-            min="2023-03-23"
-            max="2023-03-25"
-            type="date"
-            id="Date"
-            name="date"
-          />
-        )}
-        {mode === "create" && (
-          <FormInput
-            required
-            onChange={handleChange}
-            labelColor="black"
-            label="Start Time "
-            min="07:59:00"
-            max="23:59:00"
-            type="time"
-            placeholder="24 Hr format"
-            id="Time"
-            name="time"
-          />
-        )}
+
+        <FormInput
+          required
+          onChange={handleChange}
+          labelColor="black"
+          label="Date"
+          min="2023-03-23"
+          max="2023-03-25"
+          type="date"
+          id="Date"
+          name="date"
+        />
+
+        <FormInput
+          required
+          onChange={handleChange}
+          labelColor="black"
+          label="Start Time "
+          min="07:59:00"
+          max="23:59:00"
+          type="time"
+          placeholder="24 Hr format"
+          id="Time"
+          name="time"
+        />
+
         {mode === "create" && (
           <FormInput
             required
@@ -397,7 +399,6 @@ const CreateEventModal = (props: Props) => {
             name="team_size"
           />
         )}
-
         <FormInput
           required
           onChange={handleChange}

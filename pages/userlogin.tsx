@@ -20,6 +20,7 @@ const UserLogin = () => {
   const [formFields, setFormFields] = useState(deafultFormFields);
   const [isLoading, setIsLoading] = useState(false);
   const [alert, setAlert] = useState("");
+  const [error, setError] = useState("");
   const { UserEmail, password } = formFields;
 
   const handleChange = (e: any) => {
@@ -29,7 +30,7 @@ const UserLogin = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
+    setAlert("");
     setIsLoading(true);
     try {
       const { data, error } = await supabase.auth.signInWithOtp({
@@ -46,9 +47,17 @@ const UserLogin = () => {
 
       if (!error) {
         setAlert("success");
+      } else {
+        throw error;
       }
-    } catch (err) {
+    } catch (err: any) {
       setAlert("error");
+      console.log({ err });
+      if (err.status === 429) {
+        err.message === "Email rate limit exceeded"
+          ? setError(err.message + ", try again after 5 minutes")
+          : setError(err.message + ", try again after 1 minute");
+      } else setError("There has been an error , try again after some time");
     }
 
     setIsLoading(false);
@@ -155,9 +164,7 @@ const UserLogin = () => {
               success={alert === "success"}
               className="w-full rounded text-center tracking-wider text-white drop-shadow-lg"
             >
-              {alert === "success"
-                ? `Email Sent to ${UserEmail}`
-                : `An Error Occurred , try again Later`}
+              {alert === "success" ? `Email Sent to Your email` : `${error}`}
             </InlineAlert>
           )}
         </form>

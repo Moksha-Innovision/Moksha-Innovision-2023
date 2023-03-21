@@ -100,7 +100,7 @@ const Footer = () => {
             <div className="font-koulen text-xs font-medium">
               Daksh Panchal{" "}
             </div>
-            <div className="font-koulen text-xs">
+            <div className="pointer-events-none font-koulen text-xs opacity-0">
               <a
                 target={"_blank"}
                 rel="noreferrer"
@@ -111,7 +111,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="font-koulen text-xs font-medium">Priyanshi </div>
-            <div className="font-koulen text-xs">
+            <div className="pointer-events-none font-koulen text-xs opacity-0">
               <a
                 target={"_blank"}
                 rel="noreferrer"
@@ -124,7 +124,7 @@ const Footer = () => {
             <div className="font-koulen text-xs font-medium">
               Janvi Ahluwalia{" "}
             </div>
-            <div className="font-koulen text-xs">
+            <div className="pointer-events-none font-koulen text-xs opacity-0">
               <a
                 target={"_blank"}
                 rel="noreferrer"
