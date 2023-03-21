@@ -8,7 +8,7 @@ const Faqs = [
   {
     id: 1,
     ques: "What is Moksha ?",
-    ans: "Moksha is the annual cultural festival of NSUT, a 2 - day long fiesta that takes place in the month of March.More than a fest, it has been a symbolof ethereal gatherings and blasting triumphs. \n After a successful resurrection in 2022, we're back again.",
+    ans: "Moksha is the annual cultural festival of NSUT, a 3 - day long fiesta that takes place in the month of March. More than a fest, it has been a symbol of ethereal gatherings and blasting triumphs. \n After a successful resurrection in 2022, we're back again.",
   },
   {
     id: 2,
@@ -23,12 +23,12 @@ const Faqs = [
   {
     id: 4,
     ques: "When will Moksha - Innovation'23 be held ? What are the exact dates ?",
-    ans: " Moksha - innovation'23 is a 3 day annual cultural - tech  extravaganza, organised in the month of March.The dates are 23rd- 25th March.",
+    ans: " Moksha - innovation'23 is a 3 day annual cultural - tech  extravaganza, organised in the month of March.The dates are 6th-8th April..",
   },
   {
     id: 5,
     ques: "What are the events in Moksha - Innovison'23 ?",
-    ans: "Every year Moksha and Innovision witness a plethora of events ranging from dramatics and dance to Hackathons and Robowars. \n It is these events that bring life to the fest with the ever so enthusiastics hosts and  participants. ",
+    ans: "Every year Moksha and Innovision witness a plethora of events ranging from dramatics and dance to Hackathons and Robowars. \n It is these events that bring life to the fest with the ever so enthusiastic hosts and  participants. ",
   },
   {
     id: 6,
@@ -37,8 +37,8 @@ const Faqs = [
   },
   {
     id: 7,
-    ques: "Why is the participation of female students low, especially in departments like security ?",
-    ans: "The representation and participation of female students in core organising team or as volunteers, irrespective of department, has always been at par with the gender ratio of the college and maybe even more.",
+    ques: "Why is the participation of female students low, especially in departments like security?",
+    ans: "The representation and participation of female students in the core organising team or as volunteers, irrespective of department, has always been at par with the gender ratio of the college and maybe even more. With the strict increase of female representation in recent new batches and in Team Moksha-Innovision, higher levels and new epitomes of work-culture have been set by them. ",
   },
 ];
 
