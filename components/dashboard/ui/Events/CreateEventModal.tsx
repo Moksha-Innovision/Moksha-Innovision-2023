@@ -367,8 +367,8 @@ const CreateEventModal = (props: Props) => {
           onChange={handleChange}
           labelColor="black"
           label="Date"
-          min="2023-03-23"
-          max="2023-03-25"
+          min="2023-04-06"
+          max="2023-04-08"
           type="date"
           id="Date"
           name="date"
