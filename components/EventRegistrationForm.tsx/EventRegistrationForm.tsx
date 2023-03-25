@@ -77,8 +77,9 @@ const EventRegistrationForm = (props: Props) => {
       throw error;
     }
 
-    const currentRegEvents = user?.user_metadata.regEvents;
+    const currentRegEvents = user?.user_metadata.regEvents || [];
     const newRegEvents = currentRegEvents.push(eventId);
+    user!.user_metadata.regEvents = [...currentRegEvents, eventId];
 
     const { data: otherData, error: otherError } =
       await supabase.auth.updateUser({
@@ -94,7 +95,7 @@ const EventRegistrationForm = (props: Props) => {
     <>
       {user?.user_metadata?.regEvents?.includes(eventId) && (
         <div className="prompt">
-          You have already registered for the event ! Check your dashboard
+          You have registered for the event ! Check your dashboard
         </div>
       )}
 
