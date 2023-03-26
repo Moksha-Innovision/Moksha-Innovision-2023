@@ -8,7 +8,7 @@ import EventDays from "./EventDays";
 import EventGrid from "./EventGrid";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
-const days = ["I", "II", "III"];
+const days = ["0", "I", "II", "III"];
 
 const events = [
   {
@@ -130,6 +130,13 @@ const events = [
 
 const processData = (data: any) => [
   {
+    day: "0",
+    events:
+      data?.filter((e: any) => {
+        if (e.date == "2023-04-05" && e.approved) return e;
+      }) || [],
+  },
+  {
     day: "I",
     events:
       data?.filter((e: any) => {
@@ -219,6 +226,7 @@ const Event = () => {
         <div className="mt-2">
           {eData && (
             <EventGrid
+              setDay={setDay}
               events={events.filter((e) => e.day == day).at(0)?.events}
               e={eData.filter((e: any) => e.day == day).at(0)?.events}
               day={day}
