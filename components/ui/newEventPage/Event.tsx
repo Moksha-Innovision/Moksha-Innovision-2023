@@ -1,11 +1,16 @@
 import { Koulen } from "@next/font/google";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { AiOutlineReload } from "react-icons/ai";
+import { useEffect, useRef, useState } from "react";
+import {
+  AiOutlineLeft,
+  AiOutlineReload,
+  AiOutlineSearch,
+} from "react-icons/ai";
 import EventCarosel from "./EventCarosel";
 import EventDays from "./EventDays";
 import EventGrid from "./EventGrid";
+import EventGridOrg from "./EventGridOrg";
 const koulen = Koulen({ weight: "400", subsets: ["latin"] });
 
 const days = ["0", "I", "II", "III"];
@@ -127,7 +132,10 @@ const events = [
     ],
   },
 ];
-
+const processDataApproved = (data: any) =>
+  data?.filter((e: any) => {
+    if (e.approved) return e;
+  });
 const processData = (data: any) => [
   {
     day: "0",
@@ -162,17 +170,25 @@ const processData = (data: any) => [
 const Event = () => {
   const [eventss, setEventss] = useState<any>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [semode, setSemode] = useState(false);
   const router = useRouter();
   const user = useUser();
   const supabase = useSupabaseClient();
   const [eData, setEData] = useState<any>("");
+  const srch = useRef<any>("");
+  const [data, setData] = useState<any>("");
+  const [rData, setRData] = useState<any>("");
   const getEvent = async () => {
     setIsLoading(true);
-    const { data, error } = await supabase.from("socevent").select("*");
+    const { data, error } = await supabase
+      .from("socevent")
+      .select("*")
+      .eq("approved", true);
 
     sessionStorage.setItem("eData", JSON.stringify(data));
     const processedData = processData(data);
-
+    const appeve = processDataApproved(data);
+    setData(appeve);
     setEData(processedData);
     setIsLoading(false);
   };
@@ -182,9 +198,19 @@ const Event = () => {
     else {
       const rawData = JSON.parse(sessionStorage.getItem("eData") || "");
       const processedData = processData(rawData);
+      const appeve = processDataApproved(rawData);
+      setData(appeve);
       setEData(processedData);
     }
   }, []);
+  const handleSrch = (e: any) => {
+    {
+      const dat = data.filter((ev: any) =>
+        ev.event_name.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+      setRData(dat);
+    }
+  };
 
   const [day, setDay] = useState("I");
   return (
@@ -198,20 +224,56 @@ const Event = () => {
         <div className="">
           <EventCarosel></EventCarosel>
         </div>
-        <div>
-          <div className="ml-auto flex w-screen justify-end pr-4">
+
+        <div className="flex w-screen flex-col items-center px-4 sm:flex-row sm:justify-between">
+          <div className="mt-5 flex w-fit items-center  gap-3 ">
             <button
-              className="mt-5 flex items-center  gap-3 rounded bg-white bg-opacity-20 px-2 py-1"
-              onClick={getEvent}
+              onClick={() => {
+                setRData("");
+                srch.current.value = "";
+                setSemode(false);
+              }}
+              className={`${
+                semode ? " block " : " hidden "
+              } flex items-center rounded-2xl bg-white bg-opacity-20 p-2 text-2xl`}
             >
-              <AiOutlineReload
-                className={`${isLoading ? "animate-spin text-3xl" : ""}`}
-              />{" "}
-              <span>Get Recent Events</span>
+              <AiOutlineLeft className="" />
+              <span className="text-sm">back</span>
             </button>
+            <div className=" flex w-fit items-center  gap-3 rounded bg-white bg-opacity-20 py-1 px-1 ">
+              <input
+                ref={srch}
+                type="text"
+                onChange={handleSrch}
+                placeholder="Search Event"
+                onFocus={() => {
+                  setSemode(true);
+                }}
+                className=" box-border  rounded bg-transparent px-1  py-1 "
+              />
+              {/*focus:border-2 focus:border-prussian-blue-50 focus:outline-0*/}
+              <AiOutlineSearch
+                className={`${semode ? " text-3xl" : "text-2xl"}`}
+              ></AiOutlineSearch>
+            </div>
           </div>
+
+          <button
+            className="mt-5 flex  w-fit items-center gap-3 rounded bg-white bg-opacity-20 px-2 py-2"
+            onClick={getEvent}
+          >
+            <AiOutlineReload
+              className={`${isLoading ? "animate-spin text-3xl" : "text-2xl"}`}
+            />{" "}
+            <span>Get Recent Events</span>
+          </button>
         </div>
-        <div className="mt-3 flex h-full space-x-1">
+
+        <div
+          className={`${
+            !semode ? " block " : " hidden "
+          } mt-3 flex h-full space-x-1`}
+        >
           {days.map((d, i) => {
             return (
               <EventDays
@@ -223,15 +285,28 @@ const Event = () => {
             );
           })}
         </div>
-        <div className="mt-2">
-          {eData && (
-            <EventGrid
-              setDay={setDay}
-              events={events.filter((e) => e.day == day).at(0)?.events}
-              e={eData.filter((e: any) => e.day == day).at(0)?.events}
-              day={day}
-            />
-          )}
+        <div className="mt-2 min-h-[100vh]">
+          <div className={`${semode ? " block " : " hidden "}`}>
+            {rData ? (
+              <EventGridOrg setDay={setDay} e={rData} day={day} />
+            ) : (
+              <div className="w-screen p-10">
+                <div className="col-span-4 flex w-full justify-center bg-white text-black">
+                  SEARCH AN EVENT BY NAME
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className={`${!semode ? " block " : " hidden "}`}>
+            {eData && (
+              <EventGrid
+                setDay={setDay}
+                e={eData.filter((e: any) => e.day == day).at(0)?.events}
+                day={day}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
