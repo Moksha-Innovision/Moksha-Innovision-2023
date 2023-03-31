@@ -5,7 +5,7 @@ import { SliderSlideSm } from "./SliderSlide";
 type Props = {};
 
 //const sponsorImages = ["sponsor 1", "sponsor 2", "sponsor 3", "sponsor 4"];
-const sponsorImages = [
+/*const sponsorImages = [
   "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/aakash.svg",
   "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/BaskinRobbins.svg",
   "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/bingo.svg",
@@ -21,6 +21,22 @@ const sponsorImages = [
   "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/sbi.svg",
   "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/smaash.svg",
   "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/thehindu.svg",
+];*/
+const sponsorImages = [
+  "/NewSponsers/BeRealApp.svg",
+  "/NewSponsers/central bank.svg",
+  "/NewSponsers/coding-ninjas.svg",
+  "/NewSponsers/college dunia.svg",
+  "/NewSponsers/course hero.svg",
+  "/NewSponsers/fitmastic 1.svg",
+  "/NewSponsers/freedo.svg",
+  "/NewSponsers/golds gym.svg",
+  "/NewSponsers/igl.svg",
+  "/NewSponsers/kiara.svg",
+  "/NewSponsers/manforce 1.svg",
+  "/NewSponsers/oatey.svg",
+  "/NewSponsers/storia.svg",
+  "/NewSponsers/unirely.svg",
 ];
 
 const SponserMain = (props: Props) => {
@@ -60,7 +76,7 @@ const SponserMain = (props: Props) => {
           className={`m-auto mt-[8vh] hidden h-full min-h-[650px] w-full max-w-full flex-col gap-8 sm:flex md:gap-16 lg:gap-16`}
         >
           <h1 className=" mb-1 mt-5 flex   flex-col items-center text-center   text-6xl text-white drop-shadow-lowGlowtext md:mb-2     md:text-7xl lg:mb-3   ">
-            Past Sponsors
+            OUR SPONSERS
           </h1>
           <div className="top-row h-40 w-full">
             <Infiniteslider
