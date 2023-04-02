@@ -70,11 +70,7 @@ const EventColumn = (props: Props) => {
               </Link>
             }
 
-            <div
-              className={`  ${
-                !event.approved ? "pointer-events-none " : "pointer-events-auto"
-              }`}
-            >
+            <div>
               <ConciseDetails
                 key={index}
                 event_id={event.event_id}
