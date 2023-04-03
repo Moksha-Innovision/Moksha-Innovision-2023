@@ -178,6 +178,8 @@ const Event = () => {
   const srch = useRef<any>("");
   const [data, setData] = useState<any>("");
   const [rData, setRData] = useState<any>("");
+
+  const [cData, setCData] = useState<any>("");
   const getEvent = async () => {
     setIsLoading(true);
     const { data, error } = await supabase
@@ -192,8 +194,19 @@ const Event = () => {
     setEData(processedData);
     setIsLoading(false);
   };
+  const getSpecial = async () => {
+    setIsLoading(true);
+    const { data, error } = await supabase
+      .from("socevent")
+      .select("*")
+      .eq("approved", true)
+      .eq("special", true);
+    setCData(data);
+    setIsLoading(false);
+  };
 
   useEffect(() => {
+    getSpecial();
     if (!sessionStorage.getItem("eData")) getEvent();
     else {
       const rawData = JSON.parse(sessionStorage.getItem("eData") || "");
@@ -222,7 +235,7 @@ const Event = () => {
           EVENTS{" "}
         </h1>
         <div className="">
-          <EventCarosel></EventCarosel>
+          {cData && <EventCarosel data={cData}></EventCarosel>}
         </div>
 
         <div className="flex w-screen flex-col items-center px-4 sm:flex-row sm:justify-between">

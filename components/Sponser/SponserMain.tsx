@@ -1,7 +1,5 @@
-import Image from "next/image";
+import SponseBlock from "./SponseBlock";
 
-import Infiniteslider from "./infiniteslider";
-import { SliderSlideSm } from "./SliderSlide";
 type Props = {};
 
 //const sponsorImages = ["sponsor 1", "sponsor 2", "sponsor 3", "sponsor 4"];
@@ -23,62 +21,70 @@ type Props = {};
   "https://odlfyjrswlruygfdauic.supabase.co/storage/v1/object/public/project-assests/PastSponsers/thehindu.svg",
 ];*/
 const sponsorImages = [
-  "/NewSponsers/BeRealApp.svg",
-  "/NewSponsers/central bank.svg",
-  "/NewSponsers/coding-ninjas.svg",
-  "/NewSponsers/college dunia.svg",
-  "/NewSponsers/course hero.svg",
-  "/NewSponsers/fitmastic 1.svg",
-  "/NewSponsers/freedo.svg",
-  "/NewSponsers/golds gym.svg",
-  "/NewSponsers/igl.svg",
-  "/NewSponsers/kiara.svg",
-  "/NewSponsers/manforce 1.svg",
-  "/NewSponsers/oatey.svg",
-  "/NewSponsers/storia.svg",
-  "/NewSponsers/unirely.svg",
+  {
+    title: "title sponsor",
+    sponsers: ["/NewSponsers/kiara.svg"],
+  },
+  {
+    title: "associate Sponser",
+    sponsers: ["/NewSponsers/coding-ninjas.svg", "/NewSponsers/igl.svg"],
+  },
+  {
+    title: " gold sponsor",
+    sponsers: ["/NewSponsers/central bank.svg", "/NewSponsers/golds gym.svg"],
+  },
+  {
+    title: "social media partner",
+    sponsers: ["/NewSponsers/BeRealApp.svg"],
+  },
+  {
+    title: "Community partner",
+    sponsers: ["/NewSponsers/college dunia.svg"],
+  },
+  {
+    title: "education partner",
+    sponsers: ["/NewSponsers/course hero.svg", "/NewSponsers/unirely.svg"],
+  },
+  {
+    title: "Security partner",
+    sponsers: ["/NewSponsers/manforce 1.svg"],
+  },
+
+  {
+    title: "Mobility partner",
+    sponsers: ["/NewSponsers/freedo.svg"],
+  },
+  {
+    title: "Fitness partner",
+    sponsers: ["/NewSponsers/fitmastic 1.svg", "/NewSponsers/unirely.svg"],
+  },
+  {
+    title: "Food partner",
+    sponsers: ["/NewSponsers/storia.svg", "/NewSponsers/oatey.svg"],
+  },
 ];
 
 const SponserMain = (props: Props) => {
   return (
-    <>
-      <div className=" relative flex min-h-screen w-screen pt-[7vh]">
-        {/*<Image
-                    src="borders.svg"
-                    width={100}
-                    height={100}
-                    alt="border"
-                    className="absolute w-28 lg:w-36 xl:w-44 left-0 hidden sm:inline-block borders-1"
-                />
-                <Image
-                    src="borders.svg"
-                    width={100}
-                    height={100}
-                    alt="border"
-                    className="absolute w-28 lg:w-40 xl:w-44 right-0 -scale-x-100 hidden sm:inline-block borders-2"
-                />
-                <Image
-                    src="borders.svg"
-                    width={100}
-                    height={100}
-                    alt="border"
-                    className="absolute w-28 lg:w-40 xl:w-44 bottom-0 -scale-y-100  borders-3"
-                />
-                <Image
-                    src="borders.svg"
-                    width={100}
-                    height={100}
-                    alt="border"
-                    className="absolute w-28 lg:w-40 xl:w-44 bottom-0 right-0 -scale-y-100 -scale-x-100 borders-4"
-                />*/}
-
-        <div
-          className={`m-auto mt-[8vh] hidden h-full min-h-[650px] w-full max-w-full flex-col gap-8 sm:flex md:gap-16 lg:gap-16`}
-        >
-          <h1 className=" mb-1 mt-5 flex   flex-col items-center text-center   text-6xl text-white drop-shadow-lowGlowtext md:mb-2     md:text-7xl lg:mb-3   ">
-            OUR SPONSERS
-          </h1>
-          <div className="top-row h-40 w-full">
+    <div className=" relative flex min-h-screen w-screen pt-[5vh]">
+      <div className="m-auto mt-[7vh]   h-full min-h-[650px] w-full max-w-full flex-col gap-8 sm:flex md:gap-10 lg:gap-12">
+        <h1 className="  mt-5 mb-10   flex flex-col items-center   text-center text-6xl text-white drop-shadow-lowGlowtext     md:mb-6 md:text-7xl  lg:mb-8 ">
+          OUR SPONSERS
+        </h1>
+        <div className="">
+          {sponsorImages.map((cat: any, i: any) => (
+            <SponseBlock
+              title={cat.title}
+              key={i}
+              images={cat.sponsers}
+            ></SponseBlock>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+/** <div className="top-row h-40 w-full">
             <Infiniteslider
               direction={"right"}
               right={false}
@@ -87,12 +93,12 @@ const SponserMain = (props: Props) => {
           </div>
           <div className="bottom-row h-40 w-full antialiased">
             <Infiniteslider right={true} images={sponsorImages} />
-          </div>
-        </div>
-
-        <div className={`mobile mt-20 w-full sm:hidden`}>
+          </div> 
+          
+          
+ <div className={`mobile mt-20 w-full sm:hidden`}>
           <h1 className=" mb-1 flex   flex-col items-center text-center   text-6xl text-white drop-shadow-lowGlowtext md:mb-2     md:text-7xl lg:mb-3   ">
-            Past Sponsors
+            Our Sponsors
           </h1>
 
           <div className="sponsors col-span-2 my-16 grid  grid-cols-2 gap-3 px-6 pb-12">
@@ -124,10 +130,5 @@ const SponserMain = (props: Props) => {
               </SliderSlideSm>
             ))}
           </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
+        </div>*/
 export default SponserMain;
