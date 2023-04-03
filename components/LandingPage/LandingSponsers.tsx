@@ -96,8 +96,9 @@ const LandingSponsers = () => {
   //   </div>
   // );
 
-  return (
-    <>
+  /**
+   * 
+   * <>
       <h1 className="mb-7 flex flex-col  items-center text-center   text-4xl text-white drop-shadow-lowGlowtext md:mb-6 lg:text-5xl ">
         <div className="">SPONSORS</div>
         <Image
@@ -108,6 +109,26 @@ const LandingSponsers = () => {
           className={`b-2 inline w-24 scale-150`}
         />
       </h1>
+      <Marquee speed={50} gradient={false} style={{ marginBottom: "40px" }}>
+        {spons.map((a, i) => (
+          <SliderSlide
+            key={i}
+            className={"mr-12 h-36 w-60 p-2 sm:h-40 sm:w-72 md:mr-20"}
+          >
+            <Image
+              src={a}
+              width={100}
+              height={100}
+              alt={"sponser"}
+              className={`h-full w-full`}
+            />
+          </SliderSlide>
+        ))}
+      </Marquee>
+    </>
+   */
+  return (
+    <>
       <Marquee speed={50} gradient={false} style={{ marginBottom: "40px" }}>
         {spons.map((a, i) => (
           <SliderSlide

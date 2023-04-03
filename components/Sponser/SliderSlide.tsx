@@ -1,7 +1,7 @@
 const SliderSlide = ({ children, className }: any) => {
   return (
     <div
-      className={`flex h-full  items-center  justify-center  rounded-3xl  bg-yellow-700 bg-opacity-[16%] text-3xl font-bold text-[#BE922F] shadow-2xl drop-shadow-glow  hover:drop-shadow-lowGlowtext  ${className} `}
+      className={`flex h-full  items-center  justify-center rounded-3xl  bg-yellow-700  bg-opacity-[16%] p-3 text-3xl font-bold text-[#BE922F] shadow-2xl drop-shadow-glow  hover:drop-shadow-lowGlowtext  ${className} `}
     >
       {children}
     </div>
