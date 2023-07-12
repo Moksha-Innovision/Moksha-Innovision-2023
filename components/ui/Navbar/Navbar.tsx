@@ -89,7 +89,7 @@ const Navbar = (props: Props) => {
           <NavLink href="/contact" underlineclassName="">
             Contact
           </NavLink>
-          <NavLink href="/legacy">Our past</NavLink>
+          <NavLink href="/legacy">About</NavLink>
           {/*<NavLink href="/about">About Us</NavLink>*/}
         </ul>
 
@@ -196,7 +196,7 @@ const Navbar = (props: Props) => {
             Contact Us
           </NavLink>
           <NavLink href="/legacy" underlineclassName="left-3" imgScale={125}>
-            Our past
+            About
           </NavLink>
           {/*<NavLink href="/about" imgScale={110}>
             About Us
