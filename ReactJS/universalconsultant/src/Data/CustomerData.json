@@ -1,0 +1,38 @@
+[
+  {
+    "imageName": "https://imgs.search.brave.com/R-bmvuO_aoBnN5WUXs7Z-CMD37loarjGxgcVGraDR2U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3JlYWN0/LmpwZw",
+    "name": "John Doe",
+    "designation": "Software Engineer",
+    "description": "John Doe is a talented software engineer with expertise in web development and cloud computing."
+  },
+  {
+    "imageName": "https://imgs.search.brave.com/R-bmvuO_aoBnN5WUXs7Z-CMD37loarjGxgcVGraDR2U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3JlYWN0/LmpwZw",
+    "name": "Jane Smith",
+    "designation": "UI/UX Designer",
+    "description": "Jane Smith is a creative UI/UX designer passionate about creating intuitive and user-friendly interfaces."
+  },
+  {
+    "imageName": "https://imgs.search.brave.com/R-bmvuO_aoBnN5WUXs7Z-CMD37loarjGxgcVGraDR2U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3JlYWN0/LmpwZw",
+    "name": "Alex Jones",
+    "designation": "Data Scientist",
+    "description": "Alex Jones is a skilled data scientist specializing in machine learning and predictive analytics."
+  },
+  {
+    "imageName": "https://imgs.search.brave.com/R-bmvuO_aoBnN5WUXs7Z-CMD37loarjGxgcVGraDR2U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3JlYWN0/LmpwZw",
+    "name": "John Doe",
+    "designation": "Software Engineer",
+    "description": "John Doe is a talented software engineer with expertise in web development and cloud computing."
+  },
+  {
+    "imageName": "https://imgs.search.brave.com/R-bmvuO_aoBnN5WUXs7Z-CMD37loarjGxgcVGraDR2U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3JlYWN0/LmpwZw",
+    "name": "Jane Smith",
+    "designation": "UI/UX Designer",
+    "description": "Jane Smith is a creative UI/UX designer passionate about creating intuitive and user-friendly interfaces."
+  },
+  {
+    "imageName": "https://imgs.search.brave.com/R-bmvuO_aoBnN5WUXs7Z-CMD37loarjGxgcVGraDR2U/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sb2dv/d2lrLmNvbS9jb250/ZW50L3VwbG9hZHMv/aW1hZ2VzL3JlYWN0/LmpwZw",
+    "name": "Alex Jones",
+    "designation": "Data Scientist",
+    "description": "Alex Jones is a skilled data scientist specializing in machine learning and predictive analytics."
+  }
+]
